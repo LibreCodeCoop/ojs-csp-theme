@@ -11,7 +11,9 @@ class CspThemePlugin extends ThemePlugin {
         //$this->addStyle('stylesheet', 'styles/index.less');
         $this->setParent('bootstrapthreethemeplugin');
         $this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
-        //$this->addStyle('child-stylesheet', 'styles/index.less');                
+        //$this->addStyle('child-stylesheet', 'styles/index.less');
+        
+        HookRegistry::register ('Templates::Index::journal', array($this, 'issuesIndexJournal'));
 	
     }
 
@@ -30,4 +32,59 @@ class CspThemePlugin extends ThemePlugin {
     function getDescription() {
         return __('plugins.themes.csp.description');
     }
+
+	/**
+	 * Fired when the `Templates::Index::journal` hook is called.
+	 *
+	 * @param string $hookname
+	 * @param array $args [$templateMgr, $template, $sendContentType, $charset, $output]
+	 */
+	public function issuesIndexJournal($hookName, $args) {
+
+		// Retrieve the TemplateManager
+        $templateMgr = $args[0];
+
+        $request = Application::getRequest();
+        $templateMgr = TemplateManager::getManager($request);
+            
+        
+		$page = isset($args[0]) ? (int) $args[0] : 1;
+		$context = $request->getContext();
+
+		$count = $context->getData('itemsPerPage') ? $context->getData('itemsPerPage') : Config::getVar('interface', 'items_per_page');
+        $offset = $page > 1 ? ($page - 1) * $count : 0;
+                
+        
+
+        $context = $request->getContext();
+		$params = array(
+			'contextId' => $context->getId(),
+			'orderBy' => 'seq',
+			'orderDirection' => 'ASC',
+			'count' => 12,
+			'offset' => 0,
+			'isPublished' => true,
+        );        
+        
+		$issues = iterator_to_array(Services::get('issue')->getMany($params));
+		$total = Services::get('issue')->getMax($params);
+
+		$showingStart = $offset + 1;
+		$showingEnd = min($offset + $count, $offset + count($issues));
+		$nextPage = $total > $showingEnd ? $page + 1 : null;
+		$prevPage = $showingStart > 1 ? $page - 1 : null;
+
+/* 		$templateMgr->assign(array(
+			'issues' => $issues,
+			'showingStart' => $showingStart,
+			'showingEnd' => $showingEnd,
+			'total' => $total,
+			'nextPage' => $nextPage,
+			'prevPage' => $prevPage,
+		)); */
+
+
+        $templateMgr->assign(array('myCustomData', "zzzzzzzzzzzzz"));
+        return true;
+	}    
 }
