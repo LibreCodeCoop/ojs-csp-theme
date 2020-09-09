@@ -10,10 +10,10 @@ class CspThemePlugin extends ThemePlugin {
         
         //$this->addStyle('stylesheet', 'styles/index.less');
         $this->setParent('bootstrapthreethemeplugin');
-        $this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
-        //$this->addStyle('child-stylesheet', 'styles/index.less');
-        
-        HookRegistry::register ('Templates::Index::journal', array($this, 'issuesIndexJournal'));
+        //$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
+        $this->addStyle('child-stylesheet', 'styles/index.less');
+
+        HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 	
     }
 
@@ -33,20 +33,13 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
-	/**
-	 * Fired when the `Templates::Index::journal` hook is called.
-	 *
-	 * @param string $hookname
-	 * @param array $args [$templateMgr, $template, $sendContentType, $charset, $output]
-	 */
-	public function issuesIndexJournal($hookName, $args) {
+
+	public function loadTemplateData($hookName, $args) {
 
 		// Retrieve the TemplateManager
         $templateMgr = $args[0];
 
         $request = Application::getRequest();
-        $templateMgr = TemplateManager::getManager($request);
-            
         
 		$page = isset($args[0]) ? (int) $args[0] : 1;
 		$context = $request->getContext();
@@ -74,17 +67,14 @@ class CspThemePlugin extends ThemePlugin {
 		$nextPage = $total > $showingEnd ? $page + 1 : null;
 		$prevPage = $showingStart > 1 ? $page - 1 : null;
 
-/* 		$templateMgr->assign(array(
+ 		$templateMgr->assign(array(
 			'issues' => $issues,
 			'showingStart' => $showingStart,
 			'showingEnd' => $showingEnd,
 			'total' => $total,
 			'nextPage' => $nextPage,
 			'prevPage' => $prevPage,
-		)); */
+		)); 
 
-
-        $templateMgr->assign(array('myCustomData', "zzzzzzzzzzzzz"));
-        return true;
 	}    
 }
