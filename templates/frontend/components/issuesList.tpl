@@ -1,6 +1,6 @@
 		<div class="issues media-list">
 			{foreach from=$issues item="issue"}
-				<div class="issue-summary media">
+				<div class="issue-summary">
 
 					{* Retrieve separate entries for $issueTitle and $issueSeries *}
 					{assign var=issueTitle value=$issue->getLocalizedTitle()}
@@ -26,15 +26,15 @@
 									{$issueSeries|escape}
 								{/if}
 							</a>
-							{if $issueTitle}
+			{* 				{if $issueTitle}
 								<div class="series lead">
 									{$issueSeries|escape}
 								</div>
-							{/if}
+							{/if} *}
 						</h2>
-						<div class="description">
+{* 						<div class="description">
 							{$issueDescription|strip_unsafe_html|nl2br}
-						</div>
+						</div> *}
 					</div>
 				</div><!-- .issue-summary -->
 			{/foreach}

@@ -38,6 +38,17 @@
 
 			{* User profile, login, etc, navigation menu*}
 			<div class="container-fluid">
+				<div class="container">
+					<nav aria-label="{translate|escape key="common.navigation.user"}">
+						<a href="http://localhost/ojs/index.php/index" class="navbar-brand navbar-brand-logo">
+							<img src="{$publicFilesDir}/logo.gif">
+						</a>
+					</nav>
+				</div><!-- .row -->
+			</div><!-- .container-fluid -->
+
+			{* User profile, login, etc, navigation menu*}
+			<div class="container">
 				<div class="row">
 					<nav aria-label="{translate|escape key="common.navigation.user"}">
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
@@ -45,7 +56,7 @@
 				</div><!-- .row -->
 			</div><!-- .container-fluid -->
 
-			<div class="container-fluid">
+			<div class="container">
 
 				<div class="navbar-header">
 
