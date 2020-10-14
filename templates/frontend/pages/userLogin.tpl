@@ -21,7 +21,7 @@
 		</div>
 	{/if}
 
-	<form class="pkp_form login" id="login" method="post" action="http://localhost/ojs/index.php/csp/login/signIn">
+	<form class="pkp_form login" id="login" method="post" action="csp/login/signIn">
 		{csrf}
 		<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />
 
