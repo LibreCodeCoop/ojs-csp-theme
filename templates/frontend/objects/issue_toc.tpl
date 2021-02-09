@@ -32,21 +32,21 @@
 
 		<div class="issue-details col-md-2">
 
-{* 			{if $issue->hasDescription()}
+			{if $issue->hasDescription()}
 				<div class="description">
 					{$issue->getLocalizedDescription()|strip_unsafe_html}
 				</div>
-			{/if} *}
+			{/if}
 
 			{* Published date *}
-{* 			{if $issue->getDatePublished()}
+			{if $issue->getDatePublished()}
 				<p class="published">
 					<strong>
 						{translate key="submissions.published"}:
 					</strong>
 					{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
 				</p>
-			{/if} *}
+			{/if}
 			{include file="frontend/components/issuesList.tpl"}
 		</div>		
 

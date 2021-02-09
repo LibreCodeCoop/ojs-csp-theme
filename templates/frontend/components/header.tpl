@@ -40,23 +40,23 @@
 			<div class="container-fluid">
 				<div class="container">
 					<nav id="logo-ensp" aria-label="{translate|escape key="common.navigation.user"}">
-						<a href="http://localhost/ojs/index.php/index" class="navbar-brand navbar-brand-logo">
+						<a href={$homeUrl} class="navbar-brand navbar-brand-logo">
 							<img src="{$publicFilesDir}/logo.gif">
 						</a>
-						<img  class="navbar-brand-logo-fiocruz" src="http://localhost/ojs/public/journals/1/logo-fiocruz.png">
+						<img class="navbar-brand-logo-fiocruz" src="{$publicFilesDir}/logo-fiocruz.png">
 					</nav>
 				</div><!-- .row -->
 			</div><!-- .container-fluid -->
 
 			{* User profile, login, etc, navigation menu*}
 
-			{*<div class="container">
+			<div class="container">
 				<div class="row">
 					<nav aria-label="{translate|escape key="common.navigation.user"}">
 						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
 					</nav>
 				</div><!-- .row -->
-			</div><!-- .container-fluid -->*}
+			</div><!-- .container-fluid -->
 
 			<div class="container">
 
@@ -113,13 +113,16 @@
 
 				{if !empty(trim($primaryMenu)) || $currentContext}
 				<div class="pull-md-right">
-					{* Search form *}
-					{if $currentContext}
-							{include file="frontend/components/searchForm_simple.tpl"}
-					{/if}
 					<nav id="nav-menu" class="navbar-collapse collapse" aria-label="{translate|escape key="common.navigation.site"}">
 						{* Primary navigation menu for current application *}
 						{$primaryMenu}
+
+						{* Search form *}
+						{if $currentContext}
+							<div class="pull-md-right">
+								{include file="frontend/components/searchForm_simple.tpl"}
+							</div>
+						{/if}
 					</nav>
 				</div>
 				{/if}
