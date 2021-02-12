@@ -35,33 +35,55 @@
 
 		{* Header *}
 		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
-
-			{* User profile, login, etc, navigation menu*}
-			<div class="container-fluid">
+			<div class="container-fluid" id="logo-ensp-fiocruz">
 				<div class="container">
-					<nav id="logo-ensp" aria-label="{translate|escape key="common.navigation.user"}">
-						<a href={$homeUrl} class="navbar-brand navbar-brand-logo">
-							<img src="{$publicFilesDir}/logo.gif">
-						</a>
-						<img class="navbar-brand-logo-fiocruz" src="{$publicFilesDir}/logo-fiocruz.png">
-					</nav>
-				</div><!-- .row -->
+					<div class="row">
+						<div class="col-xs-6 col-sm-6">
+							<a href="{$homeUrl}">
+								<img src="{$publicFilesDir}/logo.gif">
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-6 text-right">
+							<a href="http://www.ensp.fiocruz.br/">
+								<img src="{$publicFilesDir}/logo-fiocruz.png">
+							</a>
+						</div>
+					</div><!-- .row -->
+				</div>
 			</div><!-- .container-fluid -->
 
 			{* User profile, login, etc, navigation menu*}
 
-			<div class="container">
+			<div class="container-fluid" id="logo-csp">
 				<div class="row">
-					<nav aria-label="{translate|escape key="common.navigation.user"}">
-						{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
-					</nav>
-				</div><!-- .row -->
-			</div><!-- .container-fluid -->
-
-			<div class="container">
-
+					<div class="container">
+						{*{capture assign="homeUrl"}
+							{if $currentJournal && $multipleContexts}
+								{url page="index" router=$smarty.const.ROUTE_PAGE}
+							{else}
+								{url context="index" router=$smarty.const.ROUTE_PAGE}
+							{/if}
+						{/capture}*}
+						{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
+							<a href="{$homeUrl}">
+								<img class="logo-csp" src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
+							</a>
+						{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}
+							<a href="{$homeUrl}">{$displayPageHeaderTitle}</a>
+						{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_array($displayPageHeaderTitle)}
+							<a href="{$homeUrl}">
+								<img class="logo-csp" src="{$publicFilesDir}/{$displayPageHeaderTitle.uploadName|escape:"url"}" alt="{$displayPageHeaderTitle.altText|escape}">
+							</a>
+						{else}
+							<a href="{$homeUrl}">
+								<img class="logo-csp" src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
+							</a>
+						{/if}
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid menu">
 				<div class="navbar-header">
-
 					{* Mobile hamburger menu *}
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="nav-menu">
 						<span class="sr-only">Toggle navigation</span>
@@ -69,42 +91,6 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-
-					{* Logo or site title. Only use <h1> heading on the homepage.
-					   Otherwise that should go to the page title. *}
-					{if $requestedOp == 'index'}
-						<h1 class="site-name">
-					{else}
-						<div class="site-name">
-					{/if}
-						{capture assign="homeUrl"}
-							{if $currentJournal && $multipleContexts}
-								{url page="index" router=$smarty.const.ROUTE_PAGE}
-							{else}
-								{url context="index" router=$smarty.const.ROUTE_PAGE}
-							{/if}
-						{/capture}
-						{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
-							<a href="{$homeUrl}" class="navbar-brand navbar-brand-logo">
-								<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
-							</a>
-						{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}
-							<a href="{$homeUrl}" class="navbar-brand">{$displayPageHeaderTitle}</a>
-						{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_array($displayPageHeaderTitle)}
-							<a href="{$homeUrl}" class="navbar-brand navbar-brand-logo">
-								<img src="{$publicFilesDir}/{$displayPageHeaderTitle.uploadName|escape:"url"}" alt="{$displayPageHeaderTitle.altText|escape}">
-							</a>
-						{else}
-							<a href="{$homeUrl}" class="navbar-brand">
-								<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
-							</a>
-						{/if}
-					{if $requestedOp == 'index'}
-						</h1>
-					{else}
-						</div>
-					{/if}
-
 				</div>
 				{* Primary site navigation *}
 				{capture assign="primaryMenu"}
@@ -112,22 +98,20 @@
 				{/capture}
 
 				{if !empty(trim($primaryMenu)) || $currentContext}
-				<div class="pull-md-right">
 					<nav id="nav-menu" class="navbar-collapse collapse" aria-label="{translate|escape key="common.navigation.site"}">
 						{* Primary navigation menu for current application *}
-						{$primaryMenu}
-
+						<div class="pull-md-left">
+							{$primaryMenu}
+						</div>
 						{* Search form *}
-						{if $currentContext}
-							<div class="pull-md-right">
+						<div class="pull-md-right">
+							{if $currentContext}
 								{include file="frontend/components/searchForm_simple.tpl"}
-							</div>
-						{/if}
+							{/if}
+							{load_menu name="user" id="navigationUser" ulClass="nav navbar-nav pull-right"}
+						</div>
 					</nav>
-				</div>
 				{/if}
-				<br>
-
 			</div><!-- .pkp_head_wrapper -->
 		</header><!-- .pkp_structure_head -->
 
