@@ -26,7 +26,7 @@
 			</aside><!-- pkp_sidebar.left -->
 				<div class="content">
 		{/if}	{/if}
-	{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}
+	{*{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}*}
 
 	</div><!-- pkp_structure_content -->
 
