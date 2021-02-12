@@ -23,10 +23,9 @@
 	{/if}
 
 	{* Issue introduction area above articles *}
+	{*
 	<div class="heading row">
 		{assign var="issueDetailsCol" value="12"}
-
-		{* Issue cover image and description*}
 
 		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 
@@ -38,7 +37,7 @@
 				</div>
 			{/if}
 
-			{* Published date *}
+
 			{if $issue->getDatePublished()}
 				<p class="published">
 					<strong>
@@ -59,6 +58,7 @@
 			</div>
 		{/if}
 	</div>
+	*}
 
 	{* Full-issue galleys *}
 
