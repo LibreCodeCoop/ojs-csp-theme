@@ -1,6 +1,6 @@
 		<div class="issues media-list">
 			{foreach from=$issues item="issue"}
-				<div class="issue-summary">
+				<div class="issue-summary media">
 
 					{* Retrieve separate entries for $issueTitle and $issueSeries *}
 					{assign var=issueTitle value=$issue->getLocalizedTitle()}
@@ -19,22 +19,21 @@
 					<div class="media-body">
 						<h2 class="media-heading">
 							<a class="title" href="{url|escape page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
-		
 								{if $issueTitle}
 									{$issueTitle|escape}
 								{else}
 									{$issueSeries|escape}
 								{/if}
 							</a>
-			{* 				{if $issueTitle}
+							{if $issueTitle}
 								<div class="series lead">
 									{$issueSeries|escape}
 								</div>
-							{/if} *}
+							{/if}
 						</h2>
-{* 						<div class="description">
+						<div class="description">
 							{$issueDescription|strip_unsafe_html|nl2br}
-						</div> *}
+						</div>
 					</div>
 				</div><!-- .issue-summary -->
 			{/foreach}

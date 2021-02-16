@@ -21,18 +21,28 @@
     padding-top: 15px;
 }
 
-
-#headerNavigationContainer .container-fluid{
-    background: white;
-    border-bottom: 4px solid #aad353;
+#headerNavigationContainer{
+    height: 500px;
+    width: 100%;     
+    background-image: url("http://localhost/ojs/public/journals/1/cover_issue_3_pt_BR.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.div-logo-ensp{
+    background: white;
+    border-bottom: 5px solid #71a521;
+}
+
+.navbar-brand .navbar-brand-logo img{
+    opacity: 1;
+}
+
+.menu{
+    background: #e88834;
+}
 .navbar-default, .header_view{
     background: white;
-}
-
-.navbar-brand{
-    height: 100px;
 }
 
 footer[role="contentinfo"]{
@@ -44,17 +54,42 @@ footer[role="contentinfo"]{
     margin-top: 0;
 }
 
-#logo-ensp{
-    height: 70px;
+
+.container {
+    max-width: 1760px !important;
+    width: 100% !important;
 }
 
-.navbar-brand.navbar-brand-logo{
-    position: absolute;
-    z-index: 1000;
+.logo-csp{
+    width: 100%;
+    max-width: 400px;
+    height: auto; 
 }
 
-.navbar-brand-logo-fiocruz{
-    margin-top: 30px;
-    float: right;
-    margin-right: 15px;
+#navigationUser li:last-child {
+    background: #858688;
+}
+
+#navigationUser li:nth-child(2) {
+    background: #4b4b4d;
+}
+
+.navbar-default .nav > li > a{
+    color: white;
+}
+
+#logo-csp {
+    background: rgba(255, 255, 255, 0.6);
+    padding:10px;
+}
+
+#logo-ensp-fiocruz{
+    background: white;
+}
+
+#logo-ensp-fiocruz img{
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    padding:5px;
 }
