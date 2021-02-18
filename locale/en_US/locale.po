@@ -61,3 +61,6 @@ msgstr "When a homepage image has been uploaded, display it in the background of
 
 msgid "plugins.themes.default.option.useHomepageImageAsHeader.option"
 msgstr "Show the homepage image as the header background."
+
+msgid "plugins.themes.csp.announcement.readMore"
+msgstr "Read more"

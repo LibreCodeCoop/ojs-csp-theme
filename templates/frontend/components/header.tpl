@@ -113,6 +113,50 @@
 					</nav>
 				{/if}
 			</div><!-- .pkp_head_wrapper -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 pull-md-right" id="col-carousel">
+						<div id="myCarousel" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+								<li data-target="#myCarousel" data-slide-to="1"></li>
+								<li data-target="#myCarousel" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+
+
+							{* Announcements *}
+								{if $numAnnouncementsHomepage && $announcements|count}
+									{assign var=count value=1}
+									{foreach name=announcements from=$announcements item=announcement}
+										<div class="item {if $count == 1} active {/if}">
+											{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
+												{break}
+											{/if}
+											{include file="frontend/objects/announcement_summary.tpl" heading="h3"}
+										</div>
+									{assign var=count value=$count+1}
+									{/foreach}
+								{/if}
+
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#myCarousel" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</header><!-- .pkp_structure_head -->
 
 		{* Wrapper for page content and sidebars *}

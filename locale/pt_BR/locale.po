@@ -20,3 +20,6 @@ msgstr "Tema para o site Cadernos de Saúde Pública."
 
 msgid "plugins.themes.csp.login.box"
 msgstr "Submeta seu manuscrito"
+
+msgid "plugins.themes.csp.announcement.readMore"
+msgstr "Leia mais"
