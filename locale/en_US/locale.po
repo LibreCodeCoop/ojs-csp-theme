@@ -64,3 +64,6 @@ msgstr "Show the homepage image as the header background."
 
 msgid "plugins.themes.csp.announcement.readMore"
 msgstr "Read more"
+
+msgid "plugins.themes.csp.inputSearchPlaceholder"
+msgstr "Keyword/Author"

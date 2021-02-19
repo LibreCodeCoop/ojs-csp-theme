@@ -23,3 +23,6 @@ msgstr "Submeta seu manuscrito"
 
 msgid "plugins.themes.csp.announcement.readMore"
 msgstr "Leia mais"
+
+msgid "plugins.themes.csp.inputSearchPlaceholder"
+msgstr "Palavra-chave/Autor"
