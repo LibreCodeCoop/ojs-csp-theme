@@ -40,6 +40,8 @@
 
 .menu{
     background: #e88834;
+    padding-left: unset;
+    padding-right: unset;
 }
 .navbar-default, .header_view{
     background: white;
@@ -136,4 +138,33 @@ footer[role="contentinfo"]{
     color: white;
     text-decoration: underline;
     float: right;
+}
+
+.navbar-nav > li > .dropdown-menu{
+    background: #e88834 !important;
+}
+
+.navbar-nav > li > .dropdown-menu > li{
+    background: #e88834 !important;
+}
+
+.navbar-collapse{
+    padding-left: unset;
+    padding-right: unset;
+}
+
+nav[aria-expanded="true"]{
+    margin-right: unset;
+    margin-left: unset;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+nav[aria-expanded="true"] .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse{
+    margin-left: unset;
+    margin-right: unset;
+}
+
+nav[aria-expanded="true"] .pull-right{
+    float: unset !important;
 }
