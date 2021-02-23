@@ -13,8 +13,8 @@ class CspThemePlugin extends ThemePlugin {
         //$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
         $this->addStyle('child-stylesheet', 'styles/index.less');
 
-        HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
-	
+		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
+
     }
 
     /**
@@ -38,18 +38,14 @@ class CspThemePlugin extends ThemePlugin {
 
 		// Retrieve the TemplateManager
         $templateMgr = $args[0];
-
         $request = Application::getRequest();
-        
 		$page = isset($args[0]) ? (int) $args[0] : 1;
 		$context = $request->getContext();
-
 		$count = $context->getData('itemsPerPage') ? $context->getData('itemsPerPage') : Config::getVar('interface', 'items_per_page');
         $offset = $page > 1 ? ($page - 1) * $count : 0;
-                
-        
+		$requestPath = $request->getRequestPath();
+		$baseUrl = $request->getBaseUrl();
 
-        $context = $request->getContext();
 		$params = array(
 			'contextId' => $context->getId(),
 			'orderBy' => 'seq',
@@ -67,14 +63,15 @@ class CspThemePlugin extends ThemePlugin {
 		$nextPage = $total > $showingEnd ? $page + 1 : null;
 		$prevPage = $showingStart > 1 ? $page - 1 : null;
 
- 		$templateMgr->assign(array(
+        $templateMgr->assign(array(
 			'issues' => $issues,
 			'showingStart' => $showingStart,
 			'showingEnd' => $showingEnd,
 			'total' => $total,
 			'nextPage' => $nextPage,
 			'prevPage' => $prevPage,
+			'requestPath' => $requestPath,
+			'baseUrl' => $baseUrl
 		)); 
-
-	}    
+	}
 }
