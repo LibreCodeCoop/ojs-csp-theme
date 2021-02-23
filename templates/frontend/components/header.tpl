@@ -32,9 +32,8 @@
 				<li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
 			</ul>
 		</nav>
-
 		{* Header *}
-		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner" {if !$loginUrl} style="background-image: url({$issue->getLocalizedCoverImageUrl()|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''})" {/if}>
+		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner" style="background-image: url({$coverImageUrl|escape}" alt="{$coverImageAltText|escape|default:''})">
 			<div class="container-fluid" id="logo-ensp-fiocruz">
 				<div class="container">
 					<div class="row">
@@ -176,7 +175,7 @@
 					</nav>
 				{/if}
 			</div><!-- .pkp_head_wrapper -->
-			{if !$loginUrl}
+			{if empty($page)}
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6 pull-md-right" id="col-carousel">

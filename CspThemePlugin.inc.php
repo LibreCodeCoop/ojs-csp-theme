@@ -36,42 +36,34 @@ class CspThemePlugin extends ThemePlugin {
 
 	public function loadTemplateData($hookName, $args) {
 
-		// Retrieve the TemplateManager
-        $templateMgr = $args[0];
         $request = Application::getRequest();
-		$page = isset($args[0]) ? (int) $args[0] : 1;
 		$context = $request->getContext();
-		$count = $context->getData('itemsPerPage') ? $context->getData('itemsPerPage') : Config::getVar('interface', 'items_per_page');
-        $offset = $page > 1 ? ($page - 1) * $count : 0;
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
+		$router = $request->getRouter();
+		$page = $router->_page;
 
 		$params = array(
 			'contextId' => $context->getId(),
 			'orderBy' => 'seq',
 			'orderDirection' => 'ASC',
-			'count' => 12,
+			'count' => 1,
 			'offset' => 0,
 			'isPublished' => true,
         );        
-        
+
 		$issues = iterator_to_array(Services::get('issue')->getMany($params));
-		$total = Services::get('issue')->getMax($params);
+		$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
+		$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
 
-		$showingStart = $offset + 1;
-		$showingEnd = min($offset + $count, $offset + count($issues));
-		$nextPage = $total > $showingEnd ? $page + 1 : null;
-		$prevPage = $showingStart > 1 ? $page - 1 : null;
-
+		$templateMgr = $args[0];
         $templateMgr->assign(array(
 			'issues' => $issues,
-			'showingStart' => $showingStart,
-			'showingEnd' => $showingEnd,
-			'total' => $total,
-			'nextPage' => $nextPage,
-			'prevPage' => $prevPage,
 			'requestPath' => $requestPath,
-			'baseUrl' => $baseUrl
+			'baseUrl' => $baseUrl,
+			'page' => $page,
+			'coverImageUrl' => $coverImageUrl,
+			'coverImageAltText' => $coverImageAltText,
 		)); 
 	}
 }
