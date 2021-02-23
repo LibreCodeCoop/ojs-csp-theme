@@ -22,61 +22,6 @@
 		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 	{/if}
 
-	{* Issue introduction area above articles *}
-	{*
-	<div class="heading row">
-		{assign var="issueDetailsCol" value="12"}
-
-		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
-
-		<div class="issue-details col-md-2">
-
-			{if $issue->hasDescription()}
-				<div class="description">
-					{$issue->getLocalizedDescription()|strip_unsafe_html}
-				</div>
-			{/if}
-
-
-			{if $issue->getDatePublished()}
-				<p class="published">
-					<strong>
-						{translate key="submissions.published"}:
-					</strong>
-					{$issue->getDatePublished()|escape|date_format:$dateFormatShort}
-				</p>
-			{/if}
-			{include file="frontend/components/issuesList.tpl"}
-		</div>		
-
-		{if $issueCover}
-			{assign var="issueDetailsCol" value="8"}			
-			<div class="col-md-10">
-				<a class="cover" href="{url|escape op="view" page="issue" path=$issue->getBestIssueId()}">
-					<img class="img-responsive" src="{$issueCover|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''}">
-				</a>
-			</div>
-		{/if}
-	</div>
-	*}
-
-	{* Full-issue galleys *}
-
-{* 	{if $issueGalleys}
-		<div class="galleys">
-			<div class="page-header">
-				<h2>
-					<small>{translate key="issue.fullIssue"}</small>
-				</h2>
-			</div>
-			<div class="btn-group" role="group">
-				{foreach from=$issueGalleys item=galley}
-					{include file="frontend/objects/galley_link.tpl" parent=$issue purchaseFee=$currentJournal->getData('purchaseIssueFee') purchaseCurrency=$currentJournal->getData('currency')}
-				{/foreach}
-			</div>
-		</div>
-	{/if} *}
-
 	{* Articles *}
 	<div class="sections row">
 	
