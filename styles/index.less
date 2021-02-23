@@ -24,7 +24,6 @@
 #headerNavigationContainer{
     height: 500px;
     width: 100%;     
-    background-image: url("http://localhost/ojs/public/journals/1/cover_issue_3_pt_BR.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -167,4 +166,24 @@ nav[aria-expanded="true"] .container > .navbar-header, .container-fluid > .navba
 
 nav[aria-expanded="true"] .pull-right{
     float: unset !important;
+}
+
+#language{
+    text-align: right;
+}
+#language select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 150px;
+    background: transparent;
+    z-index: 10000;
+    position: inherit
+}
+
+#language span{
+    position: absolute;
+    right: 20px;
+    top: 5px;
 }

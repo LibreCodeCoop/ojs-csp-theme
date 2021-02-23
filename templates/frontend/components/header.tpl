@@ -27,14 +27,14 @@
 
 		<nav id="accessibility-nav" class="sr-only" role="navigation" aria-label="{translate|escape key="plugins.themes.bootstrap3.accessible_menu.label"}">
 			<ul>
-			  <li><a href="#main-navigation">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_navigation"}</a></li>
-			  <li><a href="#main-content">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_content"}</a></li>
-			  <li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
+				<li><a href="#main-navigation">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_navigation"}</a></li>
+				<li><a href="#main-content">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.main_content"}</a></li>
+				<li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
 			</ul>
 		</nav>
 
 		{* Header *}
-		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
+		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner" style="background-image: url({$issue->getLocalizedCoverImageUrl()|escape}" alt="{$issue->getLocalizedCoverImageAltText()|escape|default:''})">
 			<div class="container-fluid" id="logo-ensp-fiocruz">
 				<div class="container">
 					<div class="row">
@@ -56,7 +56,7 @@
 
 			<div class="container-fluid" id="logo-csp">
 				<div class="row">
-					<div class="container">
+					<div class="col-md-6">
 						{*{capture assign="homeUrl"}
 							{if $currentJournal && $multipleContexts}
 								{url page="index" router=$smarty.const.ROUTE_PAGE}
@@ -79,6 +79,19 @@
 								<img class="logo-csp" src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
 							</a>
 						{/if}
+					</div>
+					<div class="col-md-2" id="language">
+						{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
+						<select onchange="window.location.href=this.value">
+							{foreach from=$languageToggleLocales item=localeName key=localeKey}
+								<option value="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}" {if $localeKey == $currentLocale} selected {/if}>
+										{$localeName}
+								</option>
+							{/foreach}
+						</select>
+						<span class="glyphicon">&#xe114;</span>
+					</div>
+					<div class="col-md-4">
 					</div>
 				</div>
 			</div>
@@ -126,7 +139,6 @@
 
 							<!-- Wrapper for slides -->
 							<div class="carousel-inner">
-
 
 							{* Announcements *}
 								{if $numAnnouncementsHomepage && $announcements|count}
