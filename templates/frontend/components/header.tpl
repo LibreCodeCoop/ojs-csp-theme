@@ -177,6 +177,7 @@
 			</div><!-- .pkp_head_wrapper -->
 			{if empty($page)}
 				<div class="container-fluid">
+					<br>
 					<div class="row">
 						<div class="col-md-6 pull-md-right" id="col-carousel">
 							<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -218,6 +219,7 @@
 							</div>
 						</div>
 					</div>
+					<br>
 				</div>
 			{/if}
 		</header><!-- .pkp_structure_head -->
