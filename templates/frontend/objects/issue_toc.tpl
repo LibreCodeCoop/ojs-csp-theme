@@ -17,28 +17,30 @@
 <div class="issue-toc">
 
 	{* Indicate if this is only a preview *}
-	
+
 	{if !$issue->getPublished()}
 		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 	{/if}
 
 	{* Articles *}
 	<div class="sections row">
-	
+
 		{foreach name=sections from=$publishedSubmissions item=section}
-			<section class="section">
+			<section>
 				{if $section.articles}
 					<div class="media-list">
 						{foreach from=$section.articles item=article}
-							<div class="col-md-12">
+							<div class="col-md-12 issue-content">
 								{if $section.title}
-									<div class="page-header">
+									<div class="page-header-title">
 										<h2>
 											<small>{$section.title|escape}</small>
 										</h2>
 									</div>
-								{/if}							
+								{/if}
 								{include file="frontend/objects/article_summary.tpl"}
+
+								{include file="frontend/objects/article_data.tpl"}
 							</div>
 						{/foreach}
 					</div>

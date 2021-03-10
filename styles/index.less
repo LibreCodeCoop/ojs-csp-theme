@@ -1,3 +1,16 @@
+@import './header.less';
+@import './issue.less';
+
+@font-primary-color: #e68b3a;
+@font-secondary-color: #818183;
+@font-terciary-color: #dddddd;
+
+@font-family-base: 'Crimson Text' ,'Open Sans', sans-serif;
+
+*, html, body {
+	font-family: @font-family-base;
+}
+
 .img-responsive{
     width: 100% !important;
 }
@@ -7,13 +20,13 @@
     margin: 5px;
 }
 .sections .section .media-list .col-md-12{
-    border: 1px solid #ddd;
+    border: 1px solid #DDDDDD;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 .heading{
-    background: #c5c5c5;
+    background: #C5C5C5;
     //color: white;
 }
 
@@ -22,14 +35,13 @@
 }
 
 #headerNavigationContainer{
-    width: 100%;     
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .div-logo-ensp{
-    background: white;
-    border-bottom: 5px solid #71a521;
+    border-bottom: 5px solid #a6d54c;
 }
 
 .navbar-brand .navbar-brand-logo img{
@@ -63,7 +75,7 @@ footer[role="contentinfo"]{
 .logo-csp{
     width: 100%;
     max-width: 400px;
-    height: auto; 
+    height: auto;
 }
 
 #navigationUser li:last-child {
@@ -85,12 +97,12 @@ footer[role="contentinfo"]{
 
 #logo-ensp-fiocruz{
     background: white;
+	border-bottom: 5px solid #a6d54c;
 }
 
 #logo-ensp-fiocruz img{
     width: 100%;
     height: auto;
-    max-width: 150px;
     padding:5px;
 }
 
@@ -245,4 +257,83 @@ nav[aria-expanded="true"] .pull-right{
     background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
     width: 51px;
     color:#FFFFFF!important;
+}
+.pkp_sctructure_sidebar {
+	border-left: 1px solid rgba(211, 211, 211, 1);
+}
+
+.breadcrumb-link ol li a{
+	color: #e4924a !important;
+}
+.breadcrumb-link ol li.active{
+	color: #9d9d9d;
+}
+
+.breadcrumb-link ol{
+	background-color: transparent;
+	border-bottom: 2px dashed #9d9d9d;
+	border-radius: 0;
+	width: 100%;
+}
+
+#logoCSP{
+	position: absolute;
+	z-index: 1;
+}
+
+.he-50{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	height: 50px;
+}
+.he-50 img{
+	max-width: 270px;
+}
+
+#logoFiocruz{
+	max-width: 100px !important;
+}
+
+.header-page{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.header-page h2{
+	padding-left: 5px;
+	padding-right: 0;
+	border-left: 4px solid #e88833;
+	text-transform: uppercase;
+	width: 40%;
+	font-weight: bold;
+	@media screen and (max-width: 720px){
+		width: 100%;
+	}
+}
+
+.header-page > #line{
+	border-bottom: 1px solid #e88833;
+	width: 90%;
+	padding-top: 15px;
+	@media screen and (max-width: 1080px) {
+		width: 50%;
+	}
+	@media screen and (max-width: 720px) {
+		display: none;
+	}
+}
+
+.header-issue{
+	display: flex;
+	flex-direction: column;
+	margin: 40px 0 20px;
+	p{
+		font-weight: 600;
+	}
+	.version_issue{
+		display: flex;
+		justify-content: flex-end;
+	}
 }
