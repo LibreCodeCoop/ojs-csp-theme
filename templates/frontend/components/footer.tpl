@@ -23,33 +23,40 @@
 	<footer class="footer" role="contentinfo">
 
 		<div class="container">
-			
-			<div class="row">
-				{if $pageFooter}
-				<div class="col-md-4">
-					{$pageFooter}
-				</div>
-				{/if}
-				{*
-				<div class="col-md-2">
-					<img src="{$publicFilesDir}/ensp.png">
-				</div>
-				<div class="col-md-2">
-					<img src="{$publicFilesDir}/cnpq.png">
-				</div>
-				<div class="col-md-2">
-					<img src="{$publicFilesDir}/capes.png">
-				</div>
-				<div class="col-md-2">
-					<img src="{$publicFilesDir}/faperj.png">
-				</div>
-				*}
-				<div class="col-md-2" role="complementary">
-					<a href="{url page="about" op="aboutThisPublishingSystem"}">
-						<img class="img-responsive" alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
-					</a>
-				</div>
 
+			<div class="row">
+
+				<div class="footer-page">
+					<div class="col-md-2">
+						<img class="image-footer" src="{$publicFilesDir}/footer-l1.png">
+					</div>
+
+					{if $pageFooter}
+					<div class="col-md-3 text-footer">
+						{$pageFooter}
+					</div>
+					{/if}
+
+					<div class="col-md-2">
+						<img class="image-footer" src="{$publicFilesDir}/footer-l8.png">
+					</div>
+
+					<div class="col-md-1">
+						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l3.png">
+					</div>
+					<div class="col-md-1">
+						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l4.png">
+					</div>
+					<div class="col-md-1">
+						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l5.png">
+					</div>
+					<div class="col-md-1">
+						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l6.png">
+					</div>
+					<div class="col-md-1">
+						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l7.png">
+					</div>
+				</div>
 			</div> <!-- .row -->
 		</div><!-- .container -->
 	</footer>

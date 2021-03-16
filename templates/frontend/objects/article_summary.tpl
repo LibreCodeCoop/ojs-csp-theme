@@ -19,7 +19,7 @@
 	{assign var="showAuthor" value=true}
 {/if}
 
-<div class="article-summary media issue-article">
+<div class="col-md-6 article-summary media issue-article">
 	{if $article->getLocalizedCoverImage()}
 		<div class="cover media-left">
 			<a href="{if $journal}{url journal=$journal->getPath() page="article" op="view" path=$articlePath}{else}{url page="article" op="view" path=$articlePath}{/if}class="file">

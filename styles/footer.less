@@ -1,0 +1,44 @@
+.image-footer{
+	width: 100%;
+}
+
+.image-define{
+	width: 95.09px !important;
+}
+
+div p{
+	font-weight: bold;
+}
+
+.footer-page{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	@media screen and (max-width: 720px){
+		div:not(:first-child){
+			margin-bottom: 20px;
+		}
+	}
+	@media screen and (max-width: 991px) {
+		.image-footer{
+			width: 300px;
+		}
+		.text-footer{
+			width: 90%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: justify;
+			margin-bottom: 50px !important;
+		}
+	}
+}
+
+.text-footer{
+	@media screen and (max-width: 770px) {
+	}
+}
+

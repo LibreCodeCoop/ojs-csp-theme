@@ -15,7 +15,7 @@
  * @uses $showGalleyLinks bool Show galley links to users without access?
  *}
 
-<div class="article-data">
+<div class="col-md-2 article-data">
 	<span>
 	15/11/2020
 	</span>
