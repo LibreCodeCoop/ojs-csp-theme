@@ -1,0 +1,42 @@
+.header-page{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.header-page h2{
+	padding-left: 5px;
+	padding-right: 0;
+	border-left: 4px solid #e88833;
+	text-transform: uppercase;
+	width: 40%;
+	font-weight: bold;
+	@media screen and (max-width: 720px){
+		width: 100%;
+	}
+}
+
+.header-page > #line{
+	border-bottom: 1px solid #e88833;
+	width: 90%;
+	padding-top: 15px;
+	@media screen and (max-width: 1080px) {
+		width: 50%;
+	}
+	@media screen and (max-width: 720px) {
+		display: none;
+	}
+}
+
+.header-issue{
+	display: flex;
+	flex-direction: column;
+	margin: 40px 0 20px;
+	p{
+		font-weight: 600;
+	}
+	.version_issue{
+		display: flex;
+		justify-content: flex-end;
+	}
+}

@@ -1,0 +1,71 @@
+.header-issue{
+	display: flex;
+	flex-direction: column;
+	margin: 40px 0 20px;
+
+	p{
+		font-weight: 600;
+	}
+
+	.version_issue{
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+
+.issue-section{
+	border-right: 1px solid #d7d7d7;
+	padding-right: 30px;
+}
+
+.issue-content{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+
+	@media screen and (max-width: 770px) {
+		flex-direction: column;
+
+	}
+}
+
+.page-header-title{
+	padding-bottom: 9px;
+	position: relative;
+
+	@media screen and (max-width: 770px) {
+		margin-right: 50px;
+	}
+}
+.page-header-title h2 small {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 70%;
+	color: #48484a;
+}
+
+.issue-article a {
+	color: #4b4b4d;
+	font-weight: bold;
+}
+
+.issue-article a:hover{
+	text-decoration: none;
+}
+
+.authors{
+	color: #e68b3a;
+	font-style: italic;
+}
+
+.article-data{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 28px;
+
+	@media screen and (max-width: 770px) {
+		display: none;
+	}
+}
