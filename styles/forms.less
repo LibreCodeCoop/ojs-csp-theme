@@ -1,0 +1,155 @@
+.line{
+	display: flex;
+	position: relative;
+	align-items: center;
+	padding-left: 10px;
+	border-left: #E88834 8px solid;
+	font-weight: 700;
+	padding-left: 15px;
+	color: #4C4C4E;
+}
+
+label{
+	width: 100%;
+}
+
+#register{
+
+	input:not([type="checkbox"]){
+		max-width: 350px;
+		width: 100%;
+	}
+
+
+	.buttons{
+		.btn{
+			padding: 10px 30px;
+			font-weight: bold;
+			border: 1px solid #C2C2C2;
+			color: #4E94B3;
+			font-size: 19px;
+			border-radius: 5px;
+		}
+
+		.btn:hover{
+			background: darken(#e6e7e9, 10%);
+		}
+
+		.btn:not(:first-child){
+			margin-left: 10px;
+		}
+
+		.btn-primary{
+			background-color: #E6E7E9;
+		}
+
+		.btn-default:hover{
+			background-color: darken(#fff, 10%);
+		}
+
+		.btn-default{
+			border: none;
+			text-decoration: underline;
+		}
+	}
+
+}
+
+.country{
+	label{
+		display: flex;
+		flex-direction: column;
+		max-width: 350px;
+	}
+	#fr{
+		display: flex;
+		flex-direction: row;
+		span:first-child{
+			margin-left: 5px;
+		}
+	}
+}
+
+
+.consent{
+	.form-group{
+		margin-bottom: 0 !important;
+	}
+}
+
+
+.identity, .login{
+	margin-top: 50px;
+
+	legend{
+		text-transform: uppercase;
+		font-weight: 700;
+		border: none;
+		font-size: 16px;
+	}
+	label{
+		font-weight: normal;
+	}
+}
+
+.line::after{
+	content: "";
+	width: 100%;
+	height: 2px;
+	padding-left: 10px;
+	background-color: #E98737;
+	position: relative;
+	right: 0px;
+	margin-left: 20px;
+}
+.csp_form{
+	color: #4C4C4C;
+	font-weight: 100;
+}
+.csp_form::after{
+	content:"*";
+	color: red;
+}
+.csp_input{
+	border-radius: 0px;
+	height: 40px;
+	border: 1px solid #A1A1A1;
+
+}
+.underline{
+	text-decoration: underline;
+	color: #5293AC;
+}
+.btn-csp{
+	background-color: #E6E7E9;
+	color: #5293AC;
+	font-weight: 700;
+	border-radius: 0px;
+	padding: 10px 16px;
+}
+
+.btn-csp:hover{
+	background-color: darken(#e6e7e9, 10%);
+}
+
+.btn-csp-register{
+	text-decoration: underline;
+	color: #5293AC;
+	font-weight: 700;
+	border-radius: 1px;
+	padding: 10px 16px;
+}
+
+.btn-csp-register:hover{
+	background-color: darken(#fff, 10%);
+}
+
+.checkbox label{
+	margin: 20px 0px 20px 0px;
+	color: #4C4C4C;
+}
+
+.p-r{
+	display: flex;
+	justify-content: flex-end;
+}

@@ -1,6 +1,7 @@
 @import './header.less';
 @import './issue.less';
 @import './footer.less';
+@import './forms.less';
 
 @font-primary-color: #e68b3a;
 @font-secondary-color: #818183;
@@ -103,9 +104,29 @@ footer[role="contentinfo"]{
 }
 
 #logo-ensp-fiocruz img{
-    width: 100%;
     height: auto;
-    padding:5px;
+    padding: 5px;
+
+	width: auto;
+	max-width: 270px;
+
+	@media screen and (max-width: 430px){
+		max-width: 216px;
+	}
+
+	@media screen and (max-width: 363px) {
+		max-width: 183px;
+	}
+}
+
+.logoFiocruz{
+	position: inherit;
+}
+
+.logoCSP{
+	position: relative;
+	top: 30px;
+
 }
 
 #myCarousel{
@@ -181,64 +202,71 @@ nav[aria-expanded="true"] .pull-right{
 }
 
 #language{
-    text-align: right;
-}
-#language select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    width: 140px;
-    background: transparent;
-    z-index: 10000;
-    position: inherit
+	text-align: right;
+	select{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: none;
+		width: 140px;
+		background: transparent;
+		z-index: 10000;
+		position: inherit
+	}
+	span{
+			position: absolute;
+			right: 20px;
+			top: 5px;
+	}
 }
 
-#language span{
-    position: absolute;
-    right: 20px;
-    top: 5px;
-}
 
 #social-icons{
-    text-align: right;
-}
+	display: flex;
+	text-align: right;
 
-#social-icons a{
-    color: black;
-    padding: 10px;
-}
+	svg{
+		width: 20px;
+		height: 20px;
+	}
 
-#social-icons .dropdown-menu{
-    left: unset;
-    right: 135px;
-}
+	a{
+		color: black;
+		padding: 8px;
+	}
 
-#social-icons ul {
-    float: right;
-    list-style: none outside none;
-    margin: 0;
-    min-width: 61px;
-    padding: 0;
-}
+	.dropdown-menu{
+		left: unset;
+		right: 135px;
+	}
 
-#social-icons li {
-    display: block;
-    font-size: 18px;
-    list-style: none outside none;
-    margin-bottom: 3px;
-    margin-left: 4px;
-    margin-top: 3px;
+	ul {
+		float: right;
+		list-style: none outside none;
+		margin: 0;
+		min-width: 61px;
+		padding: 0;
+	}
+	li {
+		display: block;
+		font-size: 18px;
+		list-style: none outside none;
+		margin-bottom: 3px;
+		margin-left: 4px;
+		margin-top: 3px;
+	}
+
+	@media screen and (max-width: 1055px) {
+		margin-right: 50px;
+	}
+
+	@media screen and (max-width: 991px) {
+		margin-right: 0;
+	}
 }
 
 .btn-twitter {
     background-color: #3399CC !important;
-    width: 51px;
-    color:#FFFFFF!important;
-}
-
-.btn-facebook {
-    background-color: #3D5B96 !important;
     width: 51px;
     color:#FFFFFF!important;
 }
@@ -264,23 +292,31 @@ nav[aria-expanded="true"] .pull-right{
 	border-left: 1px solid rgba(211, 211, 211, 1);
 }
 
-.breadcrumb-link ol li a{
-	color: #e4924a !important;
-}
-.breadcrumb-link ol li.active{
-	color: #9d9d9d;
-}
-
-.breadcrumb-link ol{
-	background-color: transparent;
+.breadcrumb-link {
+	display: flex;
+	flex-direction: row;
 	border-bottom: 2px dashed #9d9d9d;
 	border-radius: 0;
-	width: 100%;
-}
 
-#logoCSP{
-	position: absolute;
-	z-index: 1;
+	ol{
+		background-color: transparent;
+		width: 100%;
+		padding: 0 15px;
+
+		li{
+			a{
+				color: #e4924a !important;
+			}
+			+li::before{
+				content: '|\00a0';
+				color: #e4924a !important;
+			}
+		}
+
+		li.active{
+			color: #9d9d9d;
+		}
+	}
 }
 
 .he-50{
@@ -288,11 +324,121 @@ nav[aria-expanded="true"] .pull-right{
 	flex-direction: row;
 	justify-content: space-between;
 	height: 50px;
-}
-.he-50 img{
-	max-width: 270px;
+	div:not(:first-child){
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	img{
+		@media screen and (max-width: 430px){
+			position: relative;
+			top: 8px;
+		}
+
+		@media screen and (max-width: 363px) {
+			top: 15px;
+		}
+	}
 }
 
 #logoFiocruz{
 	max-width: 100px !important;
+}
+
+.link_csp{
+	display: flex;
+	flex-direction: row;
+	text-transform: uppercase;
+	font-weight: 600;
+	a{
+		text-decoration: none;
+	}
+	.link_csp_bot{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.setLanguage{
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	justify-content: flex-end;
+
+	li{
+		margin: 10px
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 14px;
+		color: #353535;
+	}
+}
+
+.setLanguage > li:not(:first-child){
+	border-left: 2px solid #000;
+	padding-left: 10px;
+}
+
+.selected-locale{
+	text-decoration: underline !important;
+	font-weight: bold im !important;
+}
+
+.flex-right{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+#header-language-icons{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-start;
+
+	#social-icons{
+		margin-top: 10px;
+
+		@media screen and (max-width: 380px) {
+			margin-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	@media screen and (max-width: 991px) {
+		justify-content: space-between;
+		padding-top: 20px;
+	}
+}
+#issn{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	font-size: 10px;
+	font-weight: normal;
+	color: #353535;
+	list-style: none;
+}
+
+.container-logo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.px-r-30{
+	right: 30px;
+}
+
+#dropdown-menu{
+	right: auto !important;
+}
+#main-content{
+	border-right: 1px solid #cecece;
+	padding-right: 20px;
 }
