@@ -9,7 +9,7 @@
  *
  *}
 {include file="frontend/components/header.tpl" pageTitle="user.login"}
-{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.login"}
+{* {include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.login"} *}
 
 <div id="main-content" class="page page_login">
 
@@ -23,9 +23,9 @@
 		</div>
 	{/if}
 
-	<h1 class="namePage">Login</h1>
+	<h1 class="namePage line">{translate key="user.login"}</h1>
 
-	<form class="pkp_form login" id="login" method="post" action="{$loginUrl}">
+	<form class="pkp_form login  col-sm-5" id="login" method="post" action="{$loginUrl}">
 		{csrf}
 		<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />
 
@@ -36,21 +36,21 @@
 		{/if}
 
 		<div class="form-group">
-			<label for="login-username">
+			<label class="csp_form" for="login-username">
 				{translate key="user.username"}
 			</label>
-			<input type="text" name="username" class="form-control" id="login-username" placeholder="{translate key='user.username'}" value="{$username|escape}" maxlenght="32" required>
+			<input type="text" name="username" class="form-control csp_input" id="login-username" placeholder="{translate key='user.username'}" value="{$username|escape}" maxlenght="32" required>
 		</div>
 
 		<div class="form-group">
-			<label for="login-password">
+			<label class="csp_form" for="login-password">
 				{translate key="user.password"}
 			</label>
-			<input type="password" name="password" class="form-control" id="login-password" placeholder="{translate key='user.password'}" password="true" maxlength="32" required="$passwordRequired">
+			<input type="password" name="password" class="form-control csp_input" id="login-password" placeholder="{translate key='user.password'}" password="true" maxlength="32" required="$passwordRequired">
 		</div>
 
-		<div class="form-group">
-			<a href="{url page="login" op="lostPassword"}">
+		<div class="form-group pull-right">
+			<a class="underline" href="{url page="login" op="lostPassword"}">
 				{translate key="user.login.forgotPassword"}
 			</a>
 		</div>
@@ -62,18 +62,21 @@
 		</div>
 
 		<div class="buttons">
-			<button type="submit" class="btn btn-primary">
-				{translate key="user.login"}
-			</button>
-
 			{if !$disableUserReg}
 				{capture assign="registerUrl"}{url page="user" op="register" source=$source}{/capture}
-				<a class="btn btn-default register-button" href="{$registerUrl}" role="button">
+				<a class="btn btn-link btn-csp-register" href="{$registerUrl}" role="button">
 					{translate key="user.login.registerNewAccount"}
 				</a>
 			{/if}
+			<button type="submit" class="btn btn-csp">
+				{translate key="user.login"}
+			</button>
 		</div>
 	</form>
 </div><!-- .page -->
 
 {include file="common/frontend/footer.tpl"}
+
+<script>
+	document.querySelector(".btn.btn-link").innerText = "Registrar-se"
+</script>
