@@ -25,7 +25,7 @@
 
 	<h1 class="namePage line">{translate key="user.login"}</h1>
 
-	<form class="pkp_form login  col-sm-5" id="login" method="post" action="{$loginUrl}">
+	<form class="pkp_form login  col-sm-6" id="login" method="post" action="{$loginUrl}">
 		{csrf}
 		<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />
 
@@ -49,7 +49,7 @@
 			<input type="password" name="password" class="form-control csp_input" id="login-password" placeholder="{translate key='user.password'}" password="true" maxlength="32" required="$passwordRequired">
 		</div>
 
-		<div class="form-group pull-right">
+		<div class="form-group p-r">
 			<a class="underline" href="{url page="login" op="lostPassword"}">
 				{translate key="user.login.forgotPassword"}
 			</a>
