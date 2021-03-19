@@ -7,11 +7,12 @@ class CspThemePlugin extends ThemePlugin {
      * @return null
      */
     public function init() {
-        
+
         //$this->addStyle('stylesheet', 'styles/index.less');
         $this->setParent('bootstrapthreethemeplugin');
         //$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
         $this->addStyle('child-stylesheet', 'styles/index.less');
+				$this->addScript('csp', 'js/index.js');
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 
@@ -50,7 +51,7 @@ class CspThemePlugin extends ThemePlugin {
 			'count' => 1,
 			'offset' => 0,
 			'isPublished' => true,
-        );        
+        );
 
 		$issues = iterator_to_array(Services::get('issue')->getMany($params));
 		$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
@@ -64,6 +65,6 @@ class CspThemePlugin extends ThemePlugin {
 			'page' => $page,
 			'coverImageUrl' => $coverImageUrl,
 			'coverImageAltText' => $coverImageAltText,
-		)); 
+		));
 	}
 }

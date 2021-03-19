@@ -12,7 +12,8 @@
  *       sidebars have been configured for thesite.
  *}
 
-	</main>
+		</main>
+	</div>
 
 	{* Sidebars *}
 
