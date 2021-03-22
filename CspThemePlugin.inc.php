@@ -43,12 +43,12 @@ class CspThemePlugin extends ThemePlugin {
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
 		$page = $router->_page;
-
+        $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
 		$params = array(
 			'contextId' => $context->getId(),
 			'orderBy' => 'seq',
 			'orderDirection' => 'ASC',
-			'count' => 1,
+			'count' => $count,
 			'offset' => 0,
 			'isPublished' => true,
         );
