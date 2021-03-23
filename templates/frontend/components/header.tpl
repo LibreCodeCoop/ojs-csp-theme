@@ -89,7 +89,7 @@
 								{foreach from=$languageToggleLocales item=localeName key=localeKey}
 									<li>
 										<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}" {if $localeKey == $currentLocale} class="selected-locale" {/if}>
-											{$localeName}
+											{translate key="plugins.themes.csp.{$localeKey}"}
 										</a>
 									</li>
 								{/foreach}
