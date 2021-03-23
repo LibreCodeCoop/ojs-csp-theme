@@ -64,7 +64,8 @@ class CspThemePlugin extends ThemePlugin {
 			'baseUrl' => $baseUrl,
 			'page' => $page,
 			'coverImageUrl' => $coverImageUrl,
-			'coverImageAltText' => $coverImageAltText,
+            'coverImageAltText' => $coverImageAltText,
+            'context' => $context
 		));
 	}
 }
