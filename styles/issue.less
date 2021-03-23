@@ -15,7 +15,6 @@
 
 
 .issue-section{
-	border-right: 1px solid #d7d7d7;
 	padding-right: 30px;
 }
 
@@ -23,7 +22,6 @@
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	border-bottom: 1px solid #dddddd;
 
 	@media screen and (max-width: 770px) {
 		flex-direction: column;
@@ -49,10 +47,9 @@
 .issue-article a {
 	color: #4b4b4d;
 	font-weight: bold;
-}
-
-.issue-article a:hover{
-	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
 }
 
 .authors{
@@ -63,9 +60,83 @@
 .article-data{
 	display: flex;
 	justify-content: flex-end;
-	margin-top: 28px;
+	margin-top: 0px;
+	padding-top: 12px;
 
 	@media screen and (max-width: 770px) {
 		display: none;
 	}
+}
+
+.article-list{
+	.issue-content:not(:first-child){
+		.page-header-title{
+			opacity: 0;
+
+			@media screen and (max-width: 770px) {
+				display: none;
+			}
+		}
+	}
+	.issue-content:first-child{
+		border: none;
+
+		.media{
+			border: none;
+		}
+		.page-header-title{
+			border: none;
+		}
+		.article-data{
+			border: none;
+		}
+	}
+}
+
+.issue-content{
+	.media{
+		border-top: 1px solid #ddd;
+		margin-top: 0px;
+		padding-top: 15px;
+
+		@media screen and (max-width: 770px) {
+			padding-left: 30px;
+		}
+	}
+	.page-header-title{
+		border-top: 1px solid #ddd;
+	}
+	.article-data{
+		border-top: 1px solid #ddd;
+	}
+
+	@media screen and (max-width: 770px) {
+		.page-header-title{
+			border: none;
+		}
+		.article-data{
+			border: none;
+		}
+	}
+}
+
+.csp-border{
+	border-right: 2px solid #ddd;
+	border-left: 2px solid #ddd;
+	padding: 0px 30px;
+	color: #4B4B4D;
+}
+
+.csp-article-title{
+	font-weight: 900;
+	padding-bottom: 30px;
+}
+.csp-autor{
+	color: #555;
+  font-family: serif;
+  font-size: 18px;
+}
+.csp-h2{
+	font-size: 30px;
+  font-weight: 800;
 }

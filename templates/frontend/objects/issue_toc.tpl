@@ -26,7 +26,7 @@
 	<div class="sections row">
 
 		{foreach name=sections from=$publishedSubmissions item=section}
-			<section>
+			<section {if count($section.articles) > 1}class="article-list" {/if}>
 				{if $section.articles}
 					<div class="media-list">
 						{foreach from=$section.articles item=article}
