@@ -41,6 +41,7 @@
 								{include file="frontend/objects/article_summary.tpl"}
 
 								{* {include file="frontend/objects/article_data.tpl"} *}
+
 							</div>
 						{/foreach}
 					</div>
