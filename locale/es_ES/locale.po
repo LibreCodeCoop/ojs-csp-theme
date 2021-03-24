@@ -68,7 +68,6 @@ msgstr "Read more"
 msgid "plugins.themes.csp.inputSearchPlaceholder"
 msgstr "Keyword/Author"
 
-
 msgid "plugins.themes.csp.pt_BR"
 msgstr "PT"
 
@@ -77,10 +76,3 @@ msgstr "ES"
 
 msgid "plugins.themes.csp.en_US"
 msgstr "EN"
-
-msgid "plugins.themes.csp.onlineIssn"
-msgstr "ISSN (on-line)"
-
-msgid "plugins.themes.csp.printIssn"
-msgstr "ISSN (printed)"
-

@@ -24,8 +24,19 @@ msgstr "Leia mais"
 msgid "plugins.themes.csp.inputSearchPlaceholder"
 msgstr "Palavra-chave/Autor"
 
+
+msgid "plugins.themes.csp.pt_BR"
+msgstr "PT"
+
+msgid "plugins.themes.csp.es_ES"
+msgstr "ES"
+
+msgid "plugins.themes.csp.en_US"
+msgstr "EN"
+
 msgid "plugins.themes.csp.onlineIssn"
 msgstr "ISSN (on-line)"
 
 msgid "plugins.themes.csp.printIssn"
 msgstr "ISSN (immpresso)"
+
