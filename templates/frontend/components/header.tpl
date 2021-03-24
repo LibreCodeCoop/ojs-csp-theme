@@ -96,10 +96,10 @@
 							</ul>
 							<ul id="issn">
 								<li>
-									<p> ISSN (immpresso) 0102-311X
+									<p>{translate key="plugins.themes.csp.printIssn"} {$context->getData('printIssn')|escape}
 								</li>
 								<li>
-									<p> ISSN (on-line) 1678-4464
+									<p>{translate key="plugins.themes.csp.onlineIssn"} {$context->getData('onlineIssn')|escape}
 								</li>
 							</ul>
 						</div>
