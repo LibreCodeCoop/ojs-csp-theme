@@ -43,7 +43,7 @@ class CspThemePlugin extends ThemePlugin {
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
 		$page = $router->_page;
-        $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
+        	$count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
 		$params = array(
 			'contextId' => $context->getId(),
 			'orderBy' => 'seq',
@@ -58,13 +58,14 @@ class CspThemePlugin extends ThemePlugin {
 		$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
 
 		$templateMgr = $args[0];
-        $templateMgr->assign(array(
+        	$templateMgr->assign(array(
 			'issues' => $issues,
 			'requestPath' => $requestPath,
 			'baseUrl' => $baseUrl,
 			'page' => $page,
 			'coverImageUrl' => $coverImageUrl,
-			'coverImageAltText' => $coverImageAltText,
+            		'coverImageAltText' => $coverImageAltText,
+            		'context' => $context
 		));
 	}
 }
