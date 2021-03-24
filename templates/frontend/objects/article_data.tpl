@@ -17,6 +17,6 @@
 
 <div class="col-md-2 article-data">
 	<span>
-	15/11/2020
+	{$article->getData('dateLastActivity')|date_format}
 	</span>
 </div>
