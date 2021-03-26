@@ -54,6 +54,9 @@ class CspThemePlugin extends ThemePlugin {
         );
 
 		$issues = iterator_to_array(Services::get('issue')->getMany($params));
+		if (!isset($issues[0])) {
+			return;
+		}
 		$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
 		$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
 
