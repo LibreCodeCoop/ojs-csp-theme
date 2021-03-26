@@ -37,7 +37,7 @@ class CspThemePlugin extends ThemePlugin {
 
 	public function loadTemplateData($hookName, $args) {
 
-        $request = Application::getRequest();
+        $request = Application::get()->getRequest();
 		$context = $request->getContext();
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
