@@ -89,17 +89,17 @@
 								{foreach from=$languageToggleLocales item=localeName key=localeKey}
 									<li>
 										<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}" {if $localeKey == $currentLocale} class="selected-locale" {/if}>
-											{$localeName}
+											{translate key="plugins.themes.csp.{$localeKey}"}
 										</a>
 									</li>
 								{/foreach}
 							</ul>
 							<ul id="issn">
 								<li>
-									<p> ISSN (immpresso) 0102-311X
+									<p>{translate key="plugins.themes.csp.printIssn"} {$context->getData('printIssn')|escape}
 								</li>
 								<li>
-									<p> ISSN (on-line) 1678-4464
+									<p>{translate key="plugins.themes.csp.onlineIssn"} {$context->getData('onlineIssn')|escape}
 								</li>
 							</ul>
 						</div>

@@ -16,6 +16,7 @@
  *}
 <div class="issue-toc">
 
+
 	{* Indicate if this is only a preview *}
 
 	{if !$issue->getPublished()}
@@ -39,9 +40,7 @@
 									</div>
 								{/if}
 								{include file="frontend/objects/article_summary.tpl"}
-
-								{* {include file="frontend/objects/article_data.tpl"} *}
-
+								{include file="frontend/objects/article_data.tpl"}
 							</div>
 						{/foreach}
 					</div>
