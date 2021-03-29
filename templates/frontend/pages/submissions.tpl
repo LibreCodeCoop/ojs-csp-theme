@@ -47,14 +47,14 @@
 			<p class="lead description">
 				{translate key="about.submissionPreparationChecklist.description"}
 			</p>
-			<ul class="list-group">
+			<ol class="submission-list-group">
 				{foreach from=$submissionChecklist item=checklistItem}
-					<li class="list-group-item">
-						<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+					<li class="">
+						{* <span class="glyphicon glyphicon-check" aria-hidden="true"></span> *}
 						<span class="item-content">{$checklistItem.content|nl2br}</span>
 					</li>
 				{/foreach}
-			</ul>
+			</ol>
 
 		</div>
 	{/if}
