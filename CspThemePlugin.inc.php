@@ -6,13 +6,14 @@ class CspThemePlugin extends ThemePlugin {
      * Carrega os estilos personalizados de nosso tema
      * @return null
      */
+
     public function init() {
 
         //$this->addStyle('stylesheet', 'styles/index.less');
         $this->setParent('bootstrapthreethemeplugin');
         //$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
         $this->addStyle('child-stylesheet', 'styles/index.less');
-		//$this->addScript('csp', 'js/index.js');
+				$this->addScript('csp', 'js/index.js');
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 

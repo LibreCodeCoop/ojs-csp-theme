@@ -16,8 +16,14 @@
 	</div>
 
 	{* Sidebars *}
+		{if empty($isFullWidth)}
+		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
+		{include file="frontend/components/aside.tpl"}
+	{/if}
+	{* /Sidebars *}
 
-	{*{load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"}*}
+
+	{* {load_menu name="user" id="navigationUser" ulClass="nav nav-pills tab-list pull-right"} *}
 
 	</div><!-- pkp_structure_content -->
 
