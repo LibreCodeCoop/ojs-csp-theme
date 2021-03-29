@@ -49,8 +49,7 @@
 			</p>
 			<ol class="submission-list-group">
 				{foreach from=$submissionChecklist item=checklistItem}
-					<li class="">
-						{* <span class="glyphicon glyphicon-check" aria-hidden="true"></span> *}
+					<li>
 						<span class="item-content">{$checklistItem.content|nl2br}</span>
 					</li>
 				{/foreach}
