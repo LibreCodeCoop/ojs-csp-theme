@@ -1,3 +1,7 @@
+function eventClick(elem) {
+	elem.parentElement.parentElement.classList.toggle('aside-active');
+}
+
 function replaced(item) {
 	let splitChild = item.textContent.split('*');
 

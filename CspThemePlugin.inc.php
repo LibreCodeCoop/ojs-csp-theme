@@ -6,6 +6,7 @@ class CspThemePlugin extends ThemePlugin {
      * Carrega os estilos personalizados de nosso tema
      * @return null
      */
+
     public function init() {
 
         //$this->addStyle('stylesheet', 'styles/index.less');
