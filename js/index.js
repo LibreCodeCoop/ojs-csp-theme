@@ -5,7 +5,14 @@ function replaced(item) {
 	for (let i = 0; i < splitChild.length - 1; i++) {
 		text = text + '<li>' + splitChild[i + 1] + '</li>';
 	}
-	return splitChild[0] + '<ol class="list-second">' + text + '</ol>';
+	return (
+		'<span>' +
+		splitChild[0] +
+		'</span>' +
+		'<ol class="list-second">' +
+		text +
+		'</ol>'
+	);
 }
 
 const listGroup = document.getElementsByClassName('submission-list-group')[0]

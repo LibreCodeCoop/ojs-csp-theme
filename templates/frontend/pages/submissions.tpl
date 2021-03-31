@@ -24,27 +24,21 @@
 	{if $isUserLoggedIn}
 		{capture assign="newSubmission"}<a href="{url page="submission" op="wizard"}">{translate key="about.onlineSubmissions.newSubmission"}</a>{/capture}
 		{capture assign="viewSubmissions"}<a href="{url page="submissions"}">{translate key="about.onlineSubmissions.viewSubmissions"}</a>{/capture}
-		<div class="alert alert-info">
+		<div class="alert alert-info csp-alert">
 			{translate key="about.onlineSubmissions.submissionActions" newSubmission=$newSubmission viewSubmissions=$viewSubmissions}
 		</div>
 	{else}
 		{capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
 		{capture assign="register"}<a href="{url page="user" op="register"}">{translate key="about.onlineSubmissions.register"}</a>{/capture}
-		<div class="alert alert-info">
+		<div class="alert alert-info csp-alert">
 			{translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
 		</div>
 	{/if}
 
 	{* Submission Checklist *}
 	{if $submissionChecklist}
-		<div class="submission_checklist">
-			<div class="page-header">
-				<h2>
-					{translate key="about.submissionPreparationChecklist"}
-					{include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission" sectionTitleKey="about.submissionPreparationChecklist"}
-				</h2>
-			</div>
-			<p class="lead description">
+		<div class="submission_checklist csp-submission">
+			<p class="lead description submit-lead-description">
 				{translate key="about.submissionPreparationChecklist.description"}
 			</p>
 			<ol class="submission-list-group">
