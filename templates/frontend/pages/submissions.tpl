@@ -38,7 +38,13 @@
 	{* Submission Checklist *}
 	{if $submissionChecklist}
 		<div class="submission_checklist csp-submission">
-			<p class="lead description submit-lead-description">
+			<div class="page-header">
+				<h2>
+					{translate key="about.submissionPreparationChecklist"}
+					{include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission" sectionTitleKey="about.submissionPreparationChecklist"}
+				</h2>
+			</div>
+			<p class="lead description">
 				{translate key="about.submissionPreparationChecklist.description"}
 			</p>
 			<ol class="submission-list-group">

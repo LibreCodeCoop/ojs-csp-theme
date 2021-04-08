@@ -53,7 +53,6 @@
 }
 
 .authors{
-	color: #e68b3a;
 	font-style: italic;
 }
 
@@ -132,14 +131,18 @@
 	padding-bottom: 30px;
 	margin-top: 0px;
 }
-.csp-autor{
+.csp-authors{
 	color: #555;
-  font-family: serif;
   font-size: 18px;
 }
 .csp-h2{
 	font-size: 30px;
   font-weight: 800;
+	margin-bottom: 20px;
+}
+
+.context-toggles{
+	display: flex;
 }
 
 .csp-alert{
@@ -152,7 +155,112 @@
 	font-weight: 600;
 }
 
+
 .csp-article-edition{
 	font-weight: 800;
 	font-size: 20px;
+	color: #4B4B4D;
+	div{
+		padding: 0px 15px;
+	}
+	a{
+		color: #E88834;
+		font-size: 14px;
+	}
+}
+
+.csp-date{
+  background-color: #E6E7E9;
+	display: flex;
+  div{
+		background: none;
+    border: none;
+		margin-right: 5px;
+  }
+}
+
+.csp-abstract{
+	border-bottom: 1px solid #CACBCD;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	p{
+		font-size: 19px;
+		line-height: 1.8;
+		font-weight: 500;
+	}
+}
+
+.csp-details-title{
+	font-size: 24px;
+	font-weight: 800;
+	padding-left: 0;
+}
+.csp-details-keys{
+	padding: 0;
+}
+.csp-keywords{
+	border: none;
+	padding-left: 0;
+	strong{
+		font-size: 24px;
+		font-weight: 800;
+		padding-left: 0px;
+	}
+	div{
+		font-weight: 100;
+		margin-top: 15px;
+		font-size: 19px;
+	}
+}
+
+.csp-download{
+  a{
+    background-color: #E88834;
+    color: #fff;
+		font-size: 19px;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 6px 2px;
+    box-shadow: -1px 1px 0px 0px rgba(190,192,193,1);
+		border-radius: 0;
+		margin-bottom: 15px !important;
+  }
+}
+
+.csp-cite{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-bottom: 30px;
+	strong{
+		color: #fff;
+		font-weight: 900;
+		background-color: #858688;
+		width: 100%;
+		padding: 8px 0px;
+	}
+	div{
+		text-align: left;
+		word-break: break-word;
+		width: 100%;
+		padding: 10px;
+		color: #4B4B4D;
+		background-color: #E6E7E9;
+	}
+}
+
+.csp-doi{
+  padding: 10px 0px;
+  strong{
+		font-size: 16px;
+    font-weight: 900;
+  }
+	a{
+    color: orange;
+  }
+}
+
+.csp-border-bottom{
+	border-bottom: 1px solid #CACBCD;
+	margin-bottom: 40px;
 }
