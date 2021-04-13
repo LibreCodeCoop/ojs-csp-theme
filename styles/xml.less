@@ -1,0 +1,125 @@
+.article{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.surface-scrollbar{
+	display: none !important;
+}
+
+.content-node .contributor_reference{
+	color: #f58802 !important;
+}
+
+.heading{
+	background: none !important;
+}
+.lens-article .content-node.cover .published-on{
+	color: #4D4C4E !important;
+}
+
+.content-node.heading .title, .content-node.heading .content .title .content{
+	color: #4D4C4E;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: inline;
+  font-size: 1em;
+}
+.doi{
+	text-transform: uppercase;
+	color: #4d4c4e;
+	font-weight: bold;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.doi a{
+	text-transform: lowercase;
+	color: #f58802;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.article .document{
+	border-right: none !important;
+}
+
+.article .resources{
+	margin-top: 3em;
+	padding-right: 70px;
+	border-left: 1px solid #DCDCDC;
+	border-top: 1px solid #DCDCDC;
+}
+
+.menu-bar{
+	height: 60px;
+}
+
+.menu-bar .context-toggles a{
+	/* display: flex !important;
+	align-items: center !important;
+	height: 100% !important; */
+}
+
+.menu-bar .context-toggles a{
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	float: none !important;
+	margin: auto;
+	width: 90%;
+	color: #fff !important;
+	font-weight: bold;
+	padding: 0 !important;
+	justify-content: center;
+	background: rgb(150, 150, 153);
+	top: -3px;
+}
+
+.menu-bar .context-toggles a.active{
+	background: rgb(96, 96, 98) !important;
+	height: 40px !important;
+}
+
+.orcid-label{
+	background-color: #9EED49;
+	border-radius: 50%;
+
+}
+.orcid{
+	color:darken(#D79027, 10%);
+}
+.lens-article .content-node.contributor .label{
+	color: #fff;
+	margin-right: 10px;
+}
+.article .resources .citations .content-node.highlighted{
+	border-left: 3px solid #d79027 !important;
+}
+.article .resources .info .content-node.highlighted{
+	border-left: 3px solid #d79027 !important;
+}
+.content-node .contributor_reference.highlighted{
+	background-color: lighten(#d79027, 20%) !important;
+	color: #000 !important;
+}
+.content-node .link{
+	color: #d79027 !important;
+}
+div.content > span > a{
+	color: darken(#d79027, 10% )!important;
+	text-decoration: none;
+}
+.content-node .citation_reference{
+	background-color: rgba(215, 144, 39, 0.3) !important;
+	// background-color: lighten(#d79027, 20%) !important;
+	color: #000 !important;
+border-bottom: 1px solid darken(#d79027, 20%) !important;
+}
+.content-node .citation_reference.highlighted{
+	background-color: rgba(215, 144, 39, 0.6) !important;
+	// background-color: darken(#d79027, 20%) !important;
+}
