@@ -38,13 +38,13 @@
 	</div>
 	<div class="aside-container">
 		<div class="content-csp">
-		<a href="#" target="_blank">
-			<img src="../plugins/themes/csp/assets/portal.jpg" />
+		<a href="https://periodicos.fiocruz.br/pt-br" target="_blank">
+			<img src="{$baseUrl}/plugins/themes/csp/assets/portal.jpg" />
 		</a>
 		</div>
 		<div class="content-csp">
-		<a href="#"target="_blank">
-			<img src="../../plugins/themes/csp/assets/scielo.jpg" />
+		<a href="https://www.scielo.br/scielo.php?script=sci_issues&pid=0102-311X&lng=pt&nrm=iso"target="_blank">
+			<img src="{$baseUrl}/plugins/themes/csp/assets/scielo.jpg" />
 		</a>
 		</div>
 	</div>
