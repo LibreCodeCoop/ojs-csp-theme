@@ -12,8 +12,7 @@
 			<span>Videos</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
-		<div class="aside-content">
-			<iframe id="player" type="text/html" frameborder="0" src="https://www.youtube.com/user/enspcci" height="350px"></iframe>
+		<div class="aside-content" id="video">
 		</div>
 	</div>
 	<div class="aside-container">
