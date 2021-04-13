@@ -35,4 +35,17 @@
 			</a>
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
+	</div>
+	<div class="aside-container">
+		<div class="content-csp">
+		<a href="#" target="_blank">
+			<img src="../plugins/themes/csp/assets/portal.jpg" />
+		</a>
+		</div>
+		<div class="content-csp">
+		<a href="#"target="_blank">
+			<img src="../../plugins/themes/csp/assets/scielo.jpg" />
+		</a>
+		</div>
+	</div>
 </aside><!-- pkp_sidebar.left -->
