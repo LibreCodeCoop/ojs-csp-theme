@@ -8,9 +8,11 @@
 .surface-scrollbar{
 	display: none !important;
 }
-.annotation {
-	color: #f58802;
+
+.content-node .contributor_reference{
+	color: #f58802 !important;
 }
+
 .heading{
 	background: none !important;
 }
@@ -80,4 +82,44 @@
 .menu-bar .context-toggles a.active{
 	background: rgb(96, 96, 98) !important;
 	height: 40px !important;
+}
+
+.orcid-label{
+	background-color: #9EED49;
+	border-radius: 50%;
+
+}
+.orcid{
+	color:darken(#D79027, 10%);
+}
+.lens-article .content-node.contributor .label{
+	color: #fff;
+	margin-right: 10px;
+}
+.article .resources .citations .content-node.highlighted{
+	border-left: 3px solid #d79027 !important;
+}
+.article .resources .info .content-node.highlighted{
+	border-left: 3px solid #d79027 !important;
+}
+.content-node .contributor_reference.highlighted{
+	background-color: lighten(#d79027, 20%) !important;
+	color: #000 !important;
+}
+.content-node .link{
+	color: #d79027 !important;
+}
+div.content > span > a{
+	color: darken(#d79027, 10% )!important;
+	text-decoration: none;
+}
+.content-node .citation_reference{
+	background-color: rgba(215, 144, 39, 0.3) !important;
+	// background-color: lighten(#d79027, 20%) !important;
+	color: #000 !important;
+border-bottom: 1px solid darken(#d79027, 20%) !important;
+}
+.content-node .citation_reference.highlighted{
+	background-color: rgba(215, 144, 39, 0.6) !important;
+	// background-color: darken(#d79027, 20%) !important;
 }
