@@ -189,7 +189,7 @@
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container">
 			<div>
-			{if $requestedOp !== 'index'}
+			{if $page }
 				{include file="frontend/components/breadcrumbs_t.tpl"}
 			{/if}
 			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-9" role="main">
