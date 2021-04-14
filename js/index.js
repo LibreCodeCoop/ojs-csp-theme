@@ -19,6 +19,29 @@ function changeOrcidStyle(objLabel, objID) {
 	}
 }
 
+function httpGet(url) {
+	try {
+		const xmlHttp = new XMLHttpRequest();
+		xmlHttp.open('GET', url, false);
+		xmlHttp.send(null);
+		return JSON.parse(xmlHttp.responseText);
+	} catch (err) {
+		console.error(err);
+	}
+}
+
+function getDataByGoogle(key, channelId) {
+	const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=1&order=date&type=video&videoEmbeddable=true&key=${key}`;
+	const data = httpGet(url);
+	return data.items[0].id.videoId;
+}
+
+function inserVideo(videoId, domain) {
+	document.getElementById(
+		'video'
+	).innerHTML = `<iframe id="player" type="text/html" frameborder="0" src="http://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=http://${domain}"></iframe>`;
+}
+
 function replaced(item) {
 	let splitChild = item.textContent.split('*');
 
@@ -49,9 +72,10 @@ if (listGroup) {
 		}
 	}
 }
-
 const orcidLabel = document.getElementsByClassName('label');
 const orcidID = document.getElementsByClassName('orcid');
+const videoId = getDataByGoogle('key', 'UCBc00LEzZ6Vqi8EcBoCLaYA');
+inserVideo(videoId, 'localhost');
 setTimeout(() => {
 	changeOrcidStyle(orcidLabel, orcidID);
 }, 1000);
