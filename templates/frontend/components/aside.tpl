@@ -1,6 +1,5 @@
 {if $page !== 'article'}
 <aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
-{var_dump($page)}
 	<div class="aside-container">
 		<div class="aside-item">
 			<span>Interviews</span>
@@ -83,8 +82,8 @@
 					{* <div><strong>Accepted:</strong> date </div> *}
 					<div>
 						{capture assign=translatedDatePublished}{translate key="submissions.published"}{/capture}
-						<strong>{translate key="semicolon" label=$translatedDatePublished}</strong> 
-						{$publication->getData('datePublished')|date_format} 
+						<strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
+						{$publication->getData('datePublished')|date_format}
 					</div>
 				</div>
 			</div>
