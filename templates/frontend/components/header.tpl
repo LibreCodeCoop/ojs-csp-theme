@@ -54,7 +54,7 @@
 			{* User profile, login, etc, navigation menu*}
 
 			<div class="container-fluid" id="logo-csp">
-				<div class="row">
+				<div class="">
 					<div class="col-md-6">
 						{capture assign="homeUrl"}
 							{if $currentJournal && $multipleContexts}
@@ -192,4 +192,4 @@
 			{if $requestedOp !== 'index'}
 				{include file="frontend/components/breadcrumbs_t.tpl"}
 			{/if}
-			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-9" role="main">
+			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-9 remove-old-breadcrumb" role="main">

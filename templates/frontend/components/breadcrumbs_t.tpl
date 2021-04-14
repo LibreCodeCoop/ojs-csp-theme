@@ -15,7 +15,7 @@
  *}
 
 <nav class="breadcrumb-link cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol class="breadcrumb">
+	<ol class="breadcrumb csp-breadcrumb">
 		<li>
 			<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
 				{translate key="common.homepageNavigationLabel"}

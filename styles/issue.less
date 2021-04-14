@@ -52,10 +52,6 @@
 	}
 }
 
-.authors{
-	font-style: italic;
-}
-
 .article-data{
 	display: flex;
 	justify-content: flex-end;
@@ -131,10 +127,7 @@
 	padding-bottom: 30px;
 	margin-top: 0px;
 }
-.csp-authors{
-	color: #555;
-  font-size: 18px;
-}
+
 .csp-h2{
 	font-size: 30px;
   font-weight: 800;
@@ -148,7 +141,7 @@
 .csp-alert{
 	background-color: #E6E7E9;
 	border-color: #CACBCD;
-	border-radius: 0px;
+	border-radius: 0;
 	color: #646567;
 	margin: 100px 0px 70px 0px;
 	font-size: 17px;
@@ -157,6 +150,7 @@
 
 
 .csp-article-edition{
+	margin-top: 20px;
 	font-weight: 800;
 	font-size: 20px;
 	color: #4B4B4D;
@@ -170,14 +164,20 @@
 }
 
 .csp-date{
-  background-color: #E6E7E9;
+	background-color: #E6E7E9;
 	display: flex;
-  div{
-		background: none;
-    border: none;
+	flex-direction: column;
+	padding: 10px;
+	div{
+	  background: none;
+	  padding: 5px 15px;
+	  border: none;
+	  margin-right: 5px;
+	  strong{
 		margin-right: 5px;
+	  }
+	}
   }
-}
 
 .csp-abstract{
 	border-bottom: 1px solid #CACBCD;
@@ -214,6 +214,8 @@
 }
 
 .csp-download{
+	display: flex;
+    flex-direction: column;
   a{
     background-color: #E88834;
     color: #fff;
@@ -222,8 +224,16 @@
     font-size: 18px;
     padding: 6px 2px;
     box-shadow: -1px 1px 0px 0px rgba(190,192,193,1);
-		border-radius: 0;
-		margin-bottom: 15px !important;
+	border-radius: 0;
+	margin-bottom: 15px !important;
+	transition: all .5s ease;
+  }
+  a:last-child{
+	  margin-bottom: 0px !important;
+  }
+  a:hover{
+	  background-color: #ff9941;
+	  color: #FFF;
   }
 }
 
@@ -264,3 +274,52 @@
 	border-bottom: 1px solid #CACBCD;
 	margin-bottom: 40px;
 }
+.csp-border-mid{
+	margin-top: 30px;
+	border-bottom: 2px solid #CACBCD;
+	margin-bottom: 30px;
+}
+
+.csp-authors{
+	display: flex;
+	line-height: 1.8;
+	flex-wrap: wrap;
+  }
+  .csp-author{
+	display:flex;
+  }
+  .csp-fullname{
+	color: #555;
+	font-family: open-sans;
+	font-style: italic;
+	font-size: 18px;
+	transform: translateY(-5px);
+	white-space: nowrap;
+  }
+  .csp-author:after{
+	content: ",";
+	margin-right: 5px;
+  }
+  .csp-author:only-child:after{
+	content: "";
+  }
+  .csp-author:last-child:after{
+	content: ".";
+  }
+  .orcid-icon{
+	color: #555;
+	font-size: 16px;
+	text-decoration: none;
+	transform: translateY(-6px);
+  }
+
+  .article-aside{
+	padding: 55px 10px 0px 40px;
+  }
+
+  .remove-old-breadcrumb{
+	  margin-top: 60px;
+	  nav{
+		  display: none;
+	  }
+  }

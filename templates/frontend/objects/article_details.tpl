@@ -58,72 +58,13 @@
 				</div>
 			{/if}
 
-			{* Article Galleys *}
-			{if $primaryGalleys || $supplementaryGalleys}
-				<div class="download csp-download">
-					{if $primaryGalleys}
-						{foreach from=$primaryGalleys item=galley}
-							{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
-						{/foreach}
-					{/if}
-					{if $supplementaryGalleys}
-						{foreach from=$supplementaryGalleys item=galley}
-							{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-						{/foreach}
-					{/if}
-				</div>
-			{/if}
+			
 
-			{* how to cite *}
+				
 
-			<div class="csp-cite">
-				<strong>{translate key="submission.howToCite"}</strong>
-				{$citation}
-			</div>
-
-
-			<div class="list-group">
-
-				{* Published date *}
-				{if $publication->getData('datePublished')}
-					<div class="list-group-item date-published csp-date">
-						{capture assign=translatedDatePublished}{translate key="submissions.published"}{/capture}
-						<div class=""><strong>{translate key="semicolon" label=$translatedDatePublished}</strong></div>
-						{$publication->getData('datePublished')|date_format}
-					</div>
-					{* If this is an updated version *}
-					{if $firstPublication->getID() !== $publication->getId()}
-						<div class="list-group-item date-updated">
-							{capture assign=translatedUpdated}{translate key="common.updated"}{/capture}
-							<strong>{translate key="semicolon" label=$translatedUpdated}</strong>
-							{$publication->getData('datePublished')|date_format:$dateFormatShort}
-						</div>
-					{/if}
-					{* Versions *}
-					{if count($article->getPublishedPublications()) > 1}
-						<div class="list-group-item versions">
-							<strong>{capture assign=translatedVersions}{translate key="submission.versions"}{/capture}
-							{translate key="semicolon" label=$translatedVersions}</strong>
-							{foreach from=array_reverse($article->getPublishedPublications()) item=iPublication}
-								{capture assign="name"}{translate key="submission.versionIdentity" datePublished=$iPublication->getData('datePublished')|date_format:$dateFormatShort version=$iPublication->getData('version')}{/capture}
-								<div>
-									{if $iPublication->getId() === $publication->getId()}
-										{$name}
-									{elseif $iPublication->getId() === $currentPublication->getId()}
-										<a href="{url page="article" op="view" path=$article->getBestId()}">{$name}</a>
-									{else}
-										<a href="{url page="article" op="view" path=$article->getBestId()|to_array:"version":$iPublication->getId()}">{$name}</a>
-									{/if}
-								</div>
-							{/foreach}
-						</div>
-					{/if}
-				{/if}
-DOI1
 				{* DOI (requires plugin) *}
 				{foreach from=$pubIdPlugins item=pubIdPlugin}
 					{if $pubIdPlugin->getPubIdType() != 'doi'}
-DOI2
 						{continue}
 					{/if}
 					{if $issue->getPublished()}
@@ -171,14 +112,32 @@ DOI2
 			{/if}
 		</h1>
 	</header>
-
+				
 				{* Screen-reader heading for easier navigation jumps *}
 				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
+				
 
 				{if $publication->getData('authors')}
 					<div class="csp-authors">
 						{foreach from=$publication->getData('authors') item=author}
-							<div class="authors">
+							<div class="csp-author">
+								{if $author->getOrcid()}
+									<div class="csp-author-icon">
+										<a href="{$author->getOrcid()|escape}" target="_blank">
+											<span class="glyphicon glyphicon-envelope orcid-icon"></span>
+											{$author->getOrcid()|escape}
+										</a>
+									</div>
+								{/if}
+								<div class="csp-fullname">{$author->getFullName()|escape}</div>
+							</div>
+						{/foreach}
+					</div>
+				{/if}
+				{* {if $publication->getData('authors')}
+					<div class="csp-authors">
+						{foreach from=$publication->getData('authors') item=author}
+							<div class="csp-author">
 								{$author->getFullName()|escape}
 								{if $author->getLocalizedAffiliation()}
 									<div class="article-author-affilitation">
@@ -196,36 +155,16 @@ DOI2
 							</div>
 						{/foreach}
 					</div>
-				{/if}
+				{/if} *}
 
 				{* Visual test DOI *}
-				<div class="csp-doi">
+				{* <div class="csp-doi">
 					<strong>DOI: </strong>
 					<a href="{$doiUrl}">
 						url/do/doi
 					</a>
-				</div>
-				{* True DOI *}
-				{foreach from=$pubIdPlugins item=pubIdPlugin}
-					{if $pubIdPlugin->getPubIdType() != 'doi'}
-						{continue}
-					{/if}
-					{if $issue->getPublished()}
-						{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-					{else}
-						{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-					{/if}
-					{if $pubId}
-						{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-						<div class="csp-doi">
-							{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-							<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-							<a href="{$doiUrl}">
-								{$doiUrl}
-							</a>
-						</div>
-					{/if}
-				{/foreach}
+				</div> *}
+
 				<div class="csp-border-bottom"></div>
 
 				{* Article abstract *}
@@ -274,9 +213,9 @@ DOI2
 						</div>
 					{/if}
 				{/foreach}
-
-
-
+				
+				
+				
 				{* {if $section}
 					<div class="panel section csp-details">
 						<div class="panel-heading csp-details-title">
@@ -286,7 +225,7 @@ DOI2
 							{$section->getLocalizedTitle()|escape}
 						</div>
 					</div>
-				{/if} *}
+				{/if} *}	
 
 				{* Keywords *}
 				{if !empty($keywords[$currentLocale])}
@@ -383,7 +322,6 @@ DOI2
 						</div>
 					</div>
 				{/if}
-
 			</section><!-- .article-details -->
 		</div><!-- .col-md-8 -->
 	</div><!-- .row -->
