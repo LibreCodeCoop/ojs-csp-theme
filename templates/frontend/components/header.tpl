@@ -39,12 +39,12 @@
 					<div class="row he-50">
 						<div class="col-xs-6 col-sm-6 px-r-30">
 							<a href="{$homeUrl}">
-								<img src="{$publicFilesDir}/logo.gif">
+								<img src="{$baseUrl}/plugins/themes/csp/assets/logo.gif" />
 							</a>
 						</div>
 						<div class="col-xs-6 col-sm-6 text-right">
 							<a href="http://www.ensp.fiocruz.br/">
-								<img src="{$publicFilesDir}/logo-fiocruz.png" id="logoFiocruz">
+								<img src="{$baseUrl}/plugins/themes/csp/assets/logo-fiocruz.png" id="logoFiocruz"/>
 							</a>
 						</div>
 					</div><!-- .row -->
