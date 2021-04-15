@@ -35,7 +35,7 @@
 
 				<div class="footer-page">
 					<div class="col-md-2">
-						<img class="image-footer" src="{$publicFilesDir}/footer-l1.png">
+						<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l1.png">
 					</div>
 
 					{if $pageFooter}
@@ -45,23 +45,23 @@
 					{/if}
 
 					<div class="col-md-2">
-						<img class="image-footer" src="{$publicFilesDir}/footer-l8.png">
+						<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l8.png">
 					</div>
 
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l3.png">
+						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l3.png">
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l4.png">
+						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l4.png">
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l5.png">
+						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l5.png">
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l6.png">
+						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l6.png">
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$publicFilesDir}/footer-l7.png">
+						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l7.png">
 					</div>
 				</div>
 			</div> <!-- .row -->
