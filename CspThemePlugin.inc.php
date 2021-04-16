@@ -9,11 +9,10 @@ class CspThemePlugin extends ThemePlugin {
 
     public function init() {
 
-        //$this->addStyle('stylesheet', 'styles/index.less');
         $this->setParent('bootstrapthreethemeplugin');
-        //$this->modifyStyle('stylesheet', array('addLess' => array('styles/index.less')));
         $this->addStyle('child-stylesheet', 'styles/index.less');
-				$this->addScript('csp', 'js/index.js');
+		$this->addScript('csp', 'js/index.js');
+		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 
@@ -44,7 +43,7 @@ class CspThemePlugin extends ThemePlugin {
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
 		$page = $router->_page;
-        	$count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
+        $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
 		$params = array(
 			'contextId' => $context->getId(),
 			'orderBy' => 'seq',
@@ -64,14 +63,14 @@ class CspThemePlugin extends ThemePlugin {
 		}
 
 		$templateMgr = $args[0];
-        	$templateMgr->assign(array(
+        $templateMgr->assign(array(
 			'issues' => $issues,
 			'requestPath' => $requestPath,
 			'baseUrl' => $baseUrl,
 			'page' => $page,
 			'coverImageUrl' => $coverImageUrl,
-            		'coverImageAltText' => $coverImageAltText,
-            		'context' => $context
+            'coverImageAltText' => $coverImageAltText,
+            'context' => $context
 		));
 	}
 }
