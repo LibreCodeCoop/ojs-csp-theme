@@ -170,7 +170,7 @@
 				{* Article abstract *}
 				{if $publication->getLocalizedData('abstract')}
 					<div class="article-summary" id="summary">
-						<h2 class="csp-h2">{translate key="article.abstract"}</h2>
+						<h2 class="csp-h2">{translate key="article.abstract"}:</h2>
 						<div class="article-abstract csp-abstract">
 							{$publication->getLocalizedData('abstract')|strip_unsafe_html|nl2br}
 						</div>
@@ -231,7 +231,7 @@
 				{if !empty($keywords[$currentLocale])}
 					<div class="list-group-item keywords csp-keywords">
 						<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-							{translate key="semicolon" label=$translatedKeywords}</strong>
+							{translate key="semicolon" label=$translatedKeywords}:</strong>
 						<div class="">
 								<span class="value">
 									{foreach from=$keywords[$currentLocale] item=keyword}
