@@ -40,11 +40,11 @@
 						{capture assign=homeUrl}{url page="index" router=$smarty.const.ROUTE_PAGE}{/capture}
 					{/if}
 					{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
-						<a href="{$homeUrl}" class="is_img">
+						<a href="submissions" class="is_img">
 							<img src="{$baseUrl}/plugins/themes/csp/assets/sagas.png" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
 						</a>
 					{else}
-						<a href="{$homeUrl}" class="is_img">
+						<a href="submissions" class="is_img">
 							<img src="{$baseUrl}/templates/images/structure/logo.png">
 						</a>
 					{/if}
