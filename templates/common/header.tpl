@@ -41,11 +41,11 @@
 					{/if}
 					{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
 						<a href="submissions" class="is_img">
-							<img src="{$baseUrl}/plugins/themes/csp/assets/sagas.png" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
+							<img src="{$baseUrl}/plugins/themes/csp/assets/logoSAGAS_branco.svg" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
 						</a>
 					{else}
 						<a href="submissions" class="is_img">
-							<img src="{$baseUrl}/templates/images/structure/logo.png">
+							<img src="{$baseUrl}/templates/images/structure/logoSAGAS_branco.svg">
 						</a>
 					{/if}
 				</div>
@@ -58,7 +58,7 @@
 							$('#navigationPrimary').pkpHandler(
 									'$.pkp.controllers.MenuHandler');
 						{rdelim});
-					 </script>
+					</script>
 					<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list" role="navigation" aria-label="{translate|escape key="common.navigation.site"}">
 
 						{* Users with ONLY the reader role *}
@@ -78,7 +78,28 @@
 							</li>
 						{/if}
 
-						{$appSpecificMenuItems}
+						{if array_intersect(array(ROLE_ID_MANAGER), (array)$userRoles)}
+							<li aria-haspopup="true" aria-expanded="false">
+								<a name="issues" href="#">{translate key="editor.navigation.issues"}</a>
+								<ul>
+									<li><a href="{url router=$smarty.const.ROUTE_PAGE page="manageIssues" anchor="futureIssues"}">{translate key="editor.issues.futureIssues"}</a></li>
+									<li><a href="{url router=$smarty.const.ROUTE_PAGE page="manageIssues" anchor="backIssues"}">{translate key="editor.issues.backIssues"}</a></li>
+								</ul>
+							</li>
+						{/if}
+						{if $currentJournal && $currentJournal->getData('paymentsEnabled') && array_intersect(array(ROLE_ID_SITE_ADMIN, ROLE_ID_MANAGER, ROLE_ID_SUBSCRIPTION_MANAGER), (array)$userRoles)}
+							<li aria-haspopup="true" aria-expanded="false">
+								<a name="payments" href="#">{translate key="common.payments"}</a>
+								<ul>
+									<li><a name="individualSubscription" href="{url router=$smarty.const.ROUTE_PAGE page="payments" anchor="individualSubscription"}">{translate key="subscriptionManager.individualSubscriptions"}</a></li>
+									<li><a name="institutionalSubscriptions" href="{url router=$smarty.const.ROUTE_PAGE page="payments" anchor="institutionalSubscriptions"}">{translate key="subscriptionManager.institutionalSubscriptions"}</a></li>
+									<li><a name="subscriptionTypes" href="{url router=$smarty.const.ROUTE_PAGE page="payments" anchor="subscriptionTypes"}">{translate key="subscriptionManager.subscriptionTypes"}</a></li>
+									<li><a name="subscriptionPolicies" href="{url router=$smarty.const.ROUTE_PAGE page="payments" anchor="subscriptionPolicies"}">{translate key="manager.subscriptionPolicies"}</a></li>
+									<li><a name="paymentTypes" href="{url router=$smarty.const.ROUTE_PAGE page="payments" anchor="paymentTypes"}">{translate key="manager.paymentTypes"}</a></li>
+									<li><a name="payments" href="{url router=$smarty.const.ROUTE_PAGE page="payments" anchor="payments"}">{translate key="common.payments"}</a></li>
+								</ul>
+							</li>
+						{/if}
 
 						{if array_intersect(array(ROLE_ID_MANAGER), (array)$userRoles) && $currentContext && $currentContext->getData('enableAnnouncements')}
 							<li>
