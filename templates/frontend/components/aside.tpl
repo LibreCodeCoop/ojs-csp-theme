@@ -2,7 +2,7 @@
 <aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
 	<div class="aside-container">
 		<div class="aside-item">
-			<span>Interviews</span>
+			<span>{translate|escape key="plugins.themes.csp.sidebar.interviews"}</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div class="aside-content">
@@ -10,7 +10,7 @@
 	</div>
 	<div class="aside-container">
 		<div class="aside-item">
-			<span>Videos</span>
+			<span>{translate|escape key="plugins.themes.csp.sidebar.videos"}</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div class="aside-content" id="video">
@@ -18,7 +18,7 @@
 	</div>
 	<div class="aside-container">
 		<div class="aside-item">
-			<span>Podcast</span>
+			<span>{translate|escape key="plugins.themes.csp.sidebar.podcasts"}</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div class="aside-content">
@@ -26,7 +26,7 @@
 	</div>
 	<div class="aside-container">
 		<div class="aside-item">
-			<span>Twitter</span>
+			<span>{translate|escape key="plugins.themes.csp.sidebar.twitter"}</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div id="tweet" class="aside-content">
@@ -83,7 +83,7 @@
 					<div>
 						{capture assign=translatedDatePublished}{translate key="submissions.published"}{/capture}
 						<strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
-						{$publication->getData('datePublished')|date_format}
+						{$publication->getLocalizedData('datePublished')|date_format}
 					</div>
 				</div>
 			</div>
