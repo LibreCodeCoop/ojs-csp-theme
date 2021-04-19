@@ -43,6 +43,7 @@ class CspThemePlugin extends ThemePlugin {
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
 		$page = $router->_page;
+		$op = $router->_op;
         $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
 		$params = array(
 			'contextId' => $context->getId(),
@@ -50,7 +51,7 @@ class CspThemePlugin extends ThemePlugin {
 			'orderDirection' => 'ASC',
 			'count' => $count,
 			'offset' => 0,
-			'isPublished' => true,
+			'isPublished' => true
         );
 
 		$issues = iterator_to_array(Services::get('issue')->getMany($params));
@@ -70,7 +71,8 @@ class CspThemePlugin extends ThemePlugin {
 			'page' => $page,
 			'coverImageUrl' => $coverImageUrl,
             'coverImageAltText' => $coverImageAltText,
-            'context' => $context
+			'context' => $context,
+			'op' => $op
 		));
 	}
 }
