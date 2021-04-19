@@ -190,6 +190,6 @@
 		<div class="pkp_structure_content container">
 			<div>
 			{if $page }
-				{include file="frontend/components/breadcrumbs_t.tpl"}
+				{include file="frontend/components/breadcrumbs.tpl"}
 			{/if}
 			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-9 remove-old-breadcrumb" role="main">

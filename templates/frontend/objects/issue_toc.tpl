@@ -33,7 +33,7 @@
 						{foreach from=$section.articles item=article}
 							<div class="col-md-12 issue-content">
 								{if $section.title}
-									<div class="col-md-4 page-header-title">
+									<div class="col-md-3 page-header-title">
 										<h2>
 											<small>{$section.title|escape}</small>
 										</h2>

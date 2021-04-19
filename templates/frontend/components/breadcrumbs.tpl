@@ -13,21 +13,43 @@
  * @uses $currentTitle string The title to use for the current page.
  * @uses $currentTitleKey string Translation key for title of current page.
  *}
-{*
+
 <nav class="breadcrumb-link cmp_breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
-	<ol class="breadcrumb">
+	<ol class="breadcrumb csp-breadcrumb">
 		<li>
-			<a href="{url page="index" router=$smarty.const.ROUTE_PAGE}">
+			<a href="{$baseUrl}">
 				{translate key="common.homepageNavigationLabel"}
 			</a>
 		</li>
-		<li class="active">
-		{translate key=$pageTitle}
-			{* {if $currentTitleKey}
-				{translate key=$currentTitleKey}
+		{if $page == "issue"}
+			{if $op == "view"}
+				<li>
+					<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">
+						{translate key="navigation.archives"}
+					</a>
+				</li>
+				<li class="active">
+					{$issue->getIssueIdentification()|escape}
+				</li>
 			{else}
-				{$currentTitle|escape}
-			{/if} *}
-		{* </li>
+				<li class="active">
+					{translate key="navigation.archives"}
+				</li>
+			{/if}
+		{elseif $page == "article"}
+			<li>
+				<a href="{url page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
+					{$issue->getIssueIdentification()|escape}
+				</a>
+			</li>
+			<li class="active">
+				{$section->getLocalizedTitle()}
+			</li>
+		{else}
+			<li class="active">
+				{translate key=$pageTitle}
+			</li>
+		{/if}
 	</ol>
-</nav> *}
+	{include file="frontend/components/social-media.tpl"}
+</nav>
