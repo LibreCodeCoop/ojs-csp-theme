@@ -231,7 +231,7 @@
 				{if !empty($keywords[$currentLocale])}
 					<div class="list-group-item keywords csp-keywords">
 						<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-							{translate key="semicolon" label=$translatedKeywords}:</strong>
+							{translate key="semicolon" label=$translatedKeywords}</strong>
 						<div class="">
 								<span class="value">
 									{foreach from=$keywords[$currentLocale] item=keyword}

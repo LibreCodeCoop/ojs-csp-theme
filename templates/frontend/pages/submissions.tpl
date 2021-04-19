@@ -17,7 +17,7 @@
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.submissions"}
 
 	{* Page Title *}
-		<h1 class="namePage line" id="submission-title">{translate key="about.submissions"}</h1>
+		<h1 class="namePage line">{translate key="about.submissions"}</h1>
 	{* /Page Title *}
 
 	{* Login/register prompt *}
