@@ -50,7 +50,7 @@
 	</div>
 </aside><!-- pkp_sidebar.left -->
 {else}
-	<aside id="articlebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3 article-aside" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+	<aside id="articlebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
 		{* Article Galleys *}
 			{if $primaryGalleys || $supplementaryGalleys}
 				<div class="csp-download">
