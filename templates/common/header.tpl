@@ -41,11 +41,11 @@
 					{/if}
 					{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
 						<a href="submissions" class="is_img">
-							<img src="{$baseUrl}/plugins/themes/csp/assets/logoSAGAS_branco.svg" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
+							<img src="{$baseUrl}/plugins/themes/csp/assets/sagas.png" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
 						</a>
 					{else}
 						<a href="submissions" class="is_img">
-							<img src="{$baseUrl}/templates/images/structure/logoSAGAS_branco.svg">
+							<img src="{$baseUrl}/templates/images/structure/sagas.png">
 						</a>
 					{/if}
 				</div>
