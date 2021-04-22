@@ -49,6 +49,10 @@ table colgroup col{
 	width: unset;
 }
 
-[id^="component-grid-files"] [id^="component-grid-files"] td:not(.first_column), [id^="component-grid-files"] [id^="component-grid-files"] th:not(.first_column){
+div[id^="component-grid-files"] [id^="component-grid-files"] td:not(.first_column), [id^="component-grid-files"] [id^="component-grid-files"] th:not(.first_column){
 	width: unset;
+}
+
+.formRequired, #productionNotification, div[id^="editingNotification"], div[id^="reviewRoundNotification"]{
+	display: none !important;
 }
