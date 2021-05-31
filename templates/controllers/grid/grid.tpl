@@ -34,7 +34,7 @@
 		);
 		
 		$( ".file_extension" ).each(function( index, element ) {
-			if($("#initiateReview").length) { // Ao enviar para avaliação
+			if($("#initiateReview").length || $("#newRoundRevisionsGrid").length) { // Ao enviar para avaliação ou Nova rodada de avaliação
 				var className = $(this).attr('class');
 				var index = className.indexOf( "pdf" );
 				var text = $( this ).text();
