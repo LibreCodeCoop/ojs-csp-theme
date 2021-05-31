@@ -30,26 +30,25 @@
 	</script>
 	<div class="pkp_structure_page">
 		<header class="pkp_structure_head" role="banner">
+			{* Logo or site title *}
+			<div>
+				{if $currentContext && $multipleContexts}
+					{capture assign=homeUrl}{url journal="index" router=$smarty.const.ROUTE_PAGE}{/capture}
+				{else}
+					{capture assign=homeUrl}{url page="index" router=$smarty.const.ROUTE_PAGE}{/capture}
+				{/if}
+				{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
+					<a href="submissions" class="is_img">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/sagas.png" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
+					</a>
+				{else}
+					<a href="submissions" class="is_img">
+						<img src="{$baseUrl}/templates/images/structure/sagas.png">
+					</a>
+				{/if}
+			</div>
+			<br>
 			<div class="pkp_navigation" id="headerNavigationContainer">
-
-				{* Logo or site title *}
-				<div class="pkp_site_name">
-					{if $currentContext && $multipleContexts}
-						{capture assign=homeUrl}{url journal="index" router=$smarty.const.ROUTE_PAGE}{/capture}
-					{else}
-						{capture assign=homeUrl}{url page="index" router=$smarty.const.ROUTE_PAGE}{/capture}
-					{/if}
-					{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
-						<a href="submissions" class="is_img">
-							<img src="{$baseUrl}/plugins/themes/csp/assets/sagas.png" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
-						</a>
-					{else}
-						<a href="submissions" class="is_img">
-							<img src="{$baseUrl}/templates/images/structure/sagas.png">
-						</a>
-					{/if}
-				</div>
-
 				{* Primary navigation menu *}
 				{if $isUserLoggedIn}
 					<script type="text/javascript">
@@ -60,7 +59,6 @@
 						{rdelim});
 					</script>
 					<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list" role="navigation" aria-label="{translate|escape key="common.navigation.site"}">
-
 						{* Users with ONLY the reader role *}
 						{if (count((array) $userRoles) === 1 && in_array(ROLE_ID_READER, (array) $userRoles))}
 							<li>
