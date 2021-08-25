@@ -74,5 +74,13 @@ class CspThemePlugin extends ThemePlugin {
 			'context' => $context,
 			'op' => $op
 		));
+
+		if($args[1] == 'frontend/pages/userRegister.tpl'){ /* Passa id de avaliador para checkbox ir marcado */
+			$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
+			$group = $userGroupDao->getDefaultByRoleId($context->getId(), ROLE_ID_REVIEWER);
+			$userGroupIds[] = $group->getData('id');
+			$templateMgr->assign('userGroupIds',$userGroupIds);
+		}
+
 	}
 }
