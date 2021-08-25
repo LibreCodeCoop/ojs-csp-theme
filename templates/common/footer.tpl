@@ -15,8 +15,8 @@
 	<div class="pkp_brand_footer">
 		<a href="{$pkpLink}">
 			<a href="https://pkp.sfu.ca/ojs/"> OJS|PKP</a>, customizado por 
-			<a href="https://lt.coop.br/">
-				LyseonTech
+			<a href="https://librecode.coop/">
+				LibreCode
 			</a>
 		</a>
 	</div>
