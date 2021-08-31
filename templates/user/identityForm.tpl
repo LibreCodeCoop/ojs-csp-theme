@@ -30,18 +30,16 @@
 	{/fbvFormArea}
 
 	{fbvFormArea id="userFormCompactLeft"}
-		{fbvFormSection title="user.name" required="true" size=$fbvStyles.size.MEDIUM inline=true}
+		{fbvFormSection title="user.name" required="true" size=$fbvStyles.size.MEDIUM}
 			{fbvElement type="text" multilingual="true" required="true" id="givenName" value=$givenName maxlength="255"}
 		{/fbvFormSection}
-		{fbvFormSection title="user.familyName" required="true" size=$fbvStyles.size.MEDIUM inline=true}
+		{fbvFormSection title="user.familyName" required="true" size=$fbvStyles.size.MEDIUM}
 			{fbvElement type="text" multilingual="true" required="true" id="familyName" value=$familyName maxlength="255"}
 		{/fbvFormSection}
 	{/fbvFormArea}
-
-{* 	{fbvFormSection for="preferredPublicName" description="user.preferredPublicName.description"}
-		{fbvElement type="text" label="user.preferredPublicName" multilingual="true" name="preferredPublicName" id="preferredPublicName" value=$preferredPublicName size=$fbvStyles.size.LARGE}
-	{/fbvFormSection} *}
-
+	{fbvFormSection title="user.gender" size=$fbvStyles.size.LARGE required=true}
+		{fbvElement type="select" name="gender" id="gender" required=true defaultLabel="" defaultValue="" from=$genders selected=$gender translate=false}
+	{/fbvFormSection}
 	<p>
 		{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 		{translate key="user.privacyLink" privacyUrl=$privacyUrl}

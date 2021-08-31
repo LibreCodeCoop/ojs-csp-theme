@@ -70,13 +70,13 @@
 				{translate key="user.affiliation"}
 				<span class="form-control-required">*</span>
 				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="affiliation[{$primaryLocale|escape}]" id="affiliation" value="{$affiliation.$primaryLocale|escape}" required>
+				<input class="form-control" type="text" name="affiliation" id="affiliation" value="{$affiliation|escape}" required>
 			</label>
 		</div>
 		<div class="form-group affiliation2">
 			<label>
 				{translate key="user.affiliation2"}
-				<input class="form-control" type="text" name="affiliation2[{$primaryLocale|escape}]" id="affiliation2" value="{$affiliation2.$primaryLocale|escape}">
+				<input class="form-control" type="text" name="affiliation2" id="affiliation2" value="{$affiliation2|escape}">
 			</label>
 		</div>
 		<div class="form-group mailingAddress">
