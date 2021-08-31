@@ -15,7 +15,7 @@ label{
 
 #register{
 
-	input:not([type="checkbox"]){
+	input:not([type="checkbox"]), select{
 		max-width: 350px;
 		width: 100%;
 	}
@@ -71,16 +71,7 @@ label{
 }
 
 
-.consent{
-	.form-group{
-		margin-bottom: 0 !important;
-	}
-}
-
-
 .identity, .login{
-	margin-top: 50px;
-
 	legend{
 		text-transform: uppercase;
 		font-weight: 700;
@@ -152,4 +143,8 @@ label{
 .p-r{
 	display: flex;
 	justify-content: flex-end;
+}
+
+.namePage{
+	margin-bottom: 50px;
 }
