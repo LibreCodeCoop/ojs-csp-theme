@@ -42,8 +42,8 @@
 					<span class="form-control-required">*</span>
 					<span class="sr-only">{translate key="common.required"}</span>
 				</div>
-				<select name="gender" id="gender" class="form-control">
-					<option>{translate key="common.chooseOne"}</option>
+				<select name="gender" id="gender" class="form-control" required>
+					<option value="">{translate key="common.chooseOne"}</option>
 					<option value="F">{translate key="user.gender.male"}</option>
 					<option value="M">{translate key="user.gender.female"}</option>
 				</select>
@@ -119,7 +119,7 @@
 				<span class="sr-only">{translate key="common.required"}</span>
 			</div>
 				<select class="form-control" aria-label="couuntry" name="country" id="country" required>
-					<option>{translate key="common.chooseOne"}</option>
+					<option value="">{translate key="common.chooseOne"}</option>
 					{html_options options=$countries selected=$country}
 				</select>
 			</label>
