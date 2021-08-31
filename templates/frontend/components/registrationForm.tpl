@@ -18,9 +18,6 @@
  *}
 
 <fieldset class="identity">
-	<legend>
-		{translate key="user.profile"}
-	</legend>
 	<div class="fields">
 		<div class="form-group given_name">
 			<label>
@@ -38,12 +35,80 @@
 				<input class="form-control" type="text" name="familyName" id="familyName" value="{$familyName|escape}" maxlength="255" required>
 			</label>
 		</div>
+		<div class="form-group gender">
+			<label>
+				<div id="fr">
+					{translate key="user.gender"}
+					<span class="form-control-required">*</span>
+					<span class="sr-only">{translate key="common.required"}</span>
+				</div>
+				<select name="gender" id="gender" class="form-control">
+					<option>{translate key="common.chooseOne"}</option>
+					<option value="F">{translate key="user.gender.male"}</option>
+					<option value="M">{translate key="user.gender.female"}</option>
+				</select>
+			</label>
+		</div>
+		<div class="form-group url">
+			<label>
+				{translate key="user.url"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="url" id="url" value="{$url|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group phone">
+			<label>
+				{translate key="user.phone"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="phone" id="phone" value="{$phone|escape}" maxlength="255" required>
+			</label>
+		</div>
 		<div class="form-group affiliation">
 			<label>
 				{translate key="user.affiliation"}
 				<span class="form-control-required">*</span>
 				<span class="sr-only">{translate key="common.required"}</span>
 				<input class="form-control" type="text" name="affiliation[{$primaryLocale|escape}]" id="affiliation" value="{$affiliation.$primaryLocale|escape}" required>
+			</label>
+		</div>
+		<div class="form-group affiliation2">
+			<label>
+				{translate key="user.affiliation2"}
+				<input class="form-control" type="text" name="affiliation2[{$primaryLocale|escape}]" id="affiliation2" value="{$affiliation2.$primaryLocale|escape}">
+			</label>
+		</div>
+		<div class="form-group mailingAddress">
+			<label>
+				{translate key="user.mailingAddress"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="mailingAddress" id="mailingAddress" value="{$mailingAddress|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group city">
+			<label>
+				{translate key="common.city"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="city" id="city" value="{$city|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group state">
+			<label>
+				{translate key="common.state"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="state" id="state" value="{$state|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group zipCode">
+			<label>
+				{translate key="common.zipCode"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="zipCode" id="zipCode" value="{$zipCode|escape}" maxlength="255" required>
 			</label>
 		</div>
 		<div class="form-group country">
@@ -53,8 +118,8 @@
 				<span class="form-control-required">*</span>
 				<span class="sr-only">{translate key="common.required"}</span>
 			</div>
-				<select class="form-select" aria-label="couuntry" name="country" id="country" required>
-					<option></option>
+				<select class="form-control" aria-label="couuntry" name="country" id="country" required>
+					<option>{translate key="common.chooseOne"}</option>
 					{html_options options=$countries selected=$country}
 				</select>
 			</label>
@@ -63,9 +128,6 @@
 </fieldset>
 
 <fieldset class="login">
-	<legend>
-		{translate key="user.login"}
-	</legend>
 	<div class="fields">
 		<div class="form-group email">
 			<label>
