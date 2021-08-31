@@ -15,6 +15,7 @@ class CspThemePlugin extends ThemePlugin {
 		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
+		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
 
     }
 
@@ -34,6 +35,47 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
+	public function fetchTemplate($hookName, $args)
+	{
+        $request = Application::get()->getRequest();
+        $request = Application::get()->getRequest();
+		$context = $request->getContext();
+		$requestPath = $request->getRequestPath();
+		$baseUrl = $request->getBaseUrl();
+		$router = $request->getRouter();
+		$page = $router->_page;
+		$op = $router->_op;
+        $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
+		$params = array(
+			'contextId' => $context->getId(),
+			'orderBy' => 'seq',
+			'orderDirection' => 'ASC',
+			'count' => $count,
+			'offset' => 0,
+			'isPublished' => true
+        );
+
+		$issues = iterator_to_array(Services::get('issue')->getMany($params));
+		if (isset($issues[0])) {
+			$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
+			$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
+		} else {
+			$coverImageUrl = null;
+			$coverImageAltText = null;
+		}
+
+		$templateMgr = $args[0];
+        $templateMgr->assign(array(
+			'issues' => $issues,
+			'requestPath' => $requestPath,
+			'baseUrl' => $baseUrl,
+			'page' => $page,
+			'coverImageUrl' => $coverImageUrl,
+            'coverImageAltText' => $coverImageAltText,
+			'context' => $context,
+			'op' => $op
+		));
+	}
 
 	public function loadTemplateData($hookName, $args) {
 
