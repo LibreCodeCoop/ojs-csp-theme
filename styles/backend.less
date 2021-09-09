@@ -37,10 +37,6 @@ body{
 	font-weight: unset;
 }
 
-div[id^="dashboard"] .pkp_controllers_grid{
-	margin-bottom: unset;
-}
-
 .pkp_helpers_text_warn{
 	color: unset;
 }
@@ -87,6 +83,19 @@ div[id^="dashboard"] .pkp_controllers_grid thead th{
 
 div[id^="dashboard"] .pkp_controllers_grid th{
 	vertical-align: middle;
+}
+
+div[id^="dashboard"] .pkpListPanel__body{
+	table {
+		table-layout:fixed;
+			td {
+				word-wrap:break-word;
+				}
+		}
+}
+
+div[id^="dashboard"] .pkp_controllers_grid{
+	margin-bottom: unset;
 }
 
 #notificationsGrid table{
