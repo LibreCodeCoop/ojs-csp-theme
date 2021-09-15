@@ -52,9 +52,7 @@
 		<div class="form-group url">
 			<label>
 				{translate key="user.url"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="url" id="url" value="{$url|escape}" maxlength="255" required>
+				<input class="form-control" type="text" name="url" id="url" value="{$url|escape}" maxlength="255">
 			</label>
 		</div>
 		<div class="form-group phone">

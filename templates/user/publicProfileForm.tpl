@@ -58,8 +58,8 @@
 	{fbvFormSection title="user.biography" size=$fbvStyles.size.LARGE}
 		{fbvElement type="textarea" multilingual="true" name="biography" id="biography" rich=true value=$biography}
 	{/fbvFormSection}
-	{fbvFormSection title="user.url" size=$fbvStyles.size.LARGE required="true"}
-		{fbvElement type="text" name="userUrl" id="userUrl" value=$userUrl maxlength="255" required="true"}
+	{fbvFormSection title="user.url" size=$fbvStyles.size.LARGE}
+		{fbvElement type="text" name="userUrl" id="userUrl" value=$userUrl maxlength="255"}
 	{/fbvFormSection}
 	{fbvFormSection title="user.orcid" required="true" size=$fbvStyles.size.LARGE}
 		{fbvElement type="text" name="orcid" id="orcid" value=$orcid maxlength="37" required="true"}
