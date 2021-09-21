@@ -35,7 +35,9 @@
 
 				<div class="footer-page">
 					<div class="col-md-2">
-						<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l1.png">
+						<a href="https://creativecommons.org/licenses/by/2.0/br/">
+							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l1.png">
+						</a>
 					</div>
 
 					{if $pageFooter}
@@ -45,23 +47,34 @@
 					{/if}
 
 					<div class="col-md-2">
-						<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l8.png">
-					</div>
-
-					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l3.png">
+						<a href="https://www.abecbrasil.org.br/novo/">
+							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l8.png">
+						</a>
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l4.png">
+						<a href="https://portal.fiocruz.br">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l3.png">
+						</a>
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l5.png">
+						<a href="http://ensp.fiocruz.br/">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l4.png">
+						</a>
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l6.png">
+						<a href="https://www.gov.br/cnpq/pt-br">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l5.png">
+						</a>
 					</div>
 					<div class="col-md-1">
-						<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l7.png">
+						<a href="https://www.gov.br/capes/pt-br">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l6.png">
+						</a>
+					</div>
+					<div class="col-md-1">
+						<a href="http://www.faperj.br/">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l7.png">
+						</a>
 					</div>
 				</div>
 			</div> <!-- .row -->
