@@ -36,7 +36,7 @@
 				<div class="footer-page">
 					<div class="col-md-2">
 						<a href="https://creativecommons.org/licenses/by/2.0/br/">
-							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l1.png">
+							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/creativecommons.svg">
 						</a>
 					</div>
 
@@ -48,32 +48,32 @@
 
 					<div class="col-md-2">
 						<a href="https://www.abecbrasil.org.br/novo/">
-							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/footer-l8.png">
+							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/abec.svg">
 						</a>
 					</div>
 					<div class="col-md-1">
 						<a href="https://portal.fiocruz.br">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l3.png">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/portal-fiocruz.svg">
 						</a>
 					</div>
 					<div class="col-md-1">
 						<a href="http://ensp.fiocruz.br/">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l4.png">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/ensp.svg">
 						</a>
 					</div>
 					<div class="col-md-1">
 						<a href="https://www.gov.br/cnpq/pt-br">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l5.png">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/cnpq.svg">
 						</a>
 					</div>
 					<div class="col-md-1">
 						<a href="https://www.gov.br/capes/pt-br">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l6.png">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/capes.svg">
 						</a>
 					</div>
 					<div class="col-md-1">
 						<a href="http://www.faperj.br/">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/footer-l7.png">
+							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/faperj.svg">
 						</a>
 					</div>
 				</div>

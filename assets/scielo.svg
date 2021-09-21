@@ -1,0 +1,3412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW X7 -->
+
+<svg
+   xml:space="preserve"
+   width="72mm"
+   height="37mm"
+   version="1.1"
+   style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   viewBox="0 0 7200.9 3700.4625"
+   id="svg5546"
+   sodipodi:docname="scielo.svg"
+   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   id="namedview5548"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:document-units="mm"
+   showgrid="false"
+   inkscape:zoom="0.60628663"
+   inkscape:cx="-133.60018"
+   inkscape:cy="507.18585"
+   inkscape:window-width="1680"
+   inkscape:window-height="986"
+   inkscape:window-x="0"
+   inkscape:window-y="27"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Camada_x0020_1"
+   inkscape:snap-bbox="true"
+   inkscape:bbox-paths="false"
+   inkscape:bbox-nodes="false"
+   inkscape:snap-bbox-edge-midpoints="false"
+   inkscape:snap-bbox-midpoints="false"
+   width="74mm" />
+ <defs
+   id="defs36">
+  <style
+   type="text/css"
+   id="style2">
+   <![CDATA[
+    .str2 {stroke:#E88734;stroke-width:141.127}
+    .str4 {stroke:#A6CE53;stroke-width:123.485}
+    .str26 {stroke:#373435;stroke-width:21.1726}
+    .str18 {stroke:#96989A;stroke-width:26.4533}
+    .str3 {stroke:#FEFEFE;stroke-width:105.843}
+    .str7 {stroke:black;stroke-width:11.1514}
+    .str10 {stroke:black;stroke-width:8.9311}
+    .str21 {stroke:#E6E7E8;stroke-width:35.2744}
+    .str5 {stroke:#201E1E;stroke-width:35.2744}
+    .str22 {stroke:#D2D3D5;stroke-width:20.0025}
+    .str27 {stroke:#A9ABAE;stroke-width:20.0025}
+    .str25 {stroke:#373435;stroke-width:20.0025}
+    .str1 {stroke:#E88734;stroke-width:20.0025}
+    .str0 {stroke:#BDBFC1;stroke-width:17.6322}
+    .str19 {stroke:#4B4B4D;stroke-width:17.6322}
+    .str23 {stroke:#FEFEFE;stroke-width:7.62094}
+    .str17 {stroke:#96989A;stroke-width:7.62094}
+    .str20 {stroke:#4B4B4D;stroke-width:7.62094}
+    .str8 {stroke:black;stroke-width:11.1514;stroke-linejoin:round}
+    .str9 {stroke:black;stroke-width:0.0400049;stroke-linecap:round;stroke-linejoin:round}
+    .str6 {stroke:#282828;stroke-width:44.2055}
+    .str11 {stroke:#373435;stroke-width:18.7423}
+    .str13 {stroke:#373435;stroke-width:3.50043}
+    .str14 {stroke:#373435;stroke-width:3.51043}
+    .str12 {stroke:#373435;stroke-width:1.01012}
+    .str15 {stroke:#373435;stroke-width:34.6143}
+    .str16 {stroke:#373435;stroke-width:34.6143}
+    .str24 {stroke:#FEFEFE;stroke-width:53.0566}
+    .fil3 {fill:none}
+    .fil23 {fill:none;fill-rule:nonzero}
+    .fil20 {fill:#FEFEFE}
+    .fil6 {fill:#FEFEFE}
+    .fil0 {fill:#E6E7E8}
+    .fil30 {fill:#848688}
+    .fil34 {fill:#606062}
+    .fil31 {fill:#4B4B4D}
+    .fil27 {fill:#373435}
+    .fil32 {fill:#373435}
+    .fil22 {fill:#ACB3AC}
+    .fil21 {fill:#282828}
+    .fil26 {fill:#201E1E}
+    .fil25 {fill:#201E1E}
+    .fil11 {fill:#004B92}
+    .fil41 {fill:#12AED7}
+    .fil38 {fill:#2B5492}
+    .fil39 {fill:#2F691D}
+    .fil7 {fill:#367372}
+    .fil18 {fill:#709D21}
+    .fil37 {fill:#8FC73E}
+    .fil40 {fill:#A34963}
+    .fil43 {fill:#D91F2C}
+    .fil19 {fill:#E3F1E0}
+    .fil29 {fill:#E88734}
+    .fil16 {fill:#EF9E57}
+    .fil15 {fill:#EF9E57}
+    .fil35 {fill:#F19317}
+    .fil9 {fill:#F1F1F1}
+    .fil36 {fill:#F3BF07}
+    .fil13 {fill:#FDFDFD}
+    .fil12 {fill:#FEFEFE}
+    .fil5 {fill:#FEFEFE;fill-rule:nonzero}
+    .fil17 {fill:#96989A;fill-rule:nonzero}
+    .fil2 {fill:#4B4B4D;fill-rule:nonzero}
+    .fil14 {fill:#373435;fill-rule:nonzero}
+    .fil4 {fill:#373435;fill-rule:nonzero}
+    .fil33 {fill:#201E1E;fill-rule:nonzero}
+    .fil42 {fill:#D91F2C;fill-rule:nonzero}
+    .fil10 {fill:#DADCE0;fill-rule:nonzero}
+    .fil1 {fill:#E88734;fill-rule:nonzero}
+    .fil24 {fill:black;fill-rule:nonzero}
+    .fil28 {fill:white;fill-rule:nonzero}
+    .fil8 {fill:#D2D3D5;fill-opacity:0.458824}
+   ]]>
+  </style>
+    <clipPath
+   id="id0">
+     <path
+   d="M 24,2683 H 36167 V 23577 H 24 Z"
+   id="path4" />
+    </clipPath>
+    <mask
+   id="id1">
+  <linearGradient
+   id="id2"
+   gradientUnits="userSpaceOnUse"
+   x1="-33.794201"
+   y1="5327.6299"
+   x2="36205.602"
+   y2="4090.3">
+   <stop
+   offset="0"
+   style="stop-opacity:1; stop-color:white"
+   id="stop7" />
+   <stop
+   offset="0.980392"
+   style="stop-opacity:-95.8784; stop-color:white"
+   id="stop9" />
+   <stop
+   offset="1"
+   style="stop-opacity:0; stop-color:white"
+   id="stop11" />
+  </linearGradient>
+     <rect
+   style="fill:url(#id2)"
+   x="15"
+   y="2671"
+   width="36142"
+   height="4077"
+   id="rect14" />
+    </mask>
+    <mask
+   id="id3">
+  <linearGradient
+   id="id4"
+   gradientUnits="userSpaceOnUse"
+   x1="15052.7"
+   y1="16018.4"
+   x2="36353.301"
+   y2="15291.1">
+   <stop
+   offset="0"
+   style="stop-opacity:1; stop-color:white"
+   id="stop17" />
+   <stop
+   offset="0.988235"
+   style="stop-opacity:-95.8784; stop-color:white"
+   id="stop19" />
+   <stop
+   offset="1"
+   style="stop-opacity:0; stop-color:white"
+   id="stop21" />
+  </linearGradient>
+     <rect
+   style="fill:url(#id4)"
+   x="15244"
+   y="9384"
+   width="20918"
+   height="12542"
+   id="rect24" />
+    </mask>
+    <clipPath
+   id="id5">
+     <rect
+   x="4123"
+   y="215"
+   width="771"
+   height="535"
+   id="rect27" />
+    </clipPath>
+     <clipPath
+   id="id6">
+      <rect
+   x="4123"
+   y="215"
+   width="771"
+   height="535"
+   id="rect30" />
+     </clipPath>
+     <clipPath
+   id="id7">
+      <path
+   d="m 28193,30240 h 7219 v 5816 h -7219 z"
+   id="path33" />
+     </clipPath>
+ </defs>
+ <g
+   id="Camada_x0020_1"
+   inkscape:label="Camada 1"
+   inkscape:groupmode="layer">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <g
+   id="_1660824352032"
+   transform="translate(0,317.53969)">
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <rect
+   class="fil29"
+   x="115.84668"
+   y="2522.8467"
+   width="6976"
+   height="557"
+   id="rect5404"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <rect
+   class="fil3 str25"
+   x="115.84668"
+   y="115.84662"
+   width="6976"
+   height="2964"
+   id="rect5406"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil32"
+   d="m 2693.8466,1831.8466 c 435,-462 1182,-2337.00004 217,-1489.00004 -110,97 -228,246 -381,415.00004 696,-1048.00004 1029,-966.00004 1007,-564.00004 -7,129 -39,300 -111,477.99998 -186,460.00006 -550,1000.00006 -732,1160.00006 z"
+   id="path5408"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <ellipse
+   class="fil32"
+   cx="2505.8467"
+   cy="803.84656"
+   rx="36"
+   ry="35"
+   id="ellipse5410"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <ellipse
+   class="fil0"
+   transform="matrix(0.26970479,0.96294305,-0.96868013,0.24831192,0,0)"
+   id="circle5412"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   cx="1380.5449"
+   cy="-2196.1914"
+   rx="14.407736"
+   ry="14.971009"
+   style="stroke-width:0.0941453" />
+   <path
+   class="fil4"
+   d="m 1645.8466,2241.8466 v -81 h 8 c 4,25 12,45 22,58 11,13 24,20 39,20 11,0 20,-3 27,-11 7,-7 11,-16 11,-27 0,-11 -3,-20 -9,-27 -7,-7 -18,-14 -33,-21 -28,-12 -46,-22 -53,-31 -8,-9 -12,-20 -12,-33 0,-16 6,-29 16,-40 11,-10 24,-15 40,-15 10,0 20,3 29,9 10,6 15,9 15,9 2,0 4,-1 5,-3 2,-2 3,-5 5,-9 h 7 l 1,68 h -8 c -3,-22 -10,-38 -19,-50 -10,-11 -21,-17 -34,-17 -11,0 -19,3 -26,10 -7,6 -10,15 -10,25 0,17 13,31 41,43 5,2 9,4 12,5 17,8 30,17 39,27 8,10 12,22 12,36 0,16 -5,30 -16,42 -11,11 -25,17 -41,17 -12,0 -23,-3 -33,-10 -10,-7 -16,-10 -16,-10 -2,0 -4,1 -6,4 -2,3 -4,7 -6,12 z"
+   id="path5414"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5416"
+   class="fil4"
+   d="m 1893.8466,2196.8466 c -3,15 -9,26 -17,35 -9,8 -19,13 -30,13 -15,0 -28,-7 -38,-21 -10,-14 -15,-31 -15,-53 0,-23 6,-41 16,-55 11,-14 25,-21 41,-21 11,0 20,4 28,12 8,8 12,17 12,27 0,6 -2,11 -6,15 -3,4 -7,6 -12,6 -5,0 -9,-2 -12,-4 -3,-3 -4,-7 -4,-12 0,-3 2,-7 5,-13 4,-5 6,-9 6,-12 0,-3 -1,-6 -5,-9 -3,-3 -7,-4 -12,-4 -10,0 -18,5 -22,15 -4,10 -6,28 -6,53 0,25 2,42 6,52 5,10 12,15 22,15 8,0 15,-3 22,-10 6,-7 11,-16 14,-29 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5418"
+   class="fil4"
+   d="m 1906.8466,2241.8466 v -7 h 5 c 6,0 10,-1 11,-3 2,-2 3,-6 3,-13 v -98 c 0,-8 -1,-12 -3,-14 -1,-2 -5,-3 -11,-3 h -5 v -6 h 6 c 6,0 12,0 18,0 7,-1 13,-1 21,-2 v 123 c 0,7 0,11 2,13 2,2 6,3 12,3 h 4 v 7 z m 15,-191 c 0,-4 1,-8 5,-11 3,-4 6,-5 11,-5 4,0 8,1 11,5 3,3 4,7 4,11 0,4 -1,8 -4,11 -3,3 -7,5 -11,5 -5,0 -8,-2 -11,-5 -3,-3 -5,-7 -5,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5420"
+   class="fil4"
+   d="m 2010.8466,2161.8466 h 43 c 0,-2 0,-4 0,-6 0,-3 0,-5 0,-6 0,-18 -2,-30 -5,-38 -4,-7 -9,-11 -17,-11 -8,0 -13,4 -16,11 -3,7 -5,21 -5,41 z m 71,37 c -2,15 -8,26 -16,34 -8,8 -18,12 -31,12 -15,0 -28,-7 -38,-20 -9,-14 -14,-32 -14,-54 0,-22 4,-40 14,-55 9,-14 21,-21 35,-21 15,0 27,6 36,19 9,13 13,31 13,53 v 2 h -70 c 0,1 0,3 0,5 0,3 0,5 0,7 0,19 2,34 7,43 5,9 12,13 22,13 8,0 16,-3 22,-10 6,-6 10,-16 12,-28 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5422"
+   class="fil4"
+   d="m 2095.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -98 c 0,-7 -1,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 c 8,0 16,0 23,0 7,-1 13,-1 19,-2 v 27 c 3,-9 8,-16 15,-21 6,-5 13,-7 21,-7 11,0 20,4 24,11 5,8 8,20 8,38 v 75 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 h -60 v -7 h 2 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -91 c 0,-8 -1,-15 -3,-18 -2,-4 -6,-6 -11,-6 -7,0 -14,5 -19,14 -5,9 -7,22 -7,37 v 64 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5424"
+   class="fil4"
+   d="m 2251.8466,2108.8466 h -18 v -11 c 11,-1 19,-6 25,-15 6,-9 9,-23 11,-40 h 7 v 55 h 27 v 11 h -27 v 100 c 0,8 1,14 3,17 1,4 4,5 7,5 4,0 7,-2 9,-6 2,-5 3,-12 3,-22 v -2 h 7 v 6 c 0,12 -3,22 -7,28 -5,7 -12,10 -21,10 -9,0 -16,-3 -20,-10 -4,-7 -6,-20 -6,-38 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5426"
+   class="fil4"
+   d="m 2321.8466,2241.8466 v -7 h 5 c 6,0 10,-1 11,-3 2,-2 3,-6 3,-13 v -98 c 0,-8 -1,-12 -3,-14 -1,-2 -5,-3 -11,-3 h -5 v -6 h 6 c 5,0 12,0 18,0 7,-1 13,-1 21,-2 v 123 c 0,7 0,11 2,13 2,2 6,3 11,3 h 5 v 7 z m 15,-191 c 0,-4 1,-8 4,-11 3,-4 7,-5 12,-5 4,0 8,1 11,5 3,3 4,7 4,11 0,4 -1,8 -4,11 -3,3 -7,5 -11,5 -5,0 -8,-2 -11,-5 -4,-3 -5,-7 -5,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5428"
+   class="fil4"
+   d="m 2439.8466,2218.8466 c 0,7 1,11 3,13 1,2 5,3 11,3 h 5 v 7 h -63 v -7 h 5 c 5,0 9,-1 11,-3 2,-2 2,-6 2,-13 v -111 h -18 v -10 h 18 c 0,-1 0,-2 0,-3 0,-1 0,-2 0,-4 0,-19 5,-33 14,-43 10,-9 24,-14 42,-14 13,0 24,2 33,7 9,5 13,11 13,18 0,4 -2,8 -5,10 -2,3 -6,5 -10,5 -4,0 -8,-1 -11,-4 -3,-2 -4,-5 -4,-9 0,-2 1,-4 2,-7 1,-3 2,-4 2,-5 0,-2 -2,-4 -6,-6 -3,-1 -8,-2 -13,-2 -11,0 -19,4 -24,11 -5,7 -7,20 -7,37 v 9 h 32 c 8,0 15,0 22,0 7,-1 15,-1 22,-2 v 123 c 0,7 0,11 2,13 2,2 6,3 12,3 h 4 v 7 h -61 v -7 h 3 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -95 c 0,-7 -1,-11 -2,-13 -2,-2 -6,-3 -12,-3 h -36 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5430"
+   class="fil4"
+   d="m 2647.8466,2196.8466 c -3,15 -9,26 -18,35 -8,8 -18,13 -29,13 -16,0 -28,-7 -38,-21 -10,-14 -15,-31 -15,-53 0,-23 5,-41 16,-55 11,-14 24,-21 41,-21 10,0 19,4 27,12 8,8 12,17 12,27 0,6 -2,11 -5,15 -3,4 -8,6 -13,6 -4,0 -8,-2 -11,-4 -3,-3 -5,-7 -5,-12 0,-3 2,-7 6,-13 4,-5 6,-9 6,-12 0,-3 -2,-6 -5,-9 -3,-3 -8,-4 -12,-4 -11,0 -18,5 -22,15 -4,10 -7,28 -7,53 0,25 3,42 7,52 4,10 12,15 22,15 8,0 15,-3 21,-10 6,-7 11,-16 14,-29 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5432"
+   class="fil4"
+   d="m 2721.8466,2241.8466 v -7 h 9 c 7,0 11,-2 13,-4 3,-2 4,-6 4,-13 v -157 c 0,-6 -1,-11 -4,-13 -2,-2 -6,-4 -12,-4 h -1 -9 v -6 h 144 v 65 h -7 c -3,-22 -8,-37 -17,-46 -9,-8 -23,-13 -42,-13 -11,0 -18,1 -21,3 -3,2 -4,7 -4,15 v 69 h 5 c 14,0 25,-3 31,-8 6,-6 10,-15 11,-29 h 7 v 84 h -7 c 0,-14 -4,-24 -10,-31 -6,-6 -16,-10 -29,-10 -1,0 -4,0 -8,1 0,0 0,0 0,0 v 74 c 0,10 1,17 3,19 2,2 8,4 19,4 20,0 35,-5 45,-14 10,-10 16,-26 20,-49 h 6 l -3,70 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5434"
+   class="fil4"
+   d="m 2885.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -158 c 0,-7 -1,-12 -2,-13 -2,-2 -6,-3 -12,-3 h -4 v -6 h 5 c 6,0 12,-1 18,-1 7,0 14,-1 21,-2 v 183 c 0,7 1,11 2,13 2,2 6,3 12,3 h 4 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5436"
+   class="fil4"
+   d="m 2989.8466,2161.8466 h 42 c 0,-2 0,-4 0,-6 0,-3 0,-5 0,-6 0,-18 -1,-30 -5,-38 -3,-7 -9,-11 -17,-11 -7,0 -12,4 -16,11 -3,7 -4,21 -4,41 z m 70,37 c -2,15 -7,26 -15,34 -8,8 -19,12 -31,12 -16,0 -28,-7 -38,-20 -10,-14 -15,-32 -15,-54 0,-22 5,-40 14,-55 10,-14 22,-21 36,-21 14,0 26,6 35,19 9,13 14,31 14,53 v 2 h -70 c 0,1 0,3 0,5 0,3 0,5 0,7 0,19 2,34 7,43 4,9 12,13 22,13 8,0 15,-3 21,-10 6,-6 10,-16 13,-28 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5438"
+   class="fil4"
+   d="m 3090.8466,2108.8466 h -18 v -11 c 11,-1 19,-6 25,-15 6,-9 10,-23 11,-40 h 8 v 55 h 26 v 11 h -26 v 100 c 0,8 0,14 2,17 2,4 4,5 8,5 4,0 6,-2 8,-6 2,-5 3,-12 3,-22 v -2 h 7 v 6 c 0,12 -2,22 -7,28 -5,7 -12,10 -21,10 -9,0 -16,-3 -20,-10 -4,-7 -6,-20 -6,-38 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5440"
+   class="fil4"
+   d="m 3160.8466,2241.8466 v -7 h 5 c 6,0 9,-1 11,-3 2,-2 3,-6 3,-13 v -98 c 0,-8 -1,-12 -3,-14 -2,-2 -5,-3 -11,-3 h -5 v -6 c 9,0 16,0 23,0 7,-1 14,-1 20,-2 v 27 c 3,-9 8,-15 13,-20 6,-5 12,-8 19,-8 7,0 12,2 17,7 4,4 7,9 7,15 0,6 -2,10 -6,14 -3,4 -8,6 -13,6 -5,0 -8,-1 -11,-4 -3,-3 -5,-6 -5,-10 0,-4 2,-7 5,-10 3,-3 5,-5 5,-6 0,-1 -1,-2 -2,-2 0,-1 -1,-1 -3,-1 -6,0 -12,5 -17,14 -5,10 -8,22 -8,37 v 64 c 0,7 1,11 3,13 2,2 5,3 11,3 h 7 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5442"
+   class="fil4"
+   d="m 3318.8466,2100.8466 c -9,0 -15,5 -19,15 -3,10 -5,28 -5,54 0,26 2,44 5,54 4,10 10,15 19,15 9,0 15,-5 19,-15 4,-11 6,-28 6,-54 0,-26 -2,-44 -6,-54 -4,-10 -10,-15 -19,-15 z m 0,-6 c 14,0 27,7 37,22 11,14 16,32 16,53 0,21 -5,38 -16,53 -10,14 -23,22 -37,22 -14,0 -27,-8 -37,-22 -11,-15 -16,-32 -16,-53 0,-21 5,-39 16,-53 10,-15 23,-22 37,-22 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5444"
+   class="fil4"
+   d="m 3386.8466,2241.8466 v -7 h 5 c 5,0 9,-1 11,-3 2,-2 2,-6 2,-13 v -98 c 0,-7 0,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 c 8,0 16,0 23,0 7,-1 13,-1 19,-2 v 27 c 3,-9 8,-16 15,-21 6,-5 14,-7 21,-7 12,0 20,4 25,11 5,8 7,20 7,38 v 75 c 0,7 1,11 3,13 2,2 5,3 11,3 h 4 v 7 h -60 v -7 h 3 c 5,0 9,-1 11,-3 2,-2 2,-6 2,-13 v -91 c 0,-8 -1,-15 -3,-18 -2,-4 -6,-6 -10,-6 -8,0 -15,5 -20,14 -5,9 -7,22 -7,37 v 64 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5446"
+   class="fil4"
+   d="m 3526.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -98 c 0,-8 -1,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 h 5 c 6,0 12,0 18,0 7,-1 14,-1 21,-2 v 123 c 0,7 1,11 2,13 2,2 6,3 12,3 h 4 v 7 z m 14,-191 c 0,-4 2,-8 5,-11 3,-4 6,-5 11,-5 4,0 8,1 11,5 3,3 5,7 5,11 0,4 -2,8 -5,11 -3,3 -7,5 -11,5 -4,0 -8,-2 -11,-5 -3,-3 -5,-7 -5,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5448"
+   class="fil4"
+   d="m 3702.8466,2196.8466 c -3,15 -9,26 -18,35 -8,8 -18,13 -29,13 -16,0 -29,-7 -38,-21 -10,-14 -15,-31 -15,-53 0,-23 5,-41 16,-55 10,-14 24,-21 41,-21 10,0 19,4 27,12 8,8 12,17 12,27 0,6 -2,11 -5,15 -3,4 -8,6 -13,6 -5,0 -8,-2 -11,-4 -3,-3 -5,-7 -5,-12 0,-3 2,-7 6,-13 4,-5 6,-9 6,-12 0,-3 -2,-6 -5,-9 -4,-3 -8,-4 -13,-4 -10,0 -17,5 -21,15 -5,10 -7,28 -7,53 0,25 2,42 7,52 4,10 11,15 22,15 8,0 15,-3 21,-10 6,-7 11,-16 14,-29 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5450"
+   class="fil4"
+   d="m 3854.8466,2037.8466 v 6 h -9 c -7,0 -11,1 -13,4 -3,2 -4,6 -4,13 v 151 c 0,10 2,17 4,19 2,2 8,4 18,4 16,0 30,-7 40,-19 11,-12 17,-31 21,-55 h 6 l -2,81 h -139 v -7 h 8 c 7,0 12,-1 14,-4 2,-2 3,-6 3,-13 v -157 c 0,-7 -1,-11 -3,-13 -2,-3 -7,-4 -14,-4 h -8 v -6 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5452"
+   class="fil4"
+   d="m 3933.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 2,-2 2,-6 2,-13 v -98 c 0,-8 0,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 h 5 c 6,0 12,0 18,0 7,-1 14,-1 21,-2 v 123 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 z m 14,-191 c 0,-4 2,-8 5,-11 3,-4 7,-5 11,-5 4,0 8,1 11,5 3,3 5,7 5,11 0,4 -2,8 -5,11 -3,3 -7,5 -11,5 -4,0 -8,-2 -11,-5 -3,-3 -5,-7 -5,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5454"
+   class="fil4"
+   d="m 4071.8466,2104.8466 c -8,0 -14,6 -19,19 -4,12 -6,30 -6,53 0,21 2,36 5,46 4,9 10,14 19,14 8,0 14,-5 17,-14 3,-10 5,-28 5,-53 0,-24 -2,-41 -5,-50 -3,-10 -8,-15 -16,-15 z m -50,-44 c 0,-7 -1,-12 -3,-13 -1,-2 -5,-3 -11,-3 h -5 v -6 h 5 c 6,0 12,-1 19,-1 6,0 13,-1 20,-2 v 86 c 4,-8 8,-15 13,-19 5,-5 11,-7 18,-7 12,0 22,7 31,21 8,13 12,31 12,53 0,22 -5,39 -14,53 -9,14 -21,21 -35,21 -10,0 -20,-6 -29,-17 -2,-4 -4,-5 -5,-5 0,0 -1,0 -2,1 0,1 -1,2 -3,5 l -6,15 h -5 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5456"
+   class="fil4"
+   d="m 4136.8466,2241.8466 v -7 h 5 c 6,0 9,-1 11,-3 2,-2 3,-6 3,-13 v -98 c 0,-8 -1,-12 -3,-14 -2,-2 -5,-3 -11,-3 h -5 v -6 c 9,0 16,0 23,0 7,-1 14,-1 20,-2 v 27 c 3,-9 8,-15 13,-20 6,-5 13,-8 19,-8 7,0 12,2 17,7 4,4 7,9 7,15 0,6 -2,10 -6,14 -3,4 -8,6 -13,6 -5,0 -8,-1 -11,-4 -3,-3 -5,-6 -5,-10 0,-4 2,-7 5,-10 3,-3 5,-5 5,-6 0,-1 -1,-2 -1,-2 -1,-1 -2,-1 -4,-1 -6,0 -12,5 -17,14 -5,10 -8,22 -8,37 v 64 c 0,7 1,11 3,13 2,2 5,3 11,3 h 7 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5458"
+   class="fil4"
+   d="m 4313.8466,2152.8466 c -4,4 -9,7 -16,10 -7,3 -11,5 -13,6 -5,3 -8,7 -10,12 -2,4 -2,12 -2,24 0,9 1,16 4,21 3,4 7,7 12,7 7,0 13,-4 18,-12 5,-8 7,-18 7,-30 z m 1,66 c -4,8 -9,14 -15,18 -6,5 -13,7 -20,7 -11,0 -19,-4 -26,-11 -7,-8 -11,-18 -11,-29 0,-11 3,-20 9,-26 6,-7 16,-13 31,-18 h 2 c 13,-5 23,-9 29,-14 v -19 c 0,-9 -2,-16 -6,-20 -4,-5 -10,-7 -18,-7 -5,0 -10,1 -13,4 -4,2 -6,4 -6,8 0,1 2,3 7,5 5,3 8,7 8,12 0,5 -2,8 -5,11 -3,3 -7,5 -12,5 -5,0 -9,-2 -12,-6 -4,-3 -5,-8 -5,-13 0,-10 4,-17 12,-23 8,-5 18,-8 31,-8 16,0 27,3 34,10 7,6 11,17 11,33 v 78 c 0,6 0,11 1,14 2,2 3,4 6,4 3,0 6,-2 7,-7 1,-4 2,-11 2,-22 h 7 v 6 c 0,11 -2,19 -6,25 -4,5 -10,8 -18,8 -6,0 -12,-2 -16,-7 -4,-4 -7,-10 -8,-18 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5460"
+   class="fil4"
+   d="m 4373.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -98 c 0,-8 -1,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 c 8,0 16,0 23,0 7,-1 13,-1 19,-2 v 27 c 4,-9 8,-15 14,-20 6,-5 12,-8 19,-8 6,0 12,2 16,7 5,4 7,9 7,15 0,6 -2,10 -5,14 -4,4 -8,6 -14,6 -4,0 -8,-1 -11,-4 -3,-3 -4,-6 -4,-10 0,-4 1,-7 4,-10 4,-3 5,-5 5,-6 0,-1 0,-2 -1,-2 -1,-1 -2,-1 -3,-1 -7,0 -13,5 -18,14 -5,10 -7,22 -7,37 v 64 c 0,7 1,11 2,13 2,2 6,3 12,3 h 7 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5462"
+   class="fil4"
+   d="m 4542.8466,2244.8466 -46,-122 c -3,-8 -6,-13 -8,-15 -3,-2 -6,-3 -11,-3 v -7 h 57 v 7 h -2 c -5,0 -8,0 -10,1 -2,2 -3,4 -3,6 0,2 0,3 0,5 1,1 1,2 2,3 l 32,87 22,-80 c 0,-2 1,-5 1,-7 0,-2 1,-4 1,-6 0,-4 -1,-6 -4,-7 -2,-2 -6,-2 -12,-2 v -7 h 43 v 7 h -2 c -5,0 -8,1 -12,5 -3,3 -5,8 -7,16 l -33,118 c -6,20 -13,36 -20,46 -8,10 -17,15 -26,15 -8,0 -15,-2 -20,-7 -5,-5 -8,-12 -8,-19 0,-6 2,-11 6,-15 3,-4 7,-6 12,-6 5,0 9,2 12,5 3,4 5,8 5,12 0,3 -1,5 -3,8 -2,2 -4,4 -7,5 -1,0 -2,1 -3,1 -4,1 -5,2 -5,4 0,2 1,3 3,4 2,1 5,2 8,2 8,0 15,-5 21,-13 6,-9 12,-23 17,-41 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5464"
+   class="fil4"
+   d="m 4786.8466,2138.8466 c 0,-34 -4,-59 -11,-75 -6,-16 -17,-24 -32,-24 -14,0 -25,8 -32,24 -7,16 -10,41 -10,75 0,35 3,60 10,76 7,16 18,25 32,25 15,0 25,-9 32,-25 7,-16 11,-41 11,-76 z m -43,-106 c 21,0 39,10 53,30 14,19 21,45 21,76 0,32 -7,57 -21,77 -14,20 -32,30 -53,30 -21,0 -39,-10 -53,-29 -13,-20 -20,-46 -20,-78 0,-31 7,-57 20,-77 14,-19 32,-29 53,-29 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5466"
+   class="fil4"
+   d="m 4833.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -98 c 0,-7 -1,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 c 8,0 16,0 23,0 7,-1 13,-1 19,-2 v 27 c 3,-9 8,-16 15,-21 6,-5 13,-7 21,-7 11,0 20,4 24,11 5,8 8,20 8,38 v 75 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 h -60 v -7 h 2 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -91 c 0,-8 -1,-15 -3,-18 -2,-4 -6,-6 -11,-6 -7,0 -14,5 -19,14 -5,9 -7,22 -7,37 v 64 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5468"
+   class="fil4"
+   d="m 4971.8466,2241.8466 v -7 h 5 c 5,0 9,-1 11,-3 2,-2 2,-6 2,-13 v -158 c 0,-7 0,-12 -2,-13 -2,-2 -6,-3 -11,-3 h -5 v -6 h 5 c 6,0 12,-1 19,-1 6,0 13,-1 20,-2 v 183 c 0,7 1,11 3,13 1,2 5,3 11,3 h 4 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5470"
+   class="fil4"
+   d="m 5047.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -98 c 0,-8 -1,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 h 5 c 6,0 12,0 18,0 7,-1 14,-1 21,-2 v 123 c 0,7 1,11 2,13 2,2 6,3 12,3 h 4 v 7 z m 14,-191 c 0,-4 2,-8 5,-11 3,-4 6,-5 11,-5 4,0 8,1 11,5 3,3 5,7 5,11 0,4 -2,8 -5,11 -3,3 -7,5 -11,5 -4,0 -8,-2 -11,-5 -3,-3 -5,-7 -5,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5472"
+   class="fil4"
+   d="m 5122.8466,2241.8466 v -7 h 4 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -98 c 0,-7 -1,-12 -2,-14 -2,-2 -6,-3 -12,-3 h -4 v -6 c 8,0 16,0 23,0 7,-1 13,-1 19,-2 v 27 c 3,-9 8,-16 14,-21 7,-5 14,-7 22,-7 11,0 19,4 24,11 5,8 8,20 8,38 v 75 c 0,7 1,11 2,13 2,2 6,3 12,3 h 4 v 7 h -60 v -7 h 2 c 6,0 10,-1 12,-3 1,-2 2,-6 2,-13 v -91 c 0,-8 -1,-15 -3,-18 -2,-4 -6,-6 -11,-6 -8,0 -14,5 -19,14 -5,9 -7,22 -7,37 v 64 c 0,7 1,11 2,13 2,2 6,3 12,3 h 4 v 7 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5474"
+   class="fil4"
+   d="m 5290.8466,2161.8466 h 42 c 0,-2 0,-4 0,-6 0,-3 0,-5 0,-6 0,-18 -1,-30 -5,-38 -3,-7 -9,-11 -17,-11 -7,0 -12,4 -16,11 -3,7 -4,21 -4,41 z m 70,37 c -2,15 -7,26 -15,34 -8,8 -19,12 -31,12 -16,0 -28,-7 -38,-20 -10,-14 -15,-32 -15,-54 0,-22 5,-40 14,-55 10,-14 21,-21 35,-21 15,0 27,6 36,19 9,13 14,31 14,53 v 2 h -70 c 0,1 0,3 0,5 0,3 0,5 0,7 0,19 2,34 7,43 4,9 12,13 22,13 8,0 15,-3 21,-10 6,-6 10,-16 13,-28 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil4"
+   d="m 4305.8466,1317.8466 c 2,0 4,0 6,0 2,0 5,0 9,0 26,0 45,-5 56,-14 12,-9 19,-25 23,-49 3,-22 2,-37 -5,-46 -6,-8 -20,-12 -41,-12 -13,0 -22,1 -26,4 -3,3 -6,9 -7,19 z m -2,9 -15,104 c -2,14 -2,22 0,26 3,3 9,5 19,5 24,0 41,-5 53,-16 11,-10 18,-27 22,-52 4,-25 1,-42 -9,-52 -9,-10 -27,-16 -55,-16 -4,0 -7,1 -9,1 -2,0 -4,0 -6,0 z m -94,144 1,-9 h 12 c 9,0 16,-2 19,-5 4,-3 7,-10 8,-19 l 33,-218 c 1,-9 1,-15 -2,-18 -2,-4 -7,-5 -16,-5 h -2 -12 l 1,-9 h 113 c 28,0 49,5 62,16 13,11 18,27 15,49 -2,16 -11,31 -26,44 -15,13 -33,21 -55,24 24,5 41,14 52,27 11,13 16,28 13,47 -2,12 -7,24 -15,35 -9,11 -19,20 -31,27 -9,5 -19,8 -30,10 -11,3 -26,4 -44,4 z"
+   id="path5476"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5478"
+   class="fil4"
+   d="m 4440.8466,1470.8466 1,-10 h 7 c 8,0 13,-1 16,-3 3,-3 5,-9 7,-19 l 20,-136 c 2,-10 1,-17 -1,-19 -2,-3 -7,-4 -15,-4 h -6 l 1,-8 c 12,0 23,-1 32,-1 10,-1 19,-2 28,-3 l -6,38 c 6,-12 14,-21 23,-28 9,-7 19,-10 28,-10 9,0 16,2 22,8 5,6 7,14 6,22 -1,8 -5,14 -11,19 -5,6 -12,8 -19,8 -7,0 -12,-2 -15,-5 -4,-4 -5,-9 -4,-15 1,-4 3,-9 8,-13 5,-4 8,-7 8,-8 1,-2 0,-3 -1,-4 -1,0 -2,-1 -4,-1 -9,0 -18,7 -27,20 -9,13 -15,30 -19,51 l -13,89 c -1,10 -1,16 1,19 2,2 7,3 15,3 h 10 l -2,10 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5480"
+   class="fil4"
+   d="m 4704.8466,1347.8466 c -6,5 -14,9 -24,13 -10,5 -17,8 -19,9 -8,4 -13,9 -16,16 -4,6 -7,18 -9,34 -2,13 -2,22 1,29 3,6 9,10 16,10 10,0 19,-6 27,-17 8,-11 14,-25 16,-42 z m -12,91 c -7,11 -15,20 -24,26 -10,6 -20,9 -30,9 -15,0 -26,-5 -34,-16 -8,-10 -11,-24 -9,-39 3,-16 9,-28 18,-37 9,-9 25,-17 47,-24 l 2,-1 c 20,-6 34,-13 44,-19 l 4,-27 c 2,-13 1,-22 -4,-28 -4,-6 -12,-9 -24,-9 -7,0 -14,2 -19,5 -6,3 -9,7 -10,11 0,2 3,5 9,8 6,4 9,9 8,17 -1,6 -4,11 -9,15 -5,4 -11,6 -17,6 -7,0 -13,-2 -16,-7 -4,-5 -5,-12 -4,-19 2,-13 9,-24 21,-31 12,-8 27,-12 45,-12 22,0 37,4 46,13 8,10 10,25 7,47 l -16,109 c -2,8 -2,14 -1,18 1,4 4,6 7,6 5,0 8,-3 11,-9 3,-6 6,-16 8,-31 h 9 l -1,9 c -2,15 -7,26 -13,33 -7,8 -16,12 -27,12 -9,0 -16,-3 -21,-9 -5,-6 -7,-15 -7,-26 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5482"
+   class="fil4"
+   d="m 4779.8466,1470.8466 14,-83 h 10 c -2,23 2,41 11,56 9,15 21,22 36,22 10,0 18,-3 25,-10 8,-6 12,-14 14,-23 1,-9 -1,-16 -5,-23 -5,-6 -14,-14 -29,-23 -2,-1 -6,-3 -10,-5 -32,-19 -46,-39 -43,-60 2,-14 9,-27 22,-38 12,-11 25,-17 39,-17 10,0 20,3 29,10 10,6 15,10 18,10 2,0 4,-1 6,-4 1,-2 2,-6 3,-11 h 10 l -12,73 h -10 c 0,-21 -4,-37 -12,-49 -8,-12 -18,-18 -31,-18 -9,0 -17,3 -24,9 -7,6 -12,13 -13,22 -2,12 9,24 33,38 v 0 c 27,14 43,26 49,36 7,9 9,21 7,34 -2,15 -10,29 -23,41 -13,12 -28,18 -43,18 -11,0 -22,-4 -32,-10 -11,-7 -17,-10 -18,-10 -3,0 -6,1 -7,3 -2,3 -3,6 -4,12 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5484"
+   class="fil4"
+   d="m 4932.8466,1470.8466 1,-10 h 7 c 8,0 14,-1 16,-3 3,-3 5,-9 7,-19 l 20,-136 c 2,-10 2,-17 0,-19 -2,-3 -7,-4 -16,-4 h -6 l 1,-8 h 8 c 8,0 16,-1 25,-1 9,-1 19,-2 29,-3 l -26,171 c -1,10 -1,16 1,19 2,2 7,3 15,3 h 6 l -1,10 z m 60,-265 c 1,-6 4,-12 9,-16 5,-4 10,-6 17,-6 5,0 10,2 14,6 4,4 5,10 4,16 -1,6 -4,11 -9,15 -5,4 -10,7 -16,7 -6,0 -11,-3 -14,-7 -4,-4 -5,-9 -5,-15 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5486"
+   class="fil4"
+   d="m 5035.8466,1470.8466 1,-10 h 7 c 8,0 13,-1 16,-3 3,-3 5,-9 6,-19 l 33,-219 c 2,-10 2,-16 0,-19 -2,-2 -7,-4 -15,-4 h -7 l 1,-8 h 8 c 8,0 16,0 25,-1 10,-1 19,-1 29,-2 l -38,253 c -2,10 -1,16 1,19 2,2 7,3 15,3 h 6 l -2,10 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil42"
+   d="m 1808.8466,1291.8466 v -209 h 20 c 11,66 30,116 57,151 28,34 61,52 101,52 28,0 51,-10 69,-28 19,-19 28,-43 28,-71 0,-27 -8,-50 -24,-69 -16,-19 -44,-37 -84,-55 -72,-30 -118,-57 -137,-79.00008 -20,-23 -30,-50.99998 -30,-85.99998 0,-41.99998 14,-75.99996 41,-102.99996 27,-25.99998 62,-39.99998 104,-39.99998 26,0 50,8 74,23 24,15.99998 37,22.99998 39,22.99998 4,0 8,-2 12,-7 5,-5.99998 9,-12.99998 12,-21.99998 h 18 l 2,174.99994 h -18 c -10,-54.99998 -27,-97.99998 -51,-128.99996 -24,-29.99998 -53,-44.99998 -87,-44.99998 -27,0 -50,9 -67,25.99998 -18,17 -26,39 -26,64.99998 0,42.99998 35,79.99998 105,109.99996 14,6 24,11 32,14 45,20.00008 78,44.00008 100,70.00008 21,26 32,57 32,92 0,43 -14,79 -43,108 -28,30 -63,45 -104,45 -30,0 -59,-9 -86,-26 -26,-18 -40,-26 -42,-26 -4,0 -9,3 -15,11 -5,7 -10,17 -15,30 z"
+   id="path5488"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil42"
+   d="m 2695.8466,1471.8466 v -18 h 22 c 18,0 30,-3 36,-9 5,-6 8,-17 8,-34 v -405 c 0,-17.00008 -3,-28.00008 -8,-34.00008 -6,-6 -16,-8 -32,-8 h -4 -22 v -17.99998 h 370 l 1,167.00006 h -16 c -8,-55 -23,-94 -46,-116.00008 -23,-22 -59,-33 -108,-33 -28,0 -46,2 -54,7 -8,5 -11,17 -11,38.00008 v 178 h 13 c 38,0 65,-7 81,-21 16,-15 26,-40 29,-75 h 17 v 217 h -17 c -1,-36 -10,-62 -27,-79 -17,-18 -41,-26 -74,-26 -4,0 -11,0 -20,1 -1,0 -2,0 -2,0 v 191 c 0,27 3,44 8,50 6,6 22,9 48,9 53,0 92,-12 117,-36 25,-25 42,-66 51,-126 h 18 l -10,180 z"
+   id="path5490"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil42"
+   d="m 3335.8466,945.84654 v 16.99998 h -23 c -18,0 -29,3 -35,8 -5,6 -8,18 -8,35.00008 v 388 c 0,28 3,45 9,51 6,6 21,9 46,9 43,0 78,-16 105,-48 26,-32 44,-79 53,-141 h 17 l -6,207 h -360 v -17 h 23 c 17,0 29,-3 35,-9 5,-6 8,-18 8,-35 v -405 c 0,-17.00008 -3,-29.00008 -8,-35.00008 -6,-5 -18,-8 -35,-8 h -23 v -16.99998 z"
+   id="path5492"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil42"
+   d="m 3858.8466,1207.8466 c 0,-88 -9,-153 -26,-195 -18,-42.00008 -46,-62.00008 -83,-62.00008 -38,0 -66,20 -83,62.00008 -18,42 -27,107 -27,195 0,89 9,154 27,196 17,42 45,63 83,63 37,0 65,-21 82,-63 18,-42 27,-107 27,-196 z m -110,-274.00006 c 55,0 100,24.99998 136,76.00006 36,51 54,117 54,198 0,82 -18,148 -54,199 -36,51 -81,77 -136,77 -55,0 -100,-26 -136,-77 -35,-51 -53,-117 -53,-199 0,-81 18,-147 53,-198 36,-51.00008 81,-76.00006 136,-76.00006 z"
+   id="path5494"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil42"
+   d="m 2420.8466,1185.8466 c -8,35 -22,62 -43,83 -20,20 -44,31 -70,31 -38,0 -68,-17 -92,-50 -24,-33 -35,-75 -35,-128 0,-54 12,-98 38,-131.00008 25,-34 58,-49.99998 99,-49.99998 24,0 46,8.99998 65,27.99998 19,19 28,41.00008 28,65.00008 0,15 -4,27 -12,36 -8,10 -18,14 -30,14 -11,0 -21,-3 -28,-10 -7,-7 -11,-16 -11,-27 0,-8 5,-19 14,-32 9,-13 14,-22.00008 14,-29.00008 0,-8 -4,-15 -12,-22 -8,-6 -18,-9 -29,-9 -25,0 -42,12 -53,36 -10,24.00008 -15,66.00008 -15,128.00008 0,59 5,100 16,124 10,24 28,36 52,36 19,0 36,-8 51,-25 15,-16 27,-39 35,-68 z"
+   id="path5496"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   class="fil43"
+   d="m 2458.8466,1291.8466 v -16 h 11 c 14,0 23,-2 27,-7 4,-4 6,-15 6,-32 v -235 c 0,-17.00008 -2,-28.00008 -6,-33.00008 -4,-4 -13,-6 -27,-6 h -11 v -15 h 12 c 14,0 29,0 45,-0.99998 15,-1 32,-2 49,-4 v 294.00006 c 0,17 2,28 6,32 4,5 13,7 27,7 h 11 v 16 z"
+   id="path5498"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <line
+   class="fil3 str26"
+   x1="3282.8467"
+   y1="1566.8467"
+   x2="5224.8467"
+   y2="1566.8467"
+   id="line5500"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <polygon
+   class="fil5"
+   points="29973,42531 29879,42531 29879,42640 29821,42640 29821,42363 29980,42363 29980,42411 29879,42411 29879,42482 29973,42482 "
+   id="polygon5502"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   transform="translate(-28232.154,-39686.154)" />
+   <path
+   id="path5504"
+   class="fil5"
+   d="m 1931.8466,2953.8466 -11,-29 h -1 c -10,13 -20,21 -30,26 -11,5 -24,7 -41,7 -20,0 -36,-6 -48,-18 -11,-11 -17,-28 -17,-49 0,-23 8,-39 23,-50 16,-11 40,-17 72,-18 l 36,-1 v -9 c 0,-22 -11,-32 -33,-32 -17,0 -36,5 -59,15 l -19,-39 c 24,-13 51,-19 81,-19 28,0 50,6 65,18 15,13 23,32 23,57 v 141 z m -17,-98 -22,1 c -17,0 -29,3 -38,9 -8,5 -12,14 -12,25 0,16 9,25 28,25 14,0 24,-4 32,-12 8,-8 12,-18 12,-31 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5506"
+   class="fil5"
+   d="m 2179.8466,2890.8466 c 0,22 -8,38 -23,50 -15,11 -37,17 -67,17 -16,0 -29,-1 -40,-3 -11,-2 -21,-5 -30,-9 v -48 c 10,5 23,9 36,13 13,3 25,5 35,5 22,0 32,-6 32,-19 0,-4 -1,-8 -4,-11 -3,-3 -8,-6 -15,-9 -6,-4 -15,-8 -27,-13 -16,-7 -28,-13 -36,-19 -7,-6 -13,-12 -16,-20 -4,-7 -6,-17 -6,-28 0,-18 8,-33 22,-43 15,-11 35,-16 62,-16 26,0 51,6 75,17 l -18,41 c -10,-4 -20,-8 -29,-11 -10,-3 -19,-4 -29,-4 -17,0 -25,5 -25,14 0,5 3,10 8,13 6,4 18,10 36,17 17,7 29,13 36,19 8,6 14,12 18,20 3,8 5,17 5,27 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5508"
+   class="fil5"
+   d="m 2310.8466,2957.8466 c -66,0 -99,-36 -99,-109 0,-36 9,-63 27,-82 18,-19 44,-29 77,-29 25,0 47,5 66,15 l -17,44 c -9,-3 -17,-6 -25,-9 -8,-2 -16,-3 -24,-3 -30,0 -45,21 -45,64 0,41 15,62 45,62 11,0 22,-2 31,-4 10,-3 19,-8 29,-14 v 49 c -10,6 -19,10 -29,13 -9,2 -21,3 -36,3 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5510"
+   class="fil5"
+   d="m 2481.8466,2953.8466 h -57 v -212 h 57 z m -60,-235 v -5 c 22,-25 37,-44 44,-57 h 65 v 4 c -6,6 -18,16 -33,29 -16,13 -29,23 -38,29 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5512"
+   class="fil5"
+   d="m 2628.8466,2957.8466 c -66,0 -99,-36 -99,-109 0,-36 9,-63 27,-82 18,-19 44,-29 77,-29 25,0 47,5 66,15 l -17,44 c -9,-3 -17,-6 -25,-9 -8,-2 -16,-3 -24,-3 -30,0 -45,21 -45,64 0,41 15,62 45,62 11,0 22,-2 31,-4 10,-3 19,-8 28,-14 v 49 c -9,6 -18,10 -28,13 -9,2 -21,3 -36,3 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5514"
+   class="fil5"
+   d="m 2892.8466,2953.8466 -8,-27 h -3 c -6,10 -15,17 -26,23 -12,5 -25,8 -39,8 -25,0 -44,-7 -57,-20 -12,-13 -19,-33 -19,-58 v -138 h 58 v 124 c 0,15 3,27 8,34 6,8 14,12 26,12 17,0 28,-6 35,-16 8,-11 11,-29 11,-54 v -100 h 58 v 212 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <polygon
+   id="polygon5516"
+   class="fil5"
+   points="31287,42640 31230,42640 31230,42345 31287,42345 "
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   transform="translate(-28232.154,-39686.154)" />
+   <path
+   id="path5518"
+   class="fil5"
+   d="m 3161.8466,2847.8466 c 0,21 4,37 10,47 7,11 19,16 34,16 15,0 27,-5 33,-16 7,-10 10,-26 10,-47 0,-21 -3,-37 -10,-47 -7,-11 -18,-16 -33,-16 -16,0 -27,5 -34,16 -6,10 -10,26 -10,47 z m 147,0 c 0,34 -9,61 -28,81 -18,19 -43,29 -76,29 -20,0 -38,-5 -53,-13 -16,-9 -28,-22 -36,-39 -9,-16 -13,-36 -13,-58 0,-35 9,-62 27,-81 18,-19 44,-29 76,-29 21,0 39,5 54,14 16,8 28,21 36,38 8,16 13,36 13,58 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5520"
+   class="fil5"
+   d="m 3503.8466,2890.8466 c 0,22 -7,38 -22,50 -16,11 -38,17 -68,17 -16,0 -29,-1 -40,-3 -10,-2 -21,-5 -30,-9 v -48 c 11,5 23,9 36,13 14,3 25,5 36,5 21,0 31,-6 31,-19 0,-4 -1,-8 -4,-11 -3,-3 -8,-6 -14,-9 -7,-4 -16,-8 -28,-13 -16,-7 -28,-13 -36,-19 -7,-6 -13,-12 -16,-20 -4,-7 -5,-17 -5,-28 0,-18 7,-33 21,-43 15,-11 36,-16 62,-16 26,0 51,6 75,17 l -17,41 c -11,-4 -21,-8 -30,-11 -9,-3 -19,-4 -28,-4 -18,0 -26,5 -26,14 0,5 3,10 8,13 6,4 18,10 36,17 17,7 29,13 37,19 7,6 13,12 17,20 3,8 5,17 5,27 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5522"
+   class="fil5"
+   d="m 3784.8466,2953.8466 -11,-29 h -2 c -10,13 -20,21 -30,26 -10,5 -24,7 -40,7 -21,0 -37,-6 -48,-18 -12,-11 -18,-28 -18,-49 0,-23 8,-39 24,-50 15,-11 39,-17 71,-18 l 37,-1 v -9 c 0,-22 -11,-32 -33,-32 -17,0 -37,5 -60,15 l -19,-39 c 24,-13 51,-19 81,-19 28,0 50,6 65,18 15,13 23,32 23,57 v 141 z m -17,-98 -23,1 c -17,0 -29,3 -37,9 -8,5 -13,14 -13,25 0,16 10,25 28,25 14,0 25,-4 33,-12 8,-8 12,-18 12,-31 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5524"
+   class="fil5"
+   d="m 4079.8466,2953.8466 h -58 v -124 c 0,-15 -3,-26 -8,-34 -5,-8 -14,-12 -26,-12 -16,0 -28,6 -35,17 -7,10 -11,28 -11,53 v 100 h -57 v -212 h 44 l 7,27 h 4 c 6,-10 15,-18 26,-23 12,-5 24,-8 39,-8 24,0 43,7 56,20 13,14 19,33 19,58 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5526"
+   class="fil5"
+   d="m 4228.8466,2911.8466 c 10,0 22,-2 36,-7 v 43 c -14,7 -32,10 -53,10 -23,0 -40,-6 -50,-18 -11,-11 -16,-29 -16,-52 v -102 h -28 v -25 l 32,-19 17,-45 h 37 v 45 h 59 v 44 h -59 v 102 c 0,8 2,14 7,18 4,4 10,6 18,6 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5528"
+   class="fil5"
+   d="m 4395.8466,2778.8466 c -12,0 -22,4 -29,12 -7,8 -11,19 -12,33 h 81 c 0,-14 -4,-25 -11,-33 -7,-8 -17,-12 -29,-12 z m 8,179 c -34,0 -61,-10 -80,-28 -19,-19 -29,-46 -29,-80 0,-36 9,-63 27,-83 18,-19 42,-29 73,-29 30,0 54,9 70,26 17,17 25,40 25,70 v 28 h -136 c 0,17 5,30 14,39 9,9 22,14 39,14 12,0 24,-1 36,-4 11,-3 23,-7 35,-13 v 45 c -10,5 -20,9 -32,11 -11,3 -25,4 -42,4 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5530"
+   class="fil5"
+   d="m 4655.8466,2737.8466 c 7,0 14,1 19,2 l -4,54 c -5,-1 -11,-2 -17,-2 -19,0 -33,5 -43,15 -11,9 -16,22 -16,39 v 108 h -58 v -212 h 44 l 9,36 h 2 c 7,-12 16,-22 27,-29 11,-7 23,-11 37,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5532"
+   class="fil5"
+   d="m 4710.8466,2686.8466 c 0,-19 11,-28 32,-28 21,0 31,9 31,28 0,9 -3,16 -8,21 -5,5 -13,8 -23,8 -21,0 -32,-10 -32,-29 z m 60,267 h -57 v -212 h 57 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5534"
+   class="fil5"
+   d="m 4877.8466,2847.8466 c 0,21 4,37 10,47 7,11 18,16 34,16 15,0 26,-5 33,-16 7,-10 10,-26 10,-47 0,-21 -3,-37 -10,-47 -7,-11 -18,-16 -33,-16 -16,0 -27,5 -34,16 -7,10 -10,26 -10,47 z m 146,0 c 0,34 -9,61 -27,81 -18,19 -43,29 -76,29 -20,0 -38,-5 -54,-13 -15,-9 -27,-22 -35,-39 -9,-16 -13,-36 -13,-58 0,-35 9,-62 27,-81 18,-19 44,-29 76,-29 21,0 39,5 54,14 16,8 28,21 36,38 8,16 12,36 12,58 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5536"
+   class="fil5"
+   d="m 5190.8466,2737.8466 c 7,0 14,1 19,2 l -4,54 c -5,-1 -11,-2 -17,-2 -19,0 -33,5 -43,15 -11,9 -16,22 -16,39 v 108 h -58 v -212 h 44 l 9,36 h 2 c 7,-12 16,-22 27,-29 11,-7 23,-11 37,-11 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5538"
+   class="fil5"
+   d="m 5328.8466,2778.8466 c -13,0 -22,4 -29,12 -7,8 -11,19 -12,33 h 81 c 0,-14 -4,-25 -11,-33 -7,-8 -17,-12 -29,-12 z m 8,179 c -34,0 -61,-10 -80,-28 -19,-19 -29,-46 -29,-80 0,-36 9,-63 27,-83 17,-19 42,-29 73,-29 30,0 53,9 70,26 17,17 25,40 25,70 v 28 h -137 c 1,17 6,30 15,39 9,9 22,14 38,14 13,0 25,-1 37,-4 11,-3 23,-7 35,-13 v 45 c -10,5 -21,9 -32,11 -12,3 -26,4 -42,4 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <path
+   id="path5540"
+   class="fil5"
+   d="m 5617.8466,2890.8466 c 0,22 -8,38 -23,50 -15,11 -37,17 -67,17 -16,0 -29,-1 -40,-3 -11,-2 -21,-5 -30,-9 v -48 c 10,5 22,9 36,13 13,3 25,5 35,5 21,0 32,-6 32,-19 0,-4 -2,-8 -4,-11 -3,-3 -8,-6 -15,-9 -7,-4 -16,-8 -27,-13 -16,-7 -28,-13 -36,-19 -8,-6 -13,-12 -17,-20 -3,-7 -5,-17 -5,-28 0,-18 8,-33 22,-43 15,-11 35,-16 62,-16 26,0 50,6 75,17 l -18,41 c -10,-4 -20,-8 -30,-11 -9,-3 -18,-4 -28,-4 -17,0 -25,5 -25,14 0,5 2,10 8,13 5,4 17,10 36,17 16,7 29,13 36,19 8,6 14,12 17,20 4,8 6,17 6,27 z"
+   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96" />
+   <rect
+   class="fil3 str27"
+   x="115.84668"
+   y="115.84662"
+   width="6976"
+   height="2964"
+   id="rect5542" />
+  </g>
+ </g>
+</svg>

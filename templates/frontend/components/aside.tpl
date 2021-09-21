@@ -39,12 +39,12 @@
 	<div class="aside-container">
 		<div class="content-csp">
 		<a href="https://periodicos.fiocruz.br/pt-br" target="_blank">
-			<img src="{$baseUrl}/plugins/themes/csp/assets/portal.jpg" />
+			<img src="{$baseUrl}/plugins/themes/csp/assets/portal-periodicos.svg" />
 		</a>
 		</div>
 		<div class="content-csp">
 		<a href="https://www.scielo.br/scielo.php?script=sci_issues&pid=0102-311X&lng=pt&nrm=iso"target="_blank">
-			<img src="{$baseUrl}/plugins/themes/csp/assets/scielo.jpg" />
+			<img src="{$baseUrl}/plugins/themes/csp/assets/scielo.svg" />
 		</a>
 		</div>
 	</div>
