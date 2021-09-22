@@ -21,7 +21,8 @@
   
   <div class="form-group has-feedback has-search">
     <span class="glyphicon glyphicon-search form-control-feedback"></span>
-    <input type="text" class="form-control" name="query" value="{$searchQuery|escape}" aria-label="{translate|escape key="common.searchQuery"}" placeholder="{translate key="plugins.themes.csp.inputSearchPlaceholder"}">
+    <input type="text" class="form-control" name="query" value="{$searchQuery|escape}" aria-label="{translate|escape key="common.searchQuery"}" placeholder="{translate key="common.searchQuery"}">
   </div>
+  <input type="submit" value="{translate|escape key="common.search"}">
 </form>
 {/if}
