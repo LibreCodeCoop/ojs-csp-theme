@@ -65,16 +65,12 @@
 						{/foreach}
 					{/if}
 				</div>
-				<div class="csp-border-mid"></div>
 			{/if}
 			{* how to cite *}
 			<div class="csp-cite">
 				<strong>{translate key="submission.howToCite"}</strong>
 				{$citation}
 			</div>
-
-			<div class="csp-border-mid"></div>
-
 			<div class="list-group">
 				{* test date *}
 				<div class="csp-date">

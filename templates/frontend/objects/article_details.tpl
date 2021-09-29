@@ -16,26 +16,20 @@
  * @uses $pubIdPlugins @todo
  *}
 <article class="article-details">
-
-				{* Notification that this is an old version *}
-			{if $currentPublication->getId() !== $publication->getId()}
-				<div class="alert alert-warning" role="alert">
-					{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
-					{translate key="submission.outdatedVersion"
-						datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
-						urlRecentVersion=$latestVersionUrl|escape
-					}
-				</div>
-			{/if}
-
-
+		{* Notification that this is an old version *}
+	{if $currentPublication->getId() !== $publication->getId()}
+		<div class="alert alert-warning" role="alert">
+			{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
+			{translate key="submission.outdatedVersion"
+				datePublished=$publication->getData('datePublished')|date_format:$dateFormatShort
+				urlRecentVersion=$latestVersionUrl|escape
+			}
+		</div>
+	{/if}
 	<div class="row">
-
 		<section class="article-sidebar col-md-3">
-
 			{* Screen-reader heading for easier navigation jumps *}
 			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.sidebar"}</h2>
-
 			{* Article/Issue cover image *}
 			{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
 				<div class="cover-image">
@@ -57,135 +51,83 @@
 					{/if}
 				</div>
 			{/if}
-
-			
-
-				
-
-				{* DOI (requires plugin) *}
-				{foreach from=$pubIdPlugins item=pubIdPlugin}
-					{if $pubIdPlugin->getPubIdType() != 'doi'}
-						{continue}
-					{/if}
-					{if $issue->getPublished()}
-						{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-					{else}
-						{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-					{/if}
-					{if $pubId}
-						{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-						<div class="list-group-item doi">
-							{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-							<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-							<a href="{$doiUrl}">
-								{$doiUrl}
-							</a>
-						</div>
-					{/if}
-				{/foreach}
-
-			{* Issue article appears in *}
-				<div class="text-center csp-article-edition">
-					<div class="panel-heading">
-						{translate key="issue.issue"}
-					</div>
-					<div class="panel-body">
-						<a class="title" href="{url|escape page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
-							{$issue->getIssueIdentification()|escape}
+			{* DOI (requires plugin) *}
+			{foreach from=$pubIdPlugins item=pubIdPlugin}
+				{if $pubIdPlugin->getPubIdType() != 'doi'}
+					{continue}
+				{/if}
+				{if $issue->getPublished()}
+					{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+				{else}
+					{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
+				{/if}
+				{if $pubId}
+					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
+					<div class="list-group-item doi">
+						{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
+						<strong>{translate key="semicolon" label=$translatedDoi}</strong>
+						<a href="{$doiUrl}">
+							{$doiUrl}
 						</a>
-
 					</div>
+				{/if}
+			{/foreach}
+			{* Issue article appears in *}
+			<div class="text-center">
+				<div class="panel-heading">
+					{translate key="issue.issue"}
 				</div>
-
+				<div class="panel-body">
+					<a class="title" href="{url|escape page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
+						{$issue->getIssueIdentification()|escape}
+					</a>
+				</div>
+			</div>
 		</section><!-- .article-sidebar -->
 
 		<div class="col-md-9 csp-border">
 			<section class="article-main">
-
-	<header>
-		<h1 class="csp-article-title">
-			{$publication->getLocalizedTitle()|escape}
-			{if $publication->getLocalizedData('subtitle')}
-				<small>
-					{$publication->getLocalizedData('subtitle')|escape}
-				</small>
-			{/if}
-		</h1>
-	</header>
-				
+				<header>
+					<h3>
+						{$publication->getLocalizedTitle()|escape}
+						{if $publication->getLocalizedData('subtitle')}
+							<small>
+								{$publication->getLocalizedData('subtitle')|escape}
+							</small>
+						{/if}
+					</h3>
+				</header>
 				{* Screen-reader heading for easier navigation jumps *}
 				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
-				
-
 				{if $publication->getData('authors')}
 					<div class="csp-authors">
 						{foreach from=$publication->getData('authors') item=author}
 							<div class="csp-author">
 								{if $author->getOrcid()}
-									<div class="csp-author-icon">
-										<a href="{$author->getOrcid()|escape}" target="_blank">
-											<span class="glyphicon glyphicon-envelope orcid-icon"></span>
-											{$author->getOrcid()|escape}
-										</a>
-									</div>
+									<span class="glyphicon glyphicon-envelope orcid-icon"></span>
 								{/if}
 								<div class="csp-fullname">{$author->getFullName()|escape}</div>
 							</div>
 						{/foreach}
 					</div>
 				{/if}
-				{* {if $publication->getData('authors')}
-					<div class="csp-authors">
-						{foreach from=$publication->getData('authors') item=author}
-							<div class="csp-author">
-								{$author->getFullName()|escape}
-								{if $author->getLocalizedAffiliation()}
-									<div class="article-author-affilitation">
-										{$author->getLocalizedAffiliation()|escape}
-									</div>
-								{/if}
-								{if $author->getOrcid()}
-									<div class="orcid">
-										{$orcidIcon}
-										<a href="{$author->getOrcid()|escape}" target="_blank">
-											{$author->getOrcid()|escape}
-										</a>
-									</div>
-								{/if}
-							</div>
-						{/foreach}
-					</div>
-				{/if} *}
-
-				{* Visual test DOI *}
-				{* <div class="csp-doi">
-					<strong>DOI: </strong>
-					<a href="{$doiUrl}">
-						url/do/doi
-					</a>
-				</div> *}
-
-				<div class="csp-border-bottom"></div>
-
+				<div class="csp-doi">
+					DOI:<a href="{$doiUrl}">{$doiUrl}</a>
+				</div>
 				{* Article abstract *}
 				{if $publication->getLocalizedData('abstract')}
 					<div class="article-summary" id="summary">
-						<h2 class="csp-h2">{translate key="article.abstract"}:</h2>
-						<div class="article-abstract csp-abstract">
+						<h4>{translate key="article.abstract"}:</h4>
+						<div class="article-abstract">
 							{$publication->getLocalizedData('abstract')|strip_unsafe_html|nl2br}
 						</div>
 					</div>
 				{/if}
-
 				{call_hook name="Templates::Article::Main"}
-
 			</section><!-- .article-main -->
-
 			<section class="article-more-details">
-
 				{* Screen-reader heading for easier navigation jumps *}
 				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.details"}</h2>
-
 				{* PubIds (requires plugins) *}
 				{foreach from=$pubIdPlugins item=pubIdPlugin}
 					{if $pubIdPlugin->getPubIdType() == 'doi'}
@@ -213,37 +155,19 @@
 						</div>
 					{/if}
 				{/foreach}
-				
-				
-				
-				{* {if $section}
-					<div class="panel section csp-details">
-						<div class="panel-heading csp-details-title">
-							{translate key="section.section"}
-						</div>
-						<div class="panel-body csp-details-keys">
-							{$section->getLocalizedTitle()|escape}
-						</div>
+				<div class="list-group-item keywords">
+					<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
+						{translate key="semicolon" label=$translatedKeywords}</strong>
+					<div class="">
+						<span class="value">
+							{foreach from=$keywords item=keyword}
+								{foreach name=keywords from=$keyword item=keywordItem}
+									{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
+								{/foreach}
+							{/foreach}
+						</span>
 					</div>
-				{/if} *}	
-
-				{* Keywords *}
-				{if !empty($keywords[$currentLocale])}
-					<div class="list-group-item keywords csp-keywords">
-						<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-							{translate key="semicolon" label=$translatedKeywords}</strong>
-						<div class="">
-								<span class="value">
-									{foreach from=$keywords[$currentLocale] item=keyword}
-										{foreach name=keywords from=$keyword item=keywordItem}
-											{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
-										{/foreach}
-									{/foreach}
-								</span>
-						</div>
-					</div>
-				{/if}
-
+				</div>
 				{* Licensing info *}
 				{if $licenseTerms || $licenseUrl}
 					<div class="panel panel-default copyright">
