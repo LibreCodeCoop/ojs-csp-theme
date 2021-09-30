@@ -82,7 +82,7 @@ body{
 }
 
 .menu{
-    background: #e88834;
+    background: @font-primary-color;
     padding-left: unset;
     padding-right: unset;
 }
@@ -116,7 +116,7 @@ footer[role="contentinfo"]{
 }
 
 #navigationUser li:nth-child(2) {
-    background: #4b4b4d;
+    background: @font-secondary-color;
 }
 
 .navbar-default .nav > li > a{
@@ -203,11 +203,11 @@ footer[role="contentinfo"]{
 }
 
 .navbar-nav > li > .dropdown-menu{
-    background: #e88834 !important;
+    background: @font-primary-color !important;
 }
 
 .navbar-nav > li > .dropdown-menu > li{
-    background: #e88834 !important;
+    background: @font-primary-color !important;
 }
 
 .navbar-collapse{
@@ -336,11 +336,11 @@ nav[aria-expanded="true"] .pull-right{
 
 		li{
 			a{
-				color: #e4924a !important;
+				color: @font-primary-color !important;
 			}
 			+li::before{
 				content: '|\00a0';
-				color: #e4924a !important;
+				color: @font-primary-color !important;
 			}
 		}
 
@@ -489,4 +489,8 @@ nav[aria-expanded="true"] .pull-right{
 .page p{
 	font-weight: normal;
 	line-height: 2;
+}
+
+.caret{
+	color: white;
 }
