@@ -6,6 +6,13 @@
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div class="aside-content">
+			<ul>
+				{foreach key=field item=message from=$interviews}
+					<li>
+						<a href="{url page="article" op="view" path=$message['publication_id']}">{$message['setting_value']}</a>
+					</li>
+				{/foreach}
+			</ul>
 		</div>
 	</div>
 	<div class="aside-container">
@@ -14,6 +21,10 @@
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div class="aside-content" id="video">
+			<iframe width="100%"
+					src="https://www.youtube.com/embed/+lastest?list=PLjxv_Q_71tpYCzJQpHiyeq-tmEvQVEujA"
+					frameborder="0" allowfullscreen>
+			</iframe>
 		</div>
 	</div>
 	<div class="aside-container">
@@ -22,6 +33,10 @@
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div class="aside-content">
+			<iframe src="https://open.spotify.com/embed/show/4dSWUdWQCTb2hDthntM0ZP"
+					frameBorder="0" allowfullscreen=""
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+			</iframe>
 		</div>
 	</div>
 	<div class="aside-container">
@@ -30,10 +45,11 @@
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div id="tweet" class="aside-content">
-			<a class="twitter-timeline" data-height="350" href="https://twitter.com/CadernosSP?ref_src=twsrc%5Etfw">
+			<a class="twitter-timeline" data-height="350" href="https://twitter.com/Cadernossp">
 				Tweets by CadernosSP
 			</a>
 			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 		</div>
 	</div>
 	<div class="aside-container">

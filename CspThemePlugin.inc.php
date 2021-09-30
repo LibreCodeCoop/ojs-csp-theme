@@ -105,6 +105,19 @@ class CspThemePlugin extends ThemePlugin {
 			$coverImageAltText = null;
 		}
 
+		$userDao = DAORegistry::getDAO('UserDAO');
+		$result = $userDao->retrieve(
+			<<<QUERY
+			SELECT p.publication_id, s.setting_value
+			FROM publications p
+			LEFT JOIN publication_settings s
+			ON s.publication_id = p.publication_id
+			WHERE section_id = 10 AND s.setting_name = 'title' AND s.locale = 'pt_BR'
+			ORDER BY publication_id DESC LIMIT 3
+			QUERY
+		);
+		$interviews = $result->GetRows();
+
 		$templateMgr = $args[0];
         $templateMgr->assign(array(
 			'issues' => $issues,
@@ -114,7 +127,8 @@ class CspThemePlugin extends ThemePlugin {
 			'coverImageUrl' => $coverImageUrl,
             'coverImageAltText' => $coverImageAltText,
 			'context' => $context,
-			'op' => $op
+			'op' => $op,
+			'interviews' => $interviews,
 		));
 
 		if($args[1] == 'frontend/pages/userRegister.tpl'){ /* Passa id de avaliador para checkbox ir marcado */
