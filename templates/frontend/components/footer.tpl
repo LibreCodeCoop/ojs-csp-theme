@@ -28,54 +28,47 @@
 	</div><!-- pkp_structure_content -->
 
 	<footer class="footer" role="contentinfo">
-
 		<div class="container">
-
 			<div class="row">
-
-				<div class="footer-page">
-					<div class="col-md-2">
-						<a href="https://creativecommons.org/licenses/by/2.0/br/">
-							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/creativecommons.svg">
-						</a>
-					</div>
-
-					{if $pageFooter}
-					<div class="col-md-3 text-footer">
-						{$pageFooter}
-					</div>
-					{/if}
-
-					<div class="col-md-2">
-						<a href="https://www.abecbrasil.org.br/novo/">
-							<img class="image-footer" src="{$baseUrl}/plugins/themes/csp/assets/abec.svg">
-						</a>
-					</div>
-					<div class="col-md-1">
-						<a href="https://portal.fiocruz.br">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/portal-fiocruz.svg">
-						</a>
-					</div>
-					<div class="col-md-1">
-						<a href="http://ensp.fiocruz.br/">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/ensp.svg">
-						</a>
-					</div>
-					<div class="col-md-1">
-						<a href="https://www.gov.br/cnpq/pt-br">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/cnpq.svg">
-						</a>
-					</div>
-					<div class="col-md-1">
-						<a href="https://www.gov.br/capes/pt-br">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/capes.svg">
-						</a>
-					</div>
-					<div class="col-md-1">
-						<a href="http://www.faperj.br/">
-							<img class="image-footer image-define" src="{$baseUrl}/plugins/themes/csp/assets/faperj.svg">
-						</a>
-					</div>
+				<div class="col-md-2">
+					<a href="https://creativecommons.org/licenses/by/2.0/br/">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/creativecommons.svg">
+					</a>
+				</div>
+				{if $pageFooter}
+				<div class="col-md-3 text-footer">
+					{$pageFooter}
+				</div>
+				{/if}
+				<div class="col-md-2">
+					<a href="https://www.abecbrasil.org.br/novo/">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/abec.svg">
+					</a>
+				</div>
+				<div class="col-md-1">
+					<a href="https://portal.fiocruz.br">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/portal-fiocruz.svg">
+					</a>
+				</div>
+				<div class="col-md-1">
+					<a href="http://ensp.fiocruz.br/">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/ensp.svg">
+					</a>
+				</div>
+				<div class="col-md-1">
+					<a href="https://www.gov.br/cnpq/pt-br">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/cnpq.svg">
+					</a>
+				</div>
+				<div class="col-md-1">
+					<a href="https://www.gov.br/capes/pt-br">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/capes.svg">
+					</a>
+				</div>
+				<div class="col-md-1">
+					<a href="http://www.faperj.br/">
+						<img src="{$baseUrl}/plugins/themes/csp/assets/faperj.svg">
+					</a>
 				</div>
 			</div> <!-- .row -->
 		</div><!-- .container -->

@@ -1,3 +1,11 @@
+.btn-primary{
+	font-weight: bold;
+	border: 0px;
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: @font-primary-color;
+}
+
 .page h1{
 	display: flex;
 	position: relative;
@@ -15,62 +23,12 @@ label{
 }
 
 #register{
-
+	margin-bottom: 10px;
 	input:not([type="checkbox"]), select{
 		max-width: 350px;
 		width: 100%;
 	}
-
-
-	.buttons{
-		.btn{
-			padding: 10px 30px;
-			font-weight: bold;
-			border: 1px solid #C2C2C2;
-			color: #4E94B3;
-			font-size: 19px;
-			border-radius: 5px;
-		}
-
-		.btn:hover{
-			background: darken(#e6e7e9, 10%);
-		}
-
-		.btn:not(:first-child){
-			margin-left: 10px;
-		}
-
-		.btn-primary{
-			background-color: #E6E7E9;
-		}
-
-		.btn-default:hover{
-			background-color: darken(#fff, 10%);
-		}
-
-		.btn-default{
-			border: none;
-			text-decoration: underline;
-		}
-	}
-
 }
-
-.country{
-	label{
-		display: flex;
-		flex-direction: column;
-		max-width: 350px;
-	}
-	#fr{
-		display: flex;
-		flex-direction: row;
-		span:first-child{
-			margin-left: 5px;
-		}
-	}
-}
-
 
 .identity, .login{
 	legend{

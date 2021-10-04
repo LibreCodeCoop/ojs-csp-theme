@@ -79,7 +79,7 @@
 							</a>
 						{/if}
 					</div>
-					<div class="flex-right" id="header-language-icons">
+					<div class="col-md-6" id="header-language-icons">
 					{if $pageTitle === 'common.software'}
 						{include file="frontend/components/social-media.tpl"}
 					{/if}

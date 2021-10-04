@@ -40,7 +40,7 @@ html{
 }
 
 body{
-	width: 75%;
+	max-width: 1024px;
 	margin: 0 auto;
 }
 
@@ -252,7 +252,7 @@ nav[aria-expanded="true"] .pull-right{
 
 
 #social-icons{
-	display: flex;
+	top: 10px;
 	text-align: right;
 
 	svg{
@@ -436,8 +436,6 @@ nav[aria-expanded="true"] .pull-right{
 	align-items: flex-start;
 
 	#social-icons{
-		margin-top: 10px;
-
 		@media screen and (max-width: 380px) {
 			margin-right: 0;
 			padding-left: 0;
@@ -457,6 +455,7 @@ nav[aria-expanded="true"] .pull-right{
 	font-weight: normal;
 	color: #353535;
 	list-style: none;
+	padding: 0px;
 }
 
 .container-logo{
