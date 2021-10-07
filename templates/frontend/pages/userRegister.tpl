@@ -75,7 +75,7 @@
 				</fieldset>
 			{/if}
 		{/if}
-
+		<input type="hidden" name="authorGroup[14]" value="1">
 		{include file="frontend/components/registrationFormContexts.tpl"}
 
 		{if !$currentContext}
