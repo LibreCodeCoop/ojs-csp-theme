@@ -77,38 +77,6 @@
 				<input class="form-control" type="text" name="affiliation2" id="affiliation2" value="{$affiliation2|escape}">
 			</label>
 		</div>
-		<div class="form-group mailingAddress">
-			<label>
-				{translate key="user.mailingAddress"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="mailingAddress" id="mailingAddress" value="{$mailingAddress|escape}" maxlength="255" required>
-			</label>
-		</div>
-		<div class="form-group city">
-			<label>
-				{translate key="common.city"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="city" id="city" value="{$city|escape}" maxlength="255" required>
-			</label>
-		</div>
-		<div class="form-group state">
-			<label>
-				{translate key="common.state"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="state" id="state" value="{$state|escape}" maxlength="255" required>
-			</label>
-		</div>
-		<div class="form-group zipCode">
-			<label>
-				{translate key="common.zipCode"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="zipCode" id="zipCode" value="{$zipCode|escape}" maxlength="255" required>
-			</label>
-		</div>
 		<div class="form-group country">
 			<label>
 			<div id="fr">
@@ -120,6 +88,36 @@
 					<option value="">{translate key="common.chooseOne"}</option>
 					{html_options options=$countries selected=$country}
 				</select>
+			</label>
+		</div>
+		<div class="form-group state">
+			<label>
+				{translate key="common.state"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="state" id="state" value="{$state|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group city">
+			<label>
+				{translate key="common.city"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="city" id="city" value="{$city|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group mailingAddress">
+			<label>
+				{translate key="user.mailingAddress"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="mailingAddress" id="mailingAddress" value="{$mailingAddress|escape}" maxlength="255" required>
+			</label>
+		</div>
+		<div class="form-group zipCode">
+			<label>
+				{translate key="common.zipCode"}
+				<input class="form-control" type="text" name="zipCode" id="zipCode" value="{$zipCode|escape}" maxlength="255">
 			</label>
 		</div>
 	</div>
