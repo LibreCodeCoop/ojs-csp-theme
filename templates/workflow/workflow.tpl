@@ -44,7 +44,7 @@
 				<b>{$sectionLocalizedTitle}</b>
 				<br>
 				<span class="pkpWorkflow__identificationTitle">
-					{{ localizeSubmission(currentPublication.fullTitle, currentPublication.locale) }}
+					{{ localizeSubmission(currentPublication.title, currentPublication.locale) }}
 				</span>
 			</h1>
 			<template slot="actions">
