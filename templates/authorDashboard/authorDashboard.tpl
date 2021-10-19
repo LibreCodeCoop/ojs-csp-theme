@@ -22,7 +22,6 @@
 	{include file="common/header.tpl" suppressPageTitle=true}
 {/strip}
 
-<div class="pkp_page_content">
 	{assign var="uuid" value=""|uniqid|escape}
 	<div id="workflow-{$uuid}" class="pkpWorkflow">
 		<pkp-header :is-one-line="true" class="pkpWorkflow__header">
@@ -157,6 +156,5 @@
 	<script type="text/javascript">
 		pkp.registry.init('workflow-{$uuid}', 'WorkflowContainer', {$workflowData|json_encode});
 	</script>
-</div>
 
 {include file="common/footer.tpl"}
