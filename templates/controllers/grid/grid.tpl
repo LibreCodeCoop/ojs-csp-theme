@@ -45,15 +45,7 @@
 				}
 			}
 			if($("#promote input[name=decision]").val() && $("#promote input[name=decision]").val() == 7){ // Ao enviar para editoração
-				var className = $(this).attr('class');
-				const figuras = ["jpeg", "jpg", "png", "tiff", "bmp"];
-				var index = className.indexOf( "jpeg" );
-				var text = $( this ).text();
-				var substring = text.substring(0, text.indexOf("-"));
-
-				if (figuras.some(v => className.includes(v))) {
-					$('#select-'+substring).prop('checked', true);
-				}
+				$('input[id^=select]').removeAttr('checked');
 			}
 			$(this).parent().css('display', 'none');
 		});
