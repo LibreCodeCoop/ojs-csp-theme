@@ -44,7 +44,7 @@
 					$('#select-'+substring).removeAttr('checked')
 				}
 			}
-			if($("#promote input[name=decision]").val() && $("#promote input[name=decision]").val() == 7){ // Ao enviar para editoração
+			if($("#promote input[name=decision]").val() && $("#promote input[name=decision]").val() == 7 || $("#availableReviewFilesGrid").length){ // Ao enviar para editoração ou Enviar arquivos de versão final
 				$('input[id^=select]').removeAttr('checked');
 			}
 			$(this).parent().css('display', 'none');
