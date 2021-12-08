@@ -63,13 +63,6 @@
 				{/if}
 				{if $pubId}
 					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-					<div class="list-group-item doi">
-						{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-						<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-						<a href="{$doiUrl}">
-							{$doiUrl}
-						</a>
-					</div>
 				{/if}
 			{/foreach}
 			{* Issue article appears in *}
@@ -112,7 +105,11 @@
 					</div>
 				{/if}
 				<div class="csp-doi">
-					DOI:<a href="{$doiUrl}">{$doiUrl}</a>
+					{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
+					<strong>{translate key="semicolon" label=$translatedDoi}</strong>
+					<a href="{$doiUrl}">
+						{$doiUrl}
+					</a>
 				</div>
 				{* Article abstract *}
 				{if $publication->getLocalizedData('abstract')}

@@ -10,7 +10,7 @@
    viewBox="0 0 7200.9 3700.4625"
    id="svg5546"
    sodipodi:docname="scielo.svg"
-   inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
+   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,15 +24,15 @@
    inkscape:pagecheckerboard="0"
    inkscape:document-units="mm"
    showgrid="false"
-   inkscape:zoom="0.60628663"
-   inkscape:cx="-133.60018"
-   inkscape:cy="507.18585"
+   inkscape:zoom="1.6100189"
+   inkscape:cx="132.91769"
+   inkscape:cy="66.769402"
    inkscape:window-width="1680"
    inkscape:window-height="986"
    inkscape:window-x="0"
    inkscape:window-y="27"
    inkscape:window-maximized="1"
-   inkscape:current-layer="Camada_x0020_1"
+   inkscape:current-layer="_1660824352032"
    inkscape:snap-bbox="true"
    inkscape:bbox-paths="false"
    inkscape:bbox-nodes="false"
@@ -2898,22 +2898,13 @@
    
    
    
-   <rect
-   class="fil29"
-   x="115.84668"
-   y="2522.8467"
-   width="6976"
-   height="557"
-   id="rect5404"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
+   
    <rect
    class="fil3 str25"
-   x="115.84668"
-   y="115.84662"
-   width="6976"
-   height="2964"
+   x="115.31947"
+   y="115.31948"
+   width="6977.0542"
+   height="2659.3464"
    id="rect5406"
    inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
    inkscape:export-xdpi="96"
@@ -3258,155 +3249,27 @@
    inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96" />
-   <polygon
-   class="fil5"
-   points="29973,42531 29879,42531 29879,42640 29821,42640 29821,42363 29980,42363 29980,42411 29879,42411 29879,42482 29973,42482 "
-   id="polygon5502"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   transform="translate(-28232.154,-39686.154)" />
-   <path
-   id="path5504"
-   class="fil5"
-   d="m 1931.8466,2953.8466 -11,-29 h -1 c -10,13 -20,21 -30,26 -11,5 -24,7 -41,7 -20,0 -36,-6 -48,-18 -11,-11 -17,-28 -17,-49 0,-23 8,-39 23,-50 16,-11 40,-17 72,-18 l 36,-1 v -9 c 0,-22 -11,-32 -33,-32 -17,0 -36,5 -59,15 l -19,-39 c 24,-13 51,-19 81,-19 28,0 50,6 65,18 15,13 23,32 23,57 v 141 z m -17,-98 -22,1 c -17,0 -29,3 -38,9 -8,5 -12,14 -12,25 0,16 9,25 28,25 14,0 24,-4 32,-12 8,-8 12,-18 12,-31 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5506"
-   class="fil5"
-   d="m 2179.8466,2890.8466 c 0,22 -8,38 -23,50 -15,11 -37,17 -67,17 -16,0 -29,-1 -40,-3 -11,-2 -21,-5 -30,-9 v -48 c 10,5 23,9 36,13 13,3 25,5 35,5 22,0 32,-6 32,-19 0,-4 -1,-8 -4,-11 -3,-3 -8,-6 -15,-9 -6,-4 -15,-8 -27,-13 -16,-7 -28,-13 -36,-19 -7,-6 -13,-12 -16,-20 -4,-7 -6,-17 -6,-28 0,-18 8,-33 22,-43 15,-11 35,-16 62,-16 26,0 51,6 75,17 l -18,41 c -10,-4 -20,-8 -29,-11 -10,-3 -19,-4 -29,-4 -17,0 -25,5 -25,14 0,5 3,10 8,13 6,4 18,10 36,17 17,7 29,13 36,19 8,6 14,12 18,20 3,8 5,17 5,27 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5508"
-   class="fil5"
-   d="m 2310.8466,2957.8466 c -66,0 -99,-36 -99,-109 0,-36 9,-63 27,-82 18,-19 44,-29 77,-29 25,0 47,5 66,15 l -17,44 c -9,-3 -17,-6 -25,-9 -8,-2 -16,-3 -24,-3 -30,0 -45,21 -45,64 0,41 15,62 45,62 11,0 22,-2 31,-4 10,-3 19,-8 29,-14 v 49 c -10,6 -19,10 -29,13 -9,2 -21,3 -36,3 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5510"
-   class="fil5"
-   d="m 2481.8466,2953.8466 h -57 v -212 h 57 z m -60,-235 v -5 c 22,-25 37,-44 44,-57 h 65 v 4 c -6,6 -18,16 -33,29 -16,13 -29,23 -38,29 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5512"
-   class="fil5"
-   d="m 2628.8466,2957.8466 c -66,0 -99,-36 -99,-109 0,-36 9,-63 27,-82 18,-19 44,-29 77,-29 25,0 47,5 66,15 l -17,44 c -9,-3 -17,-6 -25,-9 -8,-2 -16,-3 -24,-3 -30,0 -45,21 -45,64 0,41 15,62 45,62 11,0 22,-2 31,-4 10,-3 19,-8 28,-14 v 49 c -9,6 -18,10 -28,13 -9,2 -21,3 -36,3 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5514"
-   class="fil5"
-   d="m 2892.8466,2953.8466 -8,-27 h -3 c -6,10 -15,17 -26,23 -12,5 -25,8 -39,8 -25,0 -44,-7 -57,-20 -12,-13 -19,-33 -19,-58 v -138 h 58 v 124 c 0,15 3,27 8,34 6,8 14,12 26,12 17,0 28,-6 35,-16 8,-11 11,-29 11,-54 v -100 h 58 v 212 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <polygon
-   id="polygon5516"
-   class="fil5"
-   points="31287,42640 31230,42640 31230,42345 31287,42345 "
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   transform="translate(-28232.154,-39686.154)" />
-   <path
-   id="path5518"
-   class="fil5"
-   d="m 3161.8466,2847.8466 c 0,21 4,37 10,47 7,11 19,16 34,16 15,0 27,-5 33,-16 7,-10 10,-26 10,-47 0,-21 -3,-37 -10,-47 -7,-11 -18,-16 -33,-16 -16,0 -27,5 -34,16 -6,10 -10,26 -10,47 z m 147,0 c 0,34 -9,61 -28,81 -18,19 -43,29 -76,29 -20,0 -38,-5 -53,-13 -16,-9 -28,-22 -36,-39 -9,-16 -13,-36 -13,-58 0,-35 9,-62 27,-81 18,-19 44,-29 76,-29 21,0 39,5 54,14 16,8 28,21 36,38 8,16 13,36 13,58 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5520"
-   class="fil5"
-   d="m 3503.8466,2890.8466 c 0,22 -7,38 -22,50 -16,11 -38,17 -68,17 -16,0 -29,-1 -40,-3 -10,-2 -21,-5 -30,-9 v -48 c 11,5 23,9 36,13 14,3 25,5 36,5 21,0 31,-6 31,-19 0,-4 -1,-8 -4,-11 -3,-3 -8,-6 -14,-9 -7,-4 -16,-8 -28,-13 -16,-7 -28,-13 -36,-19 -7,-6 -13,-12 -16,-20 -4,-7 -5,-17 -5,-28 0,-18 7,-33 21,-43 15,-11 36,-16 62,-16 26,0 51,6 75,17 l -17,41 c -11,-4 -21,-8 -30,-11 -9,-3 -19,-4 -28,-4 -18,0 -26,5 -26,14 0,5 3,10 8,13 6,4 18,10 36,17 17,7 29,13 37,19 7,6 13,12 17,20 3,8 5,17 5,27 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5522"
-   class="fil5"
-   d="m 3784.8466,2953.8466 -11,-29 h -2 c -10,13 -20,21 -30,26 -10,5 -24,7 -40,7 -21,0 -37,-6 -48,-18 -12,-11 -18,-28 -18,-49 0,-23 8,-39 24,-50 15,-11 39,-17 71,-18 l 37,-1 v -9 c 0,-22 -11,-32 -33,-32 -17,0 -37,5 -60,15 l -19,-39 c 24,-13 51,-19 81,-19 28,0 50,6 65,18 15,13 23,32 23,57 v 141 z m -17,-98 -23,1 c -17,0 -29,3 -37,9 -8,5 -13,14 -13,25 0,16 10,25 28,25 14,0 25,-4 33,-12 8,-8 12,-18 12,-31 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5524"
-   class="fil5"
-   d="m 4079.8466,2953.8466 h -58 v -124 c 0,-15 -3,-26 -8,-34 -5,-8 -14,-12 -26,-12 -16,0 -28,6 -35,17 -7,10 -11,28 -11,53 v 100 h -57 v -212 h 44 l 7,27 h 4 c 6,-10 15,-18 26,-23 12,-5 24,-8 39,-8 24,0 43,7 56,20 13,14 19,33 19,58 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5526"
-   class="fil5"
-   d="m 4228.8466,2911.8466 c 10,0 22,-2 36,-7 v 43 c -14,7 -32,10 -53,10 -23,0 -40,-6 -50,-18 -11,-11 -16,-29 -16,-52 v -102 h -28 v -25 l 32,-19 17,-45 h 37 v 45 h 59 v 44 h -59 v 102 c 0,8 2,14 7,18 4,4 10,6 18,6 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5528"
-   class="fil5"
-   d="m 4395.8466,2778.8466 c -12,0 -22,4 -29,12 -7,8 -11,19 -12,33 h 81 c 0,-14 -4,-25 -11,-33 -7,-8 -17,-12 -29,-12 z m 8,179 c -34,0 -61,-10 -80,-28 -19,-19 -29,-46 -29,-80 0,-36 9,-63 27,-83 18,-19 42,-29 73,-29 30,0 54,9 70,26 17,17 25,40 25,70 v 28 h -136 c 0,17 5,30 14,39 9,9 22,14 39,14 12,0 24,-1 36,-4 11,-3 23,-7 35,-13 v 45 c -10,5 -20,9 -32,11 -11,3 -25,4 -42,4 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5530"
-   class="fil5"
-   d="m 4655.8466,2737.8466 c 7,0 14,1 19,2 l -4,54 c -5,-1 -11,-2 -17,-2 -19,0 -33,5 -43,15 -11,9 -16,22 -16,39 v 108 h -58 v -212 h 44 l 9,36 h 2 c 7,-12 16,-22 27,-29 11,-7 23,-11 37,-11 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5532"
-   class="fil5"
-   d="m 4710.8466,2686.8466 c 0,-19 11,-28 32,-28 21,0 31,9 31,28 0,9 -3,16 -8,21 -5,5 -13,8 -23,8 -21,0 -32,-10 -32,-29 z m 60,267 h -57 v -212 h 57 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5534"
-   class="fil5"
-   d="m 4877.8466,2847.8466 c 0,21 4,37 10,47 7,11 18,16 34,16 15,0 26,-5 33,-16 7,-10 10,-26 10,-47 0,-21 -3,-37 -10,-47 -7,-11 -18,-16 -33,-16 -16,0 -27,5 -34,16 -7,10 -10,26 -10,47 z m 146,0 c 0,34 -9,61 -27,81 -18,19 -43,29 -76,29 -20,0 -38,-5 -54,-13 -15,-9 -27,-22 -35,-39 -9,-16 -13,-36 -13,-58 0,-35 9,-62 27,-81 18,-19 44,-29 76,-29 21,0 39,5 54,14 16,8 28,21 36,38 8,16 12,36 12,58 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5536"
-   class="fil5"
-   d="m 5190.8466,2737.8466 c 7,0 14,1 19,2 l -4,54 c -5,-1 -11,-2 -17,-2 -19,0 -33,5 -43,15 -11,9 -16,22 -16,39 v 108 h -58 v -212 h 44 l 9,36 h 2 c 7,-12 16,-22 27,-29 11,-7 23,-11 37,-11 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5538"
-   class="fil5"
-   d="m 5328.8466,2778.8466 c -13,0 -22,4 -29,12 -7,8 -11,19 -12,33 h 81 c 0,-14 -4,-25 -11,-33 -7,-8 -17,-12 -29,-12 z m 8,179 c -34,0 -61,-10 -80,-28 -19,-19 -29,-46 -29,-80 0,-36 9,-63 27,-83 17,-19 42,-29 73,-29 30,0 53,9 70,26 17,17 25,40 25,70 v 28 h -137 c 1,17 6,30 15,39 9,9 22,14 38,14 13,0 25,-1 37,-4 11,-3 23,-7 35,-13 v 45 c -10,5 -21,9 -32,11 -12,3 -26,4 -42,4 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <path
-   id="path5540"
-   class="fil5"
-   d="m 5617.8466,2890.8466 c 0,22 -8,38 -23,50 -15,11 -37,17 -67,17 -16,0 -29,-1 -40,-3 -11,-2 -21,-5 -30,-9 v -48 c 10,5 22,9 36,13 13,3 25,5 35,5 21,0 32,-6 32,-19 0,-4 -2,-8 -4,-11 -3,-3 -8,-6 -15,-9 -7,-4 -16,-8 -27,-13 -16,-7 -28,-13 -36,-19 -8,-6 -13,-12 -17,-20 -3,-7 -5,-17 -5,-28 0,-18 8,-33 22,-43 15,-11 35,-16 62,-16 26,0 50,6 75,17 l -18,41 c -10,-4 -20,-8 -30,-11 -9,-3 -18,-4 -28,-4 -17,0 -25,5 -25,14 0,5 2,10 8,13 5,4 17,10 36,17 16,7 29,13 36,19 8,6 14,12 17,20 4,8 6,17 6,27 z"
-   inkscape:export-filename="/home/liviagouvea/Downloads/layouts_site_csp_svg_jpg/layouts_site_csp/rect5404.svg"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96" />
-   <rect
-   class="fil3 str27"
-   x="115.84668"
-   y="115.84662"
-   width="6976"
-   height="2964"
-   id="rect5542" />
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
   </g>
  </g>
 </svg>

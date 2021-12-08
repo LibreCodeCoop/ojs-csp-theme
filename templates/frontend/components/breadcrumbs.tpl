@@ -45,6 +45,10 @@
 			<li class="active">
 				{$section->getLocalizedTitle()}
 			</li>
+		{elseif $page == "announcement"}
+			<li class="active">
+				{$announcement->getLocalizedTitle()|escape}
+			</li>
 		{else}
 			<li class="active">
 				{translate key=$pageTitle}
