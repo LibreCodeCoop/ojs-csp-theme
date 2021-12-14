@@ -35,7 +35,7 @@
 		<div class="aside-content">
 			<iframe src="https://open.spotify.com/embed/show/4dSWUdWQCTb2hDthntM0ZP"
 					frameBorder="0" allowfullscreen=""
-					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+					scrolling="no" width="100%" height="100%" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
 			</iframe>
 		</div>
 	</div>
