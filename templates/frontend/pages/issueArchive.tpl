@@ -38,9 +38,9 @@
 		<div class="issues media-list">
 			<table>
 				<tr>
-					<th>Ano</th>
-					<th>Volume</th>
-					<th colspan=20>Número</th>
+					<th>{translate key="issue.year"}</th>
+					<th>{translate key="issue.volume"}</th>
+					<th colspan=20>{translate key="issue.number"}</th>
 				</tr>
 				<tr>
 				{foreach from=$issues key=$key item=$year}
