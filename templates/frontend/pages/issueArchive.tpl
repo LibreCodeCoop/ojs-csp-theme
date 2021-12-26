@@ -27,6 +27,7 @@
 	{include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
 
 	{* No issues have been published *}
+
 	{if empty($issues)}
 		<div class="alert alert-info" role="alert">
 			{translate key="current.noCurrentIssueDesc"}
@@ -35,13 +36,30 @@
 
 		{* List issues *}
 		<div class="issues media-list">
-			{foreach from=$issues item="issue"}
-				{include file="frontend/objects/issue_summary.tpl"}
-			{/foreach}
+			<table>
+				<tr>
+					<th>Ano</th>
+					<th>Volume</th>
+					<th colspan=20>Número</th>
+				</tr>
+				<tr>
+				{foreach from=$issues key=$key item=$year}
+					<td>{$key}</td>
+					{foreach from=$year key=$key item=$volume}
+						<td>{$key}</td>
+						{foreach from=$volume key=$key item=$issue}
+							<td><a href="{url|escape op="view" path=$issue}">{$key}</a></td>
+							{* 	{include file="frontend/objects/issue_summary.tpl"} *}
+						{/foreach}
+					{/foreach}
+				{/foreach}
+				</tr>
+				<tr><br></tr>
+			</table>
 		</div>
 
 		{* Pagination *}
-		{if $prevPage > 1}
+{* 		{if $prevPage > 1}
 			{capture assign=prevUrl}{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive" path=$prevPage}{/capture}
 		{elseif $prevPage === 1}
 			{capture assign=prevUrl}{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}{/capture}
@@ -56,7 +74,7 @@
 			showingStart=$showingStart
 			showingEnd=$showingEnd
 			total=$total
-		}
+		} *}
 	{/if}
 </div>
 

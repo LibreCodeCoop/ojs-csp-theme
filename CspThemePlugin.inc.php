@@ -137,6 +137,36 @@ class CspThemePlugin extends ThemePlugin {
 			$userGroupIds[] = $group->getData('id');
 			$templateMgr->assign('userGroupIds',$userGroupIds);
 		}
+		if($args[1] == 'frontend/pages/issueArchive.tpl'){
+			$userDao = DAORegistry::getDAO('UserDAO');
+			$result = $userDao->retrieve(
+				<<<QUERY
+				SELECT DISTINCT `year` AS ANO
+				FROM ojs.issues i
+				ORDER BY i.`year` DESC
+				QUERY
+			);
 
+			while (!$result->EOF) {
+				$rowAno = $result->GetRowAssoc(false);
+				$result = $userDao->retrieve(
+					<<<QUERY
+					SELECT `year`, volume, number, issue_id
+					FROM ojs.issues i
+					WHERE `year` = '$rowAno[ano]'
+					ORDER BY i.number
+					QUERY
+				);
+				while (!$result->EOF) {
+					$rowIssue = $result->GetRowAssoc(false);
+					$array[$rowAno['ano']][$rowIssue['volume']][$rowIssue['number']] = $rowIssue['issue_id'];
+					$result->MoveNext();
+				}
+				$result->MoveNext();
+			}
+
+			$templateMgr = $args[0];
+			$templateMgr->assign('issues', $array);
+		}
 	}
 }
