@@ -139,7 +139,7 @@ class CspThemePlugin extends ThemePlugin {
 		}
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
 			$userDao = DAORegistry::getDAO('UserDAO');
-			$result = $userDao->retrieve(
+			$resultAno = $userDao->retrieve(
 				<<<QUERY
 				SELECT DISTINCT `year` AS ANO
 				FROM ojs.issues i
@@ -147,9 +147,9 @@ class CspThemePlugin extends ThemePlugin {
 				QUERY
 			);
 
-			while (!$result->EOF) {
-				$rowAno = $result->GetRowAssoc(false);
-				$result = $userDao->retrieve(
+			while (!$resultAno->EOF) {
+				$rowAno = $resultAno->GetRowAssoc(false);
+				$resultMes = $userDao->retrieve(
 					<<<QUERY
 					SELECT `year`, volume, number, issue_id
 					FROM ojs.issues i
@@ -157,12 +157,12 @@ class CspThemePlugin extends ThemePlugin {
 					ORDER BY i.number
 					QUERY
 				);
-				while (!$result->EOF) {
-					$rowIssue = $result->GetRowAssoc(false);
+				while (!$resultMes->EOF) {
+					$rowIssue = $resultMes->GetRowAssoc(false);
 					$array[$rowAno['ano']][$rowIssue['volume']][$rowIssue['number']] = $rowIssue['issue_id'];
-					$result->MoveNext();
+					$resultMes->MoveNext();
 				}
-				$result->MoveNext();
+				$resultAno->MoveNext();
 			}
 
 			$templateMgr = $args[0];

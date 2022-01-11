@@ -33,7 +33,6 @@
 			{translate key="current.noCurrentIssueDesc"}
 		</div>
 	{else}
-
 		{* List issues *}
 		<div class="issues media-list">
 			<table>
@@ -42,8 +41,8 @@
 					<th>{translate key="issue.volume"}</th>
 					<th colspan=20>{translate key="issue.number"}</th>
 				</tr>
-				<tr>
 				{foreach from=$issues key=$key item=$year}
+				<tr>
 					<td>{$key}</td>
 					{foreach from=$year key=$key item=$volume}
 						<td>{$key}</td>
@@ -52,8 +51,8 @@
 							{* 	{include file="frontend/objects/issue_summary.tpl"} *}
 						{/foreach}
 					{/foreach}
-				{/foreach}
 				</tr>
+				{/foreach}
 				<tr><br></tr>
 			</table>
 		</div>
