@@ -98,6 +98,7 @@ class CspThemePlugin extends ThemePlugin {
 
 		$issues = iterator_to_array(Services::get('issue')->getMany($params));
 		if (isset($issues[0])) {
+			$x = 1;
 			$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
 			$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
 		} else {
@@ -113,7 +114,7 @@ class CspThemePlugin extends ThemePlugin {
 			LEFT JOIN publication_settings s
 			ON s.publication_id = p.publication_id
 			WHERE section_id = 10 AND s.setting_name = 'title' AND s.locale = 'pt_BR'
-			ORDER BY publication_id DESC LIMIT 3
+			ORDER BY publication_id ASC LIMIT 3
 			QUERY
 		);
 		$interviews = $result->GetRows();
@@ -154,7 +155,7 @@ class CspThemePlugin extends ThemePlugin {
 					SELECT `year`, volume, number, issue_id
 					FROM ojs.issues i
 					WHERE `year` = '$rowAno[ano]'
-					ORDER BY i.number
+					ORDER BY i.issue_id
 					QUERY
 				);
 				while (!$resultMes->EOF) {
