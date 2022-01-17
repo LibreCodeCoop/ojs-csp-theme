@@ -16,6 +16,7 @@ class CspThemePlugin extends ThemePlugin {
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
+		HookRegistry::register('CitationStyleLanguage::citation', array($this, 'CitationStyleLanguageCitation'));
 
     }
 
@@ -35,6 +36,19 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
+	public function CitationStyleLanguageCitation($hookName, $args)
+	{
+		foreach ($args[0]->author as $key => $value) {
+			$completeName = $value->family;
+			$completeNameArray = explode(" ", $completeName);
+			$arraySize = count($completeNameArray);
+			for ($i=1; $i < $arraySize; $i++) {
+				$abbrev .= substr($completeNameArray[$i], 0,1);
+			}
+			$args[0]->author[$key]->family = $completeNameArray[0]." ".$abbrev;
+		}
+
+	}
 	public function fetchTemplate($hookName, $args)
 	{
         $request = Application::get()->getRequest();
@@ -98,7 +112,6 @@ class CspThemePlugin extends ThemePlugin {
 
 		$issues = iterator_to_array(Services::get('issue')->getMany($params));
 		if (isset($issues[0])) {
-			$x = 1;
 			$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
 			$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
 		} else {

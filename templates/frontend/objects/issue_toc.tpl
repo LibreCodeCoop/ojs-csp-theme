@@ -35,7 +35,7 @@
 								{if $section.title}
 									<div class="col-md-3 page-header-title">
 										<h2>
-											<small>{$section.title|escape}</small>
+											{$section.title|escape}
 										</h2>
 									</div>
 								{/if}
