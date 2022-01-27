@@ -100,20 +100,13 @@ class CspThemePlugin extends ThemePlugin {
 		$router = $request->getRouter();
 		$page = $router->_page;
 		$op = $router->_op;
-        $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
-		$params = array(
-			'contextId' => $context->getId(),
-			'orderBy' => 'seq',
-			'orderDirection' => 'ASC',
-			'count' => $count,
-			'offset' => 0,
-			'isPublished' => true
-        );
 
-		$issues = iterator_to_array(Services::get('issue')->getMany($params));
-		if (isset($issues[0])) {
-			$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
-			$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
+		$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
+		$currentIssue = $issueDao->getCurrent($context->getId());
+
+		if ($args[1] == "frontend/pages/indexJournal.tpl") {
+			$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
+			$coverImageAltText = $currentIssue->getLocalizedCoverImageAltText();
 		} else {
 			$coverImageUrl = null;
 			$coverImageAltText = null;
