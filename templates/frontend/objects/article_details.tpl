@@ -152,6 +152,7 @@
 						</div>
 					{/if}
 				{/foreach}
+				{if !empty($keywords)}
 				<div class="list-group-item keywords">
 					<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
 						{translate key="semicolon" label=$translatedKeywords}</strong>
@@ -165,6 +166,7 @@
 						</span>
 					</div>
 				</div>
+				{/if}
 				{* Licensing info *}
 				{if $licenseTerms || $licenseUrl}
 					<div class="panel panel-default copyright">
