@@ -16,7 +16,6 @@ class CspThemePlugin extends ThemePlugin {
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
-		HookRegistry::register('CitationStyleLanguage::citation', array($this, 'CitationStyleLanguageCitation'));
 
     }
 
@@ -36,19 +35,6 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
-	public function CitationStyleLanguageCitation($hookName, $args)
-	{
-		foreach ($args[0]->author as $key => $value) {
-			$completeName = $value->family;
-			$completeNameArray = explode(" ", $completeName);
-			$arraySize = count($completeNameArray);
-			for ($i=1; $i < $arraySize; $i++) {
-				$abbrev .= substr($completeNameArray[$i], 0,1);
-			}
-			$args[0]->author[$key]->family = $completeNameArray[0]." ".$abbrev;
-		}
-
-	}
 	public function fetchTemplate($hookName, $args)
 	{
         $request = Application::get()->getRequest();
@@ -125,6 +111,58 @@ class CspThemePlugin extends ThemePlugin {
 		);
 		$interviews = $result->GetRows();
 
+		/* Make citation */
+		if($args[1] == "frontend/pages/article.tpl"){
+			$pathArray = explode("/",$requestPath);
+			$submissionId = end($pathArray);
+			$submissionDAO = Application::getSubmissionDAO();
+			$submission = $submissionDAO->getById($submissionId);
+			$publication = $submission->getCurrentPublication();
+
+			foreach ($publication->getData('authors') as $key => $value) {
+				$submissionLocale = $publication->_data["authors"][$key]->_data["submissionLocale"];
+				$givenName = $publication->_data["authors"][$key]->_data["givenName"][$submissionLocale];
+				if(strpos($givenName, ',')){
+					$givenNameArray = explode(",", $givenName);
+					$beginningNameArray = explode(" ", $givenNameArray[1]);
+					$arraySize = count($beginningNameArray);
+					for ($i=1; $i < $arraySize; $i++) {
+						if($beginningNameArray[$i] === strtolower($beginningNameArray[$i])){
+							$abbrev .= "";
+						}else{
+							$abbrev .= substr($beginningNameArray[$i], 0,1);
+						}
+					}
+					$authors[] = $givenNameArray[0]." ".$abbrev;
+				}else{
+					$givenNameArray = explode(" ", $givenName);
+					$beginningNameArray = array_shift($givenNameArray);
+					$arraySize = count($beginningNameArray);
+					for ($i=0; $i < $arraySize; $i++) {
+						if($beginningNameArray[$i] === strtolower($beginningNameArray[$i])){
+							$abbrev .= "";
+						}else{
+							$abbrev .= substr($beginningNameArray[$i], 0,1);
+						}
+					}
+					$authors[]= end($givenNameArray)." ".$abbrev;
+				}
+				unset($abbrev);
+			}
+			$issue = $issueDao->getById($publication->_data["issueId"]);
+
+			$citation = implode(", ",$authors).". ";
+			$citation .= $publication->_data["title"][$submissionLocale].". ";
+			$citation .= $context->getLocalizedName()." ";
+			$citation .= $issue->_data["year"]."; ";
+			$citation .= $issue->_data["volume"];
+			$citation .= "(".$issue->_data["number"].")";
+			if($issue->_data["year"] > 2016){
+				$doiArray = explode('X', $publication->_data["pub-id::doi"]);
+				$citation .= ':e'.$doiArray[1];
+			}
+			$citation .= " doi: ".$publication->_data["pub-id::doi"];
+		}
 		$templateMgr = $args[0];
         $templateMgr->assign(array(
 			'issues' => $issues,
@@ -136,6 +174,7 @@ class CspThemePlugin extends ThemePlugin {
 			'context' => $context,
 			'op' => $op,
 			'interviews' => $interviews,
+			'citation' => $citation
 		));
 
 		if($args[1] == 'frontend/pages/userRegister.tpl'){ /* Passa id de avaliador para checkbox ir marcado */

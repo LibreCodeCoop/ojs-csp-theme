@@ -85,7 +85,11 @@
 			{* how to cite *}
 			<div class="csp-cite">
 				<strong>{translate key="submission.howToCite"}</strong>
-				{$citation}
+				<div class="csl-bib-body">
+					<div class="csl-entry">
+						{$citation}
+					</div>
+				</div>
 			</div>
 			<div class="list-group">
 				{* test date *}
