@@ -96,7 +96,7 @@
 					<div class="csp-authors">
 						{foreach from=$publication->getData('authors') item=author}
 							<div class="csp-author">
-								{if $author->getOrcid()}
+								{if $publication->getData('primaryContactId') == $author->getId()}
 									<span class="glyphicon glyphicon-envelope orcid-icon"></span>
 								{/if}
 								<div class="csp-fullname">{$author->getFullName()|escape}</div>
