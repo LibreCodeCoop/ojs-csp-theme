@@ -118,7 +118,6 @@ class CspThemePlugin extends ThemePlugin {
 			$submissionDAO = Application::getSubmissionDAO();
 			$submission = $submissionDAO->getById($submissionId);
 			$publication = $submission->getCurrentPublication();
-
 			foreach ($publication->getData('authors') as $key => $value) {
 				$submissionLocale = $publication->_data["authors"][$key]->_data["submissionLocale"];
 				$givenName = $publication->_data["authors"][$key]->_data["givenName"][$submissionLocale];
@@ -136,13 +135,12 @@ class CspThemePlugin extends ThemePlugin {
 					$authors[] = $givenNameArray[0]." ".$abbrev;
 				}else{
 					$givenNameArray = explode(" ", $givenName);
-					$beginningNameArray = array_shift($givenNameArray);
-					$arraySize = count($beginningNameArray);
-					for ($i=0; $i < $arraySize; $i++) {
-						if($beginningNameArray[$i] === strtolower($beginningNameArray[$i])){
+					$arraySize = count($givenNameArray);
+					for ($i=0; $i < ($arraySize-1); $i++) {
+						if($givenNameArray[$i] === strtolower($givenNameArray[$i])){
 							$abbrev .= "";
 						}else{
-							$abbrev .= substr($beginningNameArray[$i], 0,1);
+							$abbrev .= substr($givenNameArray[$i], 0,1);
 						}
 					}
 					$authors[]= end($givenNameArray)." ".$abbrev;
@@ -161,7 +159,9 @@ class CspThemePlugin extends ThemePlugin {
 				$doiArray = explode('X', $publication->_data["pub-id::doi"]);
 				$citation .= ':e'.$doiArray[1];
 			}
-			$citation .= " doi: ".$publication->_data["pub-id::doi"];
+			if ($publication->_data["pub-id::doi"]) {
+				$citation .= " doi: ".$publication->_data["pub-id::doi"];
+			}
 		}
 		$templateMgr = $args[0];
         $templateMgr->assign(array(
