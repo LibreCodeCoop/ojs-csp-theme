@@ -192,25 +192,34 @@ class CspThemePlugin extends ThemePlugin {
 				ORDER BY i.`year` DESC
 				QUERY
 			);
-
 			while (!$resultAno->EOF) {
 				$rowAno = $resultAno->GetRowAssoc(false);
 				$resultMes = $userDao->retrieve(
 					<<<QUERY
-					SELECT `year`, volume, number, issue_id
-					FROM ojs.issues i
-					WHERE `year` = '$rowAno[ano]'
-					ORDER BY i.issue_id
+						SELECT
+							`year`,
+							volume,
+							CASE
+								WHEN `number` > 12 THEN CONCAT('Sup.', (`number` - 12))
+								ELSE `number`
+							END numero,
+							number,
+							issue_id
+						FROM
+							ojs.issues i
+						WHERE
+							`year` = '$rowAno[ano]'
+						ORDER BY
+							CONVERT(i.`number`, INT)
 					QUERY
 				);
 				while (!$resultMes->EOF) {
 					$rowIssue = $resultMes->GetRowAssoc(false);
-					$array[$rowAno['ano']][$rowIssue['volume']][$rowIssue['number']] = $rowIssue['issue_id'];
+					$array[$rowAno['ano']][$rowIssue['volume']][$rowIssue['numero']] = $rowIssue['issue_id'];
 					$resultMes->MoveNext();
 				}
 				$resultAno->MoveNext();
 			}
-
 			$templateMgr = $args[0];
 			$templateMgr->assign('issues', $array);
 		}
