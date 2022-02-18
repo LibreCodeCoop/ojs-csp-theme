@@ -200,7 +200,7 @@ class CspThemePlugin extends ThemePlugin {
 							`year`,
 							volume,
 							CASE
-								WHEN `number` > 12 THEN CONCAT('Sup.', (`number` - 12))
+								WHEN `number` > 12 THEN CONCAT('Supl.', (`number` - 12))
 								ELSE `number`
 							END numero,
 							number,
