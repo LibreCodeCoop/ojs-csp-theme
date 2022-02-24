@@ -200,17 +200,28 @@ class CspThemePlugin extends ThemePlugin {
 							`year`,
 							volume,
 							CASE
-								WHEN `number` > 12 THEN CONCAT('Supl.', (`number` - 12))
-								ELSE `number`
+								WHEN `year` <= 2005 AND setting_value like '%sup%' THEN CONCAT('Supl.', `number`)
+								WHEN `year` <= 2005 AND `number` > 12 THEN CONCAT('Supl.', (`number` - 12))
+								WHEN `year` > 2005 AND `number` > 12 THEN CONCAT('Supl.', (`number` - 12))
+							ELSE `number`
 							END numero,
 							number,
-							issue_id
+							i.issue_id,
+							CASE
+								WHEN setting_value like '%sup%' THEN 12 + CONVERT(REPLACE(i.`number`,'supl.',''),INT)
+							ELSE CONVERT(`number`,INT)
+							END ordem
 						FROM
 							ojs.issues i
+						LEFT JOIN
+							ojs.issue_settings s
+						ON
+							s.issue_id = i.issue_id
 						WHERE
 							`year` = '$rowAno[ano]'
-						ORDER BY
-							CONVERT(i.`number`, INT)
+							AND s.setting_name = 'title'
+							and s.locale = 'pt_BR'
+						ORDER BY ordem
 					QUERY
 				);
 				while (!$resultMes->EOF) {
