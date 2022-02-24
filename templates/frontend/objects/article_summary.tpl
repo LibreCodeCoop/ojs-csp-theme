@@ -46,7 +46,10 @@
 				<div class="meta">
 					{if $showAuthor}
 						<div class="authors">
-							{$article->getAuthorString()|escape}
+							{foreach from=$article->_data['publications'][0]->_data['authors'] item=author}
+							{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
+							{$arrayNames[1]} {$arrayNames[0]},
+							{/foreach}
 						</div>
 					{/if}
 				</div>
