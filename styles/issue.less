@@ -324,19 +324,34 @@
 .page_issue_archive table{
 	width: 100%;
 	tr{
-		height: 20px;
+		height: 35px;
 	}
 	th{
 		padding: 5px
 	}
-	th:nth-child(-n+2){
-		width: 20px;
-		padding:15px;
-	}
-	td{
+	td:nth-of-type(2){
 		text-align: center;
 	}
-	td:not(:nth-child(-n+2)){
-		border-right: 1px solid #E88834;
-	}
+}
+
+.archiveButton {
+    display: inline-block;
+    padding: 0 0.5em;
+    background: #E88834;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    -webkit-box-shadow: 0 1px 0 #ddd;
+    box-shadow: 0 1px 0 #ddd;
+    cursor: pointer;
+}
+
+.archiveButton:hover {
+    color: #fff;
+	text-decoration: none;
+	background: rgb(233, 182, 137);
 }
