@@ -9,7 +9,7 @@
 .header-page h2{
 	padding-left: 5px;
 	padding-right: 0;
-	border-left: 4px solid #e88833;
+	border-left: 4px solid @font-primary-color;
 	text-transform: uppercase;
 	width: 40%;
 	font-weight: bold;
@@ -20,7 +20,7 @@
 }
 
 .header-page > #line{
-	border-bottom: 1px solid #e88833;
+	border-bottom: 1px solid @font-primary-color;
 	width: 70%;
 	padding-top: 15px;
 	@media screen and (max-width: 1080px) {
@@ -55,8 +55,9 @@
 	width: 150px;
 }
 
-#main-navigation{
+#main-navigation a{
 	text-transform: uppercase;
+	color: white !important;
 }
 
 #nav-menu{

@@ -5,7 +5,7 @@
 @import './submissions.less';
 @import './xml.less';
 
-@font-primary-color: #e68b3a;
+@font-primary-color: #A03841;
 @font-secondary-color: #818183;
 @font-terciary-color: #dddddd;
 
@@ -117,15 +117,17 @@ footer[role="contentinfo"]{
 }
 
 #navigationUser li:last-child {
-    background: #858688;
+	background: #858688;
+	color: #FFFFFF;
 }
 
-#navigationUser li:nth-child(2) {
-    background: @font-secondary-color;
-}
-
-.navbar-default .nav > li > a{
-    color: white;
+#navigationUser {
+	a{
+		color: #FFFFFF;
+	}
+	li:nth-child(2) {
+		background: @font-secondary-color;
+	}
 }
 
 #logo-csp {
