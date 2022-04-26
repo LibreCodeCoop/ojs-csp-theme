@@ -63,7 +63,7 @@
 		</span>
 	{/if}
 
-	{$galley->getGalleyLabel()|escape}
+	{$galley->getLabel()|escape}
 
 	{if $restricted && $purchaseFee && $purchaseCurrency}
 		<span class="purchase-cost">
