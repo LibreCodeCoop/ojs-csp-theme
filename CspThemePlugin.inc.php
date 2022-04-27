@@ -16,6 +16,7 @@ class CspThemePlugin extends ThemePlugin {
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
+		HookRegistry::register('Templates::Common::Sidebar', array($this, 'addDates'));
 
     }
 
@@ -233,6 +234,41 @@ class CspThemePlugin extends ThemePlugin {
 			}
 			$templateMgr = $args[0];
 			$templateMgr->assign('issues', $array);
+		}
+	}
+
+	function addDates($hookName, $params) {
+		$request = Application::get()->getRequest();
+		if($request->_requestPath <> "/ojs/index.php/csp"){
+			$smarty = $params[1];
+			$article = $smarty->get_template_vars('article');
+
+			$dates = "";
+			$submitdate = $article->getDateSubmitted();
+			$publishdate = $article->getDatePublished();
+
+			// Get all decisions for this submission
+			$editDecisionDao = DAORegistry::getDAO('EditDecisionDAO');
+			$decisions = $editDecisionDao->getEditorDecisions($article->getId());
+
+			// Loop through the decisions
+			foreach ($decisions as $decision) {
+				// If we have a review stage decision and it was a submission accepted decision, get to date for the decision
+				if ($decision['decision'] == '1')
+					$reviewdate = $decision['dateDecided'];
+			}
+
+			$dates = array();
+			if ($submitdate)
+				$dates['received'] = date('Y-m-d',strtotime($submitdate));
+			if ($reviewdate)
+				$dates['accepted'] = date('Y-m-d',strtotime($reviewdate));
+			if ($publishdate)
+				$dates['published'] = date('Y-m-d',strtotime($publishdate));
+
+			$smarty->assign('dates', $dates);
+
+			return false;
 		}
 	}
 }

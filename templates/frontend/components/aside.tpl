@@ -94,13 +94,15 @@
 			<div class="list-group">
 				{* test date *}
 				<div class="csp-date">
-					{* <div><strong>Received:</strong> date </div> *}
-					{* <div><strong>Accepted:</strong> date </div> *}
-					<div>
-						{capture assign=translatedDatePublished}{translate key="submissions.published"}{/capture}
-						<strong>{translate key="semicolon" label=$translatedDatePublished}</strong>
-						{$publication->getLocalizedData('datePublished')|date_format}
-					</div>
+					{if array_key_exists('received', $dates)}
+						<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
+					{/if}
+					{if $dates.accepted}
+						<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
+					{/if}
+					{if $dates.published}
+						<strong>{translate key="plugins.themes.csp.dates.published"}</strong> {$dates.published|date_format} <br/>
+					{/if}
 				</div>
 			</div>
 	</aside>

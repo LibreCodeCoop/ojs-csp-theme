@@ -44,3 +44,12 @@ msgstr "Podcasts"
 
 msgid "plugins.themes.csp.sidebar.twitter"
 msgstr "Twitter"
+
+msgid "plugins.themes.csp.dates.received"
+msgstr "Received"
+
+msgid "plugins.themes.csp.dates.accepted"
+msgstr "Accepted"
+
+msgid "plugins.themes.csp.dates.published"
+msgstr "Published"
