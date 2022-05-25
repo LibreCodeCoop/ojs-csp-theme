@@ -45,15 +45,20 @@
 			{if $showAuthor}
 				<div class="meta">
 					{if $showAuthor}
+					{assign var=year value=(int)substr($article->getData('dateSubmitted'), 0,4)}
 						<div class="authors">
-							{foreach from=$article->_data['publications'][0]->_data['authors'] item=author}
-								{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
-								{if next($article->_data['publications'][0]->_data['authors']) == true}
-									{$arrayNames[1]} {$arrayNames[0]},
-								{else}
-									{$arrayNames[1]} {$arrayNames[0]}
-								{/if}
-							{/foreach}
+							{if $year > 2021}
+								{$article->getAuthorString()|escape}
+							{else}
+								{foreach from=$article->_data['publications'][0]->_data['authors'] item=author}
+									{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
+									{if next($article->_data['publications'][0]->_data['authors']) == true}
+										{$arrayNames[1]} {$arrayNames[0]},
+									{else}
+										{$arrayNames[1]} {$arrayNames[0]}
+									{/if}
+								{/foreach}
+							{/if}
 						</div>
 					{/if}
 				</div>
