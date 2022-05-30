@@ -104,14 +104,8 @@
 									{if $year > 2021}
 										{$author->getFullName()|escape}
 									{else}
-										{foreach from=$article->_data['publications'][0]->_data['authors'] item=author}
-											{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
-											{if next($article->_data['publications'][0]->_data['authors']) == true}
-												{$arrayNames[1]} {$arrayNames[0]},
-											{else}
-												{$arrayNames[1]} {$arrayNames[0]}
-											{/if}
-										{/foreach}
+										{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
+										{$arrayNames[1]} {$arrayNames[0]}
 									{/if}
 								</div>
 							</div>
