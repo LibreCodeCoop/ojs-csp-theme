@@ -92,8 +92,10 @@ class CspThemePlugin extends ThemePlugin {
 		$currentIssue = $issueDao->getCurrent($context->getId());
 
 		if ($args[1] == "frontend/pages/indexJournal.tpl") {
-			$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
-			$coverImageAltText = $currentIssue->getLocalizedCoverImageAltText();
+			if(!is_null($currentIssue)){
+				$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
+				$coverImageAltText = $currentIssue->getLocalizedCoverImageAltText();
+			}
 		} else {
 			$coverImageUrl = null;
 			$coverImageAltText = null;
@@ -239,7 +241,7 @@ class CspThemePlugin extends ThemePlugin {
 
 	function addDates($hookName, $params) {
 		$request = Application::get()->getRequest();
-		if($request->_requestPath <> "/ojs/index.php/csp"){
+		if(strpos($request->_requestPath, 'article/view')){
 			$smarty = $params[1];
 			$article = $smarty->get_template_vars('article');
 
