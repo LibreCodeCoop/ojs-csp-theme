@@ -124,6 +124,7 @@ class CspThemePlugin extends ThemePlugin {
 			foreach ($publication->getData('authors') as $key => $value) {
 				$submissionLocale = $publication->_data["authors"][$key]->_data["submissionLocale"];
 				$givenName = $publication->_data["authors"][$key]->_data["givenName"][$submissionLocale];
+				$familyName = $publication->_data["authors"][$key]->_data["familyName"][$submissionLocale];
 				if(strpos($givenName, ',')){
 					$givenNameArray = explode(",", $givenName);
 					$beginningNameArray = explode(" ", $givenNameArray[1]);
@@ -146,7 +147,21 @@ class CspThemePlugin extends ThemePlugin {
 							$abbrev .= substr($givenNameArray[$i], 0,1);
 						}
 					}
-					$authors[]= end($givenNameArray)." ".$abbrev;
+				}
+
+				if (!is_null($familyName)) {
+					$givenNameArray = explode(" ", $givenName);
+					$arraySize = count($givenNameArray);
+					for ($i=0; $i <= $arraySize; $i++) {
+						$abbrev .= substr($givenNameArray[$i], 0,1);
+					}
+
+					$familyNameArray = explode(" ", $familyName);
+					$arraySize = count($familyNameArray);
+					for ($i=0; $i < ($arraySize-1); $i++) {
+						$abbrev .= substr($familyNameArray[$i], 0,1);
+					}
+					$authors[]= end($familyNameArray)." ".$abbrev;
 				}
 				unset($abbrev);
 			}
@@ -168,7 +183,6 @@ class CspThemePlugin extends ThemePlugin {
 		}
 		$templateMgr = $args[0];
         $templateMgr->assign(array(
-			'issues' => $issues,
 			'requestPath' => $requestPath,
 			'baseUrl' => $baseUrl,
 			'page' => $page,
