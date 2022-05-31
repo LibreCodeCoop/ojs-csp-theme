@@ -238,6 +238,7 @@ class CspThemePlugin extends ThemePlugin {
 							`year` = '$rowAno[ano]'
 							AND s.setting_name = 'title'
 							and s.locale = 'pt_BR'
+							and i.published = 1
 						ORDER BY ordem
 					QUERY
 				);
