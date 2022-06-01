@@ -138,30 +138,39 @@ class CspThemePlugin extends ThemePlugin {
 					}
 					$authors[] = $givenNameArray[0]." ".$abbrev;
 				}else{
-					$givenNameArray = explode(" ", $givenName);
-					$arraySize = count($givenNameArray);
-					for ($i=0; $i < ($arraySize-1); $i++) {
-						if($givenNameArray[$i] === strtolower($givenNameArray[$i])){
-							$abbrev .= "";
-						}else{
-							$abbrev .= substr($givenNameArray[$i], 0,1);
+					if (!is_null($familyName)) {
+						$givenNameArray = explode(" ", $givenName);
+						$arraySize = count($givenNameArray);
+						for ($i=0; $i <= $arraySize; $i++) {
+							if($givenNameArray[$i] === strtolower($givenNameArray[$i])){
+								$abbrev .= "";
+							}else{
+								$abbrev .= substr($givenNameArray[$i], 0,1);
+							}
 						}
+						$familyNameArray = explode(" ", $familyName);
+						$arraySize = count($familyNameArray);
+						for ($i=0; $i < ($arraySize-1); $i++) {
+							if($familyNameArray[$i] === strtolower($familyNameArray[$i])){
+								$abbrev .= "";
+							}else{
+								$abbrev .= substr($familyNameArray[$i], 0,1);
+							}
+						}
+						$authors[]= end($familyNameArray)." ".$abbrev;
+					}else{
+						$givenNameArray = explode(" ", $givenName);
+						$arraySize = count($givenNameArray);
+						for ($i=0; $i < ($arraySize-1); $i++) {
+							if($givenNameArray[$i] === strtolower($givenNameArray[$i])){
+								$abbrev .= "";
+							}else{
+								$abbrev .= substr($givenNameArray[$i], 0,1);
+							}
+						}
+						$authors[] = $givenNameArray[$arraySize-1]." ".$abbrev;
 					}
-				}
 
-				if (!is_null($familyName)) {
-					$givenNameArray = explode(" ", $givenName);
-					$arraySize = count($givenNameArray);
-					for ($i=0; $i <= $arraySize; $i++) {
-						$abbrev .= substr($givenNameArray[$i], 0,1);
-					}
-
-					$familyNameArray = explode(" ", $familyName);
-					$arraySize = count($familyNameArray);
-					for ($i=0; $i < ($arraySize-1); $i++) {
-						$abbrev .= substr($familyNameArray[$i], 0,1);
-					}
-					$authors[]= end($familyNameArray)." ".$abbrev;
 				}
 				unset($abbrev);
 			}
