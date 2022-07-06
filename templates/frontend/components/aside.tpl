@@ -100,9 +100,6 @@
 					{if $dates.accepted}
 						<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
 					{/if}
-					{if $dates.published}
-						<strong>{translate key="plugins.themes.csp.dates.published"}</strong> {$dates.published|date_format} <br/>
-					{/if}
 				</div>
 			</div>
 	</aside>
