@@ -58,12 +58,6 @@
 }
 
 .menu-bar .context-toggles a{
-	/* display: flex !important;
-	align-items: center !important;
-	height: 100% !important; */
-}
-
-.menu-bar .context-toggles a{
 	display: flex !important;
 	align-items: center;
 	justify-content: center;
@@ -122,4 +116,23 @@ border-bottom: 1px solid darken(#d79027, 20%) !important;
 .content-node .citation_reference.highlighted{
 	background-color: rgba(215, 144, 39, 0.6) !important;
 	// background-color: darken(#d79027, 20%) !important;
+}
+
+.lens-article .publication-info{
+	.doi, .meta-data{
+		display: none;
+	}
+}
+
+.lens-article .menu-bar .definitions{
+	display: none !important;
+}
+
+
+.article .resources .nodes {
+	display: table;
+}
+
+.lens-article .content-node.publication-info {
+	display: table-footer-group;
 }
