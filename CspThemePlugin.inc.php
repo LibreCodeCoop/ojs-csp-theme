@@ -17,6 +17,7 @@ class CspThemePlugin extends ThemePlugin {
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
 		HookRegistry::register('Templates::Common::Sidebar', array($this, 'addDates'));
+		HookRegistry::register('LensGalleyPlugin::articleDownload', array($this, 'lensGalleyPluginArticleDownload'));
 
     }
 
@@ -38,7 +39,6 @@ class CspThemePlugin extends ThemePlugin {
 
 	public function fetchTemplate($hookName, $args)
 	{
-        $request = Application::get()->getRequest();
         $request = Application::get()->getRequest();
 		$context = $request->getContext();
 		$requestPath = $request->getRequestPath();
@@ -296,5 +296,105 @@ class CspThemePlugin extends ThemePlugin {
 
 			return false;
 		}
+	}
+
+	public function string_between_two_string($str, $starting_word, $ending_word)
+	{
+		$subtring_start = strpos($str, $starting_word);
+		$subtring_start += strlen($starting_word);
+		$size = strpos($str, $ending_word, $subtring_start) - $subtring_start;
+		return substr($str, $subtring_start, $size);
+	}
+
+	public function lensGalleyPluginArticleDownload($hookName, $args){
+		return;
+		$request = Application::get()->getRequest();
+		list($submission, $galley) = $args;
+		$hooks = HookRegistry::getHooks("ArticleHandler::download");
+		foreach ($hooks as $hookList) {
+			foreach ($hookList as $hook) {
+				if(is_a($hook[0], LensGalleyPlugin::class)){
+					$lensGalley = $hook[0];
+					break 2;
+				}
+			}
+		}
+		$sectionId = $args[0]->_data["publications"][0]->_data["sectionId"];
+		$XMLlocale = $args[1]->_data["locale"];
+		$navigationLocale = AppLocale::getLocale();
+		$xmlContents = $lensGalley->_getXMLContents($request, $galley);
+		file_put_contents("/tmp/xmlContents2.txt",$xmlContents."\n",FILE_APPEND);
+		$sections = array(1, 4, 6, 7, 8, 9);
+		if($navigationLocale == $XMLlocale){
+			return;
+		}
+		if($XMLlocale == "pt_BR"){
+			switch ($navigationLocale) {
+				case "en_US":
+					if(strpos($xmlContents, '<sub-article article-type="translation" id="s1" xml:lang="en">')){
+						$articleMeta = $this->string_between_two_string($xmlContents, '<article-meta>', '</article-meta>');
+						$articleFrontStubEN = $this->string_between_two_string($xmlContents, 'xml:lang="en">','<body>');
+						$bodyMain = $this->string_between_two_string($xmlContents, '</front>','<back>');
+						$bodyEN = $this->string_between_two_string($xmlContents, '</front-stub>','</sub-article>');
+
+						$xmlContents = str_replace($articleMeta, $articleFrontStubEN, $xmlContents);
+						$xmlContents = str_replace($bodyMain, $bodyEN, $xmlContents);
+					}
+					break;
+				case "es_ES":
+					if(strpos($xmlContents, '<sub-article article-type="translation" id="s2" xml:lang="es">')){
+						$articleMeta = $this->string_between_two_string($xmlContents, '<article-meta>', '</article-meta>');
+						$articleFrontStubEN = $this->string_between_two_string($xmlContents, 'xml:lang="en">','<body>');
+						$bodyMain = $this->string_between_two_string($xmlContents, '</front>','<back>');
+						$bodyEN = $this->string_between_two_string($xmlContents, '</front-stub>','</sub-article>');
+
+						$xmlContents = str_replace($bodyEN, '', $xmlContents);
+						$xmlContents = str_replace($articleFrontStubEN, '', $xmlContents);
+
+						$articleFrontStubES = $this->string_between_two_string($xmlContents, 'xml:lang="es">','<body>');
+						$bodyES = $this->string_between_two_string($xmlContents, '</front-stub>','</sub-article>');
+
+						$xmlContents = str_replace($articleMeta, $articleFrontStubES, $xmlContents);
+						$xmlContents = str_replace($bodyMain, $bodyES, $xmlContents);
+					}
+					break;
+			}
+		}
+		if($XMLlocale == "en_US"){
+			switch ($navigationLocale) {
+				case "pt_BR":
+					if(strpos($xmlContents, '<sub-article article-type="translation" id="s1" xml:lang="pt">')){
+						$articleMeta = $this->string_between_two_string($xmlContents, '<article-meta>', '</article-meta>');
+						$articleFrontStubPT = $this->string_between_two_string($xmlContents, 'xml:lang="pt">','<body>');
+						$bodyMain = $this->string_between_two_string($xmlContents, '</front>','<back>');
+						$bodyPT = $this->string_between_two_string($xmlContents, '</front-stub>','</sub-article>');
+
+						$xmlContents = str_replace($articleMeta, $articleFrontStubPT, $xmlContents);
+						$xmlContents = str_replace($bodyMain, $bodyPT, $xmlContents);
+					}
+					break;
+				case "es_ES":
+					if(strpos($xmlContents, '<sub-article article-type="translation" id="s2" xml:lang="es">')){
+						$articleMeta = $this->string_between_two_string($xmlContents, '<article-meta>', '</article-meta>');
+						$articleFrontStubES = $this->string_between_two_string($xmlContents, 'xml:lang="es">','<body>');
+						$bodyEN = $this->string_between_two_string($xmlContents, '</front>','<back>');
+						$bodyES = $this->string_between_two_string($xmlContents, '</front-stub>','</sub-article>');
+
+						$xmlContents = str_replace($articleMeta, $articleFrontStubES, $xmlContents);
+						$xmlContents = str_replace($bodyEN, $bodyES, $xmlContents);
+					}
+					break;
+			}
+		}
+
+		header('Content-Type: application/xml');
+		header('Content-Length: ' . strlen($xmlContents));
+		header('Content-Disposition: inline');
+		header('Cache-Control: private');
+		header('Pragma: public');
+		echo $xmlContents;
+		$returner = true;
+		HookRegistry::call('LensGalleyPlugin::articleDownloadFinished', array(&$returner));
+		return true;
 	}
 }
