@@ -307,7 +307,6 @@ class CspThemePlugin extends ThemePlugin {
 	}
 
 	public function lensGalleyPluginArticleDownload($hookName, $args){
-		return;
 		$request = Application::get()->getRequest();
 		list($submission, $galley) = $args;
 		$hooks = HookRegistry::getHooks("ArticleHandler::download");
