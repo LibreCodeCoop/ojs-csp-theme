@@ -99,7 +99,7 @@
 								{if $publication->getData('primaryContactId') == $author->getId()}
 									<span class="glyphicon glyphicon-envelope orcid-icon"></span>
 								{/if}
-								{assign var=year value=(int)substr($article->getData('dateSubmitted'), 0,4)}
+								{assign var=year value=(int)substr($publication->getData('lastModified'), 0,4)}
 								<div class="csp-fullname">
 									{if $year > 2021}
 										{$author->getFullName()|escape}
