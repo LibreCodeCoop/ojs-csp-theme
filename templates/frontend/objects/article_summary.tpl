@@ -45,7 +45,7 @@
 			{if $showAuthor}
 				<div class="meta">
 					{if $showAuthor}
-					{assign var=year value=(int)substr($article->getData('dateSubmitted'), 0,4)}
+					{assign var=year value=(int)substr($article->getData('lastModified'), 0,4)}
 						<div class="authors">
 							{if $year > 2021}
 								{$article->getAuthorString()|escape}
