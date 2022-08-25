@@ -641,7 +641,7 @@
 			this.urls = function () {
 				return this.properties.citation_urls.length > 0 ? this.properties.citation_urls : [this.properties.doi]
 			}, this.getHeader = function () {
-				return r.compact([this.properties.label, this.properties.citation_type || "Reference"]).join(" - ")
+				return r.compact([this.properties.label, this.properties.citation_type]).join(" - ")
 			}
 		}, i.Prototype.prototype = o.Node.prototype, i.prototype = new i.Prototype, i.prototype.constructor = i, o.Node.defineProperties(i), e.exports = i
 	}, {
@@ -3865,16 +3865,7 @@
 					ignore: ["title", "object-id"]
 				})), r.length > 0 && this.show(t, r)
 			}, this.body = function (t, e) {
-				var n = t.doc,
-					userLang = navigator.language,
-					r = {
-						id: t.nextId("heading"),
-						type: "heading",
-						level: 1,
-						content: userLang.substring(0, 2) == "pt" ? "Texto principal" : userLang.substring(0, 2) == "es" ? "Texto principal" : "Main Text",
-					};
-				n.create(r);
-				var i = [r].concat(this.bodyNodes(t, o.dom.getChildren(e)));
+				var i = this.bodyNodes(t, o.dom.getChildren(e));
 				i.length > 0 && this.show(t, i)
 			}, this._ignoredBodyNodes = {
 				fig: !0,
@@ -5119,7 +5110,7 @@
 				type: "resource",
 				name: "figures",
 				container: "figures",
-				title: userLang.substring(0, 2) == "pt" ? "Figuras" : userLang.substring(0, 2) == "es" ? "Cifras" : "Figures",
+				title: userLang.substring(0, 2) == "pt" ? "Ilustrações" : userLang.substring(0, 2) == "es" ? "Ilustraciones" : "Illustrations",
 				icon: "fa-picture-o",
 				references: ["figure_reference"],
 				zoom: !0
