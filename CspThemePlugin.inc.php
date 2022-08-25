@@ -184,7 +184,7 @@ class CspThemePlugin extends ThemePlugin {
 			$citation .= "(".$issue->_data["number"].")";
 			if($issue->_data["year"] > 2016){
 				$doiArray = explode('x', strtolower($publication->_data["pub-id::doi"]));
-				$citation .= ':e'.$doiArray[1];
+				$citation .= ':e00'.substr($doiArray[1],2);
 			}
 			if ($publication->_data["pub-id::doi"]) {
 				$citation .= " doi: ".$publication->_data["pub-id::doi"];
