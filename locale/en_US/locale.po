@@ -31,13 +31,13 @@ msgid "plugins.themes.csp.onlineIssn"
 msgstr "ISSN (on-line)"
 
 msgid "plugins.themes.csp.printIssn"
-msgstr "ISSN (immpresso)"
+msgstr "ISSN (printed)"
 
 msgid "plugins.themes.csp.sidebar.interviews"
-msgstr "Entrevistas"
+msgstr "Interviews"
 
 msgid "plugins.themes.csp.sidebar.videos"
-msgstr "Vídeos"
+msgstr "Videos"
 
 msgid "plugins.themes.csp.sidebar.podcasts"
 msgstr "Podcasts"

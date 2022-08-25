@@ -31,7 +31,7 @@ msgid "plugins.themes.csp.onlineIssn"
 msgstr "ISSN (on-line)"
 
 msgid "plugins.themes.csp.printIssn"
-msgstr "ISSN (immpresso)"
+msgstr "ISSN (impreso)"
 
 msgid "plugins.themes.csp.sidebar.interviews"
 msgstr "Entrevistas"
