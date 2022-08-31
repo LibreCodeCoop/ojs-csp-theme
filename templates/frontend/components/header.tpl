@@ -33,7 +33,7 @@
 			</ul>
 		</nav>
 		{* Header *}
-		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner" style="background-image: url({$coverImageUrl|escape}" alt="{$coverImageAltText|escape|default:''})">
+		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
 			<div class="container-fluid" id="logo-ensp-fiocruz">
 				<div class="container">
 					<div class="row he-50">
@@ -138,7 +138,7 @@
 				{/if}
 			</div><!-- .pkp_head_wrapper -->
 			{if empty($page)}
-				<div class="container-fluid">
+				<div class="container-fluid" id="container-banner" style="background-image: url({$coverImageUrl|escape}" alt="{$coverImageAltText|escape|default:''})">
 					<br>
 					<div class="row">
 						<div class="col-md-6 pull-md-right" id="col-carousel">
