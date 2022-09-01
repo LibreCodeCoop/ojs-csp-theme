@@ -1467,13 +1467,14 @@
 						text: this.node.label
 					})), this.node.url) {
 					var t = i(".image-wrapper", {
-						children: [i("a", {
-							href: this.node.url,
+						children: [i("a.toggle.toggle-fullscreen", {
+							href: "#",
 							target: "_blank",
 							children: [i("img", {
 								src: this.node.url
 							})]
 						})]
+
 					});
 					this.content.appendChild(t)
 				}
@@ -2129,7 +2130,7 @@
 		o.Prototype = function () {
 			this.createElement = function () {
 				var t = document.createElement("a");
-				return t.setAttribute("href", this.node.url), t
+				return t.setAttribute("href", this.node.url), t.setAttribute("target", "_blank"), t
 			}, this.setClasses = function () {
 				this.$el.addClass("link")
 			}
