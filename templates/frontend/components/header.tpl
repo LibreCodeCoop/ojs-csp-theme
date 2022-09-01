@@ -80,9 +80,7 @@
 						{/if}
 					</div>
 					<div class="col-md-6" id="header-language-icons">
-					{if $pageTitle === 'common.software'}
 						{include file="frontend/components/social-media.tpl"}
-					{/if}
 						<div class="col-md-5" id="language">
 							{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 							<ul class="setLanguage">

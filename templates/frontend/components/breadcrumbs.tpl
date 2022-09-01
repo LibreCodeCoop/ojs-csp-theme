@@ -55,5 +55,4 @@
 			</li>
 		{/if}
 	</ol>
-	{include file="frontend/components/social-media.tpl"}
 </nav>
