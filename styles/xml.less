@@ -84,34 +84,34 @@
 
 }
 .orcid{
-	color:darken(#D79027, 10%);
+	color:darken(@font-primary-color, 10%);
 }
 .lens-article .content-node.contributor .label{
 	color: #fff;
 	margin-right: 10px;
 }
 .article .resources .citations .content-node.highlighted{
-	border-left: 3px solid #d79027 !important;
+	border-left: 3px solid @font-primary-color !important;
 }
 .article .resources .info .content-node.highlighted{
-	border-left: 3px solid #d79027 !important;
+	border-left: 3px solid @font-primary-color !important;
 }
 .content-node .contributor_reference.highlighted{
-	background-color: lighten(#d79027, 20%) !important;
+	background-color: lighten(@font-primary-color, 20%) !important;
 	color: #000 !important;
 }
 .content-node .link{
-	color: #d79027 !important;
+	color: @font-primary-color !important;
 }
 div.content > span > a{
-	color: darken(#d79027, 10% )!important;
+	color: darken(@font-primary-color, 10% )!important;
 	text-decoration: none;
 }
 .content-node .citation_reference{
 	background-color: rgba(215, 144, 39, 0.3) !important;
 	// background-color: lighten(#d79027, 20%) !important;
 	color: #000 !important;
-border-bottom: 1px solid darken(#d79027, 20%) !important;
+border-bottom: 1px solid darken(@font-primary-color, 20%) !important;
 }
 .content-node .citation_reference.highlighted{
 	background-color: rgba(215, 144, 39, 0.6) !important;
@@ -135,4 +135,8 @@ border-bottom: 1px solid darken(#d79027, 20%) !important;
 
 .lens-article .content-node.publication-info {
 	display: table-footer-group;
+}
+
+.menu-bar .context-toggles a:hover{
+	background: #858688 !important;
 }
