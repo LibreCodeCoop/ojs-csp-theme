@@ -102,7 +102,7 @@
 			}), e
 		}, s.fromSnapshot = function (t, e) {
 			return e = e || {}, e.seed = t, new s(e)
-		}, s.views = ["content", "figures", "citations", "definitions", "info"], s.nodeTypes = t("./nodes"), s.ViewFactory = t("./view_factory"), s.ResourceView = t("./resource_view");
+		}, s.views = ["content", "figures", "citations", "info", "definitions"], s.nodeTypes = t("./nodes"), s.ViewFactory = t("./view_factory"), s.ResourceView = t("./resource_view");
 		var a = {
 			id: "lens_article",
 			nodes: {
@@ -3778,18 +3778,19 @@
 				var i = e.querySelector("body");
 				i && this.body(t, i), this.extractFigures(t, e), this.enhanceArticle(t, e)
 			}, this.extractDefinitions = function (t) {
-				var e = t.xmlDoc.querySelectorAll("def-item");
-				r.each(e, function (e) {
-					var n = e.querySelector("term"),
-						r = e.querySelector("def"),
-						o = r.id || r.getAttribute("hwp:id") || t.nextId("definition"),
+				var link = t.xmlDoc.querySelectorAll("ext-link");
+				r.each(link, function (link) {
+					var content = link.textContent;
+					var material = content.indexOf('http://cadernos.ensp.fiocruz.br/static/');
+					if(content.indexOf('http://cadernos.ensp.fiocruz.br/static/') == 0){
+						var s = t.nextId("ext-link"),
 						i = {
-							id: o,
+							id: t.nextId("ext-link"),
 							type: "definition",
-							title: n.textContent,
-							description: r.textContent
+							title: "<a href='"+content+"' target='_blank'>"+content+"</a>",
 						};
-					t.doc.create(i), t.doc.show("definitions", i.id)
+						t.doc.create(i), t.doc.show("definitions", i.id)
+					}
 				})
 			}, this.extractArticleMeta = function (t, e) {
 				var n = e.querySelector("article-meta");
@@ -5128,7 +5129,7 @@
 				type: "resource",
 				name: "definitions",
 				container: "definitions",
-				title: "Glossary",
+				title: "Material suplementar",
 				icon: "fa-book",
 				references: ["definition_reference"]
 			}),
@@ -5140,7 +5141,7 @@
 				icon: "fa-info",
 				references: ["contributor_reference"]
 			});
-		e.exports = [o, i, s, a]
+		e.exports = [o, i, a, s]
 	}, {
 		"./panels/container_panel": 132
 	}],
