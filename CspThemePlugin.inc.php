@@ -112,7 +112,7 @@ class CspThemePlugin extends ThemePlugin {
 			ORDER BY publication_id ASC LIMIT 3
 			QUERY
 		);
-		$interviews = $result->GetRows();
+		$interviews = $row = (array) $result->current();
 
 		/* Make citation */
 		if($args[1] == "frontend/pages/article.tpl"){
@@ -218,8 +218,7 @@ class CspThemePlugin extends ThemePlugin {
 				ORDER BY i.`year` DESC
 				QUERY
 			);
-			while (!$resultAno->EOF) {
-				$rowAno = $resultAno->GetRowAssoc(false);
+			foreach ($resultAno as $rowAno) {
 				$resultMes = $userDao->retrieve(
 					<<<QUERY
 						SELECT
@@ -244,19 +243,16 @@ class CspThemePlugin extends ThemePlugin {
 						ON
 							s.issue_id = i.issue_id
 						WHERE
-							`year` = '$rowAno[ano]'
+							`year` = $rowAno->ANO
 							AND s.setting_name = 'title'
 							and s.locale = 'pt_BR'
 							and i.published = 1
 						ORDER BY ordem
 					QUERY
 				);
-				while (!$resultMes->EOF) {
-					$rowIssue = $resultMes->GetRowAssoc(false);
-					$array[$rowAno['ano']][$rowIssue['volume']][$rowIssue['numero']] = $rowIssue['issue_id'];
-					$resultMes->MoveNext();
+				foreach ($resultMes as $rowIssue) {
+					$array[$rowAno->ANO][$rowIssue->volume][$rowIssue->numero] = $rowIssue->issue_id;
 				}
-				$resultAno->MoveNext();
 			}
 			$templateMgr = $args[0];
 			$templateMgr->assign('issues', $array);
