@@ -4,32 +4,7 @@
 @import './forms.less';
 @import './submissions.less';
 @import './xml.less';
-
-@font-primary-color: #A03841;
-@font-secondary-color: #818183;
-@font-terciary-color: #dddddd;
-
-@font-face {
-	font-family: "Crimson Text";
-	src: url("./fonts/CrimsonText-Bold.otf") format("otf"),
-		url("./fonts/CrimsonText-Bold.ttf") format("ttf"),
-		url("./fonts/CrimsonText-Italic.ttf") format("ttf"),
-		url("./fonts/CrimsonText-Regular.ttf") format("ttf");
-}
-
-@font-face {
-	font-family: "Open Sans";
-	src: url("./fonts/OpenSans-Bold.ttf") format("ttf"),
-		url("./fonts/OpenSans-BoldItalic.ttf") format("ttf"),
-		url("./fonts/OpenSans-ExtraBold.ttf") format("ttf"),
-		url("./fonts/OpenSans-ExtraBoldItalic.ttf") format("ttf"),
-		url("./fonts/OpenSans-Italic.ttf") format("ttf"),
-		url("./fonts/OpenSans-Light.ttf") format("ttf"),
-		url("./fonts/OpenSans-LightItalic.ttf") format("ttf"),
-		url("./fonts/OpenSans-Regular.ttf") format("ttf"),
-		url("./fonts/OpenSans-Semibold.ttf") format("ttf"),
-		url("./fonts/OpenSans-SemiboldItalic.ttf") format("ttf");
-}
+@import './variables.less';
 
 *, html, body {
 	font-family: 'Crimson Text' ,'Open Sans', sans-serif;
@@ -93,12 +68,6 @@ body.reader {
 }
 .navbar-default, .header_view{
     background: white;
-}
-
-footer[role="contentinfo"]{
-    background: #FFFFFF;
-    color: #000000;
-	border-top: 1px solid #000000;
 }
 
 .panel-default > .panel-heading, .pkp_block .title{

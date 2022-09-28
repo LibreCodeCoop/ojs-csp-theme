@@ -1,159 +1,33 @@
-body{
-	position: unset;
-	padding: 0;
-	height: 100% !important;
-	min-height: unset;
-	a{
-		text-decoration: none;
-	}
-}
+@import 'variables.less';
 
-.pkp_structure_page{
-	min-height: 100%;
-	position: relative;
-	margin-left: unset;
-}
-
-.pkp_structure_footer{
-	position: absolute;
-	margin-top: unset;
-	bottom: 0;
-	width: 100%;
-	background: #ccc;
-	font-size: 12px;
-	padding: unset;
-}
-
-.pkp_structure_content{
+.app__page{
 	max-width: unset !important;
-	margin-left: 192px;
 }
 
-.pkp_structure_main{
-	margin: 32px;
-}
-
-.pkp_controllers_grid .actions a{
-	font-weight: unset;
-}
-
-.pkp_helpers_text_warn{
-	color: unset;
-}
-
-table colgroup col{
-	width: unset;
-}
-
-div[id^="component-grid-files"] [id^="component-grid-files"] td:not(.first_column), [id^="component-grid-files"] [id^="component-grid-files"] th:not(.first_column){
-	width: unset;
-}
-
-.formRequired, #productionNotification, div[id^="editingNotification"], div[id^="reviewRoundNotification"]{
-	display: none !important;
-}
-
-.pkpWorkflow__header{
-	margin-bottom: 0px !important;
-}
-
-.pkpWorkflow__header .pkpHeader__actions button:last-child{
-	display: none !important;
-}
-.pkpHeader__title{
-	padding: unset;
-	margin-bottom: 20px;
-	h1{
-		font-size: 30px !important;
-		color: #002c40;
+.app__nav{
+	li{
+		border-bottom: 1px dotted white;
+	}
+	a.app__navItem:hover{
+		color: @font-secondary-color;
+	}
+	.app__navItem{
+		width: 100%;
+		color: white;
+	}
+	a.app__navItem--isCurrent{
+		background-color: @font-secondary-color;
 	}
 }
 
-.pkp_page_title{
-	padding: unset;
-	margin-bottom: 20px;
-	h1{
-		font-size: 30px !important;
-		color: #002c40;
-	}
+.app__header{
+	background-color: @font-secondary-color;
 }
 
-.pkp_nav_list li{
-	border-bottom: 1px dotted white;
+.app__nav{
+	background-color: @font-primary-color;
 }
 
-.pkpHeader.-isOneLine .pkpHeader__title, .pkpHeader.-isOneLine .pkpHeader__title > * {
-	white-space: unset;
-}
-.pkpHeader.-isOneLine{
-	display: unset;
-}
-.pkpHeader__actions{
-	float: right !important;
-}
-
-div[id^="dashboard"] .pkp_controllers_grid thead th{
-	font-weight: bold;
-	vertical-align: bottom;
-	font-size: 16px;
-}
-
-div[id^="dashboard"] .pkp_controllers_grid th{
-	vertical-align: middle;
-}
-
-div[id^="dashboard"] .pkpListPanel__body{
-	table {
-		table-layout:fixed;
-			td {
-				word-wrap:break-word;
-				}
-		}
-}
-
-div[id^="dashboard"] .pkp_controllers_grid{
-	margin-bottom: unset;
-}
-
-#notificationsGrid table{
-	table-layout: unset
-}
-
-.pkp_tasks .panel{
-	width: 400px;
-}
-
-#notificationsGrid .task .message{
-	max-height: unset;
-	overflow: unset;
-}
-
-.pkp_tasks .task-count{
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
-}
-
-.pkpWorkflow__identificationTitle{
-	white-space: normal !important;
-}
-
-.pkpListPanel__sidebar{
-	display: none;
-}
-
-.pkpListPanel__sidebar.-isVisible{
-	display: block;
-}
-
-.search .section{
-	display: none;
-}
-
-.submitAs{
-	display: none;
-}
-
-.pkpListPanelItem--submission__stage{
-	width: unset !important;
+.app__contextTitle img{
+	width: 100px;
 }
