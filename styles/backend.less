@@ -5,11 +5,15 @@
 }
 
 .app__nav{
+	background-color: @font-primary-color;
+	padding-left: unset !important;
+	padding-right: unset !important;
 	li{
 		border-bottom: 1px dotted white;
 	}
 	a.app__navItem:hover{
-		color: @font-secondary-color;
+		background-color: @font-secondary-color;
+		color: white;
 	}
 	.app__navItem{
 		width: 100%;
@@ -18,16 +22,34 @@
 	a.app__navItem--isCurrent{
 		background-color: @font-secondary-color;
 	}
+	.app__navItem--hasSubmenu{
+		font-size: 20px;
+	}
 }
 
 .app__header{
 	background-color: @font-secondary-color;
 }
 
-.app__nav{
-	background-color: @font-primary-color;
-}
-
 .app__contextTitle img{
 	width: 100px;
+}
+
+.pkp_modal_panel{
+	.header{
+		background-color: @font-primary-color;
+		color: white;
+	}
+	.pkpModalCloseButton{
+		color: white;
+		font-weight: bold;
+	}
+	.pkpHeader{
+		background: #ccc;
+		padding: 10px;
+	}
+}
+
+.pkp_form{
+	border: 1px solid #ccc;
 }

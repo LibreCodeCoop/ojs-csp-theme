@@ -52,9 +52,9 @@
 				</dropdown>
 			{/if}
 			{if $currentContext}
-				<a class="app__contextTitle" href="{$submission}">
+				<div class="app__contextTitle">
 					<img src="{$baseUrl}/plugins/themes/csp/assets/sagas.png" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
-				</a>
+				</div>
 			{elseif $siteTitle}
 				<a class="app__contextTitle" href="{$baseUrl}">
 					{$siteTitle}
