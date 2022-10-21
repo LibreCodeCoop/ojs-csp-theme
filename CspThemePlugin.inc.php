@@ -79,7 +79,7 @@ class CspThemePlugin extends ThemePlugin {
 	}
 
 	public function loadTemplateData($hookName, $args) {
-
+		$templateMgr = $args[0];
         $request = Application::get()->getRequest();
 		$context = $request->getContext();
 		$requestPath = $request->getRequestPath();
@@ -124,7 +124,7 @@ class CspThemePlugin extends ThemePlugin {
 			foreach ($publication->getData('authors') as $key => $value) {
 				$submissionLocale = $publication->_data["authors"][$key]->_data["submissionLocale"];
 				$givenName = $publication->_data["authors"][$key]->_data["givenName"][$submissionLocale];
-				$familyName = $publication->_data["authors"][$key]->_data["familyName"][$submissionLocale];
+				$familyName = !is_null($publication->_data["authors"][0]->_data["givenName"]) ? $publication->_data["authors"][$key]->_data["familyName"][$submissionLocale] : null;
 				if(strpos($givenName, ',')){
 					$givenNameArray = explode(",", $givenName);
 					$beginningNameArray = explode(" ", $givenNameArray[1]);
@@ -189,8 +189,11 @@ class CspThemePlugin extends ThemePlugin {
 			if ($publication->_data["pub-id::doi"]) {
 				$citation .= " doi: ".$publication->_data["pub-id::doi"];
 			}
+			$templateMgr->assign(array(
+				'issue' => $issue,
+			));
 		}
-		$templateMgr = $args[0];
+
         $templateMgr->assign(array(
 			'requestPath' => $requestPath,
 			'baseUrl' => $baseUrl,
