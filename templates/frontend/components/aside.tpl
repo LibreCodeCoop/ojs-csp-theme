@@ -77,7 +77,9 @@
 					{/if}
 					{if $supplementaryGalleys}
 						{foreach from=$supplementaryGalleys item=galley}
-							{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{if $galley->getLocale() ==  $navigationLocale}
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{/if}
 						{/foreach}
 					{/if}
 				</div>

@@ -87,6 +87,7 @@ class CspThemePlugin extends ThemePlugin {
 		$router = $request->getRouter();
 		$page = $router->_page;
 		$op = $router->_op;
+		$navigationLocale = AppLocale::getLocale();
 
 		$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
 		$currentIssue = $issueDao->getCurrent($context->getId());
@@ -203,7 +204,8 @@ class CspThemePlugin extends ThemePlugin {
 			'context' => $context,
 			'op' => $op,
 			'interviews' => $interviews,
-			'citation' => $citation
+			'citation' => $citation,
+			'navigationLocale' => $navigationLocale
 		));
 
 		if($args[1] == 'frontend/pages/userRegister.tpl'){ /* Passa id de avaliador para checkbox ir marcado */
