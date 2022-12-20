@@ -38,9 +38,9 @@
 			{/if}
 		{elseif $page == "article"}
 			<li>
-				<a href="{url page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
+				{* <a href="{url page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
 					{$issue->getIssueIdentification()|escape}
-				</a>
+				</a> *}
 			</li>
 			<li class="active">
 				{$section->getLocalizedTitle()}
