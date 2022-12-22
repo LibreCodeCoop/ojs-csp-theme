@@ -115,9 +115,15 @@
 				<div class="csp-doi">
 					{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
 					<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-					<a href="{$doiUrl}">
-						{$doiUrl}
-					</a>
+					{if array_key_exists($navigationLocale, $publication->getData('title'))}
+						<a href="{substr($doiUrl, 0, -8)}{substr($navigationLocale, 0, -3)}{substr($doiUrl, 35)}">
+							{substr($doiUrl, 0, -8)}{substr($navigationLocale, 0, -3)}{substr($doiUrl, 35)}
+						</a>
+					{else}
+						<a href="{substr($doiUrl, 0, -8)}{substr($publication->getData('locale'), 0, -3)}{substr($doiUrl, 35)}">
+							{substr($doiUrl, 0, -8)}{substr($publication->getData('locale'), 0, -3)}{substr($doiUrl, 35)}
+						</a>
+					{/if}
 				</div>
 				{* Article abstract *}
 				{if $publication->getLocalizedData('abstract')}
