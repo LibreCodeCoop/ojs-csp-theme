@@ -2147,8 +2147,8 @@
 				) {
 				  var t = i(".image-wrapper", {
 					children: [
-					  i("a", {
-						href: this.node.url,
+					  i("a.toggle.toggle-fullscreen", {
+						href: "#",
 						target: "_blank",
 						children: [
 						  i("img", {
