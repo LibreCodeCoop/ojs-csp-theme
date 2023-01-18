@@ -5525,7 +5525,9 @@
 				  this
 				);
 				var a = new Date(s, i, n);
-				return { date: a };
+				return {
+				  date: a,
+				};
 			  }),
 			  (this.abstracts = function(t, e) {
 				var n = e.querySelectorAll("abstract");
@@ -8594,7 +8596,10 @@
 			(a.prototype.constructor = a),
 			(e.exports = a);
 		},
-		{ "../../substance/application": 154, underscore: 124 },
+		{
+		  "../../substance/application": 154,
+		  underscore: 124,
+		},
 	  ],
 	  144: [
 		function(t, e, n) {
