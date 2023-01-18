@@ -3053,6 +3053,7 @@
 			  var t = document.createElement("a");
 			  return (
 				t.setAttribute("href", this.node.url),
+				t.setAttribute("target", "_blank"),
 				t
 			  );
 			}),
@@ -5539,19 +5540,29 @@
 				  this.enhanceArticle(t, e);
 			  }),
 			  (this.extractDefinitions = function(t) {
-				var e = t.xmlDoc.querySelectorAll("def-item");
-				r.each(e, function(e) {
-				  var n = e.querySelector("term"),
-					r = e.querySelector("def"),
-					o =
-					  r.id || r.getAttribute("hwp:id") || t.nextId("definition"),
-					i = {
-					  id: o,
-					  type: "definition",
-					  title: n.textContent,
-					  description: r.textContent,
-					};
-				  t.doc.create(i), t.doc.show("definitions", i.id);
+				var link = t.xmlDoc.querySelectorAll("ext-link");
+				r.each(link, function(link) {
+				  var content = link.textContent;
+				  var material = content.indexOf(
+					"http://cadernos.ensp.fiocruz.br/static/"
+				  );
+				  if (
+					content.indexOf("http://cadernos.ensp.fiocruz.br/static/") ==
+					0
+				  ) {
+					var s = t.nextId("ext-link"),
+					  i = {
+						id: t.nextId("ext-link"),
+						type: "definition",
+						title:
+						  "<a href='" +
+						  content +
+						  "' target='_blank'>" +
+						  content +
+						  "</a>",
+					  };
+					t.doc.create(i), t.doc.show("definitions", i.id);
+				  }
 				});
 			  }),
 			  (this.extractArticleMeta = function(t, e) {
