@@ -160,8 +160,8 @@
 			  "content",
 			  "figures",
 			  "citations",
-			  "definitions",
 			  "info",
+			  "definitions",
 			]),
 			(s.nodeTypes = t("./nodes")),
 			(s.ViewFactory = t("./view_factory")),
@@ -5564,11 +5564,17 @@
 				var n = t.doc,
 				  r = [],
 				  i = e.querySelector("title"),
+				  userLang = navigator.language,
 				  s = {
 					id: t.nextId("heading"),
 					type: "heading",
 					level: 1,
-					content: i ? i.textContent : "Abstract",
+					content:
+					  userLang.substring(0, 2) == "pt"
+						? "Resumo"
+						: userLang.substring(0, 2) == "es"
+						? "Resumen"
+						: "Summary",
 				  };
 				n.create(s),
 				  r.push(s),
@@ -7503,11 +7509,17 @@
 	  125: [
 		function(t, e, n) {
 		  var r = t("./panels/container_panel"),
+			userLang = navigator.language,
 			o = new r({
 			  type: "resource",
 			  name: "figures",
 			  container: "figures",
-			  title: "Figures",
+			  title:
+				userLang.substring(0, 2) == "pt"
+				  ? "Ilustrações"
+				  : userLang.substring(0, 2) == "es"
+				  ? "Ilustraciones"
+				  : "Illustrations",
 			  icon: "fa-picture-o",
 			  references: ["figure_reference"],
 			  zoom: !0,
@@ -7516,7 +7528,12 @@
 			  type: "resource",
 			  name: "citations",
 			  container: "citations",
-			  title: "References",
+			  title:
+				userLang.substring(0, 2) == "pt"
+				  ? "Referências"
+				  : userLang.substring(0, 2) == "es"
+				  ? "Referencias"
+				  : "References",
 			  icon: "fa-link",
 			  references: ["citation_reference"],
 			}),
@@ -7524,7 +7541,7 @@
 			  type: "resource",
 			  name: "definitions",
 			  container: "definitions",
-			  title: "Glossary",
+			  title: "Material suplementar",
 			  icon: "fa-book",
 			  references: ["definition_reference"],
 			}),
@@ -7532,11 +7549,16 @@
 			  type: "resource",
 			  name: "info",
 			  container: "info",
-			  title: "Info",
+			  title:
+				userLang.substring(0, 2) == "pt"
+				  ? "Informações"
+				  : userLang.substring(0, 2) == "es"
+				  ? "Información"
+				  : "Information",
 			  icon: "fa-info",
 			  references: ["contributor_reference"],
 			});
-		  e.exports = [o, i, s, a];
+		  e.exports = [o, i, a, s];
 		},
 		{
 		  "./panels/container_panel": 132,
@@ -8153,13 +8175,19 @@
 		  "use strict";
 		  var r = t("../container_panel"),
 			o = t("./content_panel_controller"),
+			userLang = navigator.language,
 			i = function() {
 			  r.call(this, {
 				name: "content",
 				type: "document",
 				container: "content",
 				label: "Contents",
-				title: "Contents",
+				title:
+				  userLang.substring(0, 2) == "pt"
+					? "Conteúdo"
+					: userLang.substring(0, 2) == "es"
+					? "Contenido"
+					: "Content",
 				icon: "fa-align-left",
 			  });
 			};
