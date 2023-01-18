@@ -4979,8 +4979,10 @@
 				  (o = o.concat(this.extractEditor(t, e))),
 				  (o = o.concat(this.extractDatasets(t, e))),
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
+				  (o = o.concat(this.extractCorrespondence(t, e))),
+				  (o = o.concat(this.extractContributions(t, e))),
+				  (o = o.concat(this.extractInterestsConflict(t, e))),
 				  (o = o.concat(this.extractAcknowledgements(t, e))),
-				  (o = o.concat(this.extractCopyrightAndLicense(t, e))),
 				  (o = o.concat(this.extractNotes(t, e))),
 				  (n.children = o),
 				  r.create(n),
@@ -5088,6 +5090,99 @@
 					),
 				  n
 				);
+			  }),
+			  (this.extractInterestsConflict = function(t, e) {
+				var n = [],
+				  i = t.doc,
+				  s = e.querySelectorAll("fn[fn-type=conflict]");
+				return (
+				  s &&
+					s.length > 0 &&
+					r.each(
+					  s,
+					  function(e) {
+						var s = e.querySelector("label"),
+						  a = {
+							type: "heading",
+							id: t.nextId("heading"),
+							level: 3,
+							content: s
+							  ? this.capitalized(
+								  s.textContent.toLowerCase(),
+								  "all"
+								)
+							  : "Interest conflicts",
+						  };
+						i.create(a), n.push(a.id);
+						var c = this.bodyNodes(t, o.dom.getChildren(e), {
+						  ignore: ["label"],
+						});
+						r.each(c, function(t) {
+						  n.push(t.id);
+						});
+					  },
+					  this
+					),
+				  n
+				);
+			  }),
+			  (this.extractContributions = function(t, e) {
+				var n = [],
+				  i = t.doc,
+				  s = e.querySelectorAll("fn[fn-type=con]");
+				return (
+				  s &&
+					s.length > 0 &&
+					r.each(
+					  s,
+					  function(e) {
+						var s = e.querySelector("label"),
+						  a = {
+							type: "heading",
+							id: t.nextId("heading"),
+							level: 3,
+							content: s
+							  ? this.capitalized(
+								  s.textContent.toLowerCase(),
+								  "all"
+								)
+							  : "Contributors",
+						  };
+						i.create(a), n.push(a.id);
+						var c = this.bodyNodes(t, o.dom.getChildren(e), {
+						  ignore: ["label"],
+						});
+						r.each(c, function(t) {
+						  n.push(t.id);
+						});
+					  },
+					  this
+					),
+				  n
+				);
+			  }),
+			  (this.extractCorrespondence = function(t, e) {
+				var n = [],
+				  r = t.doc,
+				  c = e.querySelector("corresp"),
+				  o = c ? c.textContent : "",
+				  f = o.replace("Correspondence", "");
+				if (o) {
+				  var u = {
+					type: "heading",
+					id: t.nextId("heading"),
+					level: 3,
+					content: "Correspondence",
+				  };
+				  r.create(u), n.push(u.id);
+				  var l = {
+					type: "text",
+					id: t.nextId("text"),
+					content: f.trim(),
+				  };
+				  r.create(l), n.push(l.id);
+				}
+				return n;
 			  }),
 			  (this.extractNotes = function() {
 				var t = [];
