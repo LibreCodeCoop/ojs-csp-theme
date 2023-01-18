@@ -5586,15 +5586,7 @@
 				  r.length > 0 && this.show(t, r);
 			  }),
 			  (this.body = function(t, e) {
-				var n = t.doc,
-				  r = {
-					id: t.nextId("heading"),
-					type: "heading",
-					level: 1,
-					content: "Main Text",
-				  };
-				n.create(r);
-				var i = [r].concat(this.bodyNodes(t, o.dom.getChildren(e)));
+				var i = this.bodyNodes(t, o.dom.getChildren(e));
 				i.length > 0 && this.show(t, i);
 			  }),
 			  (this._ignoredBodyNodes = {
