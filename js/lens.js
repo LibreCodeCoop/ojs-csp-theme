@@ -1623,11 +1623,11 @@
 			  }
 			  if (e) {
 				var a = e.published_on;
+				var m = e.published_on_month_year;
 				if (a) {
-				  var c = [s.formatDate(a)];
-				  e.journal &&
-					!t.breadcrumbs &&
-					c.push(" in <i>" + e.journal + "</i>"),
+				  var c = ["<i>" + e.journal + "</i>, "];
+				  c.push(s.formatDate(m));
+				  e.journal && !t.breadcrumbs && c.push(a),
 					this.content.appendChild(
 					  i(".published-on", {
 						html: c.join(""),
@@ -3432,6 +3432,7 @@
 			properties: {
 			  history: ["array", "object"],
 			  published_on: "string",
+			  published_on_month_year: "string",
 			  journal: "string",
 			  provider: "string",
 			  article_type: "string",
@@ -3468,6 +3469,7 @@
 			(o.example = {
 			  id: "publication_info",
 			  published_on: "2012-11-13",
+			  published_on: "2012-11",
 			  history: [
 				{
 				  type: "received",
@@ -4910,6 +4912,20 @@
 				  var n = t.doc,
 					r = e.querySelector("article-meta"),
 					o = r.querySelector("pub-date"),
+					y = r.querySelector(
+					  "article-meta pub-date[date-type=collection] year"
+					),
+					published_on_year = y ? y.textContent : "",
+					m = r.querySelector(
+					  "article-meta pub-date[date-type=pub] month"
+					),
+					published_on_month = m ? m.textContent : "",
+					v = r.querySelector("article-meta volume"),
+					volume = v ? v.textContent : "",
+					is = r.querySelector("article-meta issue"),
+					issue = is ? is.textContent : "",
+					el = r.querySelector("article-meta elocation-id"),
+					elocation = el ? el.textContent : "",
 					i = r.querySelectorAll("history date"),
 					s = e.querySelector("journal-title"),
 					a = e.querySelector("article-id[pub-id-type=doi]"),
@@ -4918,7 +4934,12 @@
 					l = {
 					  id: "publication_info",
 					  type: "publication_info",
-					  published_on: this.extractDate(o),
+					  published_on_month_year: published_on_year.concat(
+						"-",
+						published_on_month
+					  ),
+					  published_on:
+						"; " + volume + "(" + issue + "):" + elocation,
 					  journal: s ? s.textContent : "",
 					  related_article: c ? c.getAttribute("xlink:href") : "",
 					  doi: a ? a.textContent : "",
