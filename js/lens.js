@@ -1337,6 +1337,13 @@
 					  }),
 					})
 				  ),
+				  this.node.orcid &&
+					this.content.appendChild(
+					  i("a.orcid", {
+						href: "https://orcid.org/" + this.node.orcid,
+						text: "https://orcid.org/" + this.node.orcid,
+					  })
+					),
 				  this.node.present_address &&
 					(this.content.appendChild(
 					  i(".label", {
@@ -1417,14 +1424,6 @@
 							text: t,
 						  });
 						}),
-					  })
-					)),
-				  this.node.orcid &&
-					(this.content.appendChild(i(".label", { text: "ORCID" })),
-					this.content.appendChild(
-					  i("a.orcid", {
-						href: this.node.orcid,
-						text: this.node.orcid,
 					  })
 					)),
 				  this.node.members.length > 0 &&
@@ -5246,8 +5245,8 @@
 					this
 				  ),
 				  "yes" === e.getAttribute("deceased") && (s.deceased = !0);
-				var l = e.querySelector("uri[content-type=orcid]");
-				l && (s.orcid = l.getAttribute("xlink:href"));
+				var l = e.querySelector("contrib-id[contrib-id-type=orcid]");
+				l && (s.orcid = l.textContent);
 				var p = e.querySelector("name");
 				if (p) s.name = this.getName(p);
 				else {
