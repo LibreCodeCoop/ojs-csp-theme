@@ -12,6 +12,7 @@ class CspThemePlugin extends ThemePlugin {
         $this->setParent('bootstrapthreethemeplugin');
         $this->addStyle('child-stylesheet', 'styles/index.less');
 		$this->addScript('csp', 'js/index.js');
+		$this->addScript('csp', 'js/lens.js');
 		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
 
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
