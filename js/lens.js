@@ -364,21 +364,57 @@
 	  ],
 	  5: [
 		function(t, e, n) {
-		  var r = {
-			  1: "January",
-			  2: "February",
-			  3: "March",
-			  4: "April",
-			  5: "May",
-			  6: "June",
-			  7: "July",
-			  8: "August",
-			  9: "September",
-			  10: "October",
-			  11: "November",
-			  12: "December",
-			},
-			o = {};
+		var language = document.getElementsByTagName('html')[0].getAttribute('xml:lang')
+		switch (language) {
+			case "pt-BR":
+				var r = {
+					1: "Janeiro",
+					2: "Fevereiro",
+					3: "Março",
+					4: "Abril",
+					5: "Maio",
+					6: "Junho",
+					7: "Julho",
+					8: "Agosto",
+					9: "Setembro",
+					10: "Outubro",
+					11: "Novembro",
+					12: "Dezembro",
+				  }
+			  break;
+			case "es-ES":
+				var r = {
+					1: "Enero",
+					2: "Febrero",
+					3: "Marzo",
+					4: "Abril",
+					5: "Mayo",
+					6: "June",
+					7: "Julio",
+					8: "Agosto",
+					9: "Septiembre",
+					10: "Octubre",
+					11: "Noviembre",
+					12: "Diciembre",
+				  }
+			  break;
+			default:
+				var r = {
+					1: "January",
+					2: "February",
+					3: "March",
+					4: "April",
+					5: "May",
+					6: "June",
+					7: "July",
+					8: "August",
+					9: "September",
+					10: "October",
+					11: "November",
+					12: "December",
+				  }
+		}
+			var o = {};
 		  (o.formatDate = function(t) {
 			var e = t.split("-");
 			if (e.length >= 3) {
