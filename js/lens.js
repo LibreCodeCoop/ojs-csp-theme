@@ -4970,6 +4970,7 @@
 				  this.enhancePublicationInfo(t, l);
 			  }),
 			  (this.extractArticleInfo = function(t, e) {
+
 				var n = {
 					id: "articleinfo",
 					type: "paragraph",
@@ -5670,15 +5671,15 @@
 				var n = t.doc,
 				  r = [],
 				  i = e.querySelector("title"),
-				  userLang = navigator.language,
+				  language = document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
 				  s = {
 					id: t.nextId("heading"),
 					type: "heading",
 					level: 1,
 					content:
-					  userLang.substring(0, 2) == "pt"
+					  language == "pt-BR"
 						? "Resumo"
-						: userLang.substring(0, 2) == "es"
+						: language == "es-ES"
 						? "Resumen"
 						: "Summary",
 				  };
@@ -7607,15 +7608,15 @@
 	  125: [
 		function(t, e, n) {
 		  var r = t("./panels/container_panel"),
-			userLang = navigator.language,
+		  language = document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
 			o = new r({
 			  type: "resource",
 			  name: "figures",
 			  container: "figures",
 			  title:
-				userLang.substring(0, 2) == "pt"
+				language == "pt-BR"
 				  ? "Ilustrações"
-				  : userLang.substring(0, 2) == "es"
+				  : language == "es-ES"
 				  ? "Ilustraciones"
 				  : "Illustrations",
 			  icon: "fa-picture-o",
@@ -7627,9 +7628,9 @@
 			  name: "citations",
 			  container: "citations",
 			  title:
-				userLang.substring(0, 2) == "pt"
+				language == "pt-BR"
 				  ? "Referências"
-				  : userLang.substring(0, 2) == "es"
+				  : language == "es-ES"
 				  ? "Referencias"
 				  : "References",
 			  icon: "fa-link",
@@ -7648,9 +7649,9 @@
 			  name: "info",
 			  container: "info",
 			  title:
-				userLang.substring(0, 2) == "pt"
+				language == "pt-BR"
 				  ? "Informações"
-				  : userLang.substring(0, 2) == "es"
+				  : language == "es-ES"
 				  ? "Información"
 				  : "Information",
 			  icon: "fa-info",
@@ -8273,7 +8274,7 @@
 		  "use strict";
 		  var r = t("../container_panel"),
 			o = t("./content_panel_controller"),
-			userLang = navigator.language,
+			language = document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
 			i = function() {
 			  r.call(this, {
 				name: "content",
@@ -8281,9 +8282,9 @@
 				container: "content",
 				label: "Contents",
 				title:
-				  userLang.substring(0, 2) == "pt"
+				  language == "pt-BR"
 					? "Conteúdo"
-					: userLang.substring(0, 2) == "es"
+					: language == "es-ES"
 					? "Contenido"
 					: "Content",
 				icon: "fa-align-left",
