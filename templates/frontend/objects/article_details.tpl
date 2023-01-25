@@ -166,20 +166,21 @@
 						</div>
 					{/if}
 				{/foreach}
-				{if !empty($keywords)}
-				<div class="list-group-item keywords">
-					<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-						{translate key="semicolon" label=$translatedKeywords}</strong>
-					<div class="">
-						<span class="value">
-							{foreach from=$keywords item=keyword}
-								{foreach name=keywords from=$keyword item=keywordItem}
-									{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
-								{/foreach}
-							{/foreach}
-						</span>
+				{* Keywords *}
+				{if !empty($keywords[$currentLocale])}
+					<div class="list-group-item keywords">
+						<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
+							{translate key="semicolon" label=$translatedKeywords}</strong>
+						<div class="">
+								<span class="value">
+									{foreach from=$keywords[$currentLocale] item=keyword}
+										{foreach name=keywords from=$keyword item=keywordItem}
+											{$keywordItem|escape}{if !$smarty.foreach.keywords.last}, {/if}
+										{/foreach}
+									{/foreach}
+								</span>
+						</div>
 					</div>
-				</div>
 				{/if}
 				{* Licensing info *}
 				{if $licenseTerms || $licenseUrl}
