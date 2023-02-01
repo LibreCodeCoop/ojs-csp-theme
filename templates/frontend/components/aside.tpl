@@ -35,7 +35,7 @@
 		<div class="aside-content">
 			<iframe src="https://open.spotify.com/embed/show/4dSWUdWQCTb2hDthntM0ZP"
 					frameBorder="0" allowfullscreen=""
-					scrolling="no" width="100%" height="100%" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+					scrolling="no" width="100%" height="80px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
 			</iframe>
 		</div>
 	</div>
@@ -45,11 +45,7 @@
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
 		<div id="tweet" class="aside-content">
-			<a class="twitter-timeline" data-height="350" href="https://twitter.com/Cadernossp">
-				Tweets by CadernosSP
-			</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+			<a class="twitter-timeline" href="https://twitter.com/CadernosSP?ref_src=twsrc%5Etfw">Tweets by CadernosSP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>
 	<div class="aside-container">
