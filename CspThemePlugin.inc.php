@@ -104,17 +104,17 @@ class CspThemePlugin extends ThemePlugin {
 		}
 
 		$userDao = DAORegistry::getDAO('UserDAO');
-		$result = $userDao->retrieve(
+		$interviews = $userDao->retrieve(
 			<<<QUERY
 			SELECT p.publication_id, s.setting_value
 			FROM publications p
 			LEFT JOIN publication_settings s
 			ON s.publication_id = p.publication_id
-			WHERE section_id = 10 AND s.setting_name = 'title' AND s.locale = 'pt_BR'
+			WHERE section_id = (SELECT DISTINCT section_id FROM ojs.section_settings WHERE setting_value = 'ENTREVISTA'
+			) AND s.setting_name = 'title' AND s.locale = '$navigationLocale'
 			ORDER BY publication_id ASC LIMIT 3
 			QUERY
 		);
-		$interviews = $row = (array) $result->current();
 
 		/* Make citation */
 		if($args[1] == "frontend/pages/article.tpl"){

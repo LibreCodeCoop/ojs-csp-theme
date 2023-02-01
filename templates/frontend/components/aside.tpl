@@ -7,9 +7,9 @@
 		</div>
 		<div class="aside-content">
 			<ul>
-				{foreach key=field item=message from=$interviews}
+				{foreach from=$interviews item=interview}
 					<li>
-						<a href="{url page="article" op="view" path=$message['publication_id']}">{$message['setting_value']}</a>
+						<a target="_blank" href="{url page="article" op="view" path=$interview->publication_id}">{$interview->setting_value}</a>
 					</li>
 				{/foreach}
 			</ul>
