@@ -5170,16 +5170,17 @@
 					  s,
 					  function(e) {
 						var s = e.querySelector("label"),
+						language = document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
 						  a = {
 							type: "heading",
 							id: t.nextId("heading"),
 							level: 3,
-							content: s
-							  ? this.capitalized(
-								  s.textContent.toLowerCase(),
-								  "all"
-								)
-							  : "Contributors",
+							content:
+							language == "pt-BR"
+							? "Colaboradores"
+							: language == "es-ES"
+							? "Colaboradores"
+							: "Summary",
 						  };
 						i.create(a), n.push(a.id);
 						var c = this.bodyNodes(t, o.dom.getChildren(e), {
@@ -5199,13 +5200,19 @@
 				  r = t.doc,
 				  c = e.querySelector("corresp"),
 				  o = c ? c.textContent : "",
-				  f = o.replace("Correspondence", "");
+				  f = o.replace("Correspondence", ""),
+				  language = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
 				if (o) {
 				  var u = {
 					type: "heading",
 					id: t.nextId("heading"),
 					level: 3,
-					content: "Correspondence",
+					content:
+					  language == "pt-BR"
+						? "Correspondência"
+						: language == "es-ES"
+						? "Correspondencia"
+						: "Correspondence",
 				  };
 				  r.create(u), n.push(u.id);
 				  var l = {
