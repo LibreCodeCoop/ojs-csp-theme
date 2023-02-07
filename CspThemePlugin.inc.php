@@ -123,10 +123,10 @@ class CspThemePlugin extends ThemePlugin {
 			$submissionDAO = Application::getSubmissionDAO();
 			$submission = $submissionDAO->getById($submissionId);
 			$publication = $submission->getCurrentPublication();
+			$publicationLocale = $publication->getData('locale');
 			foreach ($publication->getData('authors') as $key => $value) {
-				$submissionLocale = $publication->_data["authors"][$key]->_data["submissionLocale"];
-				$givenName = $publication->_data["authors"][$key]->_data["givenName"][$submissionLocale];
-				$familyName = !is_null($publication->_data["authors"][0]->_data["givenName"]) ? $publication->_data["authors"][$key]->_data["familyName"][$submissionLocale] : null;
+				$givenName = $value->getData('givenName',$publicationLocale);
+				$familyName = !is_null($value->getData('givenName')) ? $value->getData('familyName',$publicationLocale) : null;
 				if(strpos($givenName, ',')){
 					$givenNameArray = explode(",", $givenName);
 					$beginningNameArray = explode(" ", $givenNameArray[1]);
@@ -176,20 +176,20 @@ class CspThemePlugin extends ThemePlugin {
 				}
 				unset($abbrev);
 			}
-			$issue = $issueDao->getById($publication->_data["issueId"]);
+			$issue = $issueDao->getById($publication->getData('issueId'));
 
 			$citation = implode(", ",$authors).". ";
-			$citation .= $publication->_data["title"][$submissionLocale].". ";
+			$citation .= $publication->getData('title',$publicationLocale).". ";
 			$citation .= $context->getLocalizedName()." ";
-			$citation .= $issue->_data["year"]."; ";
-			$citation .= $issue->_data["volume"];
-			$citation .= "(".$issue->_data["number"].")";
-			if($issue->_data["year"] > 2016){
-				$doiArray = explode('x', strtolower($publication->_data["pub-id::doi"]));
+			$citation .= $issue->getData('year')."; ";
+			$citation .= $issue->getData('volume');
+			$citation .= "(".$issue->getData('number').")";
+			if($issue->getData('year') > 2016){
+				$doiArray = explode('x', strtolower($publication->getData('pub-id::doi')));
 				$citation .= ':e00'.substr($doiArray[1],2);
 			}
-			if ($publication->_data["pub-id::doi"]) {
-				$citation .= " doi: ".$publication->_data["pub-id::doi"];
+			if ($publication->getData('pub-id::doi')) {
+				$citation .= " doi: ".$publication->getData('pub-id::doi');
 			}
 			$templateMgr->assign(array(
 				'issue' => $issue,
