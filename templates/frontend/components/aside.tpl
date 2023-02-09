@@ -74,9 +74,23 @@
 					{if $supplementaryGalleys}
 						{foreach from=$supplementaryGalleys item=galley}
 							{if $galley->getLocale() ==  $navigationLocale}
+								{assign var="fileLocaleExist" value=$fileLocaleExist+1}
 								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
 							{/if}
 						{/foreach}
+						{if !$fileLocaleExist}
+							{foreach from=$supplementaryGalleys item=galley}
+								{if $galley->getLocale() == 'en_US'}
+									{assign var="fileLocaleExist" value=$fileLocaleExist+1}
+									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+								{/if}
+							{/foreach}
+						{/if}
+						{if !$fileLocaleExist}
+							{foreach from=$supplementaryGalleys item=galley}
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{/foreach}
+						{/if}
 					{/if}
 				</div>
 			{/if}
