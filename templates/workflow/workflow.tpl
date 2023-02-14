@@ -33,7 +33,7 @@
 			>
 				{translate key="common.declined"}
 			</badge>
-			<span class="pkpWorkflow__identificationId">{{ submission.codigoArtigo }}</span>
+			<span class="pkpWorkflow__identificationId">{{ submission.submissionIdCSP }}</span>
 			<span class="pkpWorkflow__identificationDivider">/</span>
 			<span class="pkpWorkflow__identificationTitle">
 				{{ localizeSubmission(currentPublication.fullTitle, currentPublication.locale) }}

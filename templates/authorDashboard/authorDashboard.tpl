@@ -26,7 +26,7 @@
 	<div id="workflow-{$uuid}" class="pkpWorkflow">
 		<pkp-header :is-one-line="true" class="pkpWorkflow__header">
 			<h1 class="pkpWorkflow__identification">
-				<b>{$submission->getData('codigoArtigo')}</b>
+				<b>{$submission->getData('submissionIdCSP')}</b>
 				<b>-</b>
 				<b>{$sectionLocalizedTitle}</b>
 				<br>
