@@ -106,7 +106,7 @@
 			<div class="list-group">
 				{* test date *}
 				<div class="csp-date">
-					{if array_key_exists('received', $dates)}
+					{if $dates.received}
 						<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
 					{/if}
 					{if $dates.accepted}
