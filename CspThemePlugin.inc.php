@@ -41,7 +41,7 @@ class CspThemePlugin extends ThemePlugin {
 	public function fetchTemplate($hookName, $args){
         $request = Application::get()->getRequest();
 		$router = $request->getRouter();
-		$page = $router->getRequestedPage($request) ? $router->getRequestedPage($request) : "";
+		$page = $router->_page;
 		$op = $router->getRequestedOp($request);
 		if($op == "index"){
 			$context = $request->getContext();
@@ -87,10 +87,10 @@ class CspThemePlugin extends ThemePlugin {
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
-		$page = $router->getRequestedPage($request);
+		$page = $router->_page;
 		$op = $router->getRequestedOp($request);
 
-		if ($op == "index") {
+		if ($args[1] == "frontend/pages/indexJournal.tpl") {
 			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
 			$currentIssue = $issueDao->getCurrent($context->getId());
 			$navigationLocale = AppLocale::getLocale();
@@ -118,7 +118,7 @@ class CspThemePlugin extends ThemePlugin {
 		}
 
 		/* Make citation */
-		if($page == "article"){
+		if($args[1] == "frontend/pages/article.tpl"){
 			$pathArray = explode("/",$requestPath);
 			$submissionId = end($pathArray);
 			$submissionDAO = Application::getSubmissionDAO();
