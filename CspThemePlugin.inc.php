@@ -38,45 +38,46 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
-	public function fetchTemplate($hookName, $args)
-	{
+	public function fetchTemplate($hookName, $args){
         $request = Application::get()->getRequest();
-		$context = $request->getContext();
-		$requestPath = $request->getRequestPath();
-		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
-		$page = $router->_page;
-		$op = $router->_op;
-        $count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
-		$params = array(
-			'contextId' => $context->getId(),
-			'orderBy' => 'seq',
-			'orderDirection' => 'ASC',
-			'count' => $count,
-			'offset' => 0,
-			'isPublished' => true
-        );
+		$page = $router->getRequestedPage($request) ? $router->getRequestedPage($request) : "";
+		$op = $router->getRequestedOp($request);
+		if($op == "index"){
+			$context = $request->getContext();
+			$requestPath = $request->getRequestPath();
+			$baseUrl = $request->getBaseUrl();
+			$count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
+			$params = array(
+				'contextId' => $context->getId(),
+				'orderBy' => 'seq',
+				'orderDirection' => 'ASC',
+				'count' => $count,
+				'offset' => 0,
+				'isPublished' => true
+			);
 
-		$issues = iterator_to_array(Services::get('issue')->getMany($params));
-		if (isset($issues[0])) {
-			$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
-			$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
-		} else {
-			$coverImageUrl = null;
-			$coverImageAltText = null;
+			$issues = iterator_to_array(Services::get('issue')->getMany($params));
+			if (isset($issues[0])) {
+				$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
+				$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
+			} else {
+				$coverImageUrl = null;
+				$coverImageAltText = null;
+			}
+
+			$templateMgr = $args[0];
+			$templateMgr->assign(array(
+				'issues' => $issues,
+				'requestPath' => $requestPath,
+				'baseUrl' => $baseUrl,
+				'page' => $page,
+				'coverImageUrl' => $coverImageUrl,
+				'coverImageAltText' => $coverImageAltText,
+				'context' => $context,
+				'op' => $op
+			));
 		}
-
-		$templateMgr = $args[0];
-        $templateMgr->assign(array(
-			'issues' => $issues,
-			'requestPath' => $requestPath,
-			'baseUrl' => $baseUrl,
-			'page' => $page,
-			'coverImageUrl' => $coverImageUrl,
-            'coverImageAltText' => $coverImageAltText,
-			'context' => $context,
-			'op' => $op
-		));
 	}
 
 	public function loadTemplateData($hookName, $args) {
@@ -86,14 +87,27 @@ class CspThemePlugin extends ThemePlugin {
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
-		$page = $router->_page;
-		$op = $router->_op;
-		$navigationLocale = AppLocale::getLocale();
+		$page = $router->getRequestedPage($request);
+		$op = $router->getRequestedOp($request);
 
-		$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
-		$currentIssue = $issueDao->getCurrent($context->getId());
+		if ($op == "index") {
+			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
+			$currentIssue = $issueDao->getCurrent($context->getId());
+			$navigationLocale = AppLocale::getLocale();
 
-		if ($args[1] == "frontend/pages/indexJournal.tpl") {
+			$userDao = DAORegistry::getDAO('UserDAO');
+			$interviews = $userDao->retrieve(
+				<<<QUERY
+				SELECT p.publication_id, s.setting_value
+				FROM publications p
+				LEFT JOIN publication_settings s
+				ON s.publication_id = p.publication_id
+				WHERE section_id = (SELECT DISTINCT section_id FROM ojs.section_settings WHERE setting_value = 'ENTREVISTA'
+				) AND s.setting_name = 'title' AND s.locale = '$navigationLocale'
+				ORDER BY publication_id ASC LIMIT 3
+				QUERY
+			);
+
 			if(!is_null($currentIssue)){
 				$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
 				$coverImageAltText = $currentIssue->getLocalizedCoverImageAltText();
@@ -103,21 +117,8 @@ class CspThemePlugin extends ThemePlugin {
 			$coverImageAltText = null;
 		}
 
-		$userDao = DAORegistry::getDAO('UserDAO');
-		$interviews = $userDao->retrieve(
-			<<<QUERY
-			SELECT p.publication_id, s.setting_value
-			FROM publications p
-			LEFT JOIN publication_settings s
-			ON s.publication_id = p.publication_id
-			WHERE section_id = (SELECT DISTINCT section_id FROM ojs.section_settings WHERE setting_value = 'ENTREVISTA'
-			) AND s.setting_name = 'title' AND s.locale = '$navigationLocale'
-			ORDER BY publication_id ASC LIMIT 3
-			QUERY
-		);
-
 		/* Make citation */
-		if($args[1] == "frontend/pages/article.tpl"){
+		if($page == "article"){
 			$pathArray = explode("/",$requestPath);
 			$submissionId = end($pathArray);
 			$submissionDAO = Application::getSubmissionDAO();
@@ -176,6 +177,7 @@ class CspThemePlugin extends ThemePlugin {
 				}
 				unset($abbrev);
 			}
+			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
 			$issue = $issueDao->getById($publication->getData('issueId'));
 
 			$citation = implode(", ",$authors).". ";
