@@ -5013,7 +5013,7 @@
 				  (o = o.concat(this.extractDatasets(t, e))),
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
 				  (o = o.concat(this.extractCorrespondence(t, e))),
-				  (o = o.concat(this.extractContributions(t, e))),
+				//   (o = o.concat(this.extractContributions(t, e))),
 				  (o = o.concat(this.extractInterestsConflict(t, e))),
 				  (o = o.concat(this.extractAcknowledgements(t, e))),
 				  (o = o.concat(this.extractNotes(t, e))),
