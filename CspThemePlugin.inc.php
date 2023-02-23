@@ -89,11 +89,11 @@ class CspThemePlugin extends ThemePlugin {
 		$router = $request->getRouter();
 		$page = $router->_page;
 		$op = $router->getRequestedOp($request);
+		$navigationLocale = AppLocale::getLocale();
 
 		if ($args[1] == "frontend/pages/indexJournal.tpl") {
 			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
 			$currentIssue = $issueDao->getCurrent($context->getId());
-			$navigationLocale = AppLocale::getLocale();
 
 			$userDao = DAORegistry::getDAO('UserDAO');
 			$interviews = $userDao->retrieve(

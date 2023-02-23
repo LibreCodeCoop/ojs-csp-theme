@@ -73,7 +73,7 @@
 					{/if}
 					{if $supplementaryGalleys}
 						{foreach from=$supplementaryGalleys item=galley}
-							{if $galley->getLocale() ==  $navigationLocale}
+							{if ($galley->getLocale() ==  $navigationLocale) or $galley->_submissionFile->getData('mimetype') == 'text/xml'}
 								{assign var="fileLocaleExist" value=$fileLocaleExist+1}
 								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
 							{/if}
