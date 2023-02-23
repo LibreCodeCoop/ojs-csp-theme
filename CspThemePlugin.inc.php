@@ -18,7 +18,7 @@ class CspThemePlugin extends ThemePlugin {
 		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
 		HookRegistry::register('Templates::Common::Sidebar', array($this, 'addDates'));
-		//HookRegistry::register('LensGalleyPlugin::articleDownload', array($this, 'lensGalleyPluginArticleDownload'));
+		HookRegistry::register('LensGalleyPlugin::articleDownload', array($this, 'lensGalleyPluginArticleDownload'));
 
     }
 
