@@ -4939,7 +4939,7 @@
 				  o.join("-")
 				);
 			  }),
-			  (this.extractPublicationInfo = function(t, e) {
+			  (this.extractPublicationInfo = function(t, e, querySelector, navigationLanguage) {
 				for (
 				  var n = t.doc,
 					r = e.querySelector("article-meta"),
@@ -4962,7 +4962,7 @@
 					s = e.querySelector("journal-title"),
 					a = e.querySelector("article-id[pub-id-type=doi]"),
 					c = e.querySelector("related-article"),
-					u = this.extractArticleInfo(t, e),
+					u = this.extractArticleInfo(t, e, querySelector, navigationLanguage),
 					l = {
 					  id: "publication_info",
 					  type: "publication_info",
@@ -5000,7 +5000,7 @@
 				  n.show("info", l.id, 0),
 				  this.enhancePublicationInfo(t, l);
 			  }),
-			  (this.extractArticleInfo = function(t, e) {
+			  (this.extractArticleInfo = function(t, e, querySelector, navigationLanguage) {
 
 				var n = {
 					id: "articleinfo",
@@ -5013,7 +5013,7 @@
 				  (o = o.concat(this.extractDatasets(t, e))),
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
 				  (o = o.concat(this.extractCorrespondence(t, e))),
-				//   (o = o.concat(this.extractContributions(t, e))),
+				  (o = o.concat(this.extractContributions(t, e, querySelector, navigationLanguage))),
 				  (o = o.concat(this.extractInterestsConflict(t, e))),
 				  (o = o.concat(this.extractAcknowledgements(t, e))),
 				  (o = o.concat(this.extractNotes(t, e))),
@@ -5159,10 +5159,11 @@
 				  n
 				);
 			  }),
-			  (this.extractContributions = function(t, e) {
+			  (this.extractContributions = function(t, e, querySelector, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
-				  s = e.querySelectorAll("fn[fn-type=con]");
+				  s = querySelector.querySelectorAll("fn[fn-type=con]");
+				  console.log(s.length)
 				return (
 				  s &&
 					s.length > 0 &&
@@ -5170,15 +5171,14 @@
 					  s,
 					  function(e) {
 						var s = e.querySelector("label"),
-						language = document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
 						  a = {
 							type: "heading",
 							id: t.nextId("heading"),
 							level: 3,
 							content:
-							language == "pt-BR"
+							navigationLanguage == "pt-BR"
 							? "Colaboradores"
-							: language == "es-ES"
+							: navigationLanguage == "es-ES"
 							? "Colaboradores"
 							: "Summary",
 						  };
@@ -5563,20 +5563,34 @@
 				}
 			  }),
 			  (this.article = function(t, e) {
+				var xmlMainLanguage = t.xmlDoc.querySelector("article").getAttribute("xml:lang");
+				var navigationLanguage = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
+				if(navigationLanguage.substring(0, 2) == xmlMainLanguage){
+					var articleSection = 0;
+					var querySelector = e.querySelector("article-meta");
+0				}
+				if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
+					var articleSection = 1;
+					var querySelector = t.xmlDoc.getElementById('s1');
+				}
+				if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
+					var articleSection = 2;
+					var querySelector = t.xmlDoc.getElementById('s2');
+				}
 				var n = t.doc,
-				  r = e.querySelector("article-id");
+				r = e.querySelector("article-id");
 				r ? (n.id = r.textContent) : (n.id = o.uuid()),
-				  this.extractDefinitions(t, e),
-				  this.extractAffilitations(t, e),
-				  this.extractContributors(t, e),
-				  this.extractCitations(t, e),
-				  this.extractCover(t, e),
-				  this.extractArticleMeta(t, e),
-				  this.extractPublicationInfo(t, e);
-				var i = e.querySelector("body");
+				this.extractDefinitions(t, e),
+				this.extractAffilitations(t, e),
+				this.extractContributors(t, e, querySelector),
+				this.extractCitations(t, e),
+				this.extractCover(t, e),
+				this.extractArticleMeta(t, e, querySelector),
+				this.extractPublicationInfo(t, e, querySelector, navigationLanguage);
+				var i = e.querySelectorAll('body')[articleSection];
 				i && this.body(t, i),
-				  this.extractFigures(t, e),
-				  this.enhanceArticle(t, e);
+				this.extractFigures(t, e),
+				this.enhanceArticle(t, e);
 			  }),
 			  (this.extractDefinitions = function(t) {
 				var link = t.xmlDoc.querySelectorAll("ext-link");
@@ -5604,12 +5618,12 @@
 				  }
 				});
 			  }),
-			  (this.extractArticleMeta = function(t, e) {
+			  (this.extractArticleMeta = function(t, e, querySelector) {
 				var n = e.querySelector("article-meta");
 				if (!n) throw new s("Expected element: 'article-meta'");
 				var r = n.querySelectorAll("article-id");
 				this.articleIds(t, r);
-				var o = n.querySelector("title-group");
+				var o = querySelector.querySelector("title-group");
 				o && this.titleGroup(t, o);
 				var i = n.querySelectorAll("pub-date");
 				this.pubDates(t, i), this.abstracts(t, n);
@@ -5618,8 +5632,8 @@
 				for (var n = e.querySelectorAll("aff"), r = 0; r < n.length; r++)
 				  this.affiliation(t, n[r]);
 			  }),
-			  (this.extractContributors = function(t, e) {
-				var n = e.querySelector("article-meta contrib-group");
+			  (this.extractContributors = function(t, e, querySelector) {
+				var n = querySelector.querySelector("contrib-group");
 				n && this.contribGroup(t, n);
 			  }),
 			  (this.extractFigures = function(t, e) {
@@ -5660,7 +5674,7 @@
 			  }),
 			  (this.titleGroup = function(t, e) {
 				var n = t.doc,
-				  r = e.querySelector("article-title");
+				    r = e.querySelector("article-title");
 				r &&
 				  (n.title = this.annotatedText(t, r, ["document", "title"], {
 					ignore: ["xref"],
