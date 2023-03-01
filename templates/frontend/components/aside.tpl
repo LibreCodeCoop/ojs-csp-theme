@@ -73,20 +73,49 @@
 					{/if}
 					{if $supplementaryGalleys}
 						{foreach from=$supplementaryGalleys item=galley}
-							{if ($galley->getLocale() ==  $navigationLocale) or $galley->_submissionFile->getData('mimetype') == 'text/xml'}
-								{assign var="fileLocaleExist" value=$fileLocaleExist+1}
+							{if (($galley->getLocale() ==  $navigationLocale) && ($galley->_submissionFile->getData('mimetype') == 'text/xml'))}
+								{assign var="XMLExist" value=$fileLocaleExist+1}
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{/if}
+							{if (($galley->getLocale() ==  $navigationLocale) && ($galley->_submissionFile->getData('mimetype') == 'application/pdf'))}
+								{assign var="PDFExist" value=$fileLocaleExist+1}
 								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
 							{/if}
 						{/foreach}
-						{if !$fileLocaleExist}
+						{if !$XMLExist}
 							{foreach from=$supplementaryGalleys item=galley}
-								{if $galley->getLocale() == 'en_US'}
-									{assign var="fileLocaleExist" value=$fileLocaleExist+1}
+								{if (($galley->getLocale() ==  'pt_BR') && ($galley->_submissionFile->getData('mimetype') == 'text/xml'))}
+									{assign var="XMLExist" value=$fileLocaleExist+1}
 									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
 								{/if}
 							{/foreach}
 						{/if}
-						{if !$fileLocaleExist}
+						{if !$PDFExist}
+							{if (($galley->getLocale() ==  'pt_BR') && ($galley->_submissionFile->getData('mimetype') == 'application/pdf'))}
+								{assign var="PDFExist" value=$fileLocaleExist+1}
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{/if}
+						{/if}
+						{if !$XMLExist}
+							{foreach from=$supplementaryGalleys item=galley}
+								{if (($galley->getLocale() ==  'en_US') && ($galley->_submissionFile->getData('mimetype') == 'text/xml'))}
+									{assign var="XMLExist" value=$fileLocaleExist+1}
+									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+								{/if}
+							{/foreach}
+						{/if}
+						{if !$PDFExist}
+							{if (($galley->getLocale() ==  'en_US') && ($galley->_submissionFile->getData('mimetype') == 'application/pdf'))}
+								{assign var="PDFExist" value=$fileLocaleExist+1}
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{/if}
+						{/if}
+						{if !$XMLExist}
+							{foreach from=$supplementaryGalleys item=galley}
+								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+							{/foreach}
+						{/if}
+						{if !$PDFExist}
 							{foreach from=$supplementaryGalleys item=galley}
 								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
 							{/foreach}
