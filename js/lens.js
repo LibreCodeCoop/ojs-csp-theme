@@ -5163,7 +5163,6 @@
 				var n = [],
 				  i = t.doc,
 				  s = querySelector.querySelectorAll("fn[fn-type=con]");
-				  console.log(s.length)
 				return (
 				  s &&
 					s.length > 0 &&
@@ -5563,20 +5562,27 @@
 				}
 			  }),
 			  (this.article = function(t, e) {
+				var subArticle = t.xmlDoc.querySelector("sub-article");
 				var xmlMainLanguage = t.xmlDoc.querySelector("article").getAttribute("xml:lang");
 				var navigationLanguage = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
-				if(navigationLanguage.substring(0, 2) == xmlMainLanguage){
+				if(!subArticle){
 					var articleSection = 0;
 					var querySelector = e.querySelector("article-meta");
-0				}
-				if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
-					var articleSection = 1;
-					var querySelector = t.xmlDoc.getElementById('s1');
+				}else{
+					if(navigationLanguage.substring(0, 2) == xmlMainLanguage){
+						var articleSection = 0;
+						var querySelector = e.querySelector("article-meta");
+	0				}
+					if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
+						var articleSection = 1;
+						var querySelector = t.xmlDoc.getElementById('s1');
+					}
+					if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
+						var articleSection = 2;
+						var querySelector = t.xmlDoc.getElementById('s2');
+					}
 				}
-				if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
-					var articleSection = 2;
-					var querySelector = t.xmlDoc.getElementById('s2');
-				}
+
 				var n = t.doc,
 				r = e.querySelector("article-id");
 				r ? (n.id = r.textContent) : (n.id = o.uuid()),
