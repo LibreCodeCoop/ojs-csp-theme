@@ -8257,9 +8257,9 @@
 		  (c.Prototype = function() {
 			(this.render = function() {
 			  return (
-				0 === this.getContainer().getLength()
-				  ? (this.hideToggle(), this.hide())
-				  : (this.surface.render(), this.scrollbar.render()),
+				this.getContainer().hasContent(this.config.type)
+				  ? (this.surface.render(),this.scrollbar.render())
+				  : (this.hideToggle(),this.hide()),
 				this
 			  );
 			}),
@@ -10577,6 +10577,9 @@
 			  }),
 			  (this.getLength = function() {
 				return this.listView.length;
+			  }),
+			  (this.hasContent = function(panelType) {
+				return this.listView.length > 0 || (panelType === 'resource' && this.treeView.length > 0);
 			  }),
 			  (this.hasSuccessor = function(t) {
 				var e = this.getLength();
