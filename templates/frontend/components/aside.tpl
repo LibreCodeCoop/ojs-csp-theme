@@ -55,7 +55,7 @@
 		</a>
 		</div>
 		<div class="content-csp">
-		<a href="https://www.scielo.br/scielo.php?script=sci_issues&pid=0102-311X&lng=pt&nrm=iso"target="_blank">
+		<a href="https://www.scielo.br/j/csp/"target="_blank">
 			<img src="{$baseUrl}/plugins/themes/csp/assets/scielo.svg" />
 		</a>
 		</div>
