@@ -80,7 +80,6 @@
 						{/if}
 					</div>
 					<div class="col-md-6" id="header-language-icons">
-						{include file="frontend/components/social-media.tpl"}
 						<div class="col-md-5" id="language">
 							{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 							<ul class="setLanguage">

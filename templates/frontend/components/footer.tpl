@@ -50,6 +50,7 @@
 					</div>
 					<div class="col-md-4">
 						{$pageFooter}
+						{include file="frontend/components/social-media.tpl"}
 					</div>
 					<div class="col-md-1">
 						<a target="_blank" href="http://ensp.fiocruz.br/">
