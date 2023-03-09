@@ -62,8 +62,7 @@
 			{/if}
 		</span>
 	{/if}
-
-	{$galley->getGalleyLabel()|escape}
+	{str_replace('TEXT','HTML',$galley->getLabel())|escape} ({substr($galley->getLocale(),0,2)|escape})
 
 	{if $restricted && $purchaseFee && $purchaseCurrency}
 		<span class="purchase-cost">
