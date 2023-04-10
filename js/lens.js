@@ -5014,8 +5014,8 @@
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
 				  (o = o.concat(this.extractCorrespondence(t, e))),
 				  (o = o.concat(this.extractContributions(t, e, querySelector, navigationLanguage))),
-				  (o = o.concat(this.extractInterestsConflict(t, e))),
-				  (o = o.concat(this.extractAcknowledgements(t, e))),
+				  (o = o.concat(this.extractInterestsConflict(t, e, querySelector, navigationLanguage))),
+				  (o = o.concat(this.extractAcknowledgements(t, e, querySelector, navigationLanguage))),
 				  (o = o.concat(this.extractNotes(t, e))),
 				  (n.children = o),
 				  r.create(n),
@@ -5089,7 +5089,7 @@
 			(this.capitalized = function(e, n) {
 			  return t(e, n);
 			}),
-			  (this.extractAcknowledgements = function(t, e) {
+			  (this.extractAcknowledgements = function(t, e, querySelector, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
 				  s = e.querySelectorAll("ack");
@@ -5104,12 +5104,12 @@
 							type: "heading",
 							id: t.nextId("heading"),
 							level: 3,
-							content: s
-							  ? this.capitalized(
-								  s.textContent.toLowerCase(),
-								  "all"
-								)
-							  : "Acknowledgements",
+							content:
+							navigationLanguage == "pt-BR"
+								? "Agradecimentos"
+								: navigationLanguage == "es-ES"
+								? "Expresiones de gratitud"
+								: "Acknowledgements",
 						  };
 						i.create(a), n.push(a.id);
 						var c = this.bodyNodes(t, o.dom.getChildren(e), {
@@ -5124,7 +5124,7 @@
 				  n
 				);
 			  }),
-			  (this.extractInterestsConflict = function(t, e) {
+			  (this.extractInterestsConflict = function(t, e, querySelector, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
 				  s = e.querySelectorAll("fn[fn-type=conflict]");
@@ -5139,12 +5139,12 @@
 							type: "heading",
 							id: t.nextId("heading"),
 							level: 3,
-							content: s
-							  ? this.capitalized(
-								  s.textContent.toLowerCase(),
-								  "all"
-								)
-							  : "Interest conflicts",
+							content:
+								navigationLanguage == "pt-BR"
+								? "Conflito de interesses"
+								: navigationLanguage == "es-ES"
+								? "Conflicto de intereses"
+								: "Conflict of Interest",
 						  };
 						i.create(a), n.push(a.id);
 						var c = this.bodyNodes(t, o.dom.getChildren(e), {
