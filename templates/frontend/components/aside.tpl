@@ -44,8 +44,8 @@
 			<span>{translate|escape key="plugins.themes.csp.sidebar.twitter"}</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
 		</div>
-		<div id="tweet" class="aside-content">
-			<a class="twitter-timeline" href="https://twitter.com/CadernosSP?ref_src=twsrc%5Etfw">Tweets by CadernosSP</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<div id="twitter" class="aside-content">
+			<a class="twitter-timeline" href="https://twitter.com/CadernosSP"></a>
 		</div>
 	</div>
 	<div class="aside-container">
@@ -139,3 +139,4 @@
 			</div>
 	</aside>
 {/if}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
