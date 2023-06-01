@@ -76,6 +76,25 @@
 			</div>
 		{/if}
 	</div>
+	<div id="logos">
+        <div id="logosesquerda">
+            <ul>
+                <li class="acesso"><a href="https://portal.fiocruz.br/acesso-informacao"><span class="oculta">Página do Acesso à informação</span></a></li>
+                <li class="castelocemanos"><a href="https://agencia.fiocruz.br/100-anos-do-castelo-fiocruz"><span class="oculta">Página dos 110 anos do castelo</span></a></li>
+                <li class="AquiSUS"><a href="https://portal.fiocruz.br/aqui-somos-sus"><span class="oculta">Página aqui somos SUS</span></a></li>
+            </ul>
+        </div>
+
+        <div id="logosdireita">
+            <ul>
+                <li class="ensp"><a href="http://www.ensp.fiocruz.br/portal-ensp/"><span class="oculta">Página da Escola Nacional de Saúde Pública Sergio Arouca</span></a></li>
+                <li class="sus"><a href="http://portalms.saude.gov.br/sistema-unico-de-saude/sistema-unico-de-saude"><span class="oculta">Página do Sistema Único de Saúde</span></a></li>
+                <li class="fiocruz"><a href="https://portal.fiocruz.br/"><span class="oculta">Página da Fundação Oswaldo Cruz</span></a></li>
+                <li class="msaude"><a href="http://portalms.saude.gov.br/"><span class="oculta">Página do Ministério da Saúde</span></a></li>
+                <li class="gfederal"><a href="http://www.brasil.gov.br/"><span class="oculta">Página do Governo Federal</span></a></li>
+            </ul>
+        </div>
+    </div>
 </div><!-- pkp_structure_footer_wrapper -->
 
 </div><!-- pkp_structure_page -->

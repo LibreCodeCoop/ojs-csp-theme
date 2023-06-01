@@ -35,25 +35,7 @@
 		</nav>
 		{* Header *}
 		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
-			<div class="container-fluid" id="logo-ensp-fiocruz">
-				<div class="container">
-					<div class="row he-50">
-						<div class="col-xs-6 col-sm-6 px-r-30">
-							<a href="{$homeUrl}">
-								<img src="{$baseUrl}/plugins/themes/csp/assets/ensp-header.svg" />
-							</a>
-						</div>
-						<div class="col-xs-6 col-sm-6 text-right">
-							<a href="http://www.ensp.fiocruz.br/">
-								<img src="{$baseUrl}/plugins/themes/csp/assets/fiocruz.svg" id="logoFiocruz"/>
-							</a>
-						</div>
-					</div><!-- .row -->
-				</div>
-			</div><!-- .container-fluid -->
-
 			{* User profile, login, etc, navigation menu*}
-
 			<div class="container-fluid" id="logo-csp">
 				<div class="">
 					<div class="col-md-6">
