@@ -53,3 +53,6 @@ msgstr "Accepted"
 
 msgid "plugins.themes.csp.dates.published"
 msgstr "Published"
+
+msgid "plugins.themes.csp.agree"
+msgstr "Agree"
