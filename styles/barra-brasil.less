@@ -29,15 +29,11 @@
 	background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/logo-fiocruz.png') no-repeat;
 }
 
-
-
 @media screen and (max-width: 980px)
 {
-
-    #barra-ensp .link-fiocruz
-    {
+    #barra-ensp .link-fiocruz{
         top: 5px;
-	right: 0;
+    	right: 0;
         height: 40px;
         width: 40px;
         background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/logo-fiocruz_menor.png') no-repeat;
@@ -52,71 +48,57 @@
     background-repeat:repeat-x;
 }
 
-#conteudo
-{
+#conteudo{
     position: relative;
 }
 
-#barra-fiocruz #conteudo ul li
-{
+#barra-fiocruz #conteudo ul li{
     list-style: none;
 }
 
 #barra-fiocruz #conteudo ul,
 #barra-fiocruz #conteudo ul li,
-#barra-fiocruz #conteudo ul li a
-{
+#barra-fiocruz #conteudo ul li a{
     margin:0;
     padding:0;
 }
 
-#barra-fiocruz #conteudo #barra-fluida-esquerda
-{
-background-image:url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/fio-esquerdo.jpg');
-background-repeat:repeat-x;
-height:33px;
-width: 120px;
+#barra-fiocruz #conteudo #barra-fluida-esquerda{
+    background-image:url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/fio-esquerdo.jpg');
+    background-repeat:repeat-x;
+    height:33px;
+    width: 120px;
+}
 
+#barra-fiocruz #conteudo ul .a1{
+    background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/logo-fiocruz.jpg') no-repeat scroll 0 0;
+    display:inline-block;
+    height: 33px;
+    width: 120px;
+    float:left;
+}
 
+#barra-fiocruz #conteudo #barra-fluida-direita{
+    /*	background-image:url(../images/lado_direito.jpg);
+    background-repeat:no-repeat;
+    background-position:top right;*/
+    height:33px;
+    width: 180px;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    top: 0;
+}
+
+#barra-fiocruz #conteudo ul a span{
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
 }
 
 
-
-#barra-fiocruz #conteudo ul .a1
-{
-background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/logo-fiocruz.jpg') no-repeat scroll 0 0;
-display:inline-block;
-height: 33px;
-width: 120px;
-float:left;
-}
-
-
-#barra-fiocruz #conteudo #barra-fluida-direita
-{
-/*	background-image:url(../images/lado_direito.jpg);
-background-repeat:no-repeat;
-background-position:top right;*/
-height:33px;
-width: 180px;
-position: absolute;
-right: 0;
-z-index: 1000;
-top: 0;
-
-}
-
-#barra-fiocruz #conteudo ul a span
-{
-height: 1px;
-overflow: hidden;
-position: absolute;
-width: 1px;
-}
-
-
-#barra-fiocruz #conteudo ul  .a4
-{
+#barra-fiocruz #conteudo ul  .a4{
     background: rgba(0, 0, 0, 0) url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/header/logo-fiocruz-d-PNG.png') no-repeat scroll 0 0;
     display:inline-block;
     height: 33px;
@@ -124,124 +106,17 @@ width: 1px;
     float:left;
 }
 
-
-// Footer
-
-#logosesquerda
-    {
-       width: 470px;
+#foote-barra-brasil{
+    background: #4e4d4d;
+    img{
+        width: unset;
+        height: unset;
     }
+}
 
-#logosesquerda ul
-    {
-        margin: 0;
-        padding: 0;
-    }
-
- #logosesquerda ul li
-    {
-        display: inline-block;
-        margin: 0 20px 0 0;
-    }
-
- #logosesquerda ul li.acesso a
-    {
-        display: block;
-        height: 52px;
-        width: 120px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/acesso.png') no-repeat center !important;
-    }
-
- #logosesquerda ul li.castelocemanos a
-    {
-        display: block;
-        height: 57px;
-        width: 41px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/120anospreto.png') no-repeat center !important;
-    }
-
-#logosesquerda ul li.AquiSUS a
-    {
-        display: block;
-        height: 52px;
-        width: 92px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/aquisomossusu.png') no-repeat center !important;
-    }
-
-#logosdireita
-    {
-         width: 510px;
-    }
-
-#logosdireita ul
-    {
-        margin: 0;
-        padding: 0;
-    }
-
-#logosdireita ul li
-    {
-        display: inline-block;
-        margin: 0 0 0 20px;
-    }
-
-#logosdireita ul li a
-    {
-        display: block;
-        height: 52px;
-        width: 120px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/acesso.png') no-repeat center !important;
-    }
-
-#logosdireita ul li.ensp a
-    {
-        display: block;
-        height: 52px;
-        width: 45px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/Logo-ENSP.png') no-repeat center !important;
-    }
-
-#logosdireita ul li.sus a
-    {
-        display: block;
-        height: 52px;
-        width: 98px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/sus.png') no-repeat center !important;
-    }
-
-#logosdireita ul li.fiocruz a
-    {
-        display: block;
-        height: 52px;
-        width: 38px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/logofiocruzrodape.png') no-repeat center !important;
-    }
-
-#logosdireita ul li.msaude a
-    {
-        display: block;
-        height: 52px;
-        width: 90px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/ministeriosaude.png') no-repeat center !important;
-    }
-
-#logosdireita ul li.gfederal a
-    {
-        display: block;
-        height: 52px;
-        width: 117px;
-        background: url('@{baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/gfederal.png') no-repeat center !important;
-    }
-
-#logosdireita ul li.gfederal
-    {
-        margin-right: 0;
-    }
-
-span.oculta
-    {
-        position: absolute;
-        left: -999em;
-        width: 1em;
-        overflow: hidden;
-    }
+span.oculta{
+    position: absolute;
+    left: -999em;
+    width: 1em;
+    overflow: hidden;
+}

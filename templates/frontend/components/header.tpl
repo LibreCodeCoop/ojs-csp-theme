@@ -23,7 +23,7 @@
 {if !$pageTitleTranslated}{capture assign="pageTitleTranslated"}{translate key=$pageTitle}{/capture}{/if}
 {include file="frontend/components/headerHead.tpl"}
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}{if $showingLogo} has_site_logo{/if}">
-	{include file="frontend/components/barra_brasil.tpl"}
+	{include file="frontend/components/barra_brasil_cabecalho.tpl"}
 	{include file="frontend/components/cookie-alert.tpl"}
 	<div class="pkp_structure_page">
 
