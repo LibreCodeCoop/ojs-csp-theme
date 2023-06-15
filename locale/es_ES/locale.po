@@ -54,5 +54,5 @@ msgstr "Aceptado"
 msgid "plugins.themes.csp.dates.published"
 msgstr "Publicado"
 
-msgid "plugins.themes.csp.agree"
-msgstr "Aceito"
+msgid "plugins.themes.csp.cookiesPolicy"
+msgstr "Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia de navegación. <a rel=\"license\"  <a href=\"csp/politica-cookies\">Sepa mas.</a>"
