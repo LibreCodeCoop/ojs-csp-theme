@@ -5565,21 +5565,24 @@
 				var subArticle = t.xmlDoc.querySelector("sub-article");
 				var xmlMainLanguage = t.xmlDoc.querySelector("article").getAttribute("xml:lang");
 				var navigationLanguage = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
+				var navigationLanguageSubstring = navigationLanguage.substring(0, 2);
 				if(!subArticle){
 					var articleSection = 0;
 					var querySelector = e.querySelector("article-meta");
 				}else{
-					if(navigationLanguage.substring(0, 2) == xmlMainLanguage){
+					switch (navigationLanguageSubstring) {
+					  case xmlMainLanguage:
 						var articleSection = 0;
 						var querySelector = e.querySelector("article-meta");
-	0				}
-					if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
+						break;
+					  case t.xmlDoc.getElementById('s1').getAttribute("xml:lang"):
 						var articleSection = 1;
 						var querySelector = t.xmlDoc.getElementById('s1');
-					}
-					if(navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
+						break;
+					  case t.xmlDoc.getElementById('s2').getAttribute("xml:lang"):
 						var articleSection = 2;
 						var querySelector = t.xmlDoc.getElementById('s2');
+						break;
 					}
 				}
 
