@@ -5567,29 +5567,27 @@
 				var article = t.xmlDoc.querySelector("article");
 				var navigationLanguage = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
 				var navigationLanguageSubstring = navigationLanguage.substring(0, 2);
-				if(!subArticle){
 					var articleSection = 0;
 					var querySelector = e.querySelector("article-meta");
 					var body = e.querySelector("body");
-				}else{
-					switch (navigationLanguageSubstring) {
-					  case xmlMainLanguage:
+					if(navigationLanguage.substring(0, 2) == xmlMainLanguage){
+						console.log(1)
 						var articleSection = 0;
 						var querySelector = e.querySelector("article-meta");
 						var body = article.querySelector("body");
-						break;
-					  case t.xmlDoc.getElementById('s1').getAttribute("xml:lang"):
+					}
+					if(!!t.xmlDoc.getElementById('s1') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
+						console.log(2)
 						var articleSection = 1;
 						var querySelector = t.xmlDoc.getElementById('s1');
 						var body = t.xmlDoc.getElementById('s1');
-						break;
-					  case t.xmlDoc.getElementById('s2').getAttribute("xml:lang"):
+					}
+					if(!!t.xmlDoc.getElementById('s2') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
+						console.log(3);
 						var articleSection = 2;
 						var querySelector = t.xmlDoc.getElementById('s2');
-						var body = t.xmlDoc.getElementById('s1');
-						break;
+						var body = t.xmlDoc.getElementById('s2');
 					}
-				}
 
 				var n = t.doc,
 				r = e.querySelector("article-id");
