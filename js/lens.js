@@ -5564,24 +5564,29 @@
 			  (this.article = function(t, e) {
 				var subArticle = t.xmlDoc.querySelector("sub-article");
 				var xmlMainLanguage = t.xmlDoc.querySelector("article").getAttribute("xml:lang");
+				var article = t.xmlDoc.querySelector("article");
 				var navigationLanguage = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
 				var navigationLanguageSubstring = navigationLanguage.substring(0, 2);
 				if(!subArticle){
 					var articleSection = 0;
 					var querySelector = e.querySelector("article-meta");
+					var body = e.querySelector("body");
 				}else{
 					switch (navigationLanguageSubstring) {
 					  case xmlMainLanguage:
 						var articleSection = 0;
 						var querySelector = e.querySelector("article-meta");
+						var body = article.querySelector("body");
 						break;
 					  case t.xmlDoc.getElementById('s1').getAttribute("xml:lang"):
 						var articleSection = 1;
 						var querySelector = t.xmlDoc.getElementById('s1');
+						var body = t.xmlDoc.getElementById('s1');
 						break;
 					  case t.xmlDoc.getElementById('s2').getAttribute("xml:lang"):
 						var articleSection = 2;
 						var querySelector = t.xmlDoc.getElementById('s2');
+						var body = t.xmlDoc.getElementById('s1');
 						break;
 					}
 				}
@@ -5598,7 +5603,7 @@
 				this.extractPublicationInfo(t, e, querySelector, navigationLanguage);
 				var i = e.querySelectorAll('body')[articleSection];
 				i && this.body(t, i),
-				this.extractFigures(t, e),
+				this.extractFigures(t, e, body, navigationLanguage),
 				this.enhanceArticle(t, e);
 			  }),
 			  (this.extractDefinitions = function(t) {
@@ -5645,12 +5650,9 @@
 				var n = querySelector.querySelector("contrib-group");
 				n && this.contribGroup(t, n);
 			  }),
-			  (this.extractFigures = function(t, e) {
+			  (this.extractFigures = function(t, e, body, navigationLanguage) {
 				for (
-				  var n = e.querySelector("body"),
-					r = n.querySelectorAll(
-					  "fig, table-wrap, supplementary-material, media[mimetype=video]"
-					),
+				  var r = body.querySelectorAll("fig, table-wrap, supplementary-material, media[mimetype=video]"),
 					i = [],
 					s = 0;
 				  s < r.length;
