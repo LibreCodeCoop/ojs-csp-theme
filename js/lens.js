@@ -5638,7 +5638,7 @@
 				var o = querySelector.querySelector("title-group");
 				o && this.titleGroup(t, o);
 				var i = n.querySelectorAll("pub-date");
-				this.pubDates(t, i), this.abstracts(t, n);
+				this.pubDates(t, i), this.abstracts(t, n, querySelector);
 			  }),
 			  (this.extractAffilitations = function(t, e) {
 				for (var n = e.querySelectorAll("aff"), r = 0; r < n.length; r++)
@@ -5718,8 +5718,8 @@
 				  date: a,
 				};
 			  }),
-			  (this.abstracts = function(t, e) {
-				var n = e.querySelectorAll("abstract");
+			  (this.abstracts = function(t, e, querySelector) {
+				var n = querySelector.querySelectorAll("abstract");
 				r.each(
 				  n,
 				  function(e) {
