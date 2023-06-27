@@ -4939,7 +4939,7 @@
 				  o.join("-")
 				);
 			  }),
-			  (this.extractPublicationInfo = function(t, e, querySelector, navigationLanguage) {
+			  (this.extractPublicationInfo = function(t, e, articleMeta, navigationLanguage) {
 				for (
 				  var n = t.doc,
 					r = e.querySelector("article-meta"),
@@ -4962,7 +4962,7 @@
 					s = e.querySelector("journal-title"),
 					a = e.querySelector("article-id[pub-id-type=doi]"),
 					c = e.querySelector("related-article"),
-					u = this.extractArticleInfo(t, e, querySelector, navigationLanguage),
+					u = this.extractArticleInfo(t, e, articleMeta, navigationLanguage),
 					l = {
 					  id: "publication_info",
 					  type: "publication_info",
@@ -5000,7 +5000,7 @@
 				  n.show("info", l.id, 0),
 				  this.enhancePublicationInfo(t, l);
 			  }),
-			  (this.extractArticleInfo = function(t, e, querySelector, navigationLanguage) {
+			  (this.extractArticleInfo = function(t, e, articleMeta, navigationLanguage) {
 
 				var n = {
 					id: "articleinfo",
@@ -5013,9 +5013,9 @@
 				  (o = o.concat(this.extractDatasets(t, e))),
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
 				  (o = o.concat(this.extractCorrespondence(t, e))),
-				  (o = o.concat(this.extractContributions(t, e, querySelector, navigationLanguage))),
-				  (o = o.concat(this.extractInterestsConflict(t, e, querySelector, navigationLanguage))),
-				  (o = o.concat(this.extractAcknowledgements(t, e, querySelector, navigationLanguage))),
+				  (o = o.concat(this.extractContributions(t, e, articleMeta, navigationLanguage))),
+				  (o = o.concat(this.extractInterestsConflict(t, e, navigationLanguage))),
+				  (o = o.concat(this.extractAcknowledgements(t, e, navigationLanguage))),
 				  (o = o.concat(this.extractNotes(t, e))),
 				  (n.children = o),
 				  r.create(n),
@@ -5089,7 +5089,7 @@
 			(this.capitalized = function(e, n) {
 			  return t(e, n);
 			}),
-			  (this.extractAcknowledgements = function(t, e, querySelector, navigationLanguage) {
+			  (this.extractAcknowledgements = function(t, e, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
 				  s = e.querySelectorAll("ack");
@@ -5124,7 +5124,7 @@
 				  n
 				);
 			  }),
-			  (this.extractInterestsConflict = function(t, e, querySelector, navigationLanguage) {
+			  (this.extractInterestsConflict = function(t, e, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
 				  s = e.querySelectorAll("fn[fn-type=conflict]");
@@ -5159,10 +5159,10 @@
 				  n
 				);
 			  }),
-			  (this.extractContributions = function(t, e, querySelector, navigationLanguage) {
+			  (this.extractContributions = function(t, e, articleMeta, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
-				  s = querySelector.querySelectorAll("fn[fn-type=con]");
+				  s = articleMeta.querySelectorAll("fn[fn-type=con]");
 				return (
 				  s &&
 					s.length > 0 &&
@@ -5562,46 +5562,35 @@
 				}
 			  }),
 			  (this.article = function(t, e) {
-				var subArticle = t.xmlDoc.querySelector("sub-article");
-				var xmlMainLanguage = t.xmlDoc.querySelector("article").getAttribute("xml:lang");
-				var article = t.xmlDoc.querySelector("article");
 				var navigationLanguage = document.getElementsByTagName('html')[0].getAttribute('xml:lang');
-				var navigationLanguageSubstring = navigationLanguage.substring(0, 2);
-					var articleSection = 0;
-					var querySelector = e.querySelector("article-meta");
-					var body = e.querySelector("body");
-					if(navigationLanguage.substring(0, 2) == xmlMainLanguage){
-						console.log(1)
-						var articleSection = 0;
-						var querySelector = e.querySelector("article-meta");
-						var body = article.querySelector("body");
-					}
-					if(!!t.xmlDoc.getElementById('s1') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
-						console.log(2)
-						var articleSection = 1;
-						var querySelector = t.xmlDoc.getElementById('s1');
-						var body = t.xmlDoc.getElementById('s1');
-					}
-					if(!!t.xmlDoc.getElementById('s2') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
-						console.log(3);
-						var articleSection = 2;
-						var querySelector = t.xmlDoc.getElementById('s2');
-						var body = t.xmlDoc.getElementById('s2');
-					}
+				var articleSection = 0;
+				var articleMeta = e.querySelector("article-meta");
+				var body = e.querySelector("body");
+				if(!!t.xmlDoc.getElementById('s1') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
+					var articleSection = 1;
+					var articleMeta = t.xmlDoc.getElementById('s1');
+					var body = t.xmlDoc.getElementById('s1');
+				}
+				if(!!t.xmlDoc.getElementById('s2') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
+					console.log(3);
+					var articleSection = 2;
+					var articleMeta = t.xmlDoc.getElementById('s2');
+					var body = t.xmlDoc.getElementById('s2');
+				}
 
 				var n = t.doc,
 				r = e.querySelector("article-id");
 				r ? (n.id = r.textContent) : (n.id = o.uuid()),
 				this.extractDefinitions(t, e),
 				this.extractAffilitations(t, e),
-				this.extractContributors(t, e, querySelector),
+				this.extractContributors(t, e, articleMeta),
 				this.extractCitations(t, e),
 				this.extractCover(t, e),
-				this.extractArticleMeta(t, e, querySelector),
-				this.extractPublicationInfo(t, e, querySelector, navigationLanguage);
+				this.extractArticleMeta(t, e, articleMeta),
+				this.extractPublicationInfo(t, e, articleMeta, navigationLanguage);
 				var i = e.querySelectorAll('body')[articleSection];
 				i && this.body(t, i),
-				this.extractFigures(t, e, body, navigationLanguage),
+				this.extractFigures(t, e, body),
 				this.enhanceArticle(t, e);
 			  }),
 			  (this.extractDefinitions = function(t) {
@@ -5630,25 +5619,26 @@
 				  }
 				});
 			  }),
-			  (this.extractArticleMeta = function(t, e, querySelector) {
+			  (this.extractArticleMeta = function(t, e, articleMeta) {
 				var n = e.querySelector("article-meta");
 				if (!n) throw new s("Expected element: 'article-meta'");
 				var r = n.querySelectorAll("article-id");
 				this.articleIds(t, r);
-				var o = querySelector.querySelector("title-group");
+				var o = articleMeta.querySelector("title-group");
 				o && this.titleGroup(t, o);
 				var i = n.querySelectorAll("pub-date");
-				this.pubDates(t, i), this.abstracts(t, n, querySelector);
+				this.pubDates(t, i), this.abstracts(t, n, articleMeta);
 			  }),
 			  (this.extractAffilitations = function(t, e) {
 				for (var n = e.querySelectorAll("aff"), r = 0; r < n.length; r++)
 				  this.affiliation(t, n[r]);
 			  }),
-			  (this.extractContributors = function(t, e, querySelector) {
-				var n = querySelector.querySelector("contrib-group");
+			  (this.extractContributors = function(t, e, articleMeta) {
+				var n = articleMeta.querySelector("contrib-group");
 				n && this.contribGroup(t, n);
 			  }),
-			  (this.extractFigures = function(t, e, body, navigationLanguage) {
+			  (this.extractFigures = function(t, e, body) {
+				console.log(body.querySelectorAll("fig, table-wrap, supplementary-material, media[mimetype=video]"))
 				for (
 				  var r = body.querySelectorAll("fig, table-wrap, supplementary-material, media[mimetype=video]"),
 					i = [],
@@ -5718,8 +5708,8 @@
 				  date: a,
 				};
 			  }),
-			  (this.abstracts = function(t, e, querySelector) {
-				var n = querySelector.querySelectorAll("abstract");
+			  (this.abstracts = function(t, e, articleMeta) {
+				var n = articleMeta.querySelectorAll("abstract");
 				r.each(
 				  n,
 				  function(e) {
