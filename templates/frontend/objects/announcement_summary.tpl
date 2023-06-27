@@ -11,9 +11,9 @@
  *}
 <article class="announcement-summary media">
 	<div>
-		<h1>
+		<h3>
 			{$announcement->getLocalizedTitle()|escape} |
-		</h1>
+		</h3>
 		<p class="date">
 			<span class="glyphicon glyphicon-calendar"></span>
 			{$announcement->getDatePosted()|escape}
