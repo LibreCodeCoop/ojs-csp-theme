@@ -5179,7 +5179,7 @@
 							? "Colaboradores"
 							: navigationLanguage == "es-ES"
 							? "Colaboradores"
-							: "Summary",
+							: "Contributors",
 						  };
 						i.create(a), n.push(a.id);
 						var c = this.bodyNodes(t, o.dom.getChildren(e), {
@@ -5742,7 +5742,7 @@
 						? "Resumo"
 						: language == "es-ES"
 						? "Resumen"
-						: "Summary",
+						: "Abstract",
 				  };
 				n.create(s),
 				  r.push(s),
