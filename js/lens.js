@@ -5713,27 +5713,22 @@
 				r.each(
 				  n,
 				  function(e) {
-					this["abstract"](t, e);
+					this["abstract"](t, e, articleMeta);
 				  },
 				  this
 				);
 			  }),
-			  (this["abstract"] = function(t, e) {
+			  (this["abstract"] = function(t, e, articleMeta) {
 				var n = t.doc,
 				  r = [],
-				  i = e.querySelector("title"),
-				  language = document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
+				  i = articleMeta.querySelector("title").textContent,
 				  s = {
 					id: t.nextId("heading"),
 					type: "heading",
 					level: 1,
-					content:
-					  language == "pt-BR"
-						? "Resumo"
-						: language == "es-ES"
-						? "Resumen"
-						: "Abstract",
+					content: i.replace(':',''),
 				  };
+				  console.log(i)
 				n.create(s),
 				  r.push(s),
 				  (r = r.concat(
