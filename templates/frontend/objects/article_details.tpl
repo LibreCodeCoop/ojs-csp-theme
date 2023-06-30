@@ -83,12 +83,12 @@
 				<header>
 					<h3>
 						{$publication->getLocalizedTitle()|escape}
-						{if $publication->getLocalizedData('subtitle')}
-							<small>
-								{$publication->getLocalizedData('subtitle')|escape}
-							</small>
-						{/if}
 					</h3>
+					{if $publication->getLocalizedData('subtitle')}
+						<h5>
+							{$publication->getLocalizedData('subtitle')|escape}
+						</h5>
+					{/if}
 				</header>
 				{* Screen-reader heading for easier navigation jumps *}
 				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.main"}</h2>
