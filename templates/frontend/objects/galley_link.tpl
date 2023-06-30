@@ -49,7 +49,7 @@
 {/if}
 
 {* Don't be frightened. This is just a link *}
-<a target="_blank" class="galley-link btn {if $isSupplementary}btn-default{else}btn-primary{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
+<a class="galley-link btn {if $isSupplementary}btn-default{else}btn-primary{/if} {$type}" role="button" href="{url|escape page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
 
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}
