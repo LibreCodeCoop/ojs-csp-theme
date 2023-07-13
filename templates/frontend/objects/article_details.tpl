@@ -62,7 +62,7 @@
 					{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
 				{/if}
 				{if $pubId}
-					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
+					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $publication->getLocalizedData('pub-id::doi'))|escape}
 				{/if}
 			{/foreach}
 			{* Issue article appears in *}
