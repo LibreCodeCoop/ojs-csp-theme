@@ -5014,6 +5014,7 @@
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
 				  (o = o.concat(this.extractCorrespondence(t, e))),
 				  (o = o.concat(this.extractContributions(t, e, articleMeta, navigationLanguage))),
+				  (o = o.concat(this.extractOthers(t, e, articleMeta))),
 				  (o = o.concat(this.extractInterestsConflict(t, e, navigationLanguage))),
 				  (o = o.concat(this.extractAcknowledgements(t, e, navigationLanguage))),
 				  (o = o.concat(this.extractNotes(t, e))),
@@ -5153,6 +5154,37 @@
 						r.each(c, function(t) {
 						  n.push(t.id);
 						});
+					  },
+					  this
+					),
+				  n
+				);
+			  }),
+			  (this.extractOthers = function(t, e) {
+				var n = [],
+				  i = t.doc,
+				  s = e.querySelectorAll("fn[fn-type=other]");
+				return (
+				  s &&
+					s.length > 0 &&
+					r.each(
+					  s,
+					  function(e) {
+						if (e.querySelector("label").textContent == "ERRATUM") {
+							var a = {
+								type: "heading",
+								id: t.nextId("heading"),
+								level: 3,
+								content: e.querySelector("label").textContent,
+							  };
+							i.create(a), n.push(a.id);
+							var c = this.bodyNodes(t, o.dom.getChildren(e), {
+							  ignore: ["label"],
+							});
+							r.each(c, function(t) {
+							  n.push(t.id);
+							});
+						}
 					  },
 					  this
 					),
