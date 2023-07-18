@@ -82,7 +82,7 @@ class CspThemePlugin extends ThemePlugin {
 	public function loadTemplateData($hookName, $args) {
 		$templateMgr = $args[0];
         $request = Application::get()->getRequest();
-		$context = $request->getContext();
+		$context = $args[0]->get_template_vars('currentContext');
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
@@ -90,7 +90,7 @@ class CspThemePlugin extends ThemePlugin {
 		$op = $router->getRequestedOp($request);
 		$navigationLocale = AppLocale::getLocale();
 
-		if ($args[1] == "frontend/pages/indexJournal.tpl") {
+		if (str_contains($args[1], 'frontend')){
 			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
 			$currentIssue = $issueDao->getCurrent($context->getId());
 
@@ -103,7 +103,7 @@ class CspThemePlugin extends ThemePlugin {
 				ON s.publication_id = p.publication_id
 				WHERE section_id = (SELECT DISTINCT section_id FROM ojs.section_settings WHERE setting_value = 'ENTREVISTA'
 				) AND s.setting_name = 'title' AND s.locale = '$navigationLocale'
-				ORDER BY publication_id ASC LIMIT 3
+				ORDER BY publication_id DESC LIMIT 3
 				QUERY
 			);
 
