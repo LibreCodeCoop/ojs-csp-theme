@@ -5629,13 +5629,7 @@
 				var link = t.xmlDoc.querySelectorAll("ext-link");
 				r.each(link, function(link) {
 				  var content = link.textContent;
-				  var material = content.indexOf(
-					"http://cadernos.ensp.fiocruz.br/static/"
-				  );
-				  if (
-					content.indexOf("http://cadernos.ensp.fiocruz.br/static/") ==
-					0
-				  ) {
+				  if (content.includes("cadernos.ensp.fiocruz.br/static/")) {
 					var s = t.nextId("ext-link"),
 					  i = {
 						id: t.nextId("ext-link"),
