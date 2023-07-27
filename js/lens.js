@@ -4939,7 +4939,7 @@
 				  o.join("-")
 				);
 			  }),
-			  (this.extractPublicationInfo = function(t, e, articleMeta, navigationLanguage) {
+			  (this.extractPublicationInfo = function(t, e, articleMeta, article, navigationLanguage) {
 				for (
 				  var n = t.doc,
 					r = e.querySelector("article-meta"),
@@ -4962,7 +4962,7 @@
 					s = e.querySelector("journal-title"),
 					a = e.querySelector("article-id[pub-id-type=doi]"),
 					c = e.querySelector("related-article"),
-					u = this.extractArticleInfo(t, e, articleMeta, navigationLanguage),
+					u = this.extractArticleInfo(t, e, articleMeta, article, navigationLanguage),
 					l = {
 					  id: "publication_info",
 					  type: "publication_info",
@@ -5000,7 +5000,7 @@
 				  n.show("info", l.id, 0),
 				  this.enhancePublicationInfo(t, l);
 			  }),
-			  (this.extractArticleInfo = function(t, e, articleMeta, navigationLanguage) {
+			  (this.extractArticleInfo = function(t, e, articleMeta, article, navigationLanguage) {
 
 				var n = {
 					id: "articleinfo",
@@ -5016,7 +5016,7 @@
 				  (o = o.concat(this.extractContributions(t, e, articleMeta, navigationLanguage))),
 				  (o = o.concat(this.extractOthers(t, e, articleMeta))),
 				  (o = o.concat(this.extractInterestsConflict(t, e, navigationLanguage))),
-				  (o = o.concat(this.extractAcknowledgements(t, e, navigationLanguage))),
+				  (o = o.concat(this.extractAcknowledgements(t, e, article, navigationLanguage))),
 				  (o = o.concat(this.extractNotes(t, e))),
 				  (n.children = o),
 				  r.create(n),
@@ -5090,27 +5090,21 @@
 			(this.capitalized = function(e, n) {
 			  return t(e, n);
 			}),
-			  (this.extractAcknowledgements = function(t, e, navigationLanguage) {
+			  (this.extractAcknowledgements = function(t, e, article, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
-				  s = e.querySelectorAll("ack");
+				  s = article.querySelector("back").querySelectorAll("ack");
 				return (
 				  s &&
 					s.length > 0 &&
 					r.each(
 					  s,
 					  function(e) {
-						var s = e.querySelector("title"),
-						  a = {
+						var a = {
 							type: "heading",
 							id: t.nextId("heading"),
 							level: 3,
-							content:
-							navigationLanguage == "pt-BR"
-								? "Agradecimentos"
-								: navigationLanguage == "es-ES"
-								? "Expresiones de gratitud"
-								: "Acknowledgements",
+							content: e.querySelector("title").textContent,
 						  };
 						i.create(a), n.push(a.id);
 						var c = this.bodyNodes(t, o.dom.getChildren(e), {
@@ -5598,16 +5592,19 @@
 				var articleSection = 0;
 				var articleMeta = e.querySelector("article-meta");
 				var body = e.querySelector("body");
+				var article = e;
 				if(!!t.xmlDoc.getElementById('s1') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s1').getAttribute("xml:lang")){
 					var articleSection = 1;
 					var articleMeta = t.xmlDoc.getElementById('s1');
 					var body = t.xmlDoc.getElementById('s1');
+					var article = t.xmlDoc.getElementById('s1');
 				}
 				if(!!t.xmlDoc.getElementById('s2') && navigationLanguage.substring(0, 2) == t.xmlDoc.getElementById('s2').getAttribute("xml:lang")){
-					console.log(3);
+
 					var articleSection = 2;
 					var articleMeta = t.xmlDoc.getElementById('s2');
 					var body = t.xmlDoc.getElementById('s2');
+					var article = t.xmlDoc.getElementById('s2');
 				}
 
 				var n = t.doc,
@@ -5619,7 +5616,7 @@
 				this.extractCitations(t, e),
 				this.extractCover(t, e),
 				this.extractArticleMeta(t, e, articleMeta),
-				this.extractPublicationInfo(t, e, articleMeta, navigationLanguage);
+				this.extractPublicationInfo(t, e, articleMeta, article, navigationLanguage);
 				var i = e.querySelectorAll('body')[articleSection];
 				i && this.body(t, i),
 				this.extractFigures(t, e, body),
@@ -5664,7 +5661,6 @@
 				n && this.contribGroup(t, n);
 			  }),
 			  (this.extractFigures = function(t, e, body) {
-				console.log(body.querySelectorAll("fig, table-wrap, supplementary-material, media[mimetype=video]"))
 				for (
 				  var r = body.querySelectorAll("fig, table-wrap, supplementary-material, media[mimetype=video]"),
 					i = [],
@@ -5754,7 +5750,6 @@
 					level: 1,
 					content: i.replace(':',''),
 				  };
-				  console.log(i)
 				n.create(s),
 				  r.push(s),
 				  (r = r.concat(
