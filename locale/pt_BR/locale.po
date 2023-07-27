@@ -58,4 +58,4 @@ msgid "plugins.themes.csp.agree"
 msgstr "Aceito"
 
 msgid "plugins.themes.csp.cookiesPolicy"
-msgstr "Este site usa cookies para garantir que você obtenha uma melhor experiência de navegação. <a rel=\"license\"  <a href=\"csp/politica-cookies\">Saiba mais.</a>"
+msgstr "Este site usa cookies para garantir que você obtenha uma melhor experiência de navegação. <a rel=\"license\"  <a href=\"/ojs/index.php/csp/politica-cookies\">Saiba mais.</a>"
