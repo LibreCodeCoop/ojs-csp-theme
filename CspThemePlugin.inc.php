@@ -186,11 +186,11 @@ class CspThemePlugin extends ThemePlugin {
 			$citation .= $issue->getData('volume');
 			$citation .= "(".$issue->getData('number').")";
 			if($issue->getData('year') > 2016){
-				$doiArray = explode('x', strtolower($publication->getData('pub-id::doi')));
+				$doiArray = explode('x', strtolower($publication->getLocalizedData('pub-id::doi')));
 				$citation .= ':e00'.substr($doiArray[1],2);
 			}
-			if ($publication->getData('pub-id::doi')) {
-				$citation .= " doi: ".$publication->getData('pub-id::doi');
+			if ($publication->getLocalizedData('pub-id::doi')) {
+				$citation .= " doi: ".$publication->getLocalizedData('pub-id::doi');
 			}
 			$templateMgr->assign(array(
 				'issue' => $issue,
