@@ -1,5 +1,26 @@
 <?php
-import('lib.pkp.classes.plugins.ThemePlugin');
+
+/**
+ * @file plugins/themes/csp/CspThemePlugin.php
+ *
+ * Copyright (c) 2020-2023 Lívia Gouvêa
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @class CspThemePlugin
+ * @brief Default theme
+ */
+
+namespace APP\plugins\themes\csp;
+
+use APP\core\Application;
+use APP\i18n\AppLocale;
+use PKP\config\Config;
+use PKP\facades\Locale;
+use PKP\plugins\ThemePlugin;
+use PKP\plugins\Hook;	
+use APP\facades\Repo;
+use APP\decision\Decision;
+
 class CspThemePlugin extends ThemePlugin {
 
     /**
@@ -15,9 +36,10 @@ class CspThemePlugin extends ThemePlugin {
 		$this->addScript('lens', 'js/lens.js');
 		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
 
-		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
-		HookRegistry::register('TemplateManager::fetch', array($this, 'fetchTemplate'));
-		HookRegistry::register('Templates::Common::Sidebar', array($this, 'addDates'));
+
+		Hook::add ('TemplateManager::display', [$this, 'loadTemplateData']);
+		Hook::add('TemplateManager::fetch', [$this, 'fetchTemplate']);
+		Hook::add('Templates::Common::Sidebar', [$this, 'addDates']);
 
     }
 
@@ -37,7 +59,7 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
-	public function fetchTemplate($hookName, $args){
+	public function fetchTemplate($hookName, $args){ return;
         $request = Application::get()->getRequest();
 		$router = $request->getRouter();
 		$page = $router->_page;
@@ -55,11 +77,12 @@ class CspThemePlugin extends ThemePlugin {
 				'offset' => 0,
 				'isPublished' => true
 			);
-
-			$issues = iterator_to_array(Services::get('issue')->getMany($params));
-			if (isset($issues[0])) {
-				$coverImageUrl = $issues[0]->getLocalizedCoverImageUrl();
-				$coverImageAltText = $issues[0]->getLocalizedCoverImageAltText();
+			$collector = Repo::issue()->getCollector()->limit(1)->offset(0);
+			$collector->filterByContextIds([$context->getId()]);
+			$issues = $collector->getMany();
+			if ($issues) {
+				$coverImageUrl = $issues->getLocalizedCoverImageUrl();
+				$coverImageAltText = $issues->getLocalizedCoverImageAltText();
 			} else {
 				$coverImageUrl = null;
 				$coverImageAltText = null;
@@ -82,7 +105,7 @@ class CspThemePlugin extends ThemePlugin {
 	public function loadTemplateData($hookName, $args) {
 		$templateMgr = $args[0];
         $request = Application::get()->getRequest();
-		$context = $args[0]->get_template_vars('currentContext');
+		$context = $request->getContext();
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
 		$router = $request->getRouter();
@@ -91,21 +114,19 @@ class CspThemePlugin extends ThemePlugin {
 		$navigationLocale = AppLocale::getLocale();
 
 		if (str_contains($args[1], 'frontend')){
-			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
+			$issueDao = Repo::issue();
 			$currentIssue = $issueDao->getCurrent($context->getId());
+			$publicationsCollector = Repo::publication()->getCollector()
+            ->filterByContextIds([$context->getId()]);
+            // ->orderBy(\APP\submission\Collector::ORDERBY_SEQUENCE, \APP\submission\Collector::ORDER_DIR_ASC);
 
-			$userDao = DAORegistry::getDAO('UserDAO');
-			$interviews = $userDao->retrieve(
-				<<<QUERY
-				SELECT p.publication_id, s.setting_value
-				FROM publications p
-				LEFT JOIN publication_settings s
-				ON s.publication_id = p.publication_id
-				WHERE section_id = (SELECT DISTINCT section_id FROM ojs.section_settings WHERE setting_value = 'ENTREVISTA'
-				) AND s.setting_name = 'title' AND s.locale = '$navigationLocale'
-				ORDER BY publication_id DESC LIMIT 3
-				QUERY
-			);
+			$interviews = $publicationsCollector->getQueryBuilder()
+				->join('publication_settings AS p', 'p.publication_id', '=', 's.publication_id')
+				->where('s.setting_name', 'title')
+				->where('s.locale', 'pt')
+				->where('s.setting_value', 'ENTREVISTA')
+				->select('p.section_id, s.setting_value');
+
 
 			if(!is_null($currentIssue)){
 				$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
@@ -120,8 +141,7 @@ class CspThemePlugin extends ThemePlugin {
 		if($args[1] == "frontend/pages/article.tpl"){
 			$pathArray = explode("/",$requestPath);
 			$submissionId = end($pathArray);
-			$submissionDAO = Application::getSubmissionDAO();
-			$submission = $submissionDAO->getById($submissionId);
+			$submission = Repo::submission()->get($submissionId, $context->getId());
 			$publication = $submission->getCurrentPublication();
 			$publicationLocale = $publication->getData('locale');
 			foreach ($publication->getData('authors') as $key => $value) {
@@ -147,7 +167,7 @@ class CspThemePlugin extends ThemePlugin {
 							if($givenNameArray[$i] === strtolower($givenNameArray[$i])){
 								$abbrev .= "";
 							}else{
-								$abbrev .= substr($givenNameArray[$i], 0,1);
+							//	$abbrev .= substr($givenNameArray[$i], 0,1);
 							}
 						}
 						$familyNameArray = explode(" ", $familyName);
@@ -176,9 +196,7 @@ class CspThemePlugin extends ThemePlugin {
 				}
 				unset($abbrev);
 			}
-			$issueDao = DAORegistry::getDAO('IssueDAO'); /* @var $issueDao IssueDAO */
-			$issue = $issueDao->getById($publication->getData('issueId'));
-
+			$issue = Repo::issue()->get($publication->getData('issueId'), $context->getId()); 
 			$citation = implode(", ",$authors).". ";
 			$citation .= $publication->getData('title',$publicationLocale).". ";
 			$citation .= $context->getLocalizedName()." ";
@@ -186,8 +204,8 @@ class CspThemePlugin extends ThemePlugin {
 			$citation .= $issue->getData('volume');
 			$citation .= "(".$issue->getData('number').")";
 			if($issue->getData('year') > 2016){
-				$doiArray = explode('x', strtolower($publication->getLocalizedData('pub-id::doi')));
-				$citation .= ':e00'.substr($doiArray[1],2);
+//				$doiArray = explode('x', strtolower($publication->getLocalizedData('pub-id::doi')));
+//				$citation .= ':e00'.substr($doiArray[1],2);
 			}
 			if ($publication->getLocalizedData('pub-id::doi')) {
 				$citation .= " doi: ".$publication->getLocalizedData('pub-id::doi');
@@ -270,28 +288,27 @@ class CspThemePlugin extends ThemePlugin {
 		$request = Application::get()->getRequest();
 		if(strpos($request->_requestPath, 'article/view')){
 			$smarty = $params[1];
-			$article = $smarty->get_template_vars('article');
+			$article = $smarty->getTemplateVars('article');
 
 			$dates = "";
 			$submitdate = $article->getDateSubmitted();
 			$publishdate = $article->getDatePublished();
 
-			// Get all decisions for this submission
-			$editDecisionDao = DAORegistry::getDAO('EditDecisionDAO');
-			$decisions = $editDecisionDao->getEditorDecisions($article->getId());
+            $editDecisions = Repo::decision()->getCollector()
+                ->filterBySubmissionIds([$article->getData('id')])
+				->getMany();
 
-			// Loop through the decisions
-			foreach ($decisions as $decision) {
-				// If we have a review stage decision and it was a submission accepted decision, get to date for the decision
-				if ($decision['decision'] == '1')
-					$reviewdate = $decision['dateDecided'];
+			foreach ($editDecisions->reverse() as $editDecision) {
+				if ($editDecision->getData('decision') == Decision::ACCEPT) {
+					$acceptdate = $editDecision->getData('dateDecided');
+				}
 			}
 
 			$dates = array();
 			if ($submitdate)
 				$dates['received'] = date('Y-m-d',strtotime($submitdate));
-			if ($reviewdate)
-				$dates['accepted'] = date('Y-m-d',strtotime($reviewdate));
+			if ($acceptdate)
+				$dates['accepted'] = date('Y-m-d',strtotime($acceptdate));
 			if ($publishdate)
 				$dates['published'] = date('Y-m-d',strtotime($publishdate));
 

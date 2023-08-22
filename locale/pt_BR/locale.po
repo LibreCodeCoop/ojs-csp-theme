@@ -21,10 +21,10 @@ msgstr "Leia mais"
 msgid "plugins.themes.csp.pt_BR"
 msgstr "PT"
 
-msgid "plugins.themes.csp.es_ES"
+msgid "plugins.themes.csp.es"
 msgstr "ES"
 
-msgid "plugins.themes.csp.en_US"
+msgid "plugins.themes.csp.en"
 msgstr "EN"
 
 msgid "plugins.themes.csp.onlineIssn"

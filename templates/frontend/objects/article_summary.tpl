@@ -14,16 +14,18 @@
  * @uses $hideGalleys bool Hide the article galleys for this article?
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  *}
+{assign var=publication value=$article->getCurrentPublication()}
 {assign var=articlePath value=$article->getBestId($currentJournal)}
-{if (!$section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
+{if (!$section.hideAuthor && $article->getHideAuthor() == \APP\submission\Submission::AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == \APP\submission\Submission::AUTHOR_TOC_SHOW}
 	{assign var="showAuthor" value=true}
 {/if}
 
 <div class="col-md-7 article-summary media issue-article">
-	{if $article->getLocalizedCoverImage()}
+	{if $publication->getLocalizedData('coverImage')}
+		{assign var="coverImage" value=$publication->getLocalizedData('coverImage')}
 		<div class="cover media-left">
-			<a href="{if $journal}{url journal=$journal->getPath() page="article" op="view" path=$articlePath}{else}{url page="article" op="view" path=$articlePath}{/if}class="file">
-				<img class="media-object" src="{$article->getLocalizedCoverImageUrl()|escape}" alt="{$article->getLocalizedCoverImageAltText()|escape|default:''}">
+			<a href="{if $journal}{url journal=$journal->getPath() page="article" op="view" path=$articlePath}{else}{url page="article" op="view" path=$articlePath}{/if}" class="file">
+				<img class="media-object" src="{$publication->getLocalizedCoverImageUrl($currentContext->getId())|escape}" alt="{$coverImage.altText|escape|default:''}">
 			</a>
 		</div>
 	{/if}
@@ -48,8 +50,8 @@
 					{assign var=year value=(int)substr($article->getData('lastModified'), 0,4)}
 						<div class="authors">
 							{if $year > 2021}
-								{$article->getAuthorString()|escape}
-							{else}
+								{$article->getCurrentPublication()->getAuthorString($authorUserGroups)|escape}
+							{* {else}
 								{foreach from=$article->_data['publications'][0]->_data['authors'] item=author}
 									{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
 									{if next($article->_data['publications'][0]->_data['authors']) == true}
@@ -57,9 +59,9 @@
 									{else}
 										{$arrayNames[1]} {$arrayNames[0]}
 									{/if}
-								{/foreach}
+								{/foreach} *}
 							{/if}
-						</div>
+						</div> 
 					{/if}
 				</div>
 			{/if}
@@ -84,7 +86,7 @@
 					{/if}
 					{assign var=publication value=$article->getCurrentPublication()}
 					{assign var="hasArticleAccess" value=$hasAccess}
-					{if $currentContext->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_OPEN || $publication->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN}
+					{if $currentContext->getSetting('publishingMode') == \APP\journal\Journal::PUBLISHING_MODE_OPEN || $publication->getData('accessStatus') == \APP\submission\Submission::ARTICLE_ACCESS_OPEN}
 						{assign var="hasArticleAccess" value=1}
 					{/if}
 					{include file="frontend/objects/galley_link.tpl" parent=$article hasAccess=$hasArticleAccess}
