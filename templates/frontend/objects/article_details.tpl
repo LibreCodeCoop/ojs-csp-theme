@@ -128,7 +128,7 @@
 						</div>
 					</div>
 				{/if}
-				{call_hook name="Templates::Article::Main"}
+				{* {call_hook name="Templates::Article::Main"} *}
 			</section><!-- .article-main -->
 			<section class="article-more-details">
 				{* Screen-reader heading for easier navigation jumps *}

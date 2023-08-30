@@ -119,14 +119,22 @@
 				</div>
 			</div>
 			<div class="list-group">
-				{* test date *}
-				<div class="csp-date">
-					{if $dates.received}
-						<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
-					{/if}
-					{if $dates.accepted}
-						<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
-					{/if}
+				<div class="csp-aside-box">
+					<div id="workflow-dates">
+						{if $dates.received}
+							<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
+						{/if}
+						<br>
+						{if $dates.accepted}
+							<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
+						{/if}
+					</div>
+				</div>
+			</div>
+
+			<div class="list-group">
+				<div class="csp-aside-box">
+					{call_hook name="Templates::Article::Main::Csp"}
 				</div>
 			</div>
 	</aside>
