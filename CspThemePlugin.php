@@ -30,6 +30,7 @@ class CspThemePlugin extends ThemePlugin {
 
     public function init() {
 
+		xdebug_break();
         $this->setParent('bootstrapthreethemeplugin');
         $this->addStyle('child-stylesheet', 'styles/index.less');
 		$this->addScript('csp', 'js/index.js');
@@ -229,56 +230,24 @@ class CspThemePlugin extends ThemePlugin {
 		));
 
 		if($args[1] == 'frontend/pages/userRegister.tpl'){ /* Passa id de avaliador para checkbox ir marcado */
-			$userGroupDao = DAORegistry::getDAO('UserGroupDAO');
+			$userGroupDao = Repo::userGroup();
 			$group = $userGroupDao->getDefaultByRoleId($context->getId(), ROLE_ID_REVIEWER);
 			$userGroupIds[] = $group->getData('id');
 			$templateMgr->assign('userGroupIds',$userGroupIds);
 		}
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
-			$userDao = DAORegistry::getDAO('UserDAO');
-			$resultAno = $userDao->retrieve(
-				<<<QUERY
-				SELECT DISTINCT `year` AS ANO
-				FROM ojs.issues i
-				ORDER BY i.`year` DESC
-				QUERY
-			);
-			foreach ($resultAno as $rowAno) {
-				$resultMes = $userDao->retrieve(
-					<<<QUERY
-						SELECT
-							`year`,
-							volume,
-							CASE
-								WHEN `year` <= 2005 AND setting_value like '%sup%' THEN CONCAT('Supl.', `number`)
-								WHEN `year` <= 2005 AND `number` > 12 THEN CONCAT('Supl.', (`number` - 12))
-								WHEN `year` > 2005 AND `number` > 12 THEN CONCAT('Supl.', (`number` - 12))
-							ELSE `number`
-							END numero,
-							number,
-							i.issue_id,
-							CASE
-								WHEN setting_value like '%sup%' THEN 12 + CONVERT(REPLACE(i.`number`,'supl.',''),INT)
-							ELSE CONVERT(`number`,INT)
-							END ordem
-						FROM
-							ojs.issues i
-						LEFT JOIN
-							ojs.issue_settings s
-						ON
-							s.issue_id = i.issue_id
-						WHERE
-							`year` = $rowAno->ANO
-							AND s.setting_name = 'title'
-							and s.locale = 'pt_BR'
-							and i.published = 1
-						ORDER BY ordem
-					QUERY
-				);
-				foreach ($resultMes as $rowIssue) {
-					$array[$rowAno->ANO][$rowIssue->volume][$rowIssue->numero] = $rowIssue->issue_id;
+			$publishedIssues = Repo::issue()->getCollector()
+            ->filterByContextIds([$context->getId()])
+            ->filterByPublished(true)
+            ->getMany();
+
+			if ($publishedIssues->count() > 0) {
+				$issueOptions[] = ['value' => '', 'label' => '--- ' . __('editor.issues.backIssues') . ' ---'];
+				foreach ($publishedIssues as $issue) {
+					$array[$issue->getYear()][$issue->getVolume()][$issue->getNumber()] = $issue->getId();
 				}
 			}
+
 			$templateMgr = $args[0];
 			$templateMgr->assign('issues', $array);
 		}
