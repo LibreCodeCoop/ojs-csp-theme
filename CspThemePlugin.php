@@ -228,13 +228,6 @@ class CspThemePlugin extends ThemePlugin {
 			'citation' => $citation,
 			'navigationLocale' => $navigationLocale
 		));
-
-		if($args[1] == 'frontend/pages/userRegister.tpl'){ /* Passa id de avaliador para checkbox ir marcado */
-			$userGroupDao = Repo::userGroup();
-			$group = $userGroupDao->getDefaultByRoleId($context->getId(), ROLE_ID_REVIEWER);
-			$userGroupIds[] = $group->getData('id');
-			$templateMgr->assign('userGroupIds',$userGroupIds);
-		}
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
 			$publishedIssues = Repo::issue()->getCollector()
             ->filterByContextIds([$context->getId()])

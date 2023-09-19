@@ -1,9 +1,9 @@
 {**
  * templates/frontend/components/registrationForm.tpl
  *
- * Copyright (c) 2014-2017 Simon Fraser University Library
- * Copyright (c) 2003-2017 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ * Copyright (c) 2014-2023 Simon Fraser University
+ * Copyright (c) 2003-2023 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief Display the basic registration form fields
  *
@@ -16,7 +16,6 @@
  * @uses $email string Email input entry if available
  * @uses $username string Username input entry if available
  *}
-
 <fieldset class="identity">
 	<div class="fields">
 		<div class="form-group given_name">
@@ -38,15 +37,22 @@
 		<div class="form-group gender">
 			<label>
 				<div id="fr">
-					{translate key="user.gender"}
+					{translate key="plugins.themes.csp.user.gender"}
 					<span class="form-control-required">*</span>
 					<span class="sr-only">{translate key="common.required"}</span>
 				</div>
 				<select name="gender" id="gender" class="form-control" required>
 					<option value="">{translate key="common.chooseOne"}</option>
-					<option value="F">{translate key="user.gender.male"}</option>
-					<option value="M">{translate key="user.gender.female"}</option>
+					{html_options options=$genders selected=$gender}
 				</select>
+			</label>
+		</div>
+		<div class="form-group">
+			<label>
+				{translate key="user.orcid"}
+				<span class="form-control-required">*</span>
+				<span class="sr-only">{translate key="common.required"}</span>
+				<input class="form-control" type="text" name="orcid" id="orcid" value="{$orcid|escape}" maxlength="255" required>
 			</label>
 		</div>
 		<div class="form-group url">
@@ -55,25 +61,17 @@
 				<input class="form-control" type="text" name="url" id="url" value="{$url|escape}" maxlength="255">
 			</label>
 		</div>
-		<div class="form-group phone">
-			<label>
-				{translate key="user.phone"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="phone" id="phone" value="{$phone|escape}" maxlength="255" required>
-			</label>
-		</div>
 		<div class="form-group affiliation">
 			<label>
 				{translate key="user.affiliation"}
 				<span class="form-control-required">*</span>
 				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="affiliation" id="affiliation" value="{$affiliation|escape}" required>
+				<input class="form-control" type="text" name="affiliation[{$primaryLocale|escape}]" id="affiliation" value="{$affiliation.$primaryLocale|escape}" required>
 			</label>
 		</div>
 		<div class="form-group affiliation2">
 			<label>
-				{translate key="user.affiliation2"}
+				{translate key="user.affiliation"}2
 				<input class="form-control" type="text" name="affiliation2" id="affiliation2" value="{$affiliation2|escape}">
 			</label>
 		</div>
@@ -84,23 +82,21 @@
 				<span class="form-control-required">*</span>
 				<span class="sr-only">{translate key="common.required"}</span>
 			</div>
-				<select class="form-control" aria-label="couuntry" name="country" id="country" required>
+				<select class="form-control" name="country" id="country" required>
 					<option value="">{translate key="common.chooseOne"}</option>
 					{html_options options=$countries selected=$country}
 				</select>
 			</label>
 		</div>
-		<div class="form-group state">
+		<div class="form-group region">
 			<label>
-				{translate key="common.state"}
-				<span class="form-control-required">*</span>
-				<span class="sr-only">{translate key="common.required"}</span>
-				<input class="form-control" type="text" name="state" id="state" value="{$state|escape}" maxlength="255" required>
+				{translate key="plugins.themes.csp.user.region"}
+				<input class="form-control" type="text" name="region" id="region" value="{$region|escape}" maxlength="255">
 			</label>
 		</div>
 		<div class="form-group city">
 			<label>
-				{translate key="common.city"}
+				{translate key="stats.city"}
 				<span class="form-control-required">*</span>
 				<span class="sr-only">{translate key="common.required"}</span>
 				<input class="form-control" type="text" name="city" id="city" value="{$city|escape}" maxlength="255" required>
@@ -116,7 +112,7 @@
 		</div>
 		<div class="form-group zipCode">
 			<label>
-				{translate key="common.zipCode"}
+				{translate key="plugins.themes.csp.user.zip.code"}
 				<input class="form-control" type="text" name="zipCode" id="zipCode" value="{$zipCode|escape}" maxlength="255">
 			</label>
 		</div>

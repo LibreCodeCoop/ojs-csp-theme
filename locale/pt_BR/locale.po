@@ -59,3 +59,24 @@ msgstr "Aceito"
 
 msgid "plugins.themes.csp.cookiesPolicy"
 msgstr "Este site usa cookies para garantir que você obtenha uma melhor experiência de navegação. <a rel=\"license\"  <a href=\"/ojs/index.php/csp/politica-cookies\">Saiba mais.</a>"
+
+msgid "plugins.themes.csp.user.gender"
+msgstr "Com qual gênero você se identifica?"
+
+msgid "plugins.themes.csp.user.gender.male"
+msgstr "Feminino"
+
+msgid "plugins.themes.csp.user.gender.female"
+msgstr "Masculino"
+
+msgid "plugins.themes.csp.user.gender.non-binary"
+msgstr "Não binário"
+
+msgid "plugins.themes.csp.user.gender.not.inform"
+msgstr "Prefiro não informar"
+
+msgid "plugins.themes.csp.user.region"
+msgstr "Estado"
+
+msgid "plugins.themes.csp.user.zip.code"
+msgstr "Código Postal"

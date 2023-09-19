@@ -56,3 +56,24 @@ msgstr "Published"
 
 msgid "plugins.themes.csp.cookiesPolicy"
 msgstr "This website uses cookies to ensure you get the best browsing experience. <a rel=\"license\"  <a href=\"/ojs/index.php/csp/politica-cookies\">Saiba mais.</a>"
+
+msgid "plugins.themes.csp.user.gender"
+msgstr "What gender do you identify with?"
+
+msgid "plugins.themes.csp.user.gender.male"
+msgstr "Feminine"
+
+msgid "plugins.themes.csp.user.gender.female"
+msgstr "Masculine"
+
+msgid "plugins.themes.csp.user.gender.non-binary"
+msgstr "Non-binary"
+
+msgid "plugins.themes.csp.user.gender.not.inform"
+msgstr "I prefer not to inform"
+
+msgid "plugins.themes.csp.user.region"
+msgstr "State/Region"
+
+msgid "plugins.themes.csp.user.zip.code"
+msgstr "Zipcode"
