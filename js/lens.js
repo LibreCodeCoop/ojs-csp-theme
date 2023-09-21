@@ -5093,7 +5093,7 @@
 			  (this.extractAcknowledgements = function(t, e, article, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
-				  s = article.querySelector("back").querySelectorAll("ack");
+				  s = article.querySelector("back") ? querySelector("back").querySelectorAll("ack") : 0;
 				return (
 				  s &&
 					s.length > 0 &&
