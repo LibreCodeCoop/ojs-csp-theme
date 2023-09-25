@@ -30,7 +30,6 @@ class CspThemePlugin extends ThemePlugin {
 
     public function init() {
 
-		xdebug_break();
         $this->setParent('bootstrapthreethemeplugin');
         $this->addStyle('child-stylesheet', 'styles/index.less');
 		$this->addScript('csp', 'js/index.js');
