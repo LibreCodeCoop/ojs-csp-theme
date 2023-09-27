@@ -1,9 +1,9 @@
 {**
  * lib/pkp/templates/frontend/components/header.tpl
  *
- * Copyright (c) 2014-2017 Simon Fraser University Library
- * Copyright (c) 2003-2017 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ * Copyright (c) 2014-2023 Simon Fraser University
+ * Copyright (c) 2003-2023 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief Common frontend site header.
  *
@@ -34,11 +34,13 @@
 				<li><a href="#sidebar">{translate|escape key="plugins.themes.bootstrap3.accessible_menu.sidebar"}</a></li>
 			</ul>
 		</nav>
+
 		{* Header *}
 		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
+
 			{* User profile, login, etc, navigation menu*}
 			<div class="container-fluid" id="logo-csp">
-				<div class="">
+				<div class="row">
 					<div class="col-md-6">
 						{capture assign="homeUrl"}
 							{if $currentJournal && $multipleContexts}
@@ -89,6 +91,7 @@
 			</div>
 			<div class="container-fluid menu">
 				<div class="navbar-header">
+
 					{* Mobile hamburger menu *}
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false" aria-controls="nav-menu">
 						<span class="sr-only">Toggle navigation</span>
@@ -169,8 +172,7 @@
 
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container">
-			<div>
 			{if $page }
 				{include file="frontend/components/breadcrumbs.tpl"}
 			{/if}
-			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-9 remove-old-breadcrumb" role="main">
+			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-8 remove-old-breadcrumb"" role="main">

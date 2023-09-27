@@ -20,6 +20,7 @@ use PKP\plugins\ThemePlugin;
 use PKP\plugins\Hook;	
 use APP\facades\Repo;
 use APP\decision\Decision;
+use APP\template\TemplateManager;
 
 class CspThemePlugin extends ThemePlugin {
 
@@ -36,10 +37,10 @@ class CspThemePlugin extends ThemePlugin {
 		$this->addScript('lens', 'js/lens.js');
 		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
 
-
 		Hook::add ('TemplateManager::display', [$this, 'loadTemplateData']);
 		Hook::add('TemplateManager::fetch', [$this, 'fetchTemplate']);
-		Hook::add('Templates::Common::Sidebar', [$this, 'addDates']);
+		Hook::add('Templates::Common::Sidebar', [$this, 'addSidebar']);
+		Hook::add('Templates::Common::Footer::PageFooter', [$this, 'addFooter']);
 
     }
 
@@ -245,8 +246,10 @@ class CspThemePlugin extends ThemePlugin {
 		}
 	}
 
-	function addDates($hookName, $params) {
+	function addSidebar($hookName, $params) {
 		$request = Application::get()->getRequest();
+		$templateMgr = TemplateManager::getManager($request);
+
 		if(strpos($request->_requestPath, 'article/view')){
 			$smarty = $params[1];
 			$article = $smarty->getTemplateVars('article');
@@ -274,8 +277,16 @@ class CspThemePlugin extends ThemePlugin {
 				$dates['published'] = date('Y-m-d',strtotime($publishdate));
 
 			$smarty->assign('dates', $dates);
-
 			return false;
 		}
+
+		$templateMgr->display($this->getTemplateResource('frontend/components/aside.tpl'));
+	}
+
+	function addFooter($hookName, $params) {
+		$request = Application::get()->getRequest();
+		$templateMgr = TemplateManager::getManager($request);
+		$templateMgr->display($this->getTemplateResource('frontend/components/footer_logos.tpl'));
+		$templateMgr->display($this->getTemplateResource('frontend/components/footer_barra_brasil.tpl'));
 	}
 }
