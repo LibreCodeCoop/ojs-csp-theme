@@ -39,7 +39,7 @@
 			{* User profile, login, etc, navigation menu*}
 			<div class="container-fluid" id="logo-csp">
 				<div class="">
-					<div class="col-md-6">
+					<div class="col-md-7">
 						{capture assign="homeUrl"}
 							{if $currentJournal && $multipleContexts}
 								{url page="index" router=$smarty.const.ROUTE_PAGE}
@@ -63,8 +63,8 @@
 							</a>
 						{/if}
 					</div>
-					<div class="col-md-6" id="header-language-icons">
-						<div class="col-md-5" id="language">
+					<div class="col-md-5" id="header-language-icons">
+						<div id="language">
 							{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 							<ul class="setLanguage">
 								{foreach from=$languageToggleLocales item=localeName key=localeKey}
