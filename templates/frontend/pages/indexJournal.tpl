@@ -57,12 +57,6 @@
 			{include file="frontend/objects/issue_toc.tpl"}
 		</section>
 	{/if}
-	{* Additional Homepage Content *}
-	{if $additionalHomeContent}
-		<section class="additional_content">
-			{$additionalHomeContent}
-		</section>
-	{/if}
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}

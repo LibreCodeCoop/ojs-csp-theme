@@ -1,5 +1,10 @@
 {if $page !== 'article'}
 <aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+	{if $additionalHomeContent}
+		<div class="aside-container">
+			{$additionalHomeContent}
+		</div>
+	{/if}
 	<div class="aside-container">
 		<div class="aside-item">
 			<span>{translate|escape key="plugins.themes.csp.sidebar.interviews"}</span>
