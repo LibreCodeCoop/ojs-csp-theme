@@ -2699,7 +2699,7 @@
 							var e = i(".footers", {
 								children: r.map(this.node.footers, function (t) {
 									return i(".footer", {
-										html: "<b>" + t.label + "</b> " + t.content,
+										html: t.textContent,
 									});
 								}),
 							});
@@ -6182,20 +6182,22 @@
 						(this.tableWrap = function (t, e) {
 							var n = t.doc,
 								r = e.querySelector("label"),
+								s = e.querySelector("caption"),
+								w = e.querySelector("table-wrap-foot"),
 								o = {
 									id: t.nextId("html_table"),
 									source_id: e.getAttribute("id"),
 									type: "html_table",
 									title: "",
-									label: r ? r.textContent : "Table",
+									label: r ? r.textContent + ' - ' + s.textContent : "Table",
 									content: "",
 									caption: null,
-									footers: [],
+									footers: w ? Array.from(w.querySelectorAll("p")) : "",
 								},
 								i = e.querySelector("table");
 							return (
 								i && (o.content = this.toHtml(i)),
-								this.extractTableCaption(t, o, e),
+								// this.extractTableCaption(t, o, e),
 								this.enhanceTable(t, o, e),
 								n.create(o),
 								o
