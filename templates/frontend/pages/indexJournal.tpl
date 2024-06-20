@@ -39,6 +39,12 @@
 
 	{* Latest issue *}
 	{if $issue}
+	{* Additional Homepage Content *}
+	{if $additionalHomeContent}
+		<section class="additional_content">
+			{$additionalHomeContent}
+		</section>
+	{/if}
 		<section class="current_issue issue-section">
 			<header class="header-issue">
 				<div class="header-page">
