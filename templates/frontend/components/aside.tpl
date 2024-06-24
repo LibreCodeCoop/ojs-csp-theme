@@ -1,5 +1,6 @@
 {if $page !== 'article'}
 <aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-3" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+	{include file="frontend/components/social-media.tpl"}
 	<div class="aside-container">
 		<div class="aside-item">
 			<span>{translate|escape key="plugins.themes.csp.sidebar.interviews"}</span>
@@ -37,15 +38,6 @@
 					frameBorder="0" allowfullscreen=""
 					scrolling="no" width="100%" height="80px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
 			</iframe>
-		</div>
-	</div>
-	<div class="aside-container">
-		<div class="aside-item">
-			<span>{translate|escape key="plugins.themes.csp.sidebar.twitter"}</span>
-			<div class="aside-more" onclick="eventClick(this)"></div>
-		</div>
-		<div id="twitter" class="aside-content">
-			<a class="twitter-timeline" href="https://twitter.com/CadernosSP"></a>
 		</div>
 	</div>
 	<div class="aside-container">
