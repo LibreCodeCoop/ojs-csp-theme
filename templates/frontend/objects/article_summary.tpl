@@ -47,18 +47,7 @@
 					{if $showAuthor}
 					{assign var=year value=(int)substr($article->getData('lastModified'), 0,4)}
 						<div class="authors">
-							{if $year > 2021}
-								{$article->getAuthorString()|escape}
-							{else}
-								{foreach from=$article->_data['publications'][0]->_data['authors'] item=author}
-									{assign var=arrayNames value=explode(',',array_shift($author->_data['givenName']))}
-									{if next($article->_data['publications'][0]->_data['authors']) == true}
-										{$arrayNames[1]} {$arrayNames[0]},
-									{else}
-										{$arrayNames[1]} {$arrayNames[0]}
-									{/if}
-								{/foreach}
-							{/if}
+							{$article->getAuthorString()|escape}
 						</div>
 					{/if}
 				</div>
