@@ -8,14 +8,19 @@
  * User login form.
  *
  *}
+<style>
+main{
+	width: 100% !important;
+}
+</style>
 {include file="frontend/components/header.tpl" pageTitle="user.login"}
 {* {include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.login"} *}
 
-<div id="main-content" class="page page_login">
+<div class="page page_login">
 
 
 	{* A login message may be displayed if the user was redireceted to the
-	   login page from another request. Examples include if login is required
+		login page from another request. Examples include if login is required
 	   before dowloading a file. *}
 	{if $loginMessage}
 		<div class="alert alert-info" role="alert">
@@ -23,7 +28,17 @@
 		</div>
 	{/if}
 
-	<h1 class="namePage line">{translate key="user.login"}</h1>
+	<h1 class="namePage line">Acesso</h1>
+
+	<div class="alert alert-danger text-center">
+		<h3 style="line-height:2">
+			Atenção!<br>
+			Para acompanhar submissões em andamento, <br>
+			clique <a href="https://cadernos.ensp.fiocruz.br/csp1/portal/saga.php">aqui! </a>
+		</h3>
+	</div>
+
+	<h4 class="page-header">Para nova submissoes, utilize o login abaixo</h4>
 
 	<form class="pkp_form login  col-sm-6" id="login" method="post" action="{$loginUrl}">
 		{csrf}
@@ -73,7 +88,10 @@
 			</button>
 		</div>
 	</form>
+
 </div><!-- .page -->
+
+
 
 {include file="common/frontend/footer.tpl"}
 

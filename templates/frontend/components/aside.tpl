@@ -1,4 +1,4 @@
-{if $page !== 'article'}
+{if $page !== 'article' && $page !== 'login'}
 <div>
 	<div class="aside-container">
 		<div class="aside-item">
@@ -61,7 +61,8 @@
 		</div>
 	</div>
 </div><!-- pkp_sidebar.left -->
-{else}
+{/if}
+{if $page !== 'login'}
 	<div>
 		{* Article Galleys *}
 			{if $primaryGalleys || $supplementaryGalleys}

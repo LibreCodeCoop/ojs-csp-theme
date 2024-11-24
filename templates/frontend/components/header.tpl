@@ -175,4 +175,4 @@
 			{if $page }
 				{include file="frontend/components/breadcrumbs.tpl"}
 			{/if}
-			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-8 remove-old-breadcrumb"" role="main">
+			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-8 remove-old-breadcrumb" role="main">
