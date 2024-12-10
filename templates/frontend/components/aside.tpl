@@ -1,5 +1,10 @@
 {if $page !== 'article' && $page !== 'login'}
 <div>
+	{if $additionalHomeContent}
+		<div class="aside-container">
+			{$additionalHomeContent}
+		</div>
+	{/if}
 	<div class="aside-container">
 		<div class="aside-item">
 			<span>{translate|escape key="plugins.themes.csp.sidebar.interviews"}</span>
