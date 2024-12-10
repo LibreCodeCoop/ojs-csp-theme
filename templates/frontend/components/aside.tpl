@@ -1,5 +1,6 @@
 {if $page !== 'article' && $page !== 'login'}
 <div>
+	{include file="frontend/components/social-media.tpl"}
 	{if $additionalHomeContent}
 		<div class="aside-container">
 			{$additionalHomeContent}
@@ -42,15 +43,6 @@
 					frameBorder="0" allowfullscreen=""
 					scrolling="no" width="100%" height="80px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
 			</iframe>
-		</div>
-	</div>
-	<div class="aside-container">
-		<div class="aside-item">
-			<span>{translate|escape key="plugins.themes.csp.sidebar.twitter"}</span>
-			<div class="aside-more" onclick="eventClick(this)"></div>
-		</div>
-		<div id="twitter" class="aside-content">
-			<a class="twitter-timeline" href="https://twitter.com/CadernosSP"></a>
 		</div>
 	</div>
 	<div class="aside-container">
