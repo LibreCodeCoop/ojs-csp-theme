@@ -17,7 +17,6 @@
 		</div>
 		<div class="col-md-4 col-xs-12">
 			{$pageFooter}
-			{include file="frontend/components/social-media.tpl"}
 		</div>
 		<div class="col-md-1 col-xs-3">
 			<a target="_blank" href="http://ensp.fiocruz.br/">
