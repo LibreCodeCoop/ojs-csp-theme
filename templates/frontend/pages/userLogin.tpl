@@ -33,59 +33,60 @@ main{
 	<div class="alert alert-danger text-center">
 		<h3><b>Atenção!</b></h3>
 		<h3 style="line-height:2">
-			Submissões anteriores a 2025, clique <a href="https://cadernos.ensp.fiocruz.br/csp1/portal/saga.php">aqui! </a>
+			Para acompanhamento de manuscritos submetidos até dezembro de 2024, clique <a href="https://cadernos.ensp.fiocruz.br/csp1/portal/saga.php">aqui! </a>
 		</h3>
-		<h3 style="line-height:2">Para novas submissões, utilize o login abaixo:</h3>
 	</div>
+	<div class="alert alert-info">
+		<h3 style="line-height:2">Para novas submissões, utilize o login abaixo:</h3>
+		<form class="pkp_form login " id="login" method="post" action="{$loginUrl}">
+			{csrf}
+			<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />
 
-	<form class="pkp_form login  col-sm-6" id="login" method="post" action="{$loginUrl}">
-		{csrf}
-		<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />
-
-		{if $error}
-			<div class="alert alert-danger" role="alert">
-				{translate key=$error reason=$reason}
-			</div>
-		{/if}
-
-		<div class="form-group">
-			<label class="csp_form" for="login-username">
-				{translate key="user.username"}
-			</label>
-			<input type="text" name="username" class="form-control csp_input" id="login-username" placeholder="{translate key='user.username'}" value="{$username|escape}" maxlenght="32" required>
-		</div>
-
-		<div class="form-group">
-			<label class="csp_form" for="login-password">
-				{translate key="user.password"}
-			</label>
-			<input type="password" name="password" class="form-control csp_input" id="login-password" placeholder="{translate key='user.password'}" password="true" maxlength="32" required="$passwordRequired">
-		</div>
-
-		<div class="form-group p-r">
-			<a class="underline" href="{url page="login" op="lostPassword"}">
-				{translate key="user.login.forgotPassword"}
-			</a>
-		</div>
-
-		<div class="checkbox">
-			<label>
-				<input type="checkbox" name="remember" id="remember" value="1" checked="$remember"> {translate key="user.login.rememberUsernameAndPassword"}
-			</label>
-		</div>
-
-		<div class="buttons">
-			{if !$disableUserReg}
-				{capture assign="registerUrl"}{url page="user" op="register" source=$source}{/capture}
-				<a class="btn btn-link btn-csp-register" href="{$registerUrl}" role="button">
-					{translate key="user.login.registerNewAccount"}
-				</a>
+			{if $error}
+				<div class="alert alert-danger" role="alert">
+					{translate key=$error reason=$reason}
+				</div>
 			{/if}
-			<button type="submit" class="btn btn-csp">
-				{translate key="user.login"}
-			</button>
-		</div>
-	</form>
+
+			<div class="form-group">
+				<label class="csp_form" for="login-username">
+					{translate key="user.username"}
+				</label>
+				<input type="text" name="username" class="form-control csp_input" id="login-username" placeholder="{translate key='user.username'}" value="{$username|escape}" maxlenght="32" required>
+			</div>
+
+			<div class="form-group">
+				<label class="csp_form" for="login-password">
+					{translate key="user.password"}
+				</label>
+				<input type="password" name="password" class="form-control csp_input" id="login-password" placeholder="{translate key='user.password'}" password="true" maxlength="32" required="$passwordRequired">
+			</div>
+
+			<div class="form-group p-r">
+				<a class="underline" href="{url page="login" op="lostPassword"}">
+					{translate key="user.login.forgotPassword"}
+				</a>
+			</div>
+
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="remember" id="remember" value="1" checked="$remember"> {translate key="user.login.rememberUsernameAndPassword"}
+				</label>
+			</div>
+
+			<div class="buttons">
+				{if !$disableUserReg}
+					{capture assign="registerUrl"}{url page="user" op="register" source=$source}{/capture}
+					<a class="btn btn-link btn-csp-register" href="{$registerUrl}" role="button">
+						{translate key="user.login.registerNewAccount"}
+					</a>
+				{/if}
+				<button type="submit" class="btn btn-csp">
+					{translate key="user.login"}
+				</button>
+			</div>
+		</form>
+	</div>
 
 </div><!-- .page -->
 
