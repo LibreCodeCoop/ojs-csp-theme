@@ -286,7 +286,12 @@ class CspThemePlugin extends ThemePlugin {
 	function addFooter($hookName, $params) {
 		$request = Application::get()->getRequest();
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->display($this->getTemplateResource('frontend/components/footer_logos.tpl'));
-		$templateMgr->display($this->getTemplateResource('frontend/components/footer_barra_brasil.tpl'));
+		if (
+			$params[1]->template_resource <> "plugins-1-plugins-generic-pdfJsViewer-generic-pdfJsViewer:display.tpl" and
+			$params[1]->template_resource <> "plugins-1-plugins-generic-htmlArticleGalley-generic-htmlArticleGalley:display.tpl"
+			) {
+			$templateMgr->display($this->getTemplateResource('frontend/components/footer_logos.tpl'));
+			$templateMgr->display($this->getTemplateResource('frontend/components/footer_barra_brasil.tpl'));
+		}
 	}
 }
