@@ -108,25 +108,28 @@
 				</div>
 			{/if}
 			{* how to cite *}
-			<div class="csp-cite">
-				<strong>{translate key="submission.howToCite"}</strong>
-				<div class="csl-bib-body">
-					<div class="csl-entry">
-						{$citation}
+			{if $citation}
+				<div class="csp-cite">
+					<strong>{translate key="submission.howToCite"}</strong>
+					<div class="csl-bib-body">
+						<div class="csl-entry">
+							{$citation}
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="list-group">
-				{* test date *}
-				<div class="csp-date">
-					{if $dates.received}
-						<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
-					{/if}
-					{if $dates.accepted}
-						<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
-					{/if}
+			{/if}
+			{if $dates}
+				<div class="list-group">
+					{* test date *}
+					<div class="csp-date">
+						{if $dates.received}
+							<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
+						{/if}
+						{if $dates.accepted}
+							<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
+						{/if}
+					</div>
 				</div>
-			</div>
+			{/if}
 	</div>
 {/if}
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

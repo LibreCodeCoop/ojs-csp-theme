@@ -104,8 +104,8 @@ class CspThemePlugin extends ThemePlugin {
 	}
 
 	public function loadTemplateData($hookName, $args) {
-		$templateMgr = $args[0];
-        $request = Application::get()->getRequest();
+		$request = Application::get()->getRequest();
+		$templateMgr = TemplateManager::getManager($request);
 		$context = $request->getContext();
 		$requestPath = $request->getRequestPath();
 		$baseUrl = $request->getBaseUrl();
@@ -139,11 +139,8 @@ class CspThemePlugin extends ThemePlugin {
 		}
 
 		/* Make citation */
-		if($args[1] == "frontend/pages/article.tpl"){
-			$pathArray = explode("/",$requestPath);
-			$submissionId = end($pathArray);
-			$submission = Repo::submission()->get($submissionId, $context->getId());
-			$publication = $submission->getCurrentPublication();
+		if($args[1] == "plugins-1-plugins-themes-csp-themes-csp:frontend/components/aside.tpl"){
+			$publication = $args[0]->getTemplateVars('publication');
 			$publicationLocale = $publication->getData('locale');
 			foreach ($publication->getData('authors') as $key => $value) {
 				$givenName = $value->getData('givenName',$publicationLocale);
@@ -168,7 +165,7 @@ class CspThemePlugin extends ThemePlugin {
 							if($givenNameArray[$i] === strtolower($givenNameArray[$i])){
 								$abbrev .= "";
 							}else{
-							//	$abbrev .= substr($givenNameArray[$i], 0,1);
+								$abbrev .= substr($givenNameArray[$i], 0,1);
 							}
 						}
 						$familyNameArray = explode(" ", $familyName);
@@ -197,26 +194,49 @@ class CspThemePlugin extends ThemePlugin {
 				}
 				unset($abbrev);
 			}
-			$issue = Repo::issue()->get($publication->getData('issueId'), $context->getId()); 
+			$issue = $args[0]->getTemplateVars('issue');
 			$citation = implode(", ",$authors).". ";
 			$citation .= $publication->getData('title',$publicationLocale).". ";
 			$citation .= $context->getLocalizedName()." ";
-			$citation .= $issue->getData('year')."; ";
+			$citation .= $issue->value->_data["year"]."; ";
 			$citation .= $issue->getData('volume');
 			$citation .= "(".$issue->getData('number').")";
-			if($issue->getData('year') > 2016){
+			if($issue->value->_data["year"] > 2016){
 //				$doiArray = explode('x', strtolower($publication->getLocalizedData('pub-id::doi')));
 //				$citation .= ':e00'.substr($doiArray[1],2);
 			}
-			if ($publication->getLocalizedData('pub-id::doi')) {
-				$citation .= " doi: ".$publication->getLocalizedData('pub-id::doi');
+			if ($publication->value->_data["doiObject"]) {
+				$citation .= " doi: ".$publication->value->_data["doiObject"]->_data["doi"];
 			}
-			$templateMgr->assign(array(
-				'issue' => $issue,
-			));
 		}
 
-        $templateMgr->assign(array(
+		$article = $args[0]->getTemplateVars('article');
+
+		$dates = "";
+		$submitdate = $article->getDateSubmitted();
+		$publishdate = $article->getDatePublished();
+
+		$editDecisions = Repo::decision()->getCollector()
+			->filterBySubmissionIds([$article->getData('id')])
+			->getMany();
+
+		foreach ($editDecisions->reverse() as $editDecision) {
+			if ($editDecision->getData('decision') == Decision::ACCEPT) {
+				$acceptdate = $editDecision->getData('dateDecided');
+			}
+		}
+
+		$dates = array();
+		if ($submitdate)
+			$dates['received'] = date('Y-m-d',strtotime($submitdate));
+		if ($acceptdate)
+			$dates['accepted'] = date('Y-m-d',strtotime($acceptdate));
+		if ($publishdate)
+			$dates['published'] = date('Y-m-d',strtotime($publishdate));
+
+		// $smarty->assign('dates', $dates);
+
+        $array = array(
 			'requestPath' => $requestPath,
 			'baseUrl' => $baseUrl,
 			'page' => $page,
@@ -226,8 +246,9 @@ class CspThemePlugin extends ThemePlugin {
 			'op' => $op,
 			'interviews' => $interviews,
 			'citation' => $citation,
-			'navigationLocale' => $navigationLocale
-		));
+			'navigationLocale' => $navigationLocale,
+			'dates' => $dates,
+		);
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
 			$publishedIssues = Repo::issue()->getCollector()
             ->filterByContextIds([$context->getId()])
@@ -241,45 +262,14 @@ class CspThemePlugin extends ThemePlugin {
 				}
 			}
 
-			$templateMgr = $args[0];
-			$templateMgr->assign('issues', $array);
+			$array = array('issues' => $array);
 		}
+		$templateMgr->assign($array);
 	}
 
 	function addSidebar($hookName, $params) {
 		$request = Application::get()->getRequest();
 		$templateMgr = TemplateManager::getManager($request);
-
-		if(strpos($request->_requestPath, 'article/view')){
-			$smarty = $params[1];
-			$article = $smarty->getTemplateVars('article');
-
-			$dates = "";
-			$submitdate = $article->getDateSubmitted();
-			$publishdate = $article->getDatePublished();
-
-            $editDecisions = Repo::decision()->getCollector()
-                ->filterBySubmissionIds([$article->getData('id')])
-				->getMany();
-
-			foreach ($editDecisions->reverse() as $editDecision) {
-				if ($editDecision->getData('decision') == Decision::ACCEPT) {
-					$acceptdate = $editDecision->getData('dateDecided');
-				}
-			}
-
-			$dates = array();
-			if ($submitdate)
-				$dates['received'] = date('Y-m-d',strtotime($submitdate));
-			if ($acceptdate)
-				$dates['accepted'] = date('Y-m-d',strtotime($acceptdate));
-			if ($publishdate)
-				$dates['published'] = date('Y-m-d',strtotime($publishdate));
-
-			$smarty->assign('dates', $dates);
-			return false;
-		}
-
 		$templateMgr->display($this->getTemplateResource('frontend/components/aside.tpl'));
 	}
 
