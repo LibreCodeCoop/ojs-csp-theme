@@ -113,6 +113,9 @@ class CspThemePlugin extends ThemePlugin {
 		$page = $router->_page;
 		$op = $router->getRequestedOp($request);
 		$navigationLocale = AppLocale::getLocale();
+		$arrayHeader = array();
+		$arrayArticle = array();
+		$arrayArchive = array();
 
 		if (str_contains($args[1], 'frontend')){
 			$issueDao = Repo::issue();
@@ -133,13 +136,24 @@ class CspThemePlugin extends ThemePlugin {
 				$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
 				$coverImageAltText = $currentIssue->getLocalizedCoverImageAltText();
 			}
+			$arrayHeader = array(
+				'requestPath' => $requestPath,
+				'baseUrl' => $baseUrl,
+				'page' => $page,
+				'coverImageUrl' => $coverImageUrl,
+				'coverImageAltText' => $coverImageAltText,
+				'context' => $context,
+				'op' => $op,
+				'interviews' => $interviews,
+				'navigationLocale' => $navigationLocale,
+			);
 		} else {
 			$coverImageUrl = null;
 			$coverImageAltText = null;
 		}
 
 		/* Make citation */
-		if($args[1] == "plugins-1-plugins-themes-csp-themes-csp:frontend/components/aside.tpl"){
+		if($args[1] == 'frontend/pages/article.tpl'){
 			$publication = $args[0]->getTemplateVars('publication');
 			$publicationLocale = $publication->getData('locale');
 			foreach ($publication->getData('authors') as $key => $value) {
@@ -201,54 +215,49 @@ class CspThemePlugin extends ThemePlugin {
 			$citation .= $issue->value->_data["year"]."; ";
 			$citation .= $issue->getData('volume');
 			$citation .= "(".$issue->getData('number').")";
-			if($issue->value->_data["year"] > 2016){
-//				$doiArray = explode('x', strtolower($publication->getLocalizedData('pub-id::doi')));
-//				$citation .= ':e00'.substr($doiArray[1],2);
-			}
 			if ($publication->value->_data["doiObject"]) {
 				$citation .= " doi: ".$publication->value->_data["doiObject"]->_data["doi"];
 			}
-		}
 
-		$article = $args[0]->getTemplateVars('article');
+			$article = $args[0]->getTemplateVars('article');
 
-		$dates = "";
-		$submitdate = $article->getDateSubmitted();
-		$publishdate = $article->getDatePublished();
+			$dates = "";
+			$submitdate = $article->getDateSubmitted();
+			$publishdate = $article->getDatePublished();
 
-		$editDecisions = Repo::decision()->getCollector()
-			->filterBySubmissionIds([$article->getData('id')])
-			->getMany();
+			$editDecisions = Repo::decision()->getCollector()
+				->filterBySubmissionIds([$article->getData('id')])
+				->getMany();
 
-		foreach ($editDecisions->reverse() as $editDecision) {
-			if ($editDecision->getData('decision') == Decision::ACCEPT) {
-				$acceptdate = $editDecision->getData('dateDecided');
+			foreach ($editDecisions->reverse() as $editDecision) {
+				if ($editDecision->getData('decision') == Decision::ACCEPT) {
+					$acceptdate = $editDecision->getData('dateDecided');
+				}
 			}
+
+			$dates = array();
+			if ($submitdate)
+				$dates['received'] = date('Y-m-d',strtotime($submitdate));
+			if ($acceptdate)
+				$dates['accepted'] = date('Y-m-d',strtotime($acceptdate));
+			if ($publishdate)
+				$dates['published'] = date('Y-m-d',strtotime($publishdate));
+
+			$arrayArticle = array(
+				'requestPath' => $requestPath,
+				'baseUrl' => $baseUrl,
+				'page' => $page,
+				'coverImageUrl' => $coverImageUrl,
+				'coverImageAltText' => $coverImageAltText,
+				'context' => $context,
+				'op' => $op,
+				'interviews' => $interviews,
+				'citation' => $citation,
+				'navigationLocale' => $navigationLocale,
+				'dates' => $dates,
+			);
 		}
 
-		$dates = array();
-		if ($submitdate)
-			$dates['received'] = date('Y-m-d',strtotime($submitdate));
-		if ($acceptdate)
-			$dates['accepted'] = date('Y-m-d',strtotime($acceptdate));
-		if ($publishdate)
-			$dates['published'] = date('Y-m-d',strtotime($publishdate));
-
-		// $smarty->assign('dates', $dates);
-
-        $array = array(
-			'requestPath' => $requestPath,
-			'baseUrl' => $baseUrl,
-			'page' => $page,
-			'coverImageUrl' => $coverImageUrl,
-            'coverImageAltText' => $coverImageAltText,
-			'context' => $context,
-			'op' => $op,
-			'interviews' => $interviews,
-			'citation' => $citation,
-			'navigationLocale' => $navigationLocale,
-			'dates' => $dates,
-		);
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
 			$publishedIssues = Repo::issue()->getCollector()
             ->filterByContextIds([$context->getId()])
@@ -261,9 +270,10 @@ class CspThemePlugin extends ThemePlugin {
 					$array[$issue->getYear()][$issue->getVolume()][$issue->getNumber()] = $issue->getId();
 				}
 			}
-
-			$array = array('issues' => $array);
+			$arrayArchive = array('issues' => $array);
 		}
+
+		$array = array_merge($arrayHeader, $arrayArticle, $arrayArchive);
 		$templateMgr->assign($array);
 	}
 
