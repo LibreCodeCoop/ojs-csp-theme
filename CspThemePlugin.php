@@ -13,14 +13,12 @@
 namespace APP\plugins\themes\csp;
 
 use APP\core\Application;
-use APP\i18n\AppLocale;
-use PKP\config\Config;
-use PKP\facades\Locale;
 use PKP\plugins\ThemePlugin;
 use PKP\plugins\Hook;	
 use APP\facades\Repo;
 use APP\decision\Decision;
 use APP\template\TemplateManager;
+use PKP\facades\Locale;
 
 class CspThemePlugin extends ThemePlugin {
 
@@ -112,7 +110,7 @@ class CspThemePlugin extends ThemePlugin {
 		$router = $request->getRouter();
 		$page = $router->_page;
 		$op = $router->getRequestedOp($request);
-		$navigationLocale = AppLocale::getLocale();
+		$navigationLocale = Locale::getLocale();
 		$arrayHeader = array();
 		$arrayArticle = array();
 		$arrayArchive = array();
@@ -122,7 +120,6 @@ class CspThemePlugin extends ThemePlugin {
 			$currentIssue = $issueDao->getCurrent($context->getId());
 			$publicationsCollector = Repo::publication()->getCollector()
             ->filterByContextIds([$context->getId()]);
-            // ->orderBy(\APP\submission\Collector::ORDERBY_SEQUENCE, \APP\submission\Collector::ORDER_DIR_ASC);
 
 			$interviews = $publicationsCollector->getQueryBuilder()
 				->join('publication_settings AS p', 'p.publication_id', '=', 's.publication_id')
@@ -130,7 +127,6 @@ class CspThemePlugin extends ThemePlugin {
 				->where('s.locale', 'pt')
 				->where('s.setting_value', 'ENTREVISTA')
 				->select('p.section_id, s.setting_value');
-
 
 			if(!is_null($currentIssue)){
 				$coverImageUrl = $currentIssue->getLocalizedCoverImageUrl();
