@@ -19,7 +19,7 @@ use APP\facades\Repo;
 use APP\decision\Decision;
 use APP\template\TemplateManager;
 use PKP\facades\Locale;
-
+use APP\issue\Collector;
 class CspThemePlugin extends ThemePlugin {
 
     /**
@@ -36,7 +36,6 @@ class CspThemePlugin extends ThemePlugin {
 		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
 
 		Hook::add ('TemplateManager::display', [$this, 'loadTemplateData']);
-		Hook::add('TemplateManager::fetch', [$this, 'fetchTemplate']);
 		Hook::add('Templates::Common::Sidebar', [$this, 'addSidebar']);
 		Hook::add('Templates::Common::Footer::PageFooter', [$this, 'addFooter']);
 
@@ -58,49 +57,6 @@ class CspThemePlugin extends ThemePlugin {
         return __('plugins.themes.csp.description');
     }
 
-	public function fetchTemplate($hookName, $args){ return;
-        $request = Application::get()->getRequest();
-		$router = $request->getRouter();
-		$page = $router->_page;
-		$op = $router->getRequestedOp($request);
-		if($op == "index"){
-			$context = $request->getContext();
-			$requestPath = $request->getRequestPath();
-			$baseUrl = $request->getBaseUrl();
-			$count = $args[1] != 'frontend/pages/issueArchive.tpl' ? 1 : null;
-			$params = array(
-				'contextId' => $context->getId(),
-				'orderBy' => 'seq',
-				'orderDirection' => 'ASC',
-				'count' => $count,
-				'offset' => 0,
-				'isPublished' => true
-			);
-			$collector = Repo::issue()->getCollector()->limit(1)->offset(0);
-			$collector->filterByContextIds([$context->getId()]);
-			$issues = $collector->getMany();
-			if ($issues) {
-				$coverImageUrl = $issues->getLocalizedCoverImageUrl();
-				$coverImageAltText = $issues->getLocalizedCoverImageAltText();
-			} else {
-				$coverImageUrl = null;
-				$coverImageAltText = null;
-			}
-
-			$templateMgr = $args[0];
-			$templateMgr->assign(array(
-				'issues' => $issues,
-				'requestPath' => $requestPath,
-				'baseUrl' => $baseUrl,
-				'page' => $page,
-				'coverImageUrl' => $coverImageUrl,
-				'coverImageAltText' => $coverImageAltText,
-				'context' => $context,
-				'op' => $op
-			));
-		}
-	}
-
 	public function loadTemplateData($hookName, $args) {
 		$request = Application::get()->getRequest();
 		$templateMgr = TemplateManager::getManager($request);
@@ -116,11 +72,11 @@ class CspThemePlugin extends ThemePlugin {
 		$arrayArchive = array();
 
 		if (str_contains($args[1], 'frontend')){
+			// Seleção de entrevistas para exibir em sidebar
 			$issueDao = Repo::issue();
 			$currentIssue = $issueDao->getCurrent($context->getId());
 			$publicationsCollector = Repo::publication()->getCollector()
             ->filterByContextIds([$context->getId()]);
-
 			$interviews = $publicationsCollector->getQueryBuilder()
 				->join('publication_settings AS p', 'p.publication_id', '=', 's.publication_id')
 				->where('s.setting_name', 'title')
@@ -148,7 +104,7 @@ class CspThemePlugin extends ThemePlugin {
 			$coverImageAltText = null;
 		}
 
-		/* Make citation */
+		// Conteúdo de box Como citar
 		if($args[1] == 'frontend/pages/article.tpl'){
 			$publication = $args[0]->getTemplateVars('publication');
 			$publicationLocale = $publication->getData('locale');
@@ -255,6 +211,7 @@ class CspThemePlugin extends ThemePlugin {
 		}
 
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
+			// Query de página de acervo
 			$publishedIssues = Repo::issue()->getCollector()
             ->filterByContextIds([$context->getId()])
             ->filterByPublished(true)
