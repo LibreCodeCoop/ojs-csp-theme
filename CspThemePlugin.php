@@ -164,11 +164,19 @@ class CspThemePlugin extends ThemePlugin {
 			$citation = implode(", ",$authors).". ";
 			$citation .= $publication->getData('title',$publicationLocale).". ";
 			$citation .= $context->getLocalizedName()." ";
-			$citation .= $issue->value->_data["year"]."; ";
+			$citation .= $issue->getData('year')."; ";
 			$citation .= $issue->getData('volume');
 			$citation .= "(".$issue->getData('number').")";
-			if ($publication->value->_data["doiObject"]) {
-				$citation .= " doi: ".$publication->value->_data["doiObject"]->_data["doi"];
+
+			$doiObject = $publication->getData('doiObject');
+
+			if($issue->getData('year') > 2016){
+				$doiArray = explode('x', strtolower($doiObject->getData('doi')));
+				$citation .= ':e00'.substr($doiArray[1],2);
+			}
+
+			if ($doiObject->getData('doi')) {
+				$citation .= " doi: ".$doiObject->getData('doi');
 			}
 
 			$article = $args[0]->getTemplateVars('article');
@@ -215,12 +223,40 @@ class CspThemePlugin extends ThemePlugin {
 			$publishedIssues = Repo::issue()->getCollector()
             ->filterByContextIds([$context->getId()])
             ->filterByPublished(true)
+			->orderBy(Collector::ORDERBY_PUBLISHED_ISSUES)
             ->getMany();
 
 			if ($publishedIssues->count() > 0) {
 				$issueOptions[] = ['value' => '', 'label' => '--- ' . __('editor.issues.backIssues') . ' ---'];
 				foreach ($publishedIssues as $issue) {
-					$array[$issue->getYear()][$issue->getVolume()][$issue->getNumber()] = $issue->getId();
+					$number = $issue->getNumber();
+					$year = $issue->getYear();
+					$volume = $issue->getVolume();
+					$title = strtolower($issue->getTitle($navigationLocale));
+					$isSupl = str_contains($title,'sup');
+					if($isSupl){
+						$order = 12 + $number;
+					}
+					else{
+						$order = $number;
+					}
+					if($year <= 2005){
+						if(($isSupl !== false)){
+							$number = 'Supl. '.$number;
+						}elseif($number > 12){
+							$number = $number - 12;
+							$number = 'Supl. '.$number;
+						}
+					}else{
+						if(is_int($number)){
+							$x = 1;
+						}
+						if(intval($number) > 12){
+							$number = $number - 12;
+							$number = 'Supl. '.$number;
+						}
+					}
+					$array[$year][$volume][$order] = array($number => $issue->getId());
 				}
 			}
 			$arrayArchive = array('issues' => $array);
