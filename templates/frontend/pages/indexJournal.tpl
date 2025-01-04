@@ -38,15 +38,20 @@
 
 	{* Latest issue *}
 	{if $issue}
-		<section class="current_issue">
-			<header class="page-header">
-				<h2>
-					{translate key="journal.currentIssue"}
-				</h2>
+		<section class="current_issue issue-section">
+			<header class="header-issue">
+				<div class="header-page">
+					<h2>
+						{translate key="journal.currentIssue"}
+					</h2>
+					<div id="line"></div>
+				</div>
+				<div class="version_issue">
+					<p class="current_issue_title lead">
+						{$issue->getIssueIdentification()|strip_unsafe_html}
+					</p>
+				</div>
 			</header>
-			<p class="current_issue_title lead">
-				{$issue->getIssueIdentification()|strip_unsafe_html}
-			</p>
 			{include file="frontend/objects/issue_toc.tpl"}
 		</section>
 	{/if}

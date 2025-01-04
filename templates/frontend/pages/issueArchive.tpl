@@ -47,9 +47,13 @@
 					{foreach from=$year key=$key item=$volume}
 						<td>{$key}</td>
 						<td>
+						<div style="display: none;">{ksort($volume)}</div>
 						{foreach from=$volume key=$key item=$issue}
-							<a href="{url|escape op="view" path=$issue}" class="archiveButton">{$key}</a>
-							{* 	{include file="frontend/objects/issue_summary.tpl"} *}
+							{* {var_dump($issue)} *}
+							{foreach from=$issue key=$key item=$number}
+								<a href="{url|escape op="view" path=$issue}" class="archiveButton">{$key}</a>
+								{* 	{include file="frontend/objects/issue_summary.tpl"} *}
+							{/foreach}
 						{/foreach}
 						</td>
 					{/foreach}

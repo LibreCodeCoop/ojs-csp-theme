@@ -40,7 +40,7 @@
 
 			{* User profile, login, etc, navigation menu*}
 			<div class="container-fluid" id="logo-csp">
-				<div class="row">
+				<div>
 					<div class="col-md-7">
 						{capture assign="homeUrl"}
 							{if $currentJournal && $multipleContexts}

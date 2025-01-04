@@ -1,9 +1,9 @@
 {**
  * templates/frontend/objects/article_details.tpl
  *
- * Copyright (c) 2014-2017 Simon Fraser University Library
- * Copyright (c) 2003-2017 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ * Copyright (c) 2014-2023 Simon Fraser University
+ * Copyright (c) 2003-2023 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief View of an Article which displays all details about the article.
  *  Expected to be primary object on the page.
@@ -16,7 +16,8 @@
  * @uses $pubIdPlugins @todo
  *}
 <article class="article-details">
-		{* Notification that this is an old version *}
+
+	{* Notification that this is an old version *}
 	{if $currentPublication->getId() !== $publication->getId()}
 		<div class="alert alert-warning" role="alert">
 			{capture assign="latestVersionUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
@@ -30,6 +31,7 @@
 		<section class="article-sidebar col-md-3">
 			{* Screen-reader heading for easier navigation jumps *}
 			<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.sidebar"}</h2>
+
 			{* Article/Issue cover image *}
 			{if $publication->getLocalizedData('coverImage') || ($issue && $issue->getLocalizedCoverImage())}
 				<div class="cover-image">
@@ -51,20 +53,6 @@
 					{/if}
 				</div>
 			{/if}
-			{* DOI (requires plugin) *}
-			{foreach from=$pubIdPlugins item=pubIdPlugin}
-				{if $pubIdPlugin->getPubIdType() != 'doi'}
-					{continue}
-				{/if}
-				{if $issue->getPublished()}
-					{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-				{else}
-					{assign var=pubId value=$pubIdPlugin->getPubId($article)}{* Preview pubId *}
-				{/if}
-				{if $pubId}
-					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $publication->getLocalizedData('pub-id::doi'))|escape}
-				{/if}
-			{/foreach}
 			{* Issue article appears in *}
 			<div class="text-center">
 				<div class="panel-heading">
@@ -112,13 +100,19 @@
 						{/foreach}
 					</div>
 				{/if}
-				<div class="csp-doi">
-					{capture assign=translatedDoi}{translate key="plugins.pubIds.doi.readerDisplayName"}{/capture}
-					<strong>{translate key="semicolon" label=$translatedDoi}</strong>
-					<a href="{$doiUrl}">
-						{$doiUrl}
-					</a>
-				</div>
+				{* DOI *}
+				{assign var=doiObject value=$article->getCurrentPublication()->getData('doiObject')}
+				{if $doiObject}
+					{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
+					<div class="csp-doi">
+						{capture assign=translatedDoi}{translate key="doi.readerDisplayName"}{/capture}
+						<strong>{translate key="semicolon" label=$translatedDoi}</strong>
+						<a href="{$doiUrl}">
+							{$doiUrl}
+						</a>
+					</div>
+				{/if}
+
 				{* Article abstract *}
 				{if $publication->getLocalizedData('abstract')}
 					<div class="article-summary" id="summary">
@@ -128,11 +122,44 @@
 						</div>
 					</div>
 				{/if}
+				<div class="list-group">
+				{* Keywords *}
+				{if !empty($publication->getLocalizedData('keywords'))}
+					<div class="list-group-item keywords">
+						<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
+						{translate key="semicolon" label=$translatedKeywords}</strong>
+						<div class="">
+							<span class="value">
+								{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}
+									{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}
+								{/foreach}
+							</span>
+						</div>
+					</div>
+				{/if}
+			</div>
 				{call_hook name="Templates::Article::Main"}
+
+				{* Usage statistics chart*}
+				{if $activeTheme->getOption('displayStats') != 'none'}
+					{$activeTheme->displayUsageStatsGraph($article->getId())}
+					<section class="item downloads_chart">
+						<h2 class="label">
+							{translate key="plugins.themes.bootstrap3.displayStats.downloads"}
+						</h2>
+						<div class="value">
+							<canvas class="usageStatsGraph" data-object-type="Submission" data-object-id="{$article->getId()|escape}"></canvas>
+							<div class="usageStatsUnavailable" data-object-type="Submission" data-object-id="{$article->getId()|escape}">
+								{translate key="plugins.themes.bootstrap3.displayStats.noStats"}
+							</div>
+						</div>
+					</section>
+				{/if}
+
 			</section><!-- .article-main -->
+
 			<section class="article-more-details">
-				{* Screen-reader heading for easier navigation jumps *}
-				<h2 class="sr-only">{translate key="plugins.themes.bootstrap3.article.details"}</h2>
+
 				{* PubIds (requires plugins) *}
 				{foreach from=$pubIdPlugins item=pubIdPlugin}
 					{if $pubIdPlugin->getPubIdType() == 'doi'}
@@ -160,20 +187,7 @@
 						</div>
 					{/if}
 				{/foreach}
-				{* Keywords *}
-				{if !empty($publication->getLocalizedData('keywords'))}
-					<div class="list-group-item keywords">
-						<strong>{capture assign=translatedKeywords}{translate key="article.subject"}{/capture}
-							{translate key="semicolon" label=$translatedKeywords}</strong>
-						<div class="">
-								<span class="value">
-									{foreach name="keywords" from=$publication->getLocalizedData('keywords') item="keyword"}
-										{$keyword|escape}{if !$smarty.foreach.keywords.last}{translate key="common.commaListSeparator"}{/if}
-									{/foreach}
-								</span>
-						</div>
-					</div>
-				{/if}
+
 				{* Licensing info *}
 				{if $licenseTerms || $licenseUrl}
 					<div class="panel panel-default copyright">
@@ -252,6 +266,7 @@
 						</div>
 					</div>
 				{/if}
+
 			</section><!-- .article-details -->
 		</div><!-- .col-md-8 -->
 	</div><!-- .row -->
