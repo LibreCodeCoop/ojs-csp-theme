@@ -78,12 +78,14 @@
 								{/foreach}
 							</ul>
 							<ul id="issn">
+								{if $context}
 								<li>
 									<p>{translate key="plugins.themes.csp.printIssn"} {$context->getData('printIssn')|escape}
 								</li>
 								<li>
 									<p>{translate key="plugins.themes.csp.onlineIssn"} {$context->getData('onlineIssn')|escape}
 								</li>
+								{/if}
 							</ul>
 						</div>
 					</div>
