@@ -266,9 +266,42 @@ class CspThemePlugin extends ThemePlugin {
 		$templateMgr->assign($array);
 	}
 
+	// Passa datas de submissão e aceite para exibir na sidebar
 	function addSidebar($hookName, $params) {
 		$request = Application::get()->getRequest();
 		$templateMgr = TemplateManager::getManager($request);
+		if(strpos($request->_requestPath, 'article/view')){
+			$article = $params[1]->getTemplateVars('article');
+
+			$dates = "";
+			$submitdate = $article->getDateSubmitted();
+			$publishdate = $article->getDatePublished();
+
+			// Get all decisions for this submission
+			$decisionIterator = Repo::decision()->getCollector()
+            ->filterBySubmissionIds([$article->getData('id')])
+            ->getMany();
+
+			// Loop through the decisions
+			foreach ($decisionIterator as $decision) {
+				// If we have a review stage decision and it was a submission accepted decision, get to date for the decision
+				$x = $decision->getData('decision');
+				if ($decision->getData('decision') == Decision::ACCEPT){
+					$reviewdate = $decision->getData('dateDecided');
+				}
+			}
+
+			$dates = array();
+			if ($submitdate)
+				$dates['received'] = date('Y-m-d',strtotime($submitdate));
+			if ($reviewdate)
+				$dates['accepted'] = date('Y-m-d',strtotime($reviewdate));
+			if ($publishdate)
+				$dates['published'] = date('Y-m-d',strtotime($publishdate));
+
+				$templateMgr->assign('dates', $dates);
+		}
+
 		$templateMgr->display($this->getTemplateResource('frontend/components/aside.tpl'));
 	}
 
