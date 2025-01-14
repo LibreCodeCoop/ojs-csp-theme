@@ -31,13 +31,12 @@ main{
 	<h1 class="namePage line">Acesso</h1>
 
 	<div class="alert alert-danger text-center">
-		<h3><b>Atenção!</b></h3>
 		<h3 style="line-height:2">
-			Para acompanhamento de manuscritos submetidos até dezembro de 2024, clique <a href="https://cadernos.ensp.fiocruz.br/csp1/portal/saga.php">aqui! </a>
+			{translate key="plugins.themes.csp.login.announcement"}
 		</h3>
 	</div>
 	<div class="alert alert-info">
-		<h3 style="line-height:2">Para novas submissões, utilize o login abaixo:</h3>
+		<h3 style="line-height:2">{translate key="plugins.themes.csp.login.announcement2"}</h3>
 		<form class="pkp_form login " id="login" method="post" action="{$loginUrl}">
 			{csrf}
 			<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />

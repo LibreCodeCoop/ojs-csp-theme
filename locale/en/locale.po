@@ -56,3 +56,9 @@ msgstr "Published"
 
 msgid "plugins.themes.csp.cookiesPolicy"
 msgstr "This website uses cookies to ensure you get the best browsing experience. <a rel=\"license\"  <a href=\"/ojs/index.php/csp/politica-cookies\">Saiba mais.</a>"
+
+msgid "plugins.themes.csp.login.announcement"
+msgstr "<b>Attention!</b><br>To accompany manuscripts submitted by December 2024, click <a href=\"https://cadernos.ensp.fiocruz.br/csp1/portal/saga.php\">here!</a>"
+
+msgid "plugins.themes.csp.login.announcement2"
+msgstr "For new submissions, please use the login below. If you have already registered with the SAGAS system, use the <b> same login and password </b>."
