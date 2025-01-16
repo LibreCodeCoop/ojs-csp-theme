@@ -170,13 +170,14 @@ class CspThemePlugin extends ThemePlugin {
 
 			$doiObject = $publication->getData('doiObject');
 
-			if($issue->getData('year') > 2016){
-				$doiArray = explode('x', strtolower($doiObject->getData('doi')));
-				$citation .= ':e00'.substr($doiArray[1],2);
-			}
-
-			if ($doiObject->getData('doi')) {
-				$citation .= " doi: ".$doiObject->getData('doi');
+			if($doiObject){
+				if($issue->getData('year') > 2016){
+					$doiArray = explode('x', strtolower($doiObject->getData('doi')));
+					$citation .= ':e00'.substr($doiArray[1],2);
+				}
+				if ($doiObject->getData('doi')) {
+					$citation .= " doi: ".$doiObject->getData('doi');
+				}
 			}
 
 			$article = $args[0]->getTemplateVars('article');
