@@ -64,4 +64,4 @@ msgid "plugins.themes.csp.login.announcement"
 msgstr "<b>Atenção!</b><br> Para acompanhamento de manuscritos submetidos até dezembro de 2024, clique <a href=\"https://cadernos.ensp.fiocruz.br/csp1/portal/saga.php\">aqui! </a>"
 
 msgid "plugins.themes.csp.login.announcement2"
-msgstr "Para novas submissões, utilize o login abaixo. Caso já tenha cadastro no sistema SAGAS <b>utilize o mesmo login e senha.</b>"
+msgstr "Para novas submissões, utilize o login abaixo. <br> Caso já tenha cadastro no sistema SAGAS <b>utilize o mesmo login e senha.</b>"
