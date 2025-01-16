@@ -31,12 +31,13 @@ main{
 	<h1 class="namePage line">Acesso</h1>
 
 	<div class="alert alert-danger text-center">
-		<h3 style="line-height:2">
+		<h4 style="line-height:2">
 			{translate key="plugins.themes.csp.login.announcement"}
-		</h3>
+		</h4>
 	</div>
 	<div class="alert alert-info">
-		<h3 style="line-height:2">{translate key="plugins.themes.csp.login.announcement2"}</h3>
+		<h4 class="text-center" style="line-height:2">{translate key="plugins.themes.csp.login.announcement2"}</h4>
+		<br>
 		<form class="pkp_form login " id="login" method="post" action="{$loginUrl}">
 			{csrf}
 			<input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />
