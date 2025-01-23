@@ -64,11 +64,6 @@
 		{* Article Galleys *}
 			{if $primaryGalleys || $supplementaryGalleys}
 				<div class="csp-download">
-					{if $primaryGalleys}
-						{foreach from=$primaryGalleys item=galley}
-							{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
-						{/foreach}
-					{/if}
 					{if $supplementaryGalleys}
 						{foreach from=$supplementaryGalleys item=galley}
 							{if ($galley->getFileType()|escape == 'text/xml' or $galley->getFileType()|escape == 'text/html')}
@@ -101,6 +96,43 @@
 								{if (($galley->getLocale() ==  'es_ES') && ($galley->getFileType()|escape == 'application/pdf'))}
 									{assign var="pdfExist" value=$pdfExist+1}
 									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
+								{/if}
+							{/foreach}
+						{/if}
+					{/if}
+
+					{if $primaryGalleys}
+						{foreach from=$primaryGalleys item=galley}
+							{if ($galley->getFileType()|escape == 'text/xml' or $galley->getFileType()|escape == 'text/html')}
+								{assign var="xmlExist" value=$xmlExist+1}
+								{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+							{/if}
+							{if (($galley->getLocale() ==  $navigationLocale) && ($galley->getFileType()|escape == 'application/pdf'))}
+								{assign var="pdfExist" value=$pdfExist+1}
+								{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+							{/if}
+						{/foreach}
+						{if !$pdfExist}
+							{foreach from=$primaryGalleys item=galley}
+								{if (($galley->getLocale() ==  'en_US') && ($galley->getFileType()|escape == 'application/pdf'))}
+									{assign var="pdfExist" value=$pdfExist+1}
+									{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+								{/if}
+							{/foreach}
+						{/if}
+						{if !$pdfExist}
+							{foreach from=$primaryGalleys item=galley}
+								{if (($galley->getLocale() ==  'pt_BR') && ($galley->getFileType()|escape == 'application/pdf'))}
+									{assign var="pdfExist" value=$pdfExist+1}
+									{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+								{/if}
+							{/foreach}
+						{/if}
+						{if !$pdfExist}
+							{foreach from=$primaryGalleys item=galley}
+								{if (($galley->getLocale() ==  'es_ES') && ($galley->getFileType()|escape == 'application/pdf'))}
+									{assign var="pdfExist" value=$pdfExist+1}
+									{include file="frontend/objects/galley_link.tpl" parent=$article purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
 								{/if}
 							{/foreach}
 						{/if}
