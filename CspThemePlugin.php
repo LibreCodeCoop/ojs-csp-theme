@@ -110,6 +110,8 @@ class CspThemePlugin extends ThemePlugin {
 			foreach ($publication->getData('authors') as $key => $value) {
 				$givenName = $value->getData('givenName',$publicationLocale);
 				$familyName = !is_null($value->getData('givenName')) ? $value->getData('familyName',$publicationLocale) : null;
+				$givenName = ltrim(rtrim($givenName));
+				$familyName = ltrim(rtrim($familyName));
 				if(strpos($givenName, ',')){
 					$givenNameArray = explode(",", $givenName);
 					$beginningNameArray = explode(" ", $givenNameArray[1]);
