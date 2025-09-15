@@ -12,7 +12,7 @@
                 <span class="oculta">Página dos 110 anos do castelo</span>
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 text-center">
             <a target="_blank" href="https://portal.fiocruz.br/aqui-somos-sus">
                 <img src="{$baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/aquisomossusu.png">
                 <span class="oculta">Página aqui somos SUS</span>
@@ -24,19 +24,19 @@
                 <span class="oculta">Página do Sistema Único de Saúde</span>
             </a>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-1 text-right">
             <a target="_blank" href="https://portal.fiocruz.br/">
                 <img src="{$baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/logofiocruzrodape.png">
                 <span class="oculta">Página da Fundação Oswaldo Cruz</span>
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 text-right">
             <a target="_blank" href="http://portalms.saude.gov.br/">
                 <img src="{$baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/ministeriosaude.png">
                 <span class="oculta">Página do Ministério da Saúde</span>
             </a>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 text-right">
             <a target="_blank" href="http://www.brasil.gov.br/">
                 <img src="{$baseUrl}/plugins/themes/csp/assets/barra-brasil/footer/gfederal.png">
                 <span class="oculta">Página do Governo Federal</span>
