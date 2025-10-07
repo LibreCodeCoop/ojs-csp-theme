@@ -29,7 +29,7 @@
 }
 
 .page-header-title{
-	padding-bottom: 9px;
+	padding-bottom: 2em;
 	position: relative;
 
 	@media screen and (max-width: 770px) {
@@ -51,17 +51,6 @@
 	}
 }
 
-.article-data{
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 0px;
-	padding-top: 12px;
-
-	@media screen and (max-width: 770px) {
-		display: none;
-	}
-}
-
 .article-list{
 	.issue-content:not(:first-child){
 		.page-header-title{
@@ -72,26 +61,13 @@
 			}
 		}
 	}
-	.issue-content:first-child{
-		border: none;
-
-		.media{
-			border: none;
-		}
-		.page-header-title{
-			border: none;
-		}
-		.article-data{
-			border: none;
-		}
-	}
 }
 
 .issue-content{
 	.media{
 		border-top: 1px solid #ddd;
 		margin-top: 0px;
-		padding-top: 15px;
+		padding-top: 2em;
 
 		@media screen and (max-width: 770px) {
 			padding-left: 30px;
@@ -99,16 +75,11 @@
 	}
 	.page-header-title{
 		border-top: 1px solid #ddd;
-	}
-	.article-data{
-		border-top: 1px solid #ddd;
+		padding-top: 2em;
 	}
 
 	@media screen and (max-width: 770px) {
 		.page-header-title{
-			border: none;
-		}
-		.article-data{
 			border: none;
 		}
 	}
