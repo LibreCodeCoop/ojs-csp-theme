@@ -1,21 +1,26 @@
 <footer id="footer-logos">
 	<div class="row">
-		<div class="col-md-1  col-xs-4">
+		<div class="col-md-1  col-xs-3">
 			<a target="_blank" href="https://creativecommons.org/licenses/by/2.0/br/">
 				<img src="{$baseUrl}/plugins/themes/csp/assets/cc-by.svg">
 			</a>
 		</div>
-		<div class="col-md-1  col-xs-4">
+		<div class="col-md-1  col-xs-3">
 			<a target="_blank" href="https://publicationethics.org/">
 				<img src="{$baseUrl}/plugins/themes/csp/assets/COPE.svg">
 			</a>
 		</div>
-		<div class="col-md-2 col-xs-4">
+		<div class="col-md-1 col-xs-3">
 			<a target="_blank" href="https://www.abecbrasil.org.br/novo/">
 				<img src="{$baseUrl}/plugins/themes/csp/assets/abec.svg">
 			</a>
 		</div>
-		<div class="col-md-4 col-xs-12">
+		<div class="col-md-1 col-xs-3">
+			<a target="_blank" href="https://www.abecbrasil.org.br/novo/">
+				<img src="{$baseUrl}/plugins/themes/csp/assets/ojs_csp.png">
+			</a>
+		</div>
+		<div class="col-md-4 col-xs-12 endereco" >
 			{$pageFooter}
 		</div>
 		<div class="col-md-1 col-xs-3">
