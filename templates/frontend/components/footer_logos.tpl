@@ -10,18 +10,20 @@
 				<img src="{$baseUrl}/plugins/themes/csp/assets/COPE.svg">
 			</a>
 		</div>
-		<div class="col-md-1 col-xs-3">
-			<a target="_blank" href="https://www.abecbrasil.org.br/novo/">
+		<div class="col-md-2 col-xs-3">
+			<a target="_blank" href="https://www.abecbrasil.org.br/">
 				<img src="{$baseUrl}/plugins/themes/csp/assets/abec.svg">
 			</a>
 		</div>
-		<div class="col-md-1 col-xs-3">
-			<a target="_blank" href="https://www.abecbrasil.org.br/novo/">
-				<img src="{$baseUrl}/plugins/themes/csp/assets/ojs_csp.png">
-			</a>
-		</div>
-		<div class="col-md-4 col-xs-12 endereco" >
-			{$pageFooter}
+		<div class="col-md-4 col-xs-12 endereco">
+			<div>
+				<a target="_blank" href="https://pkp.sfu.ca/ojs/">
+					<img src="{$baseUrl}/plugins/themes/csp/assets/ojs_csp.png">
+				</a>
+			</div>
+			<div>
+				{$pageFooter}
+			</div>
 		</div>
 		<div class="col-md-1 col-xs-3">
 			<a target="_blank" href="http://ensp.fiocruz.br/">
