@@ -24,18 +24,21 @@
 
 	{call_hook name="Templates::Index::journal"}
 
-	{if $homepageImage}
-		<div class="homepage-image">
-			<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
-		</div>
-	{/if}
+	<br>
+	<div class="row journal-description-section">
+		{if $homepageImage}
+			<div class="homepage-image col-md-4">
+				<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+			</div>
+		{/if}
 
-	{if $journalDescription}
-		<div class="journal-description">
-			{$journalDescription}
-		</div>
-	{/if}
-
+		{if $journalDescription}
+			<div class="journal-description col-md-8">
+				{$journalDescription}
+			</div>
+		{/if}
+	</div>
+	<br>
 	{* Latest issue *}
 	{if $issue}
 		<section class="current_issue issue-section">
