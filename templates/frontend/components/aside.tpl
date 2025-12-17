@@ -1,5 +1,14 @@
 {if $page !== 'article' && $page !== 'login'}
 <div>
+	<div class="aside-container">
+		<a class="btn btn-default" role="button" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="instrucoes-autores-ojs"}">
+				{translate key="navigation.infoForAuthors"}
+		</a>
+		<a class="btn btn-default" role="button" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="passo-passo-ojs"}">
+				{translate key="plugins.themes.csp.navigation.stepByStep"}
+		</a>
+	</div>
+	<br>
 	{include file="frontend/components/social-media.tpl"}
 	{if $additionalHomeContent}
 		<div class="aside-container">
