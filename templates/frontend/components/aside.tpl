@@ -5,7 +5,7 @@
 				{translate key="navigation.infoForAuthors"}
 		</a>
 		<a class="btn btn-default" role="button" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="passo-passo-ojs"}">
-				{translate key="plugins.themes.csp.navigation.stepByStep"}
+				{translate key="navigation.infoForReaders"}
 		</a>
 	</div>
 	<br>
