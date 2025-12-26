@@ -40,6 +40,9 @@
 									</div>
 								{/if}
 								{include file="frontend/objects/article_summary.tpl"}
+								<div class="col-md-2 article-date-published">
+									{$article->getCurrentPublication()->getData('datePublished')|date_format:$dateFormatShort}
+								</div>
 							</div>
 						{/foreach}
 					</div>
