@@ -85,3 +85,6 @@
 	</div>
 	{call_hook name="Templates::Issue::Issue::Article"}
 </div><!-- .article-summary -->
+<div class="col-md-2 article-date-published">
+	{$article->getCurrentPublication()->getData('datePublished')|date_format:$dateFormatShort}
+</div>
