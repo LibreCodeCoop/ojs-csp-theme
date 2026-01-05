@@ -510,15 +510,26 @@ nav[aria-expanded="true"] .pull-right{
 
 .cmp_article_list {
 	list-style: none;
-	.issue-article{
+	li:not(:first-child) .issue-article{
 		padding-top: 2em;
 		border-top: 1px solid #ddd;
 	}
+
 }
 
 .article-date-published{
-	border-top: 1px solid #ddd;
 	padding-top: 2em;
 	color: @font-primary-color;
 	font-weight: bold;
+	border-top: 1px solid #ddd;
+
+}
+
+li:first-child .article-date-published{
+	border-top: unset !important
+}
+
+.page_section .section_description{
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
