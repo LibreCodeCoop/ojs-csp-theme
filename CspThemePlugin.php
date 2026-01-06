@@ -21,6 +21,7 @@ use APP\template\TemplateManager;
 use PKP\facades\Locale;
 use APP\issue\Collector;
 class CspThemePlugin extends ThemePlugin {
+	private const CSS_VERSION = '202601061108';
 
     /**
      * Carrega os estilos personalizados de nosso tema
@@ -29,11 +30,11 @@ class CspThemePlugin extends ThemePlugin {
 
     public function init() {
 
-        $this->setParent('bootstrapthreethemeplugin');
-        $this->addStyle('child-stylesheet', 'styles/index.less');
+		$this->setParent('bootstrapthreethemeplugin');
+		$this->addStyle('child-stylesheet-' . self::CSS_VERSION, 'styles/index.less');
 		$this->addScript('csp', 'js/frontend.js', array( 'contexts' => 'frontend'));
 		$this->addScript('lens', 'js/lens.js');
-		$this->addStyle('csp', 'styles/backend.less', array( 'contexts' => 'backend'));
+		$this->addStyle('csp'. self::CSS_VERSION, 'styles/backend.less', array( 'contexts' => 'backend'));
 
 		Hook::add ('TemplateManager::display', [$this, 'loadTemplateData']);
 		Hook::add('Templates::Common::Sidebar', [$this, 'addSidebar']);
