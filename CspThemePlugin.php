@@ -270,12 +270,6 @@ class CspThemePlugin extends ThemePlugin {
 		$array = array_merge($arrayHeader, $arrayArticle, $arrayArchive);
 		$templateMgr->assign($array);
 
-		// Sobrecreve página de seção do plugin BrowseBySection para ordenar artigos por data de publicação
-		if($args[1] == 'plugins-1-plugins-generic-browseBySection-generic-browseBySection:frontend/pages/section.tpl'){
-			$templateMgr->display($this->getTemplateResource('frontend/pages/section.tpl'));
-			return true;
-		}
-
 	}
 
 	// Passa datas de submissão e aceite para exibir na sidebar
