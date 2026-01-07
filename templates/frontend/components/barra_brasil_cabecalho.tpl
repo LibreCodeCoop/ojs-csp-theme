@@ -22,7 +22,7 @@
  </div>
   <div id="barras">
 		<div id="barra-ensp">
-			<a href="http://www.ensp.fiocruz.br" target="_blank" title="Link para o portal ENSP."><span>Portal ENSP - Escola Nacional de Saúde Pública Sergio Arouca</span></a>
+			<a href="http://ensp.fiocruz.br" target="_blank" title="Link para o portal ENSP."><span>Portal ENSP - Escola Nacional de Saúde Pública Sergio Arouca</span></a>
 			<a href="http://www.fiocruz.br" target="_blank" title="Link para o portal FIOCRUZ." class="link-fiocruz"><span>Portal FIOCRUZ - Fundação Oswaldo Cruz</span></a>
 		</div>
 	</div>
