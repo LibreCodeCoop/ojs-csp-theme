@@ -170,8 +170,9 @@ class CspThemePlugin extends ThemePlugin {
 			$citation .= $context->getLocalizedName()." ";
 			$citation .= $issue->getData('year')."; ";
 			$citation .= $issue->getData('volume');
-			$citation .= "(".$issue->getData('number').")";
-
+			if($issue->getData('number')){
+				$citation .= "(".$issue->getData('number').")";
+			}
 			$doiObject = $publication->getData('doiObject');
 
 			if($doiObject){

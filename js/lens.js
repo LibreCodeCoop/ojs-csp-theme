@@ -4970,8 +4970,7 @@
 						"-",
 						published_on_month
 					  ),
-					  published_on:
-						"; " + volume + "(" + issue + "):" + elocation,
+						published_on:"; " + volume + (issue ? "(" + issue + ")" : "") + ":" + elocation,
 					  journal: s ? s.textContent : "",
 					  related_article: c ? c.getAttribute("xlink:href") : "",
 					  doi: a ? a.textContent : "",
