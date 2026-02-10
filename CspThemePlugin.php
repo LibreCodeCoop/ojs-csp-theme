@@ -36,9 +36,11 @@ class CspThemePlugin extends ThemePlugin {
 		$this->addScript('lens' . self::CSS_VERSION, 'js/lens.js');
 		$this->addStyle('csp'. self::CSS_VERSION, 'styles/backend.less', array( 'contexts' => 'backend'));
 
+
 		Hook::add ('TemplateManager::display', [$this, 'loadTemplateData']);
 		Hook::add('Templates::Common::Sidebar', [$this, 'addSidebar']);
 		Hook::add('Templates::Common::Footer::PageFooter', [$this, 'addFooter']);
+		Hook::add('Submission::Collector', [$this, 'submissionCollector']);
 
     }
 
@@ -321,6 +323,16 @@ class CspThemePlugin extends ThemePlugin {
 			) {
 			$templateMgr->display($this->getTemplateResource('frontend/components/footer_logos.tpl'));
 			$templateMgr->display($this->getTemplateResource('frontend/components/footer_barra_brasil.tpl'));
+		}
+	}
+	function submissionCollector($hookName, $params) {
+		// Ordena as publicações da página inicial por data de publicação, do mais recente para o mais antigo
+		$request = Application::get()->getRequest();
+		$router = $request->getRouter();
+		if (($router->_page === '' || $router->_page === 'index') && $router->_op === 'index') {
+			unset($params[0]->orders);
+			$params[0]->orderBy('po.date_published', 'DESC');
+			$params[1]->orderBy('po.date_published','DESC');
 		}
 	}
 }
