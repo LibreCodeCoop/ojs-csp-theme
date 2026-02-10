@@ -23,9 +23,15 @@
 		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 	{/if}
 
+
 	{* Limita a exibir somente as últimas 15 publicações *}
-	{assign var=maxArticles value=15}
-	{assign var=renderedArticles value=0}
+	{if ($requestedPage == '' || $requestedPage == 'index') && $requestedOp == 'index'}
+		{assign var=maxArticles value=15}
+		{assign var=renderedArticles value=0}
+	{else}
+		{assign var=maxArticles value=9999}
+		{assign var=renderedArticles value=0}
+	{/if}
 
 	{* Articles *}
 	<div class="sections row">
