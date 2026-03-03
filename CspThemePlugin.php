@@ -20,6 +20,8 @@ use APP\decision\Decision;
 use APP\template\TemplateManager;
 use PKP\facades\Locale;
 use APP\issue\Collector;
+use PKP\submission\PKPSubmission;
+
 class CspThemePlugin extends ThemePlugin {
 	private const CSS_VERSION = '202601091258';
 
@@ -40,7 +42,6 @@ class CspThemePlugin extends ThemePlugin {
 		Hook::add ('TemplateManager::display', [$this, 'loadTemplateData']);
 		Hook::add('Templates::Common::Sidebar', [$this, 'addSidebar']);
 		Hook::add('Templates::Common::Footer::PageFooter', [$this, 'addFooter']);
-		Hook::add('Submission::Collector', [$this, 'submissionCollector']);
 
     }
 
@@ -73,7 +74,40 @@ class CspThemePlugin extends ThemePlugin {
 		$arrayHeader = array();
 		$arrayArticle = array();
 		$arrayArchive = array();
+		if (($args[1] == 'frontend/pages/indexJournal.tpl') && (in_array($page, ['', 'index'], true) && $op === 'index') ){
+			// Refaz a query de publicações da página inicial para exibir as 15 últimas publicações
+			$journal = $request->getJournal();
+            $issue = Repo::issue()->getCurrent($journal->getId(), true);
+			// Show scheduled submissions if this is a preview
+			$allowedStatuses = [PKPSubmission::STATUS_PUBLISHED];
+			if (!$issue->getPublished()) {
+				$allowedStatuses[] = PKPSubmission::STATUS_SCHEDULED;
+			}
+			$issueSubmissions = Repo::submission()->getCollector()
+				->filterByContextIds([$issue->getJournalId()])
+				->filterByIssueIds([$issue->getId()])
+				->filterByStatus($allowedStatuses)
+				->orderBy(\APP\submission\Collector::ORDERBY_DATE_PUBLISHED, \APP\submission\Collector::ORDER_DIR_DESC)
+				->limit(15)
+				->getMany();
 
+			$sections = Repo::section()->getByIssueId($issue->getId());
+			$issueSubmissionsInSection = [];
+			foreach ($sections as $section) {
+				$issueSubmissionsInSection[$section->getId()] = [
+					'title' => $section->getHideTitle() ? null : $section->getLocalizedTitle(),
+					'hideAuthor' => $section->getHideAuthor(),
+					'articles' => [],
+				];
+			}
+			foreach ($issueSubmissions as $submission) {
+				if (!$sectionId = $submission->getCurrentPublication()->getData('sectionId')) {
+					continue;
+				}
+				$issueSubmissionsInSection[$sectionId]['articles'][] = $submission;
+			}
+			$templateMgr->assign('publishedSubmissions', $issueSubmissionsInSection);
+		}
 		if (str_contains($args[1], 'frontend')){
 			// Seleção de entrevistas para exibir em sidebar
 			$issueDao = Repo::issue();
@@ -323,16 +357,6 @@ class CspThemePlugin extends ThemePlugin {
 			) {
 			$templateMgr->display($this->getTemplateResource('frontend/components/footer_logos.tpl'));
 			$templateMgr->display($this->getTemplateResource('frontend/components/footer_barra_brasil.tpl'));
-		}
-	}
-	function submissionCollector($hookName, $params) {
-		// Ordena as publicações da página inicial por data de publicação, do mais recente para o mais antigo
-		$request = Application::get()->getRequest();
-		$router = $request->getRouter();
-		if (($router->_page === '' || $router->_page === 'index') && $router->_op === 'index') {
-			unset($params[0]->orders);
-			$params[0]->orderBy('po.date_published', 'DESC');
-			$params[1]->orderBy('po.date_published','DESC');
 		}
 	}
 }
