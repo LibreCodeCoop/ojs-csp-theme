@@ -23,29 +23,14 @@
 		{include file="frontend/components/notification.tpl" type="warning" messageKey="editor.issues.preview"}
 	{/if}
 
-
-	{* Limita a exibir somente as últimas 15 publicações *}
-	{if ($requestedPage == '' || $requestedPage == 'index') && $requestedOp == 'index'}
-		{assign var=maxArticles value=15}
-		{assign var=renderedArticles value=0}
-	{else}
-		{assign var=maxArticles value=9999}
-		{assign var=renderedArticles value=0}
-	{/if}
-
 	{* Articles *}
 	<div class="sections row">
 
 		{foreach name=sections from=$publishedSubmissions item=section}
-			{assign var=remaining value=$maxArticles-$renderedArticles}
-			{if $remaining <= 0}
-				{break}
-			{/if}
-			{assign var=sectionArticles value=$section.articles|@array_slice:0:$remaining}
-			<section {if count($sectionArticles) > 1}class="article-list" {/if}>
-				{if $sectionArticles}
+			<section {if count($section.articles) > 1}class="article-list" {/if}>
+				{if $section.articles}
 					<div class="media-list">
-						{foreach from=$sectionArticles item=article}
+						{foreach from=$section.articles item=article}
 							<div class="col-md-12 issue-content">
 								{if $section.title}
 									<div class="col-md-3 page-header-title">
@@ -56,7 +41,6 @@
 								{/if}
 								{include file="frontend/objects/article_summary.tpl"}
 							</div>
-							{assign var=renderedArticles value=$renderedArticles+1}
 						{/foreach}
 					</div>
 				{/if}
