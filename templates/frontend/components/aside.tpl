@@ -164,10 +164,10 @@
 					{* test date *}
 					<div class="csp-date">
 						{if $dates.received}
-							<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format} <br/>
+							<strong>{translate key="plugins.themes.csp.dates.received"}</strong> {$dates.received|date_format:$dateFormatLong} <br/>
 						{/if}
 						{if $dates.accepted}
-							<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format} <br/>
+							<strong>{translate key="plugins.themes.csp.dates.accepted"}</strong> {$dates.accepted|date_format:$dateFormatLong} <br/>
 						{/if}
 					</div>
 				</div>
