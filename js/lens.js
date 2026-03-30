@@ -5012,6 +5012,7 @@
 				  (o = o.concat(this.extractDatasets(t, e))),
 				  (o = o.concat(this.extractCustomMetaGroup(t, e))),
 				  (o = o.concat(this.extractCorrespondence(t, e))),
+				  (o = o.concat(this.extractEditedBy(t, e, articleMeta, navigationLanguage))),
 				  (o = o.concat(this.extractContributions(t, e, articleMeta, navigationLanguage))),
 				  (o = o.concat(this.extractOthers(t, e, articleMeta))),
 				  (o = o.concat(this.extractInterestsConflict(t, e, navigationLanguage))),
@@ -5183,6 +5184,39 @@
 					),
 				  n
 				);
+			  }),
+			  (this.extractEditedBy = function(t, e, articleMeta, navigationLanguage) {
+				var n = [],
+				  i = t.doc,
+				  s = articleMeta.querySelectorAll("fn[fn-type=edited-by]");
+				if (s && s.length > 0) {
+				  var a = {
+					type: "heading",
+					id: t.nextId("heading"),
+					level: 3,
+					content:
+					  navigationLanguage == "pt-BR"
+					  ? "Editores"
+					  : navigationLanguage == "es"
+					  ? "Editores"
+					  : "Editors",
+				  };
+				  i.create(a), n.push(a.id);
+				  r.each(
+					s,
+					function(e) {
+					  var pTags = e.querySelectorAll("p");
+					  var c = this.bodyNodes(t, Array.prototype.slice.call(pTags), {
+						ignore: ["label"],
+					  });
+					  r.each(c, function(t) {
+						n.push(t.id);
+					  });
+					},
+					this
+				  );
+				}
+				return n;
 			  }),
 			  (this.extractContributions = function(t, e, articleMeta, navigationLanguage) {
 				var n = [],
@@ -5406,8 +5440,11 @@
 				  },
 				  a = e.getAttribute("contrib-type");
 				s.contributor_type = this._contribTypeMapping[a];
-				var c = e.querySelector("role");
-				c && (s.role = c.textContent);
+				var c = e.querySelectorAll("role");
+				c.length > 0 && (s.role = Array.prototype.slice.call(c).map(function(n) {
+					var text = n.textContent;
+					return text ? text.charAt(0).toUpperCase() + text.slice(1) : "";
+				}).join("; "));
 				var u = e.querySelector("bio");
 				u &&
 				  r.each(
