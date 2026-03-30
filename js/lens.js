@@ -6320,7 +6320,7 @@
 			  }),
 			  (this.citationTypes = {
 				"mixed-citation": !0,
-				"element-citation": !0,
+				"element-citation": 0,
 			  }),
 			  (this.refList = function(t, e) {
 				for (var n = e.querySelectorAll("ref"), r = 0; r < n.length; r++)
@@ -6342,11 +6342,6 @@
 				  i = t.doc,
 				  s = t.nextId("article_citation"),
 				  a = n.querySelector("person-group");
-				if (!a)
-				  return void console.error(
-					"FIXME: there is one of those 'mixed-citation' without any structure. Skipping ...",
-					n
-				  );
 				r = {
 				  id: s,
 				  source_id: e.getAttribute("id"),
@@ -6361,9 +6356,9 @@
 				  lpage: "",
 				  citation_urls: [],
 				};
-				var c = a.querySelectorAll("name");
+				var c = a ? a.querySelectorAll("name") : n.querySelectorAll("name");
 				for (o = 0; o < c.length; o++) r.authors.push(this.getName(c[o]));
-				var u = a.querySelectorAll("collab");
+				var u = a ? a.querySelectorAll("collab") : n.querySelectorAll("collab");
 				for (o = 0; o < u.length; o++) r.authors.push(u[o].textContent);
 				var l = n.querySelector("source");
 				l && (r.source = l.textContent);
@@ -6375,7 +6370,7 @@
 					? (r.title = this.annotatedText(t, h, [s, "title"]))
 					: l
 					? (r.title = this.annotatedText(t, l, [s, "title"]))
-					: console.error("FIXME: this citation has no title", n);
+					: (r.title = this.annotatedText(t, n, [s, "title"]));
 				}
 				var d = n.querySelector("volume");
 				d && (r.volume = d.textContent);
