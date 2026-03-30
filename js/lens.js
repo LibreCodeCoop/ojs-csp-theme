@@ -5123,36 +5123,37 @@
 				var n = [],
 				  i = t.doc,
 				  s = e.querySelectorAll("fn[fn-type=conflict]");
-				return (
-				  s &&
-					s.length > 0 &&
-					r.each(
-					  s,
-					  function(e) {
-						var s = e.querySelector("label"),
-						  a = {
-							type: "heading",
-							id: t.nextId("heading"),
-							level: 3,
-							content:
-								navigationLanguage == "pt-BR"
-								? "Conflito de interesses"
-								: navigationLanguage == "es"
-								? "Conflicto de intereses"
-								: "Conflict of Interest",
-						  };
-						i.create(a), n.push(a.id);
-						var c = this.bodyNodes(t, o.dom.getChildren(e), {
-						  ignore: ["label"],
-						});
-						r.each(c, function(t) {
-						  n.push(t.id);
-						});
-					  },
-					  this
-					),
-				  n
-				);
+
+				if (s && s.length > 0) {
+				  var conflictFn = s[0];
+				  r.each(s, function(node) {
+					// Pega o conflito do sub-artigo se estiver extraindo sub-artigo, senão do artigo principal
+					if (e.nodeName === "sub-article" && node.closest('sub-article') === e) {
+						conflictFn = node;
+					} else if (e.nodeName !== "sub-article" && !node.closest('sub-article')) {
+						conflictFn = node;
+					}
+				  });
+				  var a = {
+					type: "heading",
+					id: t.nextId("heading"),
+					level: 3,
+					content:
+					  navigationLanguage == "pt-BR"
+					  ? "Conflito de interesses"
+					  : navigationLanguage == "es"
+					  ? "Conflicto de intereses"
+					  : "Conflict of Interest",
+				  };
+				  i.create(a), n.push(a.id);
+				  var c = this.bodyNodes(t, o.dom.getChildren(conflictFn), {
+					ignore: ["label"],
+				  });
+				  r.each(c, function(t) {
+					n.push(t.id);
+				  });
+				}
+				return n;
 			  }),
 			  (this.extractOthers = function(t, e) {
 				var n = [],
