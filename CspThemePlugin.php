@@ -23,7 +23,7 @@ use APP\issue\Collector;
 use PKP\submission\PKPSubmission;
 
 class CspThemePlugin extends ThemePlugin {
-	private const CSS_VERSION = '202601091258';
+	private const CSS_VERSION = '202603311146';
 
     /**
      * Carrega os estilos personalizados de nosso tema
