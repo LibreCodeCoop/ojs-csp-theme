@@ -5015,7 +5015,7 @@
 				  (o = o.concat(this.extractEditedBy(t, e, articleMeta, navigationLanguage))),
 				  (o = o.concat(this.extractContributions(t, e, articleMeta, navigationLanguage))),
 				  (o = o.concat(this.extractOthers(t, e, articleMeta))),
-				  (o = o.concat(this.extractInterestsConflict(t, e, navigationLanguage))),
+				  (o = o.concat(this.extractInterestsConflict(t, e, articleMeta, navigationLanguage))),
 				  (o = o.concat(this.extractAcknowledgements(t, e, article, navigationLanguage))),
 				  (o = o.concat(this.extractNotes(t, e))),
 				  (n.children = o),
@@ -5119,21 +5119,17 @@
 				  n
 				);
 			  }),
-			  (this.extractInterestsConflict = function(t, e, navigationLanguage) {
+			  (this.extractInterestsConflict = function(t, e, articleMeta, navigationLanguage) {
 				var n = [],
 				  i = t.doc,
+				  s = articleMeta.querySelectorAll("fn[fn-type=conflict]");
+
+				if (!s || s.length === 0) {
 				  s = e.querySelectorAll("fn[fn-type=conflict]");
+				}
 
 				if (s && s.length > 0) {
 				  var conflictFn = s[0];
-				  r.each(s, function(node) {
-					// Pega o conflito do sub-artigo se estiver extraindo sub-artigo, senão do artigo principal
-					if (e.nodeName === "sub-article" && node.closest('sub-article') === e) {
-						conflictFn = node;
-					} else if (e.nodeName !== "sub-article" && !node.closest('sub-article')) {
-						conflictFn = node;
-					}
-				  });
 				  var a = {
 					type: "heading",
 					id: t.nextId("heading"),
