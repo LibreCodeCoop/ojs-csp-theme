@@ -941,7 +941,7 @@
 				var t = document.createDocumentFragment(),
 				  e = this.node,
 				  n = this.createTextPropertyView([e.id, "title"], {
-					classes: "title",
+					classes: "",
 				  });
 				t.appendChild(n.render().el),
 				  t.appendChild(
