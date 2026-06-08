@@ -73,43 +73,6 @@
 		{* Article Galleys *}
 			{if $primaryGalleys || $supplementaryGalleys}
 				<div class="csp-download">
-					{if $supplementaryGalleys}
-						{foreach from=$supplementaryGalleys item=galley}
-							{if ($galley->getFileType()|escape == 'text/xml' or $galley->getFileType()|escape == 'text/html')}
-								{assign var="xmlExist" value=$xmlExist+1}
-								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-							{/if}
-							{if (($galley->getLocale() ==  $navigationLocale) && ($galley->getFileType()|escape == 'application/pdf'))}
-								{assign var="pdfExist" value=$pdfExist+1}
-								{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-							{/if}
-						{/foreach}
-						{if !$pdfExist}
-							{foreach from=$supplementaryGalleys item=galley}
-								{if (($galley->getLocale() ==  'en') && ($galley->getFileType()|escape == 'application/pdf'))}
-									{assign var="pdfExist" value=$pdfExist+1}
-									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-								{/if}
-							{/foreach}
-						{/if}
-						{if !$pdfExist}
-							{foreach from=$supplementaryGalleys item=galley}
-								{if (($galley->getLocale() ==  'pt_BR') && ($galley->getFileType()|escape == 'application/pdf'))}
-									{assign var="pdfExist" value=$pdfExist+1}
-									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-								{/if}
-							{/foreach}
-						{/if}
-						{if !$pdfExist}
-							{foreach from=$supplementaryGalleys item=galley}
-								{if (($galley->getLocale() ==  'es') && ($galley->getFileType()|escape == 'application/pdf'))}
-									{assign var="pdfExist" value=$pdfExist+1}
-									{include file="frontend/objects/galley_link.tpl" parent=$article isSupplementary="1"}
-								{/if}
-							{/foreach}
-						{/if}
-					{/if}
-
 					{if $primaryGalleys}
 						{foreach from=$primaryGalleys item=galley}
 							{if ($galley->getFileType()|escape == 'text/xml' or $galley->getFileType()|escape == 'text/html')}
