@@ -14,7 +14,8 @@ namespace APP\plugins\themes\csp;
 
 use APP\core\Application;
 use PKP\plugins\ThemePlugin;
-use PKP\plugins\Hook;	
+use PKP\plugins\Hook;
+use PKP\db\DAORegistry;
 use APP\facades\Repo;
 use APP\decision\Decision;
 use APP\template\TemplateManager;
@@ -258,6 +259,27 @@ class CspThemePlugin extends ThemePlugin {
 				'navigationLocale' => $navigationLocale,
 				'dates' => $dates,
 			);
+
+			// Remove exibição de botão Material Suplementar na página do artigo
+			$genreDao = DAORegistry::getDAO('GenreDAO');
+			$filterOutMaterialSupl = function (array $galleys) use ($genreDao): array {
+				return array_values(array_filter($galleys, function ($galley) use ($genreDao) {
+					$file = $galley->getFile();
+					if (!$file) {
+						return true;
+					}
+					$genreId = $file->getGenreId();
+					if (!$genreId) {
+						return true;
+					}
+					$genre = $genreDao->getById($genreId);
+					return !$genre || $genre->getKey() !== 'MATERIAL_SUPLEMENTAR';
+				}));
+			};
+			$templateMgr->assign([
+				'primaryGalleys' => $filterOutMaterialSupl($templateMgr->getTemplateVars('primaryGalleys') ?? []),
+				'supplementaryGalleys' => $filterOutMaterialSupl($templateMgr->getTemplateVars('supplementaryGalleys') ?? []),
+			]);
 		}
 
 		if($args[1] == 'frontend/pages/issueArchive.tpl'){
