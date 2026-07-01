@@ -127,7 +127,7 @@
 				<div class="container-fluid" id="container-banner" style="height:440px; background-image: url({$coverImageUrl|escape}" alt="{$coverImageAltText|escape|default:''})">
 					<br>
 					<div class="row">
-						{* <div class="col-md-6 pull-md-right" id="col-carousel">
+						<div class="col-md-6 pull-md-right" id="col-carousel">
 							<div id="myCarousel" class="carousel slide" data-ride="carousel">
 								<!-- Indicators -->
 								<ol class="carousel-indicators">
@@ -164,7 +164,7 @@
 									<span class="sr-only">Next</span>
 								</a>
 							</div>
-						</div> *}
+						</div>
 					</div>
 					<br>
 				</div>
