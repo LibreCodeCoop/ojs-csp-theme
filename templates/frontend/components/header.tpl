@@ -124,10 +124,10 @@
 				{/if}
 			</div><!-- .pkp_head_wrapper -->
 			{if empty($page)}
-				<div class="container-fluid" id="container-banner" style="background-image: url({$coverImageUrl|escape}" alt="{$coverImageAltText|escape|default:''})">
+				<div class="container-fluid" id="container-banner" style="height:440px; background-image: url({$coverImageUrl|escape}" alt="{$coverImageAltText|escape|default:''})">
 					<br>
 					<div class="row">
-						<div class="col-md-6 pull-md-right" id="col-carousel">
+						{* <div class="col-md-6 pull-md-right" id="col-carousel">
 							<div id="myCarousel" class="carousel slide" data-ride="carousel">
 								<!-- Indicators -->
 								<ol class="carousel-indicators">
@@ -139,7 +139,6 @@
 								<!-- Wrapper for slides -->
 								<div class="carousel-inner">
 
-								{* Announcements *}
 									{if $numAnnouncementsHomepage && $announcements|count}
 										{assign var=count value=1}
 										{foreach name=announcements from=$announcements item=announcement}
@@ -165,7 +164,7 @@
 									<span class="sr-only">Next</span>
 								</a>
 							</div>
-						</div>
+						</div> *}
 					</div>
 					<br>
 				</div>
