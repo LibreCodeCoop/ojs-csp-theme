@@ -9,7 +9,7 @@
 		</a>
 	</div>
 	<br>
-	{include file="frontend/components/social-media.tpl"}
+	{* {include file="frontend/components/social-media.tpl"} *}
 	{if $additionalHomeContent}
 		<div class="aside-container">
 			{$additionalHomeContent}
@@ -30,7 +30,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="aside-container">
+	{* <div class="aside-container">
 		<div class="aside-item">
 			<span>{translate|escape key="plugins.themes.csp.sidebar.videos"}</span>
 			<div class="aside-more" onclick="eventClick(this)"></div>
@@ -53,7 +53,7 @@
 					scrolling="no" width="100%" height="80px" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
 			</iframe>
 		</div>
-	</div>
+	</div> *}
 	<div class="aside-container">
 		<div class="content-csp">
 		<a href="https://periodicos.fiocruz.br/pt-br" target="_blank">
