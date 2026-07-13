@@ -5657,11 +5657,12 @@
 			  }),
 			  (this.extractDefinitions = function(t) {
 				var link = t.xmlDoc.querySelectorAll("ext-link");
+				var seen = {};
 				r.each(link, function(link) {
-				  var content = link.textContent;
-				  if (content.includes("cadernos.ensp.fiocruz.br/static/")) {
-					var s = t.nextId("ext-link"),
-					  i = {
+				  var content = link.textContent.trim();
+				  if (content.includes("cadernos.ensp.fiocruz.br/static/") && !seen[content]) {
+					seen[content] = true;
+					var i = {
 						id: t.nextId("ext-link"),
 						type: "definition",
 						title:
