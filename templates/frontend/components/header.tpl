@@ -173,7 +173,13 @@
 
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container">
-			{if $page }
-				{include file="frontend/components/breadcrumbs.tpl"}
+			{if $section}
+				{include file="frontend/components/breadcrumbs_article.tpl" currentTitle=$section->getLocalizedTitle()}
+			{elseif $announcement}
+				{include file="frontend/components/breadcrumbs_announcement.tpl" currentTitle=$announcement->getLocalizedData('title')|escape}
+			{elseif $issue}
+				{include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
+			{else}
+				{include file="frontend/components/breadcrumbs.tpl" currentTitleKey=$pageTitle}
 			{/if}
 			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-8 remove-old-breadcrumb" role="main">
