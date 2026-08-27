@@ -12,17 +12,17 @@
 <article class="announcement-summary media">
 	<div>
 		<h3>
-			{$announcement->getLocalizedTitle()|escape} |
+			{$announcement->getLocalizedData('title')|escape} |
 		</h3>
 		<p class="date">
 			<span class="glyphicon glyphicon-calendar"></span>
-			{$announcement->getDatePosted()|escape}
+			{$announcement->datePosted->format($dateFormatShort)|escape}
 		</p>
 	</div>
 	<div>
-		{$announcement->getLocalizedDescriptionShort()|strip_unsafe_html}
+		{$announcement->getLocalizedData('descriptionShort')|strip_unsafe_html}
 		<br>
-		<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}">
+		<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->id}">
 			{translate key="plugins.themes.csp.announcement.readMore"}
 		</a>
 	</div>

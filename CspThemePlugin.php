@@ -225,8 +225,8 @@ class CspThemePlugin extends ThemePlugin {
 			$article = $args[0]->getTemplateVars('article');
 
 			$dates = "";
-			$submitdate = $article->getDateSubmitted();
-			$publishdate = $article->getDatePublished();
+			$submitdate = $article->getData('dateSubmitted');
+			$publishdate = $publication->getData('datePublished');
 
 			$editDecisions = Repo::decision()->getCollector()
 				->filterBySubmissionIds([$article->getData('id')])
@@ -337,10 +337,11 @@ class CspThemePlugin extends ThemePlugin {
 		$templateMgr = TemplateManager::getManager($request);
 		if(strpos($request->_requestPath, 'article/view')){
 			$article = $params[1]->getTemplateVars('article');
+			$publication = $article->getCurrentPublication();
 
 			$dates = "";
-			$submitdate = $article->getDateSubmitted();
-			$publishdate = $article->getDatePublished();
+			$submitdate = $article->getData('dateSubmitted');
+			$publishdate = $publication->getData('datePublished');
 
 			// Get all decisions for this submission
 			$decisionIterator = Repo::decision()->getCollector()

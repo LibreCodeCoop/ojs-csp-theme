@@ -2,9 +2,9 @@
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
 
 <!--
-  * plugins/themes/default/version.xml
+  * plugins/themes/csp/version.xml
   *
-  * Copyright (c) 2020-2023 Lívia Gouvêa
+  * Copyright (c) 2020-2026 Lívia Gouvêa
   * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
   *
   * Plugin version information.
@@ -13,8 +13,8 @@
 <version>
 	<application>csp</application>
 	<type>plugins.themes</type>
-	<release>1.0.0.0</release>
-	<date>2020-09-09</date>
+	<release>1.1.0.0</release>
+	<date>2026-08-27</date>
 	<lazy-load>1</lazy-load>
 	<class>CspThemePlugin</class>
 </version>

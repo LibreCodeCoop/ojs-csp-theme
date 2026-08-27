@@ -232,9 +232,9 @@
 									<div class="media biography">
 										<div class="media-body">
 											<h3 class="media-heading biography-author">
-												{if $author->getLocalizedAffiliation()}
+												{if $author->getLocalizedAffiliationNamesAsString()}
 													{capture assign="authorName"}{$author->getFullName()|escape}{/capture}
-													{capture assign="authorAffiliation"}<span class="affiliation">{$author->getLocalizedAffiliation()|escape}</span>{/capture}
+													{capture assign="authorAffiliation"}<span class="affiliation">{$author->getLocalizedAffiliationNamesAsString()|escape}</span>{/capture}
 													{translate key="submission.authorWithAffiliation" name=$authorName affiliation=$authorAffiliation}
 												{else}
 													{$author->getFullName()|escape}
