@@ -141,12 +141,12 @@
 
 									{if $numAnnouncementsHomepage && $announcements|count}
 										{assign var=count value=1}
-										{foreach name=announcements from=$announcements item=announcement}
+										{foreach name=announcements from=$announcements item=homepageAnnouncement}
 											<div class="item {if $count == 1} active {/if}">
 												{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
 													{break}
 												{/if}
-												{include file="frontend/objects/announcement_summary.tpl" heading="h3"}
+												{include file="frontend/objects/announcement_summary.tpl" heading="h3" announcement=$homepageAnnouncement}
 											</div>
 										{assign var=count value=$count+1}
 										{/foreach}
@@ -173,13 +173,15 @@
 
 		{* Wrapper for page content and sidebars *}
 		<div class="pkp_structure_content container">
-			{if $section}
-				{include file="frontend/components/breadcrumbs_article.tpl" currentTitle=$section->getLocalizedTitle()}
-			{elseif $announcement}
-				{include file="frontend/components/breadcrumbs_announcement.tpl" currentTitle=$announcement->getLocalizedData('title')|escape}
-			{elseif $issue}
-				{include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
-			{else}
-				{include file="frontend/components/breadcrumbs.tpl" currentTitleKey=$pageTitle}
+			{if $page}
+				{if $section}
+					{include file="frontend/components/breadcrumbs_article.tpl" currentTitle=$section->getLocalizedTitle()}
+				{elseif $announcement}
+					{include file="frontend/components/breadcrumbs_announcement.tpl" currentTitle=$announcement->getLocalizedData('title')|escape}
+				{elseif $page == "issue" && $op == "view"}
+					{include file="frontend/components/breadcrumbs_issue.tpl" currentTitle=$issueIdentification}
+				{else}
+					{include file="frontend/components/breadcrumbs.tpl" currentTitleKey=$pageTitle}
+				{/if}
 			{/if}
 			<main class="pkp_structure_main col-xs-12 col-sm-10 col-md-8 remove-old-breadcrumb" role="main">
